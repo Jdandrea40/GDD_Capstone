@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\Scriptable Objects\AmmoType.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\TowerBase.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\TurretTop.cs" />
+    <None Include="Assets\Sprites\tower-defense-top-down\License.txt" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/Josh D'Andrea/Documents/GDD_Capstone/GDD_CAPSTONE/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

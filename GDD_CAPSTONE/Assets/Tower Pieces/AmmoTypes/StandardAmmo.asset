@@ -18,3 +18,4 @@ MonoBehaviour:
   DoTAmount: 0
   Slow: 0
   AmmoSprite: {fileID: 0}
+  color: {r: 1, g: 1, b: 1, a: 0}

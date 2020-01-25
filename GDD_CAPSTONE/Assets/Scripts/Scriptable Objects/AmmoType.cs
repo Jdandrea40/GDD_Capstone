@@ -11,5 +11,6 @@ public class AmmoType : ScriptableObject
     [SerializeField] int DoTAmount;
     [SerializeField] bool Slow;
     [SerializeField] Sprite AmmoSprite;
+    [SerializeField] Color color;
 
 }
