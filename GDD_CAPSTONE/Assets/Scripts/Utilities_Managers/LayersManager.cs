@@ -4,4 +4,5 @@
     WATER = 4,
     UI = 5,
     ENEMIES = 8,
+    TOWER = 9
 }

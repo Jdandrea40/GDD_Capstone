@@ -63,7 +63,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Enemies\Enemy.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemyMoveTowardsPoint.cs" />
+    <Compile Include="Assets\Scripts\Events\EnemyDequeueEvent.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\AmmoType.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\TowerBase.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\TurretTop.cs" />

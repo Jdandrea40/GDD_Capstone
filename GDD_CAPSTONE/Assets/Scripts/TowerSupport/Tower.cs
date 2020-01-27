@@ -13,10 +13,11 @@ public class Tower : MonoBehaviour
     // visuals
     protected Color tColor;           // Ammo
 
-    // status effects (ALL AMMO)
-    protected bool SplashDamage;
-    protected bool Slow;
-    protected bool DamageOverTime;
+    // status effects
+    protected bool SplashDamage;      // TurretTop
+    protected bool Slow;              // Ammo  
+    protected bool DamageOverTime;    // Ammo
+    
 
     private void Awake()
     {
@@ -25,11 +26,16 @@ public class Tower : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        EventManager.EnemeyDequeueListener(DequeueEnemy);
            
     }
 
     protected virtual void CreateTower()
+    {
+
+    }
+
+    protected virtual void DequeueEnemy()
     {
 
     }

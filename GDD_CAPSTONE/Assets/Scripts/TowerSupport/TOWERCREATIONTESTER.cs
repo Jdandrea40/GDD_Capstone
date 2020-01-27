@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class TOWERCREATIONTESTER : Tower
 {
-
-
     SpriteRenderer sr;
 
     [SerializeField] TurretTop[] tTop;

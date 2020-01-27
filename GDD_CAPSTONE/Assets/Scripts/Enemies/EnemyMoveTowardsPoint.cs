@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyMoveTowardsPoint : MonoBehaviour
+public class EnemyMoveTowardsPoint : Enemy
 {
     [SerializeField] private Transform[] movePoints;
-    [SerializeField] float moveSpeed = 2;
-    [SerializeField] GameObject test;
+    //[SerializeField] GameObject test;
     int currentPoint = 0;
 
     // Start is called before the first frame update
@@ -29,7 +28,7 @@ public class EnemyMoveTowardsPoint : MonoBehaviour
                 movePoints[currentPoint].transform.position, moveSpeed * Time.deltaTime);
             if(transform.position == movePoints[currentPoint].transform.position)
             {
-                Instantiate(test, transform.position, Quaternion.identity);
+                // Instantiate(test, transform.position, Quaternion.identity);
                 currentPoint++;
                 if (currentPoint == movePoints.Length)
                 {

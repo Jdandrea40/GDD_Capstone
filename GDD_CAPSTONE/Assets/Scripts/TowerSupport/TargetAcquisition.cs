@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TargetAcquisition : Tower
 {
-    Queue<GameObject> targets;
+    List<GameObject> targets = new List<GameObject>();
 
     // Start is called before the first frame update
     void Start()
@@ -15,22 +15,22 @@ public class TargetAcquisition : Tower
     // Update is called once per frame
     void Update()
     {
-        
+        Debug.Log(targets.Count);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.layer == (int)CollisionLayers.ENEMIES)
         {
-            targets.Enqueue(collision.gameObject);
+            targets.Add(collision.gameObject);
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    protected override void DequeueEnemy()
     {
-        if(collision.gameObject.layer == (int)CollisionLayers.ENEMIES)
-        {
-            targets.Dequeue();
-        }
+        base.DequeueEnemy();
+        //targets.Remove();
     }
+
+
 }
