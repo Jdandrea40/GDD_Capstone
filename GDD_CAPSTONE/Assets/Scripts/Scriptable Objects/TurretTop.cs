@@ -5,10 +5,10 @@ using UnityEngine;
 [CreateAssetMenu]
 public class TurretTop : ScriptableObject
 {
-    [SerializeField] string Name;
-    [SerializeField] int Damage;
-    [SerializeField] float FireRate;
-    [SerializeField] bool SplashDamage;
-    [SerializeField] Sprite TurretSprite;
+    public string Name;
+    public int Damage;
+    public float FireRate;
+    public bool SplashDamage;
+    public Sprite TurretSprite;
 
 }

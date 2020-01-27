@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu]
 public class TowerBase : ScriptableObject
 {
-    [SerializeField] string Name;
-    [SerializeField] int Range;
-    [SerializeField] float FireRateModifier;
+    public string Name;
+    public int Range;
+    public float FireRateModifier;
 }

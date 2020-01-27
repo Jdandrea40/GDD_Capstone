@@ -1,0 +1,7 @@
+﻿public enum CollisionLayers
+{
+    DEFAULT,
+    WATER = 4,
+    UI = 5,
+    ENEMIES = 8,
+}

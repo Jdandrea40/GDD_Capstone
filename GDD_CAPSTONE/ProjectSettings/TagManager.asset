@@ -13,7 +13,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - ENEMY
   - 
   - 
   - 
@@ -40,4 +40,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: GROUND
+    uniqueID: 3897557765
+    locked: 0
+  - name: ENEMIES
+    uniqueID: 2519321695
     locked: 0

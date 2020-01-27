@@ -5,12 +5,12 @@ using UnityEngine;
 [CreateAssetMenu]
 public class AmmoType : ScriptableObject
 {
-    [SerializeField] string Name;
-    [SerializeField] int ImpactDamage;
-    [SerializeField] bool DamageOverTime;
-    [SerializeField] int DoTAmount;
-    [SerializeField] bool Slow;
-    [SerializeField] Sprite AmmoSprite;
-    [SerializeField] Color color;
+    public string Name;
+    public int ImpactDamage;
+    public bool DamageOverTime;
+    public int DoTAmount;
+    public bool Slow;
+    public Sprite AmmoSprite;
+    public Color color;
 
 }
