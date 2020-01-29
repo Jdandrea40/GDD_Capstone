@@ -39,7 +39,7 @@ public static class EventManager
         towerFireInvoker.Add(invoker);
         foreach (UnityAction<Transform> listener in towerFireListener)
         {
-            invoker.AddTowerFireListener(listener);
+            //invoker.AddTowerFireListener(listener);
         }
     }
 
@@ -48,7 +48,7 @@ public static class EventManager
         towerFireListener.Add(listener);
         foreach (Tower invoker in towerFireInvoker)
         {
-            invoker.AddTowerFireListener(listener);
+            //invoker.AddTowerFireListener(listener);
         }
     }
     #endregion

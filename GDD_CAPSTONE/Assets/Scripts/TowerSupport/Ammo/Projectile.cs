@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Projectile : MonoBehaviour
+public class Projectile : Tower
 {
     BoxCollider2D bc2d;
-    GameObject target;
+    Transform targetToHit;
     SpriteRenderer sr;
 
     float projectileMoveSpeed;
@@ -14,22 +14,24 @@ public class Projectile : MonoBehaviour
     {
         bc2d = GetComponent<BoxCollider2D>();
         sr = GetComponent<SpriteRenderer>();
-
+        targetToHit = target;
         projectileMoveSpeed = ConstantsManager.Instance.PROJECTILE_MOVE_SPEED;       
     }
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
+        Debug.Log(enemyTargets.Count);
+        // moves the projectile towards the saved enemy
+        transform.position = Vector2.MoveTowards(transform.position,
+           targetToHit.transform.position, projectileMoveSpeed * Time.deltaTime);
+        ;
         // Gets the first enemy in the list and stores it
-        EventManager.TowerFireListener(MoveToEnemy);
-
+        //EventManager.TowerFireListener(MoveToEnemy);
     }
 
     void MoveToEnemy(Transform target)
     {
-        // moves the projectile towards the saved enemy
-        transform.position = Vector2.MoveTowards(transform.position,
-           target.transform.position, projectileMoveSpeed * Time.deltaTime);
+       
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

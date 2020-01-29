@@ -6,11 +6,12 @@ using UnityEngine.Events;
 public class Tower : MonoBehaviour
 {
     protected CircleCollider2D cc2d;
-    public List<GameObject> enemyTarget = new List<GameObject>();
+    public List<GameObject> enemyTargets;
     [SerializeField] GameObject projectile;
 
     protected bool canFire = false;
-    public Transform target;
+    bool firing = false;
+    protected Transform target;
     float range;
 
     #region TOWER PROPERTIES
@@ -32,80 +33,96 @@ public class Tower : MonoBehaviour
 
     #endregion
 
-    protected TowerFireEvent towerFireEvent = new TowerFireEvent();
-    public void AddTowerFireListener(UnityAction<Transform> listener)
-    {
-        towerFireEvent.AddListener(listener);
-    }
+    //protected TowerFireEvent towerFireEvent = new TowerFireEvent();
+    //public void AddTowerFireListener(UnityAction<Transform> listener)
+    //{
+    //    towerFireEvent.AddListener(listener);
+    //}
 
     // Called before Start()
     private void Awake()
     {
         cc2d = GetComponent<CircleCollider2D>();
-       
+        enemyTargets = new List<GameObject>();
     }
 
     // Start is called before the first frame update
     void Start()
     {
         // Not Currently using
-        //EventManager.EnemeyDequeueListener(DequeueEnemy);
-        EventManager.TowerFireInvoker(this);
-        //range = 2;//cc2d.radius;
-        //InvokeRepeating("UpdateTarget", 0f, .5f); 
+        // EventManager.EnemeyDequeueListener(DequeueEnemy);
+        // EventManager.TowerFireInvoker(this);
+        // range = 2;//cc2d.radius;
+        // InvokeRepeating("UpdateTarget", 0f, .5f); 
     }
 
-    //void UpdateTarget()
-    //{
-    //    GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-    //    float shortestDistance = Mathf.Infinity;
-    //    GameObject nearestEnemy = null;
-
-
-    //    foreach (GameObject enemy in enemies)
-    //    {
-    //        float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
-    //        if (distanceToEnemy < shortestDistance)
-    //        {
-    //            shortestDistance = distanceToEnemy;
-    //            nearestEnemy = enemy;
-    //        }
-    //    }
-
-    //    if (nearestEnemy != null && shortestDistance <= range)
-    //    {
-    //        target = nearestEnemy.transform;
-    //        canFire = true;
-    //        StartCoroutine(Fire());
-
-    //    }
-    //    else
-    //    {
-    //        target = null;
-    //        canFire = false;
-    //    }
-    //}
-
-    //IEnumerator Fire()
-    //{
-    //    while (canFire)
-    //    {
-    //        towerFireEvent.Invoke(target.transform);
-    //        Instantiate(projectile, transform.position, Quaternion.identity);
-    //        yield return new WaitForSeconds(2);
-    //    }
-
-    //}
-
-    private void Update()
+    protected virtual void Update()
     {
-        if (target == null)
+        Debug.Log(enemyTargets.Count);
+
+        if (enemyTargets.Count > 0)
         {
+            canFire = true;
+            target = enemyTargets[0].transform;
+            if(!firing)
+            {
+                StartCoroutine(Fire());
+                firing = true;
+            }
+        }       
+        else if (enemyTargets.Count < 1)
+        {
+            firing = false;
+            canFire = false;
             return;
         }
+
+        if (firing)
+        {
+            Vector2 direction = target.transform.position - transform.position;
+            float angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.AngleAxis(angle, Vector3.back);
+        }
     }
+
+    #region UNITY METHODS
+
+    // Target acquired
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == (int)CollisionLayers.ENEMIES)
+        {
+            enemyTargets.Add(collision.gameObject);
+        }
+    }
+
+    // Target unacquired
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == (int)CollisionLayers.ENEMIES)
+        {
+            enemyTargets.Remove(collision.gameObject);
+        }
+    }
+    #endregion
+    #region CUSTOM METHODS
+
+    IEnumerator Fire()
+    {
+        yield return new WaitForEndOfFrame();
+        while (canFire)
+        {
+            // towerFireEvent.Invoke(target.transform);
+            Instantiate(projectile, transform.position, Quaternion.identity);
+            yield return new WaitForSeconds(2);
+        }
+
+    }
+
     void CreateTower()
     {
 
     }
+
+    #endregion
 }

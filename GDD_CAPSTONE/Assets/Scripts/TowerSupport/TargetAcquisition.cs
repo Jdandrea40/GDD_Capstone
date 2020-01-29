@@ -8,6 +8,7 @@ using UnityEngine.Events;
 /// </summary>
 public class TargetAcquisition : Tower
 {
+   //List<GameObject> targets = new List<GameObject>();
   
     public float range;
 
@@ -57,7 +58,7 @@ public class TargetAcquisition : Tower
     {
         if (collision.gameObject.layer == (int)CollisionLayers.ENEMIES)
         {
-            enemyTarget.Add(collision.gameObject);
+            enemyTargets.Add(collision.gameObject);
         }
     }
 
@@ -66,7 +67,7 @@ public class TargetAcquisition : Tower
     {
         if (collision.gameObject.layer == (int)CollisionLayers.ENEMIES)
         {
-            enemyTarget.Remove(collision.gameObject);
+            enemyTargets.Remove(collision.gameObject);
         }
     }
 }
