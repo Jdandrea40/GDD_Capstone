@@ -3,13 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+/// <summary>
+/// Overarching Enemy class
+/// </summary>
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] protected float moveSpeed = 2;
+    [SerializeField] protected float moveSpeed;
     CircleCollider2D cc2d;
 
     #region EVENTS
 
+    /// <summary>
+    /// NOT CURRENTLY USING
+    /// </summary>
     EnemyDequeueEvent enemyDequeue;
     public void AddEnemyDequeueListener(UnityAction listener)
     {
@@ -17,14 +23,17 @@ public class Enemy : MonoBehaviour
     }
 
     #endregion
+
     private void Awake()
     {
         cc2d = GetComponent<CircleCollider2D>();
+        moveSpeed = ConstantsManager.Instance.ENEMY_MOVE_SPEED;
 
     }
     // Start is called before the first frame update
     void Start()
     {
+        // Not currently using
         enemyDequeue = new EnemyDequeueEvent();
         EventManager.EnemyDequeueInvoker(this);
     }
@@ -35,11 +44,5 @@ public class Enemy : MonoBehaviour
         
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.layer == (int)CollisionLayers.TOWER)
-        {
-            enemyDequeue.Invoke();
-        }
-    }
+
 }

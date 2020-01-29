@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
+  - EnemyPath
   layers:
   - Default
   - TransparentFX
@@ -46,4 +48,13 @@ TagManager:
     locked: 0
   - name: ENEMIES
     uniqueID: 2519321695
+    locked: 0
+  - name: TOWER_RADIUS
+    uniqueID: 980436587
+    locked: 0
+  - name: TOWER
+    uniqueID: 4176556375
+    locked: 0
+  - name: VERY_TOP
+    uniqueID: 3426128005
     locked: 0
