@@ -2,36 +2,44 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Projectile : Tower
+public class Projectile : MonoBehaviour
 {
     BoxCollider2D bc2d;
+    
     Transform targetToHit;
+     
     SpriteRenderer sr;
 
     float projectileMoveSpeed;
 
-    private void Awake()
+    private void Start()
     {
         bc2d = GetComponent<BoxCollider2D>();
         sr = GetComponent<SpriteRenderer>();
-        targetToHit = target;
+        //targetToHit = tower.TargetToShoot.transform;
         projectileMoveSpeed = ConstantsManager.Instance.PROJECTILE_MOVE_SPEED;       
     }
     // Update is called once per frame
-    void LateUpdate()
+    void Update()
     {
-        Debug.Log(enemyTargets.Count);
-        // moves the projectile towards the saved enemy
-        transform.position = Vector2.MoveTowards(transform.position,
-           targetToHit.transform.position, projectileMoveSpeed * Time.deltaTime);
-        ;
-        // Gets the first enemy in the list and stores it
-        //EventManager.TowerFireListener(MoveToEnemy);
+        if (targetToHit != null)
+        {
+            Debug.Log(targetToHit.name);
+            // moves the projectile towards the saved enemy
+            transform.position = Vector2.MoveTowards(transform.position,
+              targetToHit.position, projectileMoveSpeed * Time.deltaTime);
+            // Gets the first enemy in the list and stores it
+            //EventManager.TowerFireListener(MoveToEnemy);
+        }
+        else
+        {
+            Debug.Log("NOTHING");
+        }
     }
 
-    void MoveToEnemy(Transform target)
+    public void MoveToEnemy(GameObject target)
     {
-       
+        targetToHit = target.transform;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

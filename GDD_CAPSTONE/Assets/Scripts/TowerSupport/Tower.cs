@@ -11,9 +11,14 @@ public class Tower : MonoBehaviour
 
     protected bool canFire = false;
     bool firing = false;
-    protected Transform target;
+    // protected Transform target;
     float range;
 
+    GameObject targetToShoot;
+    public GameObject TargetToShoot
+    {
+        get { return targetToShoot; }
+    }
     #region TOWER PROPERTIES
 
     // damage modifiers
@@ -56,14 +61,14 @@ public class Tower : MonoBehaviour
         // InvokeRepeating("UpdateTarget", 0f, .5f); 
     }
 
-    protected virtual void Update()
+    void Update()
     {
-        Debug.Log(enemyTargets.Count);
+        //Debug.Log(enemyTargets.Count);
 
         if (enemyTargets.Count > 0)
         {
             canFire = true;
-            target = enemyTargets[0].transform;
+            targetToShoot = enemyTargets[0];
             if(!firing)
             {
                 StartCoroutine(Fire());
@@ -79,7 +84,7 @@ public class Tower : MonoBehaviour
 
         if (firing)
         {
-            Vector2 direction = target.transform.position - transform.position;
+            Vector2 direction = targetToShoot.transform.position - transform.position;
             float angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.AngleAxis(angle, Vector3.back);
         }
@@ -109,14 +114,13 @@ public class Tower : MonoBehaviour
 
     IEnumerator Fire()
     {
-        yield return new WaitForEndOfFrame();
         while (canFire)
         {
             // towerFireEvent.Invoke(target.transform);
-            Instantiate(projectile, transform.position, Quaternion.identity);
+            Projectile proj = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Projectile>();
+            proj.MoveToEnemy(targetToShoot);
             yield return new WaitForSeconds(2);
         }
-
     }
 
     void CreateTower()

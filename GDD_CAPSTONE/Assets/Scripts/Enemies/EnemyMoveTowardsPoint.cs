@@ -30,7 +30,7 @@ public class EnemyMoveTowardsPoint : Enemy
         // Gets the distance of the current point of travel
         Vector3 dir = target.position - transform.position;
         // moves the enemy
-        transform.Translate(dir.normalized * moveSpeed * Time.deltaTime, Space.World);
+        transform.Translate(dir.normalized * MoveSpeed * Time.deltaTime, Space.World);
 
         // detects if it has reach its destination (with buffer)
         if (Vector3.Distance(transform.position, target.position) <= .2f)

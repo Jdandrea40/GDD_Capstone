@@ -8,8 +8,15 @@ using UnityEngine.Events;
 /// </summary>
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] protected float moveSpeed;
     CircleCollider2D cc2d;
+
+    #region ENEMY PROPERTIES
+
+    protected int Health;
+    protected float MoveSpeed;
+    protected int Damage;
+
+    #endregion
 
     #region EVENTS
 
@@ -24,10 +31,12 @@ public class Enemy : MonoBehaviour
 
     #endregion
 
+    #region UNITY METHODS
+
     private void Awake()
     {
         cc2d = GetComponent<CircleCollider2D>();
-        moveSpeed = ConstantsManager.Instance.ENEMY_MOVE_SPEED;
+        MoveSpeed = ConstantsManager.Instance.ENEMY_MOVE_SPEED;
 
     }
     // Start is called before the first frame update
@@ -44,5 +53,14 @@ public class Enemy : MonoBehaviour
         
     }
 
+    #endregion
 
+    #region CUSTOM METHODS
+
+    protected void TakeDamage(int amount)
+    {
+
+    }
+
+    #endregion
 }
