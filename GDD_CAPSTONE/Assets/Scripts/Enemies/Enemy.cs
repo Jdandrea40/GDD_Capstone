@@ -10,7 +10,13 @@ public class Enemy : MonoBehaviour
 {
     CircleCollider2D cc2d;
 
-    #region ENEMY PROPERTIES
+    bool hasTriggered = false;
+    public bool HasTriggered
+    {
+        get { return hasTriggered; }
+    }
+
+    #region ENEMY STATS
 
     protected int Health;
     protected float MoveSpeed;
@@ -47,10 +53,20 @@ public class Enemy : MonoBehaviour
         EventManager.EnemyDequeueInvoker(this);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if(collision.gameObject.layer == (int)CollisionLayers.TOWER)
+        {
+            hasTriggered = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if(collision.gameObject.layer == (int)CollisionLayers.TOWER)
+        {
+            hasTriggered = false;
+        }
     }
 
     #endregion

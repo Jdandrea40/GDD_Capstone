@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class Tower : MonoBehaviour
 {
     protected CircleCollider2D cc2d;
+    Enemy enemy;
     public List<GameObject> enemyTargets;
     [SerializeField] GameObject projectile;
 
@@ -106,6 +107,7 @@ public class Tower : MonoBehaviour
     {
         if (collision.gameObject.layer == (int)CollisionLayers.ENEMIES)
         {
+
             enemyTargets.Remove(collision.gameObject);
         }
     }
