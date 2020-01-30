@@ -9,6 +9,9 @@ public static class EventManager
 
     static Enemy enemyDequeueInvoker;
     static UnityAction enemyDequeueListener;
+
+    static List<Tower> towerFireInvoker = new List<Tower>();
+    static List<UnityAction<Transform>> towerFireListener = new List<UnityAction<Transform>>();
     
     #endregion
 
@@ -28,6 +31,24 @@ public static class EventManager
         if(enemyDequeueInvoker != null)
         {
             enemyDequeueInvoker.AddEnemyDequeueListener(listener);
+        }
+    }
+
+    public static void TowerFireInvoker(Tower invoker)
+    {
+        towerFireInvoker.Add(invoker);
+        foreach (UnityAction<Transform> listener in towerFireListener)
+        {
+            //invoker.AddTowerFireListener(listener);
+        }
+    }
+
+    public static void TowerFireListener(UnityAction<Transform> listener)
+    {
+        towerFireListener.Add(listener);
+        foreach (Tower invoker in towerFireInvoker)
+        {
+            //invoker.AddTowerFireListener(listener);
         }
     }
     #endregion
