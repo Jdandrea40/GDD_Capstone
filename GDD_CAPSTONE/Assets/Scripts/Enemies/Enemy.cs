@@ -56,8 +56,15 @@ public class Enemy : MonoBehaviour
     #endregion
 
     #region CUSTOM METHODS
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == (int)CollisionLayers.PROJECTILE)
+        {
+            TakeDamage(1);
+        }
+    }
 
-    protected void TakeDamage(int amount)
+    protected virtual void TakeDamage(int amount)
     {
 
     }

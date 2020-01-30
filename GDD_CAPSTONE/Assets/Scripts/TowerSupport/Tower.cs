@@ -19,7 +19,7 @@ public class Tower : MonoBehaviour
     {
         get { return targetToShoot; }
     }
-    #region TOWER PROPERTIES
+    #region TOWER STATS
 
     // damage modifiers
     protected int Damage;             // Ammo + TurretTop
@@ -44,6 +44,8 @@ public class Tower : MonoBehaviour
     //    towerFireEvent.AddListener(listener);
     //}
 
+    #region UNITY METHODS
+
     // Called before Start()
     private void Awake()
     {
@@ -63,8 +65,6 @@ public class Tower : MonoBehaviour
 
     void Update()
     {
-        //Debug.Log(enemyTargets.Count);
-
         if (enemyTargets.Count > 0)
         {
             canFire = true;
@@ -90,7 +90,7 @@ public class Tower : MonoBehaviour
         }
     }
 
-    #region UNITY METHODS
+
 
     // Target acquired
     private void OnTriggerEnter2D(Collider2D collision)
@@ -110,16 +110,18 @@ public class Tower : MonoBehaviour
         }
     }
     #endregion
+
     #region CUSTOM METHODS
 
     IEnumerator Fire()
     {
         while (canFire)
         {
+            // TODO: REMOVE HARDCODED VALUES
             // towerFireEvent.Invoke(target.transform);
             Projectile proj = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Projectile>();
             proj.MoveToEnemy(targetToShoot);
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(1);
         }
     }
 
