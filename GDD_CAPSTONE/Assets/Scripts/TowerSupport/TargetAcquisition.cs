@@ -58,7 +58,7 @@ public class TargetAcquisition : Tower
     {
         if (collision.gameObject.layer == (int)CollisionLayers.ENEMIES)
         {
-            enemyTargets.Add(collision.gameObject);
+            //enemyTargets.Add(collision.gameObject);
         }
     }
 
@@ -67,7 +67,7 @@ public class TargetAcquisition : Tower
     {
         if (collision.gameObject.layer == (int)CollisionLayers.ENEMIES)
         {
-            enemyTargets.Remove(collision.gameObject);
+            //enemyTargets.Remove(collision.gameObject);
         }
     }
 }

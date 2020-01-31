@@ -68,7 +68,8 @@
     <Compile Include="Assets\Scripts\Enemies\Enemy_BasicAirplane.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemyMoveTowardsPoint.cs" />
     <Compile Include="Assets\Scripts\Enemies\WaveSpawner.cs" />
-    <Compile Include="Assets\Scripts\Events\EnemyDequeueEvent.cs" />
+    <Compile Include="Assets\Scripts\Events\AddEnemyTargetEvent.cs" />
+    <Compile Include="Assets\Scripts\Events\RemoveEnemyTargetEvent.cs" />
     <Compile Include="Assets\Scripts\Events\TowerFireEvent.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\AmmoType.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\TowerBase.cs" />

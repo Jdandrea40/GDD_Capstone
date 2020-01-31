@@ -3,6 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class EnemyDequeueEvent : UnityEvent
+public class RemoveEnemyTargetEvent : UnityEvent<int, GameObject>
 {
 }

@@ -6,11 +6,12 @@ using UnityEngine.Events;
 public class Tower : MonoBehaviour
 {
     protected CircleCollider2D cc2d;
-    Enemy enemy;
-    public List<GameObject> enemyTargets;
+    //public List<GameObject> enemyTargets;
     [SerializeField] GameObject projectile;
 
-    protected bool canFire = false;
+    public Dictionary<int, GameObject> enemies; 
+
+    bool canFire = false;
     bool firing = false;
     // protected Transform target;
     float range;
@@ -20,6 +21,7 @@ public class Tower : MonoBehaviour
     {
         get { return targetToShoot; }
     }
+
     #region TOWER STATS
 
     // damage modifiers
@@ -51,12 +53,15 @@ public class Tower : MonoBehaviour
     private void Awake()
     {
         cc2d = GetComponent<CircleCollider2D>();
-        enemyTargets = new List<GameObject>();
+        enemies = new Dictionary<int, GameObject>();
+        //enemyTargets = new List<GameObject>();
     }
 
     // Start is called before the first frame update
     void Start()
     {
+        EventManager.AddEnemyTargetListener(AddEnemyTarget);
+        EventManager.RemoveEnemyTargetListener(RemoveEnemyTarget);
         // Not Currently using
         // EventManager.EnemeyDequeueListener(DequeueEnemy);
         // EventManager.TowerFireInvoker(this);
@@ -66,17 +71,17 @@ public class Tower : MonoBehaviour
 
     void Update()
     {
-        if (enemyTargets.Count > 0)
+        if (enemies.Count > 0)
         {
             canFire = true;
-            targetToShoot = enemyTargets[0];
+            targetToShoot = enemies[0];
             if(!firing)
             {
                 StartCoroutine(Fire());
                 firing = true;
             }
         }       
-        else if (enemyTargets.Count < 1)
+        else if (enemies.Count < 1)
         {
             firing = false;
             canFire = false;
@@ -91,26 +96,32 @@ public class Tower : MonoBehaviour
         }
     }
 
-
-
     // Target acquired
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.layer == (int)CollisionLayers.ENEMIES)
-        {
-            enemyTargets.Add(collision.gameObject);
-        }
-    }
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    if (collision.gameObject.layer == (int)CollisionLayers.ENEMIES)
+    //    { 
+    //        if (enemies.ContainsKey(collision.GetInstanceID()))
+    //        {
+    //            enemies.Add(collision.GetInstanceID(), collision.gameObject);
+    //        }
+    //        //enemyTargets.Add(collision.gameObject);
+    //    }
+    //}
 
-    // Target unacquired
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.layer == (int)CollisionLayers.ENEMIES)
-        {
+    //// Target unacquired
+    //private void OnTriggerExit2D(Collider2D collision)
+    //{
+    //    if (collision.gameObject.layer == (int)CollisionLayers.ENEMIES)
+    //    {
+    //        if(enemies.ContainsKey(collision.GetInstanceID()))
+    //        {
+    //            enemies.Remove(collision.GetInstanceID());
+    //        }
 
-            enemyTargets.Remove(collision.gameObject);
-        }
-    }
+    //        //enemyTargets.Remove(collision.gameObject);
+    //    }
+    //}
     #endregion
 
     #region CUSTOM METHODS
@@ -127,6 +138,17 @@ public class Tower : MonoBehaviour
         }
     }
 
+    void AddEnemyTarget(int targetID, GameObject enemy)
+    {
+        if (!enemies.ContainsKey(targetID))
+        {
+            enemies.Add(targetID, enemy);
+        }
+    }
+    void RemoveEnemyTarget(int targetID, GameObject enemy)
+    {
+        enemies.Remove(targetID);
+    }
     void CreateTower()
     {
 

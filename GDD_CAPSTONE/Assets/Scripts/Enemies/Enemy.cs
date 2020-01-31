@@ -10,11 +10,12 @@ public class Enemy : MonoBehaviour
 {
     CircleCollider2D cc2d;
 
+    protected int instanceID;
     bool hasTriggered = false;
-    public bool HasTriggered
-    {
-        get { return hasTriggered; }
-    }
+    //public bool HasTriggered
+    //{
+    //    get { return hasTriggered; }
+    //}
 
     #region ENEMY STATS
 
@@ -26,13 +27,16 @@ public class Enemy : MonoBehaviour
 
     #region EVENTS
 
-    /// <summary>
-    /// NOT CURRENTLY USING
-    /// </summary>
-    EnemyDequeueEvent enemyDequeue;
-    public void AddEnemyDequeueListener(UnityAction listener)
+ 
+    AddEnemyTargetEvent addEnemyTarget;
+    public void AddEnemyTargetListener(UnityAction<int, GameObject> listener)
     {
-        enemyDequeue.AddListener(listener);
+        addEnemyTarget.AddListener(listener);
+    }
+    protected RemoveEnemyTargetEvent removeEnemyTarget;
+    public void RemoveEnemyTargetListener(UnityAction<int, GameObject> listener)
+    {
+        removeEnemyTarget.AddListener(listener);
     }
 
     #endregion
@@ -43,29 +47,35 @@ public class Enemy : MonoBehaviour
     {
         cc2d = GetComponent<CircleCollider2D>();
         MoveSpeed = ConstantsManager.Instance.ENEMY_MOVE_SPEED;
+        instanceID = gameObject.GetInstanceID();
 
     }
     // Start is called before the first frame update
     void Start()
     {
         // Not currently using
-        enemyDequeue = new EnemyDequeueEvent();
-        EventManager.EnemyDequeueInvoker(this);
+        addEnemyTarget = new AddEnemyTargetEvent();
+        EventManager.AddEnemyTargetInvoker(this);
+        removeEnemyTarget = new RemoveEnemyTargetEvent();
+        EventManager.RemoveEnemyTargetInvoker(this);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.layer == (int)CollisionLayers.TOWER)
         {
-            hasTriggered = true;
+                addEnemyTarget.Invoke(instanceID, gameObject);
+                hasTriggered = true;
+       
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         if(collision.gameObject.layer == (int)CollisionLayers.TOWER)
-        {
-            hasTriggered = false;
+        { 
+                removeEnemyTarget.Invoke(instanceID, gameObject);
+                hasTriggered = false;
         }
     }
 
@@ -77,12 +87,13 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject.layer == (int)CollisionLayers.PROJECTILE)
         {
             TakeDamage(1);
+
         }
     }
 
     protected virtual void TakeDamage(int amount)
     {
-
+        
     }
 
     #endregion

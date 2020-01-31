@@ -7,7 +7,7 @@ public class Enemy_BasicAirplane : Enemy
     // Start is called before the first frame update
     void Start()
     {
-        Health = 2;
+        Health = 200;
     }
 
     // Update is called once per frame
@@ -22,6 +22,7 @@ public class Enemy_BasicAirplane : Enemy
         Health -= amount;
         if (Health <= 0)
         {
+            removeEnemyTarget.Invoke(instanceID, gameObject);
             Destroy(gameObject);
         }
     }
