@@ -7,7 +7,7 @@ public class Enemy_BasicAirplane : Enemy
     // Start is called before the first frame update
     void Start()
     {
-        Health = 200;
+        Health = 1;
     }
 
     // Update is called once per frame
@@ -16,14 +16,14 @@ public class Enemy_BasicAirplane : Enemy
         
     }
 
-    protected override void TakeDamage(int amount)
-    {
-        base.TakeDamage(amount);
-        Health -= amount;
-        if (Health <= 0)
-        {
-            removeEnemyTarget.Invoke(instanceID, gameObject);
-            Destroy(gameObject);
-        }
-    }
+    //protected override void TakeDamage(int amount)
+    //{
+    //    base.TakeDamage(amount);
+    //    Health -= amount;
+    //    if (Health <= 0)
+    //    {
+    //        //removeEnemyTarget.Invoke(instanceID, gameObject);
+    //        Destroy(gameObject);
+    //    }
+    //}
 }

@@ -6,10 +6,10 @@ using UnityEngine.Events;
 public class Tower : MonoBehaviour
 {
     protected CircleCollider2D cc2d;
-    //public List<GameObject> enemyTargets;
+    public List<GameObject> enemyTargets;
     [SerializeField] GameObject projectile;
 
-    public Dictionary<int, GameObject> enemies; 
+    //public Dictionary<int, GameObject> enemies; 
 
     bool canFire = false;
     bool firing = false;
@@ -53,15 +53,15 @@ public class Tower : MonoBehaviour
     private void Awake()
     {
         cc2d = GetComponent<CircleCollider2D>();
-        enemies = new Dictionary<int, GameObject>();
-        //enemyTargets = new List<GameObject>();
+        //enemies = new Dictionary<int, GameObject>();
+        enemyTargets = new List<GameObject>();
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        EventManager.AddEnemyTargetListener(AddEnemyTarget);
-        EventManager.RemoveEnemyTargetListener(RemoveEnemyTarget);
+        // EventManager.AddEnemyTargetListener(AddEnemyTarget);
+        // EventManager.RemoveEnemyTargetListener(RemoveEnemyTarget);
         // Not Currently using
         // EventManager.EnemeyDequeueListener(DequeueEnemy);
         // EventManager.TowerFireInvoker(this);
@@ -71,18 +71,19 @@ public class Tower : MonoBehaviour
 
     void Update()
     {
-        if (enemies.Count > 0)
+        if (enemyTargets.Count > 0)
         {
             canFire = true;
-            targetToShoot = enemies[0];
+            targetToShoot = enemyTargets[0];
             if(!firing)
             {
                 StartCoroutine(Fire());
                 firing = true;
             }
         }       
-        else if (enemies.Count < 1)
+        else if (enemyTargets.Count < 1)
         {
+            StopCoroutine(Fire());
             firing = false;
             canFire = false;
             return;
@@ -97,57 +98,57 @@ public class Tower : MonoBehaviour
     }
 
     // Target acquired
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    if (collision.gameObject.layer == (int)CollisionLayers.ENEMIES)
-    //    { 
-    //        if (enemies.ContainsKey(collision.GetInstanceID()))
-    //        {
-    //            enemies.Add(collision.GetInstanceID(), collision.gameObject);
-    //        }
-    //        //enemyTargets.Add(collision.gameObject);
-    //    }
-    //}
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        // Debug.Log(collision.name + " " + collision.gameObject.GetInstanceID());
+        if (collision.gameObject.layer == (int)CollisionLayers.ENEMIES)
+        {
+            //if (enemies.ContainsKey(collision.GetInstanceID()))
+            //{
+            //enemies.Add(collision.gameObject.GetInstanceID(), collision.gameObject);
+            //}
+            enemyTargets.Add(collision.gameObject);
+        }
+    }
 
-    //// Target unacquired
-    //private void OnTriggerExit2D(Collider2D collision)
-    //{
-    //    if (collision.gameObject.layer == (int)CollisionLayers.ENEMIES)
-    //    {
-    //        if(enemies.ContainsKey(collision.GetInstanceID()))
-    //        {
-    //            enemies.Remove(collision.GetInstanceID());
-    //        }
+    // Target unacquired
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == (int)CollisionLayers.ENEMIES)
+        {
+            //if (enemies.ContainsKey(collision.GetInstanceID()))
+            //{
+            //    enemies.Remove(collision.GetInstanceID());
+            //}
 
-    //        //enemyTargets.Remove(collision.gameObject);
-    //    }
-    //}
+            enemyTargets.Remove(collision.gameObject);
+        }
+    }
     #endregion
 
     #region CUSTOM METHODS
 
     IEnumerator Fire()
     {
-        while (canFire)
-        {
-            // TODO: REMOVE HARDCODED VALUES
-            // towerFireEvent.Invoke(target.transform);
-            Projectile proj = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Projectile>();
-            proj.MoveToEnemy(targetToShoot);
-            yield return new WaitForSeconds(1);
-        }
+        // TODO: REMOVE HARDCODED VALUES
+        // towerFireEvent.Invoke(target.transform);
+        Projectile proj = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Projectile>();
+        proj.MoveToEnemy(targetToShoot);
+        yield return new WaitForSeconds(1);
+        firing = false;
+        
     }
 
     void AddEnemyTarget(int targetID, GameObject enemy)
     {
-        if (!enemies.ContainsKey(targetID))
-        {
-            enemies.Add(targetID, enemy);
-        }
+        //if (!enemies.ContainsKey(targetID))
+        //{
+        //    enemies.Add(targetID, enemy);
+        //}
     }
     void RemoveEnemyTarget(int targetID, GameObject enemy)
     {
-        enemies.Remove(targetID);
+        //enemies.Remove(targetID);
     }
     void CreateTower()
     {

@@ -9,7 +9,7 @@ using UnityEngine.Events;
 public class Enemy : MonoBehaviour
 {
     CircleCollider2D cc2d;
-
+    [SerializeField] GameObject item;
     protected int instanceID;
     bool hasTriggered = false;
     //public bool HasTriggered
@@ -19,7 +19,7 @@ public class Enemy : MonoBehaviour
 
     #region ENEMY STATS
 
-    protected int Health;
+    protected int Health = 2;
     protected float MoveSpeed;
     protected int Damage;
 
@@ -33,6 +33,7 @@ public class Enemy : MonoBehaviour
     {
         addEnemyTarget.AddListener(listener);
     }
+
     protected RemoveEnemyTargetEvent removeEnemyTarget;
     public void RemoveEnemyTargetListener(UnityAction<int, GameObject> listener)
     {
@@ -53,47 +54,55 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // Not currently using
         addEnemyTarget = new AddEnemyTargetEvent();
         EventManager.AddEnemyTargetInvoker(this);
         removeEnemyTarget = new RemoveEnemyTargetEvent();
         EventManager.RemoveEnemyTargetInvoker(this);
-    }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+        
+    }
+    private void Update()
     {
-        if(collision.gameObject.layer == (int)CollisionLayers.TOWER)
+        if (Health <= 0)
         {
-                addEnemyTarget.Invoke(instanceID, gameObject);
-                hasTriggered = true;
-       
+            Instantiate(item, transform.position, Quaternion.identity);
+            Destroy(gameObject);
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if(collision.gameObject.layer == (int)CollisionLayers.TOWER)
-        { 
-                removeEnemyTarget.Invoke(instanceID, gameObject);
-                hasTriggered = false;
-        }
-    }
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    if(collision.gameObject.layer == (int)CollisionLayers.TOWER)
+    //    {
+    //        addEnemyTarget.Invoke(instanceID, gameObject);
+    //        hasTriggered = true;     
+    //    }
+    //}
 
-    #endregion
-
-    #region CUSTOM METHODS
+    //private void OnTriggerExit2D(Collider2D collision)
+    //{
+    //    if(collision.gameObject.layer == (int)CollisionLayers.TOWER)
+    //    { 
+    //        removeEnemyTarget.Invoke(instanceID, gameObject);
+    //        hasTriggered = false;
+    //    }
+    //}
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.layer == (int)CollisionLayers.PROJECTILE)
         {
             TakeDamage(1);
-
         }
     }
+    #endregion
 
-    protected virtual void TakeDamage(int amount)
+    #region CUSTOM METHODS
+
+
+    void TakeDamage(int amount)
     {
-        
+        Health -= amount;
+
     }
 
     #endregion
