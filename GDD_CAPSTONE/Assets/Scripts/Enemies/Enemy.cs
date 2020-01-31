@@ -9,10 +9,17 @@ using UnityEngine.Events;
 public class Enemy : MonoBehaviour
 {
     CircleCollider2D cc2d;
+    [SerializeField] GameObject item;
+    protected int instanceID;
+    bool hasTriggered = false;
+    //public bool HasTriggered
+    //{
+    //    get { return hasTriggered; }
+    //}
 
-    #region ENEMY PROPERTIES
+    #region ENEMY STATS
 
-    protected int Health;
+    protected int Health = 2;
     protected float MoveSpeed;
     protected int Damage;
 
@@ -20,13 +27,17 @@ public class Enemy : MonoBehaviour
 
     #region EVENTS
 
-    /// <summary>
-    /// NOT CURRENTLY USING
-    /// </summary>
-    EnemyDequeueEvent enemyDequeue;
-    public void AddEnemyDequeueListener(UnityAction listener)
+ 
+    AddEnemyTargetEvent addEnemyTarget;
+    public void AddEnemyTargetListener(UnityAction<int, GameObject> listener)
     {
-        enemyDequeue.AddListener(listener);
+        addEnemyTarget.AddListener(listener);
+    }
+
+    protected RemoveEnemyTargetEvent removeEnemyTarget;
+    public void RemoveEnemyTargetListener(UnityAction<int, GameObject> listener)
+    {
+        removeEnemyTarget.AddListener(listener);
     }
 
     #endregion
@@ -37,28 +48,60 @@ public class Enemy : MonoBehaviour
     {
         cc2d = GetComponent<CircleCollider2D>();
         MoveSpeed = ConstantsManager.Instance.ENEMY_MOVE_SPEED;
+        instanceID = gameObject.GetInstanceID();
 
     }
     // Start is called before the first frame update
     void Start()
     {
-        // Not currently using
-        enemyDequeue = new EnemyDequeueEvent();
-        EventManager.EnemyDequeueInvoker(this);
-    }
+        addEnemyTarget = new AddEnemyTargetEvent();
+        EventManager.AddEnemyTargetInvoker(this);
+        removeEnemyTarget = new RemoveEnemyTargetEvent();
+        EventManager.RemoveEnemyTargetInvoker(this);
 
-    // Update is called once per frame
-    void Update()
-    {
         
     }
+    private void Update()
+    {
+        if (Health <= 0)
+        {
+            Instantiate(item, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }
+    }
 
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    if(collision.gameObject.layer == (int)CollisionLayers.TOWER)
+    //    {
+    //        addEnemyTarget.Invoke(instanceID, gameObject);
+    //        hasTriggered = true;     
+    //    }
+    //}
+
+    //private void OnTriggerExit2D(Collider2D collision)
+    //{
+    //    if(collision.gameObject.layer == (int)CollisionLayers.TOWER)
+    //    { 
+    //        removeEnemyTarget.Invoke(instanceID, gameObject);
+    //        hasTriggered = false;
+    //    }
+    //}
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == (int)CollisionLayers.PROJECTILE)
+        {
+            TakeDamage(1);
+        }
+    }
     #endregion
 
     #region CUSTOM METHODS
 
-    protected void TakeDamage(int amount)
+
+    void TakeDamage(int amount)
     {
+        Health -= amount;
 
     }
 

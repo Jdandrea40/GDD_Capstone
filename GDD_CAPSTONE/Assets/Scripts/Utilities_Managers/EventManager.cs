@@ -7,8 +7,11 @@ public static class EventManager
 {
     #region PROPERTIES
 
-    static Enemy enemyDequeueInvoker;
-    static UnityAction enemyDequeueListener;
+    static Enemy addEnemyTargetInvoker;
+    static UnityAction<int, GameObject> addEnemyTargetListener;
+
+    static Enemy removeEnemyTargetInvoker;
+    static UnityAction<int, GameObject> removeEnemyTargetListener;
 
     static List<Tower> towerFireInvoker = new List<Tower>();
     static List<UnityAction<Transform>> towerFireListener = new List<UnityAction<Transform>>();
@@ -16,21 +19,39 @@ public static class EventManager
     #endregion
 
     #region EVENTS
-    public static void EnemyDequeueInvoker(Enemy invoker)
+    public static void AddEnemyTargetInvoker(Enemy invoker)
     {
-        enemyDequeueInvoker = invoker;
-        if(enemyDequeueListener != null)
+        addEnemyTargetInvoker = invoker;
+        if (addEnemyTargetListener != null)
         {
-            invoker.AddEnemyDequeueListener(enemyDequeueListener);
+            invoker.AddEnemyTargetListener(addEnemyTargetListener);
         }
     }
 
-    public static void EnemeyDequeueListener(UnityAction listener)
+    public static void AddEnemyTargetListener(UnityAction<int, GameObject> listener)
     {
-        enemyDequeueListener = listener;
-        if(enemyDequeueInvoker != null)
+        addEnemyTargetListener = listener;
+        if (addEnemyTargetInvoker != null)
         {
-            enemyDequeueInvoker.AddEnemyDequeueListener(listener);
+            addEnemyTargetInvoker.AddEnemyTargetListener(listener);
+        }
+    }
+
+    public static void RemoveEnemyTargetInvoker(Enemy invoker)
+    {
+        removeEnemyTargetInvoker = invoker;
+        if (removeEnemyTargetListener != null)
+        {
+            invoker.RemoveEnemyTargetListener(addEnemyTargetListener);
+        }
+    }
+
+    public static void RemoveEnemyTargetListener(UnityAction<int, GameObject> listener)
+    {
+        removeEnemyTargetListener = listener;
+        if (removeEnemyTargetInvoker != null)
+        {
+            removeEnemyTargetInvoker.RemoveEnemyTargetListener(listener);
         }
     }
 
