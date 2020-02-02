@@ -5,5 +5,6 @@
     UI = 5,
     ENEMIES = 8,
     TOWER = 9,
-    PROJECTILE = 10
+    PROJECTILE = 10,
+    BUILDABLE_AREA = 11,
 }

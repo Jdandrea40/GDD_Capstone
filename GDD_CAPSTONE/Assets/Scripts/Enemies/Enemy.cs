@@ -19,7 +19,7 @@ public class Enemy : MonoBehaviour
 
     #region ENEMY STATS
 
-    protected int Health = 2;
+    protected int Health = 5;
     protected float MoveSpeed;
     protected int Damage;
 
@@ -66,6 +66,7 @@ public class Enemy : MonoBehaviour
         if (Health <= 0)
         {
             Instantiate(item, transform.position, Quaternion.identity);
+            GameplayManager.EnemiesKilled++;
             Destroy(gameObject);
         }
     }
