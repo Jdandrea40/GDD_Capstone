@@ -8,6 +8,9 @@ public class Tower : MonoBehaviour
     protected CircleCollider2D cc2d;
     public List<GameObject> enemyTargets;
     [SerializeField] GameObject projectile;
+    int counter = 0;
+    int otherCount = 0;
+    IEnumerator fireCoroutine;
 
     //public Dictionary<int, GameObject> enemies; 
 
@@ -53,6 +56,7 @@ public class Tower : MonoBehaviour
     private void Awake()
     {
         cc2d = GetComponent<CircleCollider2D>();
+        fireCoroutine = Fire();
         //enemies = new Dictionary<int, GameObject>();
         enemyTargets = new List<GameObject>();
     }
@@ -71,20 +75,22 @@ public class Tower : MonoBehaviour
 
     void Update()
     {
-
         if (enemyTargets.Count > 0)
         {
             canFire = true;
             targetToShoot = enemyTargets[0];
             if(!firing)
             {
-                StartCoroutine(Fire());
                 firing = true;
+                StartCoroutine(fireCoroutine);
+                
             }
         }       
         else if (enemyTargets.Count < 1)
         {
-            StopCoroutine(Fire());
+            counter++;
+            StopCoroutine(fireCoroutine);
+            //fireCoroutine = Fire();
             firing = false;
             canFire = false;
             return;
@@ -133,10 +139,12 @@ public class Tower : MonoBehaviour
     {
         // TODO: REMOVE HARDCODED VALUES
         // towerFireEvent.Invoke(target.transform);
-        Projectile proj = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Projectile>();
-        proj.MoveToEnemy(targetToShoot);
-        yield return new WaitForSeconds(1);
-        firing = false;
+        while (firing)
+        {
+            Projectile proj = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Projectile>();
+            proj.MoveToEnemy(targetToShoot);
+            yield return new WaitForSeconds(1);
+        }
         
     }
 
