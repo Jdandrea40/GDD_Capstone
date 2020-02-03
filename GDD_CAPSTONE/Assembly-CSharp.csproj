@@ -63,10 +63,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\EnemyPathFinder.cs" />
+    <Compile Include="Assets\Scripts\BuildableArea.cs" />
     <Compile Include="Assets\Scripts\Enemies\Enemy.cs" />
     <Compile Include="Assets\Scripts\Enemies\Enemy_BasicAirplane.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemyMoveTowardsPoint.cs" />
+    <Compile Include="Assets\Scripts\Enemies\EnemyPathFinder.cs" />
     <Compile Include="Assets\Scripts\Enemies\WaveSpawner.cs" />
     <Compile Include="Assets\Scripts\Events\AddEnemyTargetEvent.cs" />
     <Compile Include="Assets\Scripts\Events\RemoveEnemyTargetEvent.cs" />
@@ -85,10 +86,10 @@
     <Compile Include="Assets\Scripts\Utilities_Managers\ConstantsManager.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\EventManager.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\GameplayManager.cs" />
+    <Compile Include="Assets\Scripts\Utilities_Managers\HUDManager.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\ItemSpawnManager.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\LayersManager.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\Singleton.cs" />
-    <Compile Include="Assets\Scripts\Utilities_Managers\TowerCreationManager.cs" />
     <None Include="Assets\Sprites\FULL TILE SHEET\License.txt" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/Josh D'Andrea/Documents/GitHub/GDD_Capstone/GDD_CAPSTONE/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>

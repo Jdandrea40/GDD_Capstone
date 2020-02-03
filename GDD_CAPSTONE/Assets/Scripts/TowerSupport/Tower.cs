@@ -71,6 +71,7 @@ public class Tower : MonoBehaviour
 
     void Update()
     {
+
         if (enemyTargets.Count > 0)
         {
             canFire = true;
