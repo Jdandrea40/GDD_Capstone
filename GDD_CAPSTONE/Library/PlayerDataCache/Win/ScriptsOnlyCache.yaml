@@ -86,27 +86,27 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10400}
     - Class: 114
-      Script: {instanceID: 10560}
+      Script: {instanceID: 10558}
     - Class: 114
-      Script: {instanceID: 10586}
+      Script: {instanceID: 10584}
     - Class: 114
-      Script: {instanceID: 10676}
+      Script: {instanceID: 10674}
     - Class: 114
-      Script: {instanceID: 10784}
+      Script: {instanceID: 10782}
     - Class: 114
-      Script: {instanceID: 10824}
+      Script: {instanceID: 10822}
     - Class: 114
-      Script: {instanceID: 11150}
+      Script: {instanceID: 11148}
     - Class: 114
-      Script: {instanceID: 11166}
+      Script: {instanceID: 11164}
     - Class: 114
-      Script: {instanceID: 11408}
+      Script: {instanceID: 11200}
     - Class: 114
-      Script: {instanceID: 11540}
+      Script: {instanceID: 11242}
     - Class: 114
-      Script: {instanceID: 19434}
+      Script: {instanceID: 11410}
     - Class: 114
-      Script: {instanceID: 27606}
+      Script: {instanceID: 11542}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -540,6 +540,18 @@ ScriptsOnlyBuild:
     className: BeforeAfterTestCommandState
   - hash:
       serializedVersion: 2
+      Hash: 0970056930f399f1af23e52786f7a3f3
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: BuildableArea
+  - hash:
+      serializedVersion: 2
+      Hash: e25cb450ed37c28b157ad38967dc86e8
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: HUDManager
+  - hash:
+      serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -652,19 +664,7 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 0970056930f399f1af23e52786f7a3f3
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: BuildableArea
-  - hash:
-      serializedVersion: 2
-      Hash: e25cb450ed37c28b157ad38967dc86e8
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: HUDManager
   platform: 5
   scenePathNames:
   - Assets/Scenes/TestScene.unity
-  playerPath: C:/Users/Josh D'Andrea/Documents/GitHub/GDD_Capstone/GDD_CAPSTONE/BUILD/GDD_CAPSTONE.exe
+  playerPath: C:/Users/Josh/Documents/GitHub/GDD_Capstone/GDD_CAPSTONE/BUILD/GDD_CAPSTONE.exe

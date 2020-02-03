@@ -28,8 +28,11 @@ public class BuildableArea : MonoBehaviour
     }
     private void OnMouseEnter()
     {
-        sr.material.color = hoverColor;
-        hovering = true;
+        if (!occupied)
+        {
+            sr.material.color = hoverColor;
+            hovering = true;
+        }
     }
 
     private void OnMouseExit()
