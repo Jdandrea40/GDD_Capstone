@@ -59,7 +59,9 @@ public class Enemy : MonoBehaviour
         removeEnemyTarget = new RemoveEnemyTargetEvent();
         EventManager.RemoveEnemyTargetInvoker(this);
 
-        
+        GameplayManager.SpawnEnemies.Add(gameObject);
+
+
     }
     private void Update()
     {
@@ -67,6 +69,7 @@ public class Enemy : MonoBehaviour
         {
             Instantiate(item, transform.position, Quaternion.identity);
             GameplayManager.EnemiesKilled++;
+            GameplayManager.SpawnEnemies.Remove(gameObject);
             Destroy(gameObject);
         }
     }

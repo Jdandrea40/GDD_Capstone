@@ -72,6 +72,7 @@
     <Compile Include="Assets\Scripts\Events\AddEnemyTargetEvent.cs" />
     <Compile Include="Assets\Scripts\Events\RemoveEnemyTargetEvent.cs" />
     <Compile Include="Assets\Scripts\Events\TowerFireEvent.cs" />
+    <Compile Include="Assets\Scripts\Events\WaveSpawnEvent.cs" />
     <Compile Include="Assets\Scripts\HomeBase.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\AmmoType.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\TowerBase.cs" />
