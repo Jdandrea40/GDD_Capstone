@@ -4,24 +4,34 @@ using UnityEngine;
 
 public class WaveSpawner : MonoBehaviour
 {
-   
-    [SerializeField] GameObject[] wave;
+
+    [SerializeField] List<GameObject> enemies = new List<GameObject>();
+    List<GameObject> spawnedEnemies = new List<GameObject>();
     int i = 0;
 
     // Start is called before the first frame update
     void Start()
     {
+        EventManager.AddWaveSpawnListener(InvokeSpawner);
+    }
+
+    void InvokeSpawner()
+    {
+        GameplayManager.CurWaveCount++;
+        GameplayManager.WaveInProgress = true;
         StartCoroutine(SpawnEnemies());
+        
     }
 
     IEnumerator SpawnEnemies()
     {
-        while (i <= wave.Length)
+        i = 0;
+        while (i <= enemies.Count - 1)
         {
-            Instantiate(wave[i], transform.position, Quaternion.identity);
+            Instantiate(enemies[i], transform.position, Quaternion.identity);
             yield return new WaitForSeconds(1f);
+            i++;
         }
-
-        Destroy(gameObject);
+        GameplayManager.WaveInProgress = false;
     }
 }

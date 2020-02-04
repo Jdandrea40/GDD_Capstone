@@ -15,10 +15,31 @@ public static class EventManager
 
     static List<Tower> towerFireInvoker = new List<Tower>();
     static List<UnityAction<Transform>> towerFireListener = new List<UnityAction<Transform>>();
+
+    static HUDManager waveSpawnInvoker;
+    static UnityAction waveSpawnListener;
     
     #endregion
 
     #region EVENTS
+    public static void AddWaveSpawnInvoker(HUDManager invoker)
+    {
+        waveSpawnInvoker = invoker;
+        if(waveSpawnListener != null)
+        {
+            invoker.AddWaveSpawnListener(waveSpawnListener);
+        }
+    }
+
+    public static void AddWaveSpawnListener(UnityAction listener)
+    {
+        waveSpawnListener = listener;
+        if (waveSpawnInvoker != null)
+        {
+            waveSpawnInvoker.AddWaveSpawnListener(listener);
+        }
+    }
+
     public static void AddEnemyTargetInvoker(Enemy invoker)
     {
         addEnemyTargetInvoker = invoker;
