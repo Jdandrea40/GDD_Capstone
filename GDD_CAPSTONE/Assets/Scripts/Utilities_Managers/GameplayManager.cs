@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class GameplayManager : Singleton<GameplayManager>
 {
-     public static int EnemiesKilled { get; set; }
+    public static int EnemiesKilled { get; set; }
+    public static int BaseHealth { get; set; }
 
     // Start is called before the first frame update
     void Start()

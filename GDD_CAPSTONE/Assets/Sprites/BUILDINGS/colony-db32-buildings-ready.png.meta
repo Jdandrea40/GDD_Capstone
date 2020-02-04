@@ -1,0 +1,6931 @@
+fileFormatVersion: 2
+guid: 1b26118c640856c44ba69b859bf07a1a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7820868620476137211
+    second: colony-db32-buildings-ready_0
+  - first:
+      213: 6879890285122189683
+    second: colony-db32-buildings-ready_1
+  - first:
+      213: 6479686991179418825
+    second: colony-db32-buildings-ready_2
+  - first:
+      213: 3728803381116521578
+    second: colony-db32-buildings-ready_3
+  - first:
+      213: 1866220687767924850
+    second: colony-db32-buildings-ready_4
+  - first:
+      213: 1822190338009040060
+    second: colony-db32-buildings-ready_5
+  - first:
+      213: -3010189462133383619
+    second: colony-db32-buildings-ready_6
+  - first:
+      213: -5844286055924758263
+    second: colony-db32-buildings-ready_7
+  - first:
+      213: -5236539016339799463
+    second: colony-db32-buildings-ready_8
+  - first:
+      213: -65307849753826645
+    second: colony-db32-buildings-ready_9
+  - first:
+      213: 2452403423600932677
+    second: colony-db32-buildings-ready_10
+  - first:
+      213: 306943403436234996
+    second: colony-db32-buildings-ready_11
+  - first:
+      213: -7343779184541695132
+    second: colony-db32-buildings-ready_12
+  - first:
+      213: -2977024342294015183
+    second: colony-db32-buildings-ready_13
+  - first:
+      213: -3208917673085105283
+    second: colony-db32-buildings-ready_14
+  - first:
+      213: 7359860352025030545
+    second: colony-db32-buildings-ready_15
+  - first:
+      213: -8099008246055990898
+    second: colony-db32-buildings-ready_16
+  - first:
+      213: 2590350916743539766
+    second: colony-db32-buildings-ready_17
+  - first:
+      213: 8491284794851386880
+    second: colony-db32-buildings-ready_18
+  - first:
+      213: -4209796054021730790
+    second: colony-db32-buildings-ready_19
+  - first:
+      213: -3202524648730055641
+    second: colony-db32-buildings-ready_20
+  - first:
+      213: 8735884600200035255
+    second: colony-db32-buildings-ready_21
+  - first:
+      213: 2033574116922798952
+    second: colony-db32-buildings-ready_22
+  - first:
+      213: -1609337300960528206
+    second: colony-db32-buildings-ready_23
+  - first:
+      213: -3833863666257359505
+    second: colony-db32-buildings-ready_24
+  - first:
+      213: 5342814678458041180
+    second: colony-db32-buildings-ready_25
+  - first:
+      213: -8786572282204336068
+    second: colony-db32-buildings-ready_26
+  - first:
+      213: 2485851021589089804
+    second: colony-db32-buildings-ready_27
+  - first:
+      213: -6005441714419588857
+    second: colony-db32-buildings-ready_28
+  - first:
+      213: 1410696405140972101
+    second: colony-db32-buildings-ready_29
+  - first:
+      213: -5775895676630442783
+    second: colony-db32-buildings-ready_30
+  - first:
+      213: 3663070740793416833
+    second: colony-db32-buildings-ready_31
+  - first:
+      213: 5070150831684505628
+    second: colony-db32-buildings-ready_32
+  - first:
+      213: -5937480339942232621
+    second: colony-db32-buildings-ready_33
+  - first:
+      213: -5508555888181121226
+    second: colony-db32-buildings-ready_34
+  - first:
+      213: -3393345029708351952
+    second: colony-db32-buildings-ready_35
+  - first:
+      213: 2419156156653861666
+    second: colony-db32-buildings-ready_36
+  - first:
+      213: 3122366692586425578
+    second: colony-db32-buildings-ready_37
+  - first:
+      213: 2486399611706143047
+    second: colony-db32-buildings-ready_38
+  - first:
+      213: -5456929883666754204
+    second: colony-db32-buildings-ready_39
+  - first:
+      213: -5027153045206897621
+    second: colony-db32-buildings-ready_40
+  - first:
+      213: 1817151926083767369
+    second: colony-db32-buildings-ready_41
+  - first:
+      213: 1897932383276152646
+    second: colony-db32-buildings-ready_42
+  - first:
+      213: 5525049087950726844
+    second: colony-db32-buildings-ready_43
+  - first:
+      213: -7445339118758645993
+    second: colony-db32-buildings-ready_44
+  - first:
+      213: 5011355041692345550
+    second: colony-db32-buildings-ready_45
+  - first:
+      213: 1722955923450584437
+    second: colony-db32-buildings-ready_46
+  - first:
+      213: -8267265824195548364
+    second: colony-db32-buildings-ready_47
+  - first:
+      213: 3143095023576895103
+    second: colony-db32-buildings-ready_48
+  - first:
+      213: -5303915814573894585
+    second: colony-db32-buildings-ready_49
+  - first:
+      213: 7670605032015468899
+    second: colony-db32-buildings-ready_50
+  - first:
+      213: -1634450356995875835
+    second: colony-db32-buildings-ready_51
+  - first:
+      213: -8349913435213064917
+    second: colony-db32-buildings-ready_52
+  - first:
+      213: -846951768693963429
+    second: colony-db32-buildings-ready_53
+  - first:
+      213: 8966091679760261341
+    second: colony-db32-buildings-ready_54
+  - first:
+      213: 4261625405302896834
+    second: colony-db32-buildings-ready_55
+  - first:
+      213: 3767418839550542493
+    second: colony-db32-buildings-ready_56
+  - first:
+      213: -2441092073107228387
+    second: colony-db32-buildings-ready_57
+  - first:
+      213: -908646161058858420
+    second: colony-db32-buildings-ready_58
+  - first:
+      213: -4049428309903220678
+    second: colony-db32-buildings-ready_59
+  - first:
+      213: 8453061396831869398
+    second: colony-db32-buildings-ready_60
+  - first:
+      213: -3625495762345418531
+    second: colony-db32-buildings-ready_61
+  - first:
+      213: -5402947244462993143
+    second: colony-db32-buildings-ready_62
+  - first:
+      213: -7016602261344610990
+    second: colony-db32-buildings-ready_63
+  - first:
+      213: 9211455275099478239
+    second: colony-db32-buildings-ready_64
+  - first:
+      213: -7686570327676395383
+    second: colony-db32-buildings-ready_65
+  - first:
+      213: -2283477892379646487
+    second: colony-db32-buildings-ready_66
+  - first:
+      213: 8801526324524075844
+    second: colony-db32-buildings-ready_67
+  - first:
+      213: 61715186634926521
+    second: colony-db32-buildings-ready_68
+  - first:
+      213: -6096363478907212071
+    second: colony-db32-buildings-ready_69
+  - first:
+      213: 5969263879641105014
+    second: colony-db32-buildings-ready_70
+  - first:
+      213: 8689696184704941652
+    second: colony-db32-buildings-ready_71
+  - first:
+      213: 1787183843186193540
+    second: colony-db32-buildings-ready_72
+  - first:
+      213: 8468742776801552361
+    second: colony-db32-buildings-ready_73
+  - first:
+      213: 5768483732408595824
+    second: colony-db32-buildings-ready_74
+  - first:
+      213: 1495291113818155705
+    second: colony-db32-buildings-ready_75
+  - first:
+      213: 6041209365094365
+    second: colony-db32-buildings-ready_76
+  - first:
+      213: -490218752969646573
+    second: colony-db32-buildings-ready_77
+  - first:
+      213: 931393725039391799
+    second: colony-db32-buildings-ready_78
+  - first:
+      213: -1555676831772277179
+    second: colony-db32-buildings-ready_79
+  - first:
+      213: 733402152511703479
+    second: colony-db32-buildings-ready_80
+  - first:
+      213: -4042862408032758233
+    second: colony-db32-buildings-ready_81
+  - first:
+      213: 5971512196766563321
+    second: colony-db32-buildings-ready_82
+  - first:
+      213: 740381806980231285
+    second: colony-db32-buildings-ready_83
+  - first:
+      213: -878920046846907239
+    second: colony-db32-buildings-ready_84
+  - first:
+      213: -1365177708338713301
+    second: colony-db32-buildings-ready_85
+  - first:
+      213: -261754454502244059
+    second: colony-db32-buildings-ready_86
+  - first:
+      213: 2575973131104134107
+    second: colony-db32-buildings-ready_87
+  - first:
+      213: -6112092869811582150
+    second: colony-db32-buildings-ready_88
+  - first:
+      213: -3527271799482709964
+    second: colony-db32-buildings-ready_89
+  - first:
+      213: 7552907254239453006
+    second: colony-db32-buildings-ready_90
+  - first:
+      213: 26800961182082492
+    second: colony-db32-buildings-ready_91
+  - first:
+      213: 5729922473406361293
+    second: colony-db32-buildings-ready_92
+  - first:
+      213: 851433233294928368
+    second: colony-db32-buildings-ready_93
+  - first:
+      213: -6696715072163592336
+    second: colony-db32-buildings-ready_94
+  - first:
+      213: -4321796286686321761
+    second: colony-db32-buildings-ready_95
+  - first:
+      213: 2418750402497497886
+    second: colony-db32-buildings-ready_96
+  - first:
+      213: 2855036298722896295
+    second: colony-db32-buildings-ready_97
+  - first:
+      213: -187945758880411767
+    second: colony-db32-buildings-ready_98
+  - first:
+      213: -3062461941295428596
+    second: colony-db32-buildings-ready_99
+  - first:
+      213: 510338272403101766
+    second: colony-db32-buildings-ready_100
+  - first:
+      213: -1582251813573118782
+    second: colony-db32-buildings-ready_101
+  - first:
+      213: -2982527931515738700
+    second: colony-db32-buildings-ready_102
+  - first:
+      213: -4839610740386173901
+    second: colony-db32-buildings-ready_103
+  - first:
+      213: 4090840543498085854
+    second: colony-db32-buildings-ready_104
+  - first:
+      213: 2871268492115158433
+    second: colony-db32-buildings-ready_105
+  - first:
+      213: 5489699874059212835
+    second: colony-db32-buildings-ready_106
+  - first:
+      213: 3509954893721164457
+    second: colony-db32-buildings-ready_107
+  - first:
+      213: 1972990053323325800
+    second: colony-db32-buildings-ready_108
+  - first:
+      213: 7376711292695248044
+    second: colony-db32-buildings-ready_109
+  - first:
+      213: 8873085327211543835
+    second: colony-db32-buildings-ready_110
+  - first:
+      213: 3608555664090490583
+    second: colony-db32-buildings-ready_111
+  - first:
+      213: -1871772550027347197
+    second: colony-db32-buildings-ready_112
+  - first:
+      213: 8249932239816924265
+    second: colony-db32-buildings-ready_113
+  - first:
+      213: -3681336961619194368
+    second: colony-db32-buildings-ready_114
+  - first:
+      213: 9218393649031033559
+    second: colony-db32-buildings-ready_115
+  - first:
+      213: 5957138953250548000
+    second: colony-db32-buildings-ready_116
+  - first:
+      213: -6894374206458515133
+    second: colony-db32-buildings-ready_117
+  - first:
+      213: -2276824300607048508
+    second: colony-db32-buildings-ready_118
+  - first:
+      213: 8406832027452575309
+    second: colony-db32-buildings-ready_119
+  - first:
+      213: 2937038085028493365
+    second: colony-db32-buildings-ready_120
+  - first:
+      213: 4612350335523513527
+    second: colony-db32-buildings-ready_121
+  - first:
+      213: -1741049886704305334
+    second: colony-db32-buildings-ready_122
+  - first:
+      213: -7740805141079172469
+    second: colony-db32-buildings-ready_123
+  - first:
+      213: 2832376355271706359
+    second: colony-db32-buildings-ready_124
+  - first:
+      213: -3669354483992212691
+    second: colony-db32-buildings-ready_125
+  - first:
+      213: 2498157119128886900
+    second: colony-db32-buildings-ready_126
+  - first:
+      213: -1779296344695658019
+    second: colony-db32-buildings-ready_127
+  - first:
+      213: -9008603984273497012
+    second: colony-db32-buildings-ready_128
+  - first:
+      213: 7250955992548475979
+    second: colony-db32-buildings-ready_129
+  - first:
+      213: 6431181979852872789
+    second: colony-db32-buildings-ready_130
+  - first:
+      213: 6086772492048252838
+    second: colony-db32-buildings-ready_131
+  - first:
+      213: 3348444124098188686
+    second: colony-db32-buildings-ready_132
+  - first:
+      213: 48407893988198234
+    second: colony-db32-buildings-ready_133
+  - first:
+      213: 308036901411666481
+    second: colony-db32-buildings-ready_134
+  - first:
+      213: -2572036431027040563
+    second: colony-db32-buildings-ready_135
+  - first:
+      213: -5029347363904819386
+    second: colony-db32-buildings-ready_136
+  - first:
+      213: 1453062603583545724
+    second: colony-db32-buildings-ready_137
+  - first:
+      213: -3875740487569393170
+    second: colony-db32-buildings-ready_138
+  - first:
+      213: 8742784827228298588
+    second: colony-db32-buildings-ready_139
+  - first:
+      213: 6050633538578212378
+    second: colony-db32-buildings-ready_140
+  - first:
+      213: -7800946361909020037
+    second: colony-db32-buildings-ready_141
+  - first:
+      213: 8984169719511457678
+    second: colony-db32-buildings-ready_142
+  - first:
+      213: -1768893275522752970
+    second: colony-db32-buildings-ready_143
+  - first:
+      213: 7520697391563950577
+    second: colony-db32-buildings-ready_144
+  - first:
+      213: -7674570582887822052
+    second: colony-db32-buildings-ready_145
+  - first:
+      213: 7688920191876306184
+    second: colony-db32-buildings-ready_146
+  - first:
+      213: -7590609618322185118
+    second: colony-db32-buildings-ready_147
+  - first:
+      213: 8502176057869563287
+    second: colony-db32-buildings-ready_148
+  - first:
+      213: 798582809880425203
+    second: colony-db32-buildings-ready_149
+  - first:
+      213: -4661040233075761161
+    second: colony-db32-buildings-ready_150
+  - first:
+      213: -7876107561856118291
+    second: colony-db32-buildings-ready_151
+  - first:
+      213: 4937691630234186015
+    second: colony-db32-buildings-ready_152
+  - first:
+      213: -5657193883365741186
+    second: colony-db32-buildings-ready_153
+  - first:
+      213: -7725045910715377751
+    second: colony-db32-buildings-ready_154
+  - first:
+      213: 1435956302487679452
+    second: colony-db32-buildings-ready_155
+  - first:
+      213: -1067364874181079348
+    second: colony-db32-buildings-ready_156
+  - first:
+      213: 828104843567640847
+    second: colony-db32-buildings-ready_157
+  - first:
+      213: -5576461506683490575
+    second: colony-db32-buildings-ready_158
+  - first:
+      213: -3699277137149117558
+    second: colony-db32-buildings-ready_159
+  - first:
+      213: -6129380175617457815
+    second: colony-db32-buildings-ready_160
+  - first:
+      213: -8510249898029797090
+    second: colony-db32-buildings-ready_161
+  - first:
+      213: 3137855714091183175
+    second: colony-db32-buildings-ready_162
+  - first:
+      213: 6704446939896155790
+    second: colony-db32-buildings-ready_163
+  - first:
+      213: -1039681600826982900
+    second: colony-db32-buildings-ready_164
+  - first:
+      213: -4866486749767087482
+    second: colony-db32-buildings-ready_165
+  - first:
+      213: -3239408371659319283
+    second: colony-db32-buildings-ready_166
+  - first:
+      213: 8339607384193106659
+    second: colony-db32-buildings-ready_167
+  - first:
+      213: -1976749163972882640
+    second: colony-db32-buildings-ready_168
+  - first:
+      213: -4051366179537742962
+    second: colony-db32-buildings-ready_169
+  - first:
+      213: -385940251337500056
+    second: colony-db32-buildings-ready_170
+  - first:
+      213: -7931458020511953782
+    second: colony-db32-buildings-ready_171
+  - first:
+      213: 322053945628124131
+    second: colony-db32-buildings-ready_172
+  - first:
+      213: -8201492858492531812
+    second: colony-db32-buildings-ready_173
+  - first:
+      213: 1717290184685013538
+    second: colony-db32-buildings-ready_174
+  - first:
+      213: -5307757334335061336
+    second: colony-db32-buildings-ready_175
+  - first:
+      213: -3140993477713380696
+    second: colony-db32-buildings-ready_176
+  - first:
+      213: -827330484914229332
+    second: colony-db32-buildings-ready_177
+  - first:
+      213: -1271370186135638221
+    second: colony-db32-buildings-ready_178
+  - first:
+      213: 6087593989770152673
+    second: colony-db32-buildings-ready_179
+  - first:
+      213: -6421388917419580390
+    second: colony-db32-buildings-ready_180
+  - first:
+      213: -7459578173351521221
+    second: colony-db32-buildings-ready_181
+  - first:
+      213: -8875546721130338071
+    second: colony-db32-buildings-ready_182
+  - first:
+      213: -2012622691454719276
+    second: colony-db32-buildings-ready_183
+  - first:
+      213: -3111459297663213474
+    second: colony-db32-buildings-ready_184
+  - first:
+      213: 1300954193837689436
+    second: colony-db32-buildings-ready_185
+  - first:
+      213: -8809075730011246565
+    second: colony-db32-buildings-ready_186
+  - first:
+      213: 9096518456717679414
+    second: colony-db32-buildings-ready_187
+  - first:
+      213: 533381175078883070
+    second: colony-db32-buildings-ready_188
+  - first:
+      213: 384707408719438217
+    second: colony-db32-buildings-ready_189
+  - first:
+      213: 4699122917577418092
+    second: colony-db32-buildings-ready_190
+  - first:
+      213: -7744492981200967446
+    second: colony-db32-buildings-ready_191
+  - first:
+      213: 1143832034925329534
+    second: colony-db32-buildings-ready_192
+  - first:
+      213: -6721743850465127773
+    second: colony-db32-buildings-ready_193
+  - first:
+      213: -461277363001374405
+    second: colony-db32-buildings-ready_194
+  - first:
+      213: 2386046281382035235
+    second: colony-db32-buildings-ready_195
+  - first:
+      213: -7996151882862250262
+    second: colony-db32-buildings-ready_196
+  - first:
+      213: 7234311351506719522
+    second: colony-db32-buildings-ready_197
+  - first:
+      213: 6567235730797022945
+    second: colony-db32-buildings-ready_198
+  - first:
+      213: 2144943461399504444
+    second: colony-db32-buildings-ready_199
+  - first:
+      213: 2633224093548225620
+    second: colony-db32-buildings-ready_200
+  - first:
+      213: -836242985822112227
+    second: colony-db32-buildings-ready_201
+  - first:
+      213: -7978551090932900678
+    second: colony-db32-buildings-ready_202
+  - first:
+      213: 5457328938066563988
+    second: colony-db32-buildings-ready_203
+  - first:
+      213: -3414796994522925338
+    second: colony-db32-buildings-ready_204
+  - first:
+      213: 2344920484881903431
+    second: colony-db32-buildings-ready_205
+  - first:
+      213: -940265263928287015
+    second: colony-db32-buildings-ready_206
+  - first:
+      213: 7963194481291398907
+    second: colony-db32-buildings-ready_207
+  - first:
+      213: -5198779042108175594
+    second: colony-db32-buildings-ready_208
+  - first:
+      213: 5793297752919489569
+    second: colony-db32-buildings-ready_209
+  - first:
+      213: -3611367880510246562
+    second: colony-db32-buildings-ready_210
+  - first:
+      213: 741918321024458055
+    second: colony-db32-buildings-ready_211
+  - first:
+      213: -1594987705488869907
+    second: colony-db32-buildings-ready_212
+  - first:
+      213: -3485025455551516292
+    second: colony-db32-buildings-ready_213
+  - first:
+      213: -8568354807631747879
+    second: colony-db32-buildings-ready_214
+  - first:
+      213: 3758102328134966580
+    second: colony-db32-buildings-ready_215
+  - first:
+      213: -6450535709336966678
+    second: colony-db32-buildings-ready_216
+  - first:
+      213: 7730356152813617836
+    second: colony-db32-buildings-ready_217
+  - first:
+      213: -5681870943181966249
+    second: colony-db32-buildings-ready_218
+  - first:
+      213: -2747299558498421919
+    second: colony-db32-buildings-ready_219
+  - first:
+      213: 2106770295020292249
+    second: colony-db32-buildings-ready_220
+  - first:
+      213: -3273830229389013537
+    second: colony-db32-buildings-ready_221
+  - first:
+      213: 3175722888607380826
+    second: colony-db32-buildings-ready_222
+  - first:
+      213: -3913638614336919239
+    second: colony-db32-buildings-ready_223
+  - first:
+      213: -4573716019872797101
+    second: colony-db32-buildings-ready_224
+  - first:
+      213: 2593070177438965837
+    second: colony-db32-buildings-ready_225
+  - first:
+      213: -301119336332504741
+    second: colony-db32-buildings-ready_226
+  - first:
+      213: -1187849468372059026
+    second: colony-db32-buildings-ready_227
+  - first:
+      213: 8597299802146996866
+    second: colony-db32-buildings-ready_228
+  - first:
+      213: -5336689290645761770
+    second: colony-db32-buildings-ready_229
+  - first:
+      213: 7438279614780884465
+    second: colony-db32-buildings-ready_230
+  - first:
+      213: 7038461629861621376
+    second: colony-db32-buildings-ready_231
+  - first:
+      213: 4717774031929704463
+    second: colony-db32-buildings-ready_232
+  - first:
+      213: -8074645150833898707
+    second: colony-db32-buildings-ready_233
+  - first:
+      213: -4340594271056247768
+    second: colony-db32-buildings-ready_234
+  - first:
+      213: -9005143084372228375
+    second: colony-db32-buildings-ready_235
+  - first:
+      213: 1355084474105126602
+    second: colony-db32-buildings-ready_236
+  - first:
+      213: 7904371013942193889
+    second: colony-db32-buildings-ready_237
+  - first:
+      213: 4168978588303791270
+    second: colony-db32-buildings-ready_238
+  - first:
+      213: 3471618209499551887
+    second: colony-db32-buildings-ready_239
+  - first:
+      213: 9201888886497833352
+    second: colony-db32-buildings-ready_240
+  - first:
+      213: -7098564347456237644
+    second: colony-db32-buildings-ready_241
+  - first:
+      213: 1306490946598244774
+    second: colony-db32-buildings-ready_242
+  - first:
+      213: 6298065818950507487
+    second: colony-db32-buildings-ready_243
+  - first:
+      213: -3944781486123495216
+    second: colony-db32-buildings-ready_244
+  - first:
+      213: 5349438663397940028
+    second: colony-db32-buildings-ready_245
+  - first:
+      213: 1692139235941157298
+    second: colony-db32-buildings-ready_246
+  - first:
+      213: -3672749590679403196
+    second: colony-db32-buildings-ready_247
+  - first:
+      213: -4503999360321688694
+    second: colony-db32-buildings-ready_248
+  - first:
+      213: -8920397444762462542
+    second: colony-db32-buildings-ready_249
+  - first:
+      213: -415788770926782092
+    second: colony-db32-buildings-ready_250
+  - first:
+      213: 5403917887053149773
+    second: colony-db32-buildings-ready_251
+  - first:
+      213: 5162168912016038249
+    second: colony-db32-buildings-ready_252
+  - first:
+      213: -5632281971667351495
+    second: colony-db32-buildings-ready_253
+  - first:
+      213: 8248468288617817233
+    second: colony-db32-buildings-ready_254
+  - first:
+      213: 1936827006956961325
+    second: colony-db32-buildings-ready_255
+  - first:
+      213: -4058285476820856725
+    second: colony-db32-buildings-ready_256
+  - first:
+      213: 4481991523071904879
+    second: colony-db32-buildings-ready_257
+  - first:
+      213: 6870051595236398271
+    second: colony-db32-buildings-ready_258
+  - first:
+      213: -5116098267797693724
+    second: colony-db32-buildings-ready_259
+  - first:
+      213: 3261652997912883852
+    second: colony-db32-buildings-ready_260
+  - first:
+      213: 8310349697829313005
+    second: colony-db32-buildings-ready_261
+  - first:
+      213: 7130476298763972598
+    second: colony-db32-buildings-ready_262
+  - first:
+      213: 5016880469753967427
+    second: colony-db32-buildings-ready_263
+  - first:
+      213: 7020678394411799901
+    second: colony-db32-buildings-ready_264
+  - first:
+      213: -8082723844516779501
+    second: colony-db32-buildings-ready_265
+  - first:
+      213: 6213907538243519850
+    second: colony-db32-buildings-ready_266
+  - first:
+      213: 5168201368304437785
+    second: colony-db32-buildings-ready_267
+  - first:
+      213: 2633074099327879985
+    second: colony-db32-buildings-ready_268
+  - first:
+      213: -3991017314130745733
+    second: colony-db32-buildings-ready_269
+  - first:
+      213: 1504513589697672356
+    second: colony-db32-buildings-ready_270
+  - first:
+      213: 6580858472684480748
+    second: colony-db32-buildings-ready_271
+  - first:
+      213: 8725348022224479996
+    second: colony-db32-buildings-ready_272
+  - first:
+      213: 6908124965216694941
+    second: colony-db32-buildings-ready_273
+  - first:
+      213: -8324637830910567247
+    second: colony-db32-buildings-ready_274
+  - first:
+      213: 4294479462653166615
+    second: colony-db32-buildings-ready_275
+  - first:
+      213: 4460511896898811254
+    second: colony-db32-buildings-ready_276
+  - first:
+      213: -6228486197111340291
+    second: colony-db32-buildings-ready_277
+  - first:
+      213: 629560830330066457
+    second: colony-db32-buildings-ready_278
+  - first:
+      213: 1865727584544101706
+    second: colony-db32-buildings-ready_279
+  - first:
+      213: 5961605068497820643
+    second: colony-db32-buildings-ready_280
+  - first:
+      213: 4333652836277489730
+    second: colony-db32-buildings-ready_281
+  - first:
+      213: -682872968704692206
+    second: colony-db32-buildings-ready_282
+  - first:
+      213: -4841415395031356917
+    second: colony-db32-buildings-ready_283
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 2034
+        width: 76
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ff607305055e6e41afdb1caef84ae98
+      internalID: 7820868620476137211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_1
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 2034
+        width: 76
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 356a65c7b0d86784299c88cb62154729
+      internalID: 6879890285122189683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_2
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 2031
+        width: 105
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f054b34de42c016438ae021b23635eca
+      internalID: 6479686991179418825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_3
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 2067
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3797d79c08a061f4890f853eb010ff81
+      internalID: 3728803381116521578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_4
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 2041
+        width: 19
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8319081d275ed0d49b84ab8cd48f02f2
+      internalID: 1866220687767924850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_5
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 2039
+        width: 15
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9119a576fe1202348b7b0ef33fe978f3
+      internalID: 1822190338009040060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_6
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 2038
+        width: 9
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3687e47026baf074e8df815ad41d1caf
+      internalID: -3010189462133383619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_7
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 1991
+        width: 76
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e194d535feeb2146bf1ea323a48a2ac
+      internalID: -5844286055924758263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_8
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 1991
+        width: 76
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38819c61e73409544b8f1f0f13cf53ab
+      internalID: -5236539016339799463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_9
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 1999
+        width: 12
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1afdbd6fbc8ced349be2d08e089808c3
+      internalID: -65307849753826645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_10
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 1999
+        width: 18
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48abdfde473cff04889d886aea7a834e
+      internalID: 2452403423600932677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_11
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 2015
+        width: 17
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf2c4d7a31dec3b4191dfabef3c6b0e3
+      internalID: 306943403436234996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_12
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 2010
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f99841e56568f3048beeee6adf0331f4
+      internalID: -7343779184541695132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_13
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 1974
+        width: 46
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41e012e34d492c941bd866578c46afe3
+      internalID: -2977024342294015183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_14
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 1999
+        width: 17
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1810fc5188729344a8f726fdb9ab14e9
+      internalID: -3208917673085105283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_15
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 1991
+        width: 17
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 716ea27fd3ef7634ebb9214b0307f40b
+      internalID: 7359860352025030545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_16
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 1955
+        width: 11
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9040d24bd6cb91847906f75384e46b77
+      internalID: -8099008246055990898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_17
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 1938
+        width: 74
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95fdb8ae227a80449b4fd9a99f836462
+      internalID: 2590350916743539766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_18
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 1938
+        width: 74
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f778317c2fc5937439ca43ad26bcc146
+      internalID: 8491284794851386880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_19
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 1967
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccb02fc0925f1f847b40b2b9f1b2aa6e
+      internalID: -4209796054021730790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_20
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 1967
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f04f5eb99a0c2d4baabae791a3f4976
+      internalID: -3202524648730055641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_21
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 1975
+        width: 17
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 679e7d28f7c58b8408113695a710574c
+      internalID: 8735884600200035255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_22
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 1943
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 823ba610388cace478433237a6530140
+      internalID: 2033574116922798952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_23
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 1942
+        width: 18
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5575c9e9c8733f043af790eaa109e3bb
+      internalID: -1609337300960528206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_24
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 1911
+        width: 44
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a89224f4af58d140a409bf993448996
+      internalID: -3833863666257359505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_25
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 1959
+        width: 5
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ed3d048e41c0d84d90b9978eef64bb0
+      internalID: 5342814678458041180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_26
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 1862
+        width: 51
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da2bcd823d8b0f746b6793418bf60f5d
+      internalID: -8786572282204336068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_27
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1896
+        width: 77
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c347934a642107948ae8195db9ec3acf
+      internalID: 2485851021589089804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_28
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 1896
+        width: 74
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f728957106b49bb4a904fe6750c70885
+      internalID: -6005441714419588857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_29
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 1888
+        width: 14
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d3c7e3e5c0761149b03c0fb99c416d3
+      internalID: 1410696405140972101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_30
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 1911
+        width: 42
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bd8eeccc85697c4abbde8382d887de6
+      internalID: -5775895676630442783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_31
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 1888
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a345437e6182f6f4bb9c989d2b0b1cd8
+      internalID: 3663070740793416833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_32
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 1850
+        width: 74
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e716dd1efa713c46b92cf6924e20ed7
+      internalID: 5070150831684505628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_33
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 1845
+        width: 78
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dbda2db6169ac34c931dc7eb07e94d8
+      internalID: -5937480339942232621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_34
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 1888
+        width: 26
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 599893369d253cd4d9dc25e08ac1b150
+      internalID: -5508555888181121226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_35
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 1888
+        width: 26
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 987e782151afb2e49914f93df8ebd9af
+      internalID: -3393345029708351952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_36
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 1775
+        width: 42
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbcd4aa51b6d25c49b528e6cb71e054e
+      internalID: 2419156156653861666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_37
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 1844
+        width: 36
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 583d24bea545e54468eada89abe11902
+      internalID: 3122366692586425578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_38
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 1711
+        width: 63
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8feb3a115b6991b47b14f831debd9d1d
+      internalID: 2486399611706143047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_39
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 1846
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c10f9e8671b7d6c4087e25b762acfee9
+      internalID: -5456929883666754204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_40
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 1766
+        width: 74
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98a4d22fc0dd9e14b8bc99a8e2f2dbb5
+      internalID: -5027153045206897621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_41
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 1808
+        width: 74
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 886c344bcae9aba4c8a3fc2681617a4d
+      internalID: 1817151926083767369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_42
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 1780
+        width: 36
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0bbe843b9e60f74583e4e4c67dc226f
+      internalID: 1897932383276152646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_43
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 1781
+        width: 7
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9ab4aa4e2399df429970aaac9abbba8
+      internalID: 5525049087950726844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_44
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 1767
+        width: 6
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57375a1b038d5784aae5d6b05d4edd89
+      internalID: -7445339118758645993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_45
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 1767
+        width: 44
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf2ad98e0a9d2db43aedb50506129e63
+      internalID: 5011355041692345550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_46
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 1777
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b01324607169eaf4e825b195c089b4e7
+      internalID: 1722955923450584437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_47
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1711
+        width: 68
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bc6d5c5c5037d24fa00fd1b5d7a0ee6
+      internalID: -8267265824195548364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_48
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 1698
+        width: 58
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fafd38158fe0a104eac4a03b081ac4e0
+      internalID: 3143095023576895103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_49
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 1711
+        width: 34
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b97314dc8dbad045ac7a1c475fa3252
+      internalID: -5303915814573894585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_50
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 1716
+        width: 28
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebaf105bf6b6cb441a596c10a976e5af
+      internalID: 7670605032015468899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_51
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 1745
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0743846dfa76a724cb7c1e6738bf6f29
+      internalID: -1634450356995875835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_52
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 1719
+        width: 6
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 809571f81addc7541ac4cbaffde9e863
+      internalID: -8349913435213064917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_53
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 1717
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad6cade8eadef1240814621715d629a1
+      internalID: -846951768693963429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_54
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 1722
+        width: 5
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cff3bdef786c78f42b1ac524eba673c2
+      internalID: 8966091679760261341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_55
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1663
+        width: 49
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fd8b47595116384c9359bf4ec0f5774
+      internalID: 4261625405302896834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_56
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 1668
+        width: 51
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44a726df9e544504c9e78a38126dd61c
+      internalID: 3767418839550542493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_57
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 1617
+        width: 76
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0d7da8f50e0a69428f6651b703f7279
+      internalID: -2441092073107228387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_58
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 1615
+        width: 117
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ff880085e398cb4080fcb0c1b3f323d
+      internalID: -908646161058858420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_59
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 1625
+        width: 19
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd98d0a1bf443234ab5e65ffe4b9a82f
+      internalID: -4049428309903220678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_60
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 1617
+        width: 76
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b88d5dd30421b4418910b72db867997
+      internalID: 8453061396831869398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_61
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 1651
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7398dc642ddeabf439f63258d5b3b987
+      internalID: -3625495762345418531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_62
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 1623
+        width: 15
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e20f1d4d1962394da67424d8aaaa99e
+      internalID: -5402947244462993143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_63
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 1622
+        width: 9
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 838ab0ecc026b144ea98578c0dde1a1f
+      internalID: -7016602261344610990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_64
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 1575
+        width: 76
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d66f0c0135375074696398f822208975
+      internalID: 9211455275099478239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_65
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 1575
+        width: 76
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95595867d4965b146b2d183e3059d549
+      internalID: -7686570327676395383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_66
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 1583
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf9b8d95164aef54fa9590065fa26796
+      internalID: -2283477892379646487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_67
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 1583
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bc9ab4045347e74c88c008eae844cf1
+      internalID: 8801526324524075844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_68
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 1599
+        width: 17
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b6e57b501b5fb64d9cd6319cb3f7eda
+      internalID: 61715186634926521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_69
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 1595
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63b7005aed58b7c4d99be777f62fcc3c
+      internalID: -6096363478907212071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_70
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 1558
+        width: 46
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f29ef79f087fb904d8087e85172c8a6c
+      internalID: 5969263879641105014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_71
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 1583
+        width: 17
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 058822d7258e113478f1fa04a06f8d2c
+      internalID: 8689696184704941652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_72
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 1575
+        width: 17
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a49c48bcccff0b49b4f318d398a3f72
+      internalID: 1787183843186193540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_73
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 1539
+        width: 11
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 332cc0bf7b6429f44840a4d6093fa9b5
+      internalID: 8468742776801552361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_74
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 1522
+        width: 74
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d4387a4cb74b3e498f1c9381e3ad30d
+      internalID: 5768483732408595824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_75
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 1522
+        width: 74
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dadd616d6c02d414086fcdb34654f99d
+      internalID: 1495291113818155705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_76
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 1551
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 789b84476e7ea9341970cd7540f3de95
+      internalID: 6041209365094365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_77
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 1551
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79a92de3c7cf0574b8e3cea818aabe31
+      internalID: -490218752969646573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_78
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 1559
+        width: 17
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe1497452e15f6b49b1826f55a69dfa1
+      internalID: 931393725039391799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_79
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 1527
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7691c73ba5a623540b46b18511bf3d3c
+      internalID: -1555676831772277179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_80
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 1527
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83f639e68da76e243863d3b0ee6d273e
+      internalID: 733402152511703479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_81
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 1472
+        width: 44
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a5f3ef891c629b41a5ad3ca204ce746
+      internalID: -4042862408032758233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_82
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 1543
+        width: 5
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14772eb283d6bd44e9a79075c44ae027
+      internalID: 5971512196766563321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_83
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 1446
+        width: 51
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ea9f78c6bfbdd3459d43b291c4ba200
+      internalID: 740381806980231285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_84
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1480
+        width: 77
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ad23430e1868a74fbab074f5bc72654
+      internalID: -878920046846907239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_85
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 1480
+        width: 74
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24269b9b6b2b31345ba6f94a1afc2f89
+      internalID: -1365177708338713301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_86
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 1472
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4da61f7168eeb243a7960aa842d71c6
+      internalID: -261754454502244059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_87
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 1495
+        width: 42
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89afac29931fdef408817f22b91a04ce
+      internalID: 2575973131104134107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_88
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 1434
+        width: 74
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a917f5398f980be489316a613557874b
+      internalID: -6112092869811582150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_89
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 1429
+        width: 78
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da24053a38bf7ec4aa849c46b9c2aa54
+      internalID: -3527271799482709964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_90
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 1472
+        width: 26
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2640912129d08804491b67884ed68e0f
+      internalID: 7552907254239453006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_91
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 1358
+        width: 42
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07dea997ec2b3554a8a86f30a49fc790
+      internalID: 26800961182082492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_92
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 1428
+        width: 36
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a76a898635ae20e4fb35390c035cef66
+      internalID: 5729922473406361293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_93
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 1294
+        width: 63
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dad1a1011b644d64fb49c64e713f74f0
+      internalID: 851433233294928368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_94
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 1430
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 522e17cdbd021634aa2004063c8afb31
+      internalID: -6696715072163592336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_95
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 1350
+        width: 74
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf26ee817cd0d624da0bc9ebc9c2a62c
+      internalID: -4321796286686321761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_96
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 1392
+        width: 74
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2705816deb1bdf848817cb29d3910746
+      internalID: 2418750402497497886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_97
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 1364
+        width: 36
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc81deddabd727848972f1caf7f7d552
+      internalID: 2855036298722896295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_98
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 1365
+        width: 7
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71dfed946e8e20c449aa3f0d7d33344b
+      internalID: -187945758880411767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_99
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 1351
+        width: 6
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40895c92d94cc244b8954c05aa2c5ce7
+      internalID: -3062461941295428596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_100
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 1351
+        width: 44
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f729f519eebad4644b64451ed0490f11
+      internalID: 510338272403101766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_101
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 1360
+        width: 12
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 246f203f1834fbb47847333f33c71ad7
+      internalID: -1582251813573118782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_102
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1294
+        width: 68
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 244ed266f09f14c41ac77a20b17ecedb
+      internalID: -2982527931515738700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_103
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 1282
+        width: 58
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35e156cd860ecf645939d4bc5fb0dc60
+      internalID: -4839610740386173901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_104
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 1294
+        width: 34
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b423dcb9ae485941a7ac14bdb75a352
+      internalID: 4090840543498085854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_105
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 1300
+        width: 28
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0784ca855f6dd2468f7aba0126a604c
+      internalID: 2871268492115158433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_106
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 1329
+        width: 12
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b22c1a014babc65449d4c54ffd013ae9
+      internalID: 5489699874059212835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_107
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 1303
+        width: 6
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bc6ac9a8c447b54da11e2ebabfb7778
+      internalID: 3509954893721164457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_108
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 1301
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b6704df43b880f40b7da2f402d58fdc
+      internalID: 1972990053323325800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_109
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 1306
+        width: 5
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f654ec49a512e07499ad641803116010
+      internalID: 7376711292695248044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_110
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1247
+        width: 49
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68e757be3aa446f419aabd63e0174dd0
+      internalID: 8873085327211543835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_111
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 1252
+        width: 51
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38b4029810316924d8d9b1cd798660f5
+      internalID: 3608555664090490583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_112
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 1202
+        width: 76
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95f492184ad2de44db38c9c8691048ce
+      internalID: -1871772550027347197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_113
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 1199
+        width: 117
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 796944da17a54bd4985cb5e123b2088b
+      internalID: 8249932239816924265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_114
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 1209
+        width: 19
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 925138a2c479c104587464aada565ff6
+      internalID: -3681336961619194368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_115
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 1202
+        width: 76
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 336985dea92121d47a3d0dcfd2d90e61
+      internalID: 9218393649031033559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_116
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 1235
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77812a3238108214cb3811390b7f1468
+      internalID: 5957138953250548000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_117
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 1207
+        width: 15
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d637079ef5c48b47ba9ca2b97aa44ba
+      internalID: -6894374206458515133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_118
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 1206
+        width: 9
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80f04cefd5aa25248bc1495e4c162bff
+      internalID: -2276824300607048508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_119
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 1159
+        width: 76
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 687b6c7aaedf75144adae243064471c8
+      internalID: 8406832027452575309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_120
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 1159
+        width: 76
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e923d87fafd66674690e9b1a497173f2
+      internalID: 2937038085028493365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_121
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 1166
+        width: 12
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc38e5a42fc2854429af4c09c5ab12ac
+      internalID: 4612350335523513527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_122
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 1166
+        width: 18
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8a0e3b46184f8a4ba1dc52ff3a7f04e
+      internalID: -1741049886704305334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_123
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 1183
+        width: 17
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 103247b2f78cfff42bda58c3e6df1aed
+      internalID: -7740805141079172469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_124
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 1179
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 961979fa25dcff94da09e7daac12af8d
+      internalID: 2832376355271706359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_125
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 1142
+        width: 46
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6984865600b352c4c8f773567f154164
+      internalID: -3669354483992212691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_126
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 1166
+        width: 17
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a43f0f1b014705044911fd66957413e2
+      internalID: 2498157119128886900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_127
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 1159
+        width: 17
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be5ad4495eda6994a8f4e62f53d5c9d6
+      internalID: -1779296344695658019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_128
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 1123
+        width: 11
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f83c20c5b0676a4a96cef059f761c6e
+      internalID: -9008603984273497012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_129
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 1106
+        width: 74
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27ae7e76c619d904d93b6164d351d92b
+      internalID: 7250955992548475979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_130
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 1106
+        width: 74
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4557ebbad9a2164d8db3b4700f4e266
+      internalID: 6431181979852872789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_131
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 1135
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01f8b7a2e962b334ea849fed545afa49
+      internalID: 6086772492048252838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_132
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 1135
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 991f31b5400f43a4ba8ffa7661cfdbd8
+      internalID: 3348444124098188686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_133
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 1143
+        width: 17
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fda8c5547d8b20e4abde702372503347
+      internalID: 48407893988198234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_134
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 1111
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 082633cc2fffaa746a3071dfa43eea3d
+      internalID: 308036901411666481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_135
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 1111
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4264ed9bc355efe4faebb581be5d9e67
+      internalID: -2572036431027040563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_136
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 1079
+        width: 44
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e71e191c10553e24b83d5fcad7f61c5a
+      internalID: -5029347363904819386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_137
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 1127
+        width: 5
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46708e1fbc4da1642a407274a8e2e7ac
+      internalID: 1453062603583545724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_138
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 1030
+        width: 51
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cdb994422fb0044e8208a85277d9e4d
+      internalID: -3875740487569393170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_139
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1064
+        width: 77
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c78f4ff87cc770a40b89ab0d41a353ff
+      internalID: 8742784827228298588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_140
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 1064
+        width: 74
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a75f7fc6eba445e4ab6ac598da6c8484
+      internalID: 6050633538578212378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_141
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 1056
+        width: 14
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c35cfc8651d3972468681c0c04b73f0b
+      internalID: -7800946361909020037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_142
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 1079
+        width: 42
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d319875d5a630d41b83c8e687dea176
+      internalID: 8984169719511457678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_143
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 1056
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fe3a431e3fde0241a1c332dd62aa42b
+      internalID: -1768893275522752970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_144
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 1018
+        width: 74
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df8cd4623faade2478415f635af9c37f
+      internalID: 7520697391563950577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_145
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 1013
+        width: 78
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f54f0b9b26d3e74c8f9367afebaac1a
+      internalID: -7674570582887822052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_146
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 1056
+        width: 26
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 020bb5f56b436c64db246b98352e4f24
+      internalID: 7688920191876306184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_147
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 1056
+        width: 26
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 030c3e59da6913c4b99e686a1dc8087d
+      internalID: -7590609618322185118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_148
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 943
+        width: 42
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: baad03ec2b484e546bcf29d8b4b9e692
+      internalID: 8502176057869563287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_149
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 1012
+        width: 36
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4e8c0cd6b21f0e46b9cf7ec5a236f92
+      internalID: 798582809880425203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_150
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 879
+        width: 63
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6ca0ce65788671418e16ab351757c03
+      internalID: -4661040233075761161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_151
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 1014
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 152ad571364dd61409268892c5da8524
+      internalID: -7876107561856118291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_152
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 934
+        width: 74
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c6f3aec3274808468ce1380eb9e75a1
+      internalID: 4937691630234186015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_153
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 976
+        width: 74
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c009cd78727f8d4428cdfa7ac6298624
+      internalID: -5657193883365741186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_154
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 948
+        width: 36
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad6c82af42fd3594c911e6f23948290a
+      internalID: -7725045910715377751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_155
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 949
+        width: 7
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e567ba8c4533e8d43be20fb1229ebf63
+      internalID: 1435956302487679452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_156
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 935
+        width: 6
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e413f4ea7a0524c4182e47693b7b3c1b
+      internalID: -1067364874181079348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_157
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 935
+        width: 44
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e946b79f051bd6b4d8912aee3b6fad4c
+      internalID: 828104843567640847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_158
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 945
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51a328be8b3c32f4897a9c34cd562fa9
+      internalID: -5576461506683490575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_159
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 879
+        width: 68
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34c90603e1f7a9042938bfaea62a791b
+      internalID: -3699277137149117558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_160
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 866
+        width: 58
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a744d0864dca8f6469886b844cc12c16
+      internalID: -6129380175617457815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_161
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 879
+        width: 34
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9155995487074aa4e9a95aed5db2c69d
+      internalID: -8510249898029797090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_162
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 884
+        width: 28
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31bbcc7c961e07a4aae62dc8634b852b
+      internalID: 3137855714091183175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_163
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 913
+        width: 12
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a757a8de37688364a94a634da77ef89a
+      internalID: 6704446939896155790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_164
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 887
+        width: 6
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0d2d3b909162184090fa9d13e8a5e9c
+      internalID: -1039681600826982900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_165
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 885
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7ff3a21a2ce0bc4ebf5aac53bf30f47
+      internalID: -4866486749767087482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_166
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 890
+        width: 5
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf48507b5c2f423478e310c4ab5412cf
+      internalID: -3239408371659319283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_167
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 831
+        width: 49
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 331c6a9021c6cf541ba574a92e4d801f
+      internalID: 8339607384193106659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_168
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 836
+        width: 51
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26d7ccc5e29d9a0458f29b765f8fb162
+      internalID: -1976749163972882640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_169
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 786
+        width: 76
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ca8cb9c268b9a748a4f43a64377ad48
+      internalID: -4051366179537742962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_170
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 783
+        width: 117
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a66ef59ef35af874a8e26202ec33ee68
+      internalID: -385940251337500056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_171
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 793
+        width: 19
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8ca62e9b64ff5f41990414c4d0ef009
+      internalID: -7931458020511953782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_172
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 786
+        width: 76
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a777f51d7532d249985728b3693d86a
+      internalID: 322053945628124131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_173
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 819
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf2b3691a69b90b4aba1482e498b4b68
+      internalID: -8201492858492531812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_174
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 791
+        width: 15
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5d5d622093295b44b0bfc38d7552410
+      internalID: 1717290184685013538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_175
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 790
+        width: 9
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa9520c6c20abbd40aaa1efd796d79ce
+      internalID: -5307757334335061336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_176
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 743
+        width: 76
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d476db6c42a62ee4985714e7c6d21c24
+      internalID: -3140993477713380696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_177
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 743
+        width: 76
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffaa88afc5168e24395b8b1f516bae4c
+      internalID: -827330484914229332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_178
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 751
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2513bd3ed6fc15f4bb99496321b79347
+      internalID: -1271370186135638221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_179
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 751
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8ee7ed4e402a5442af09fab8367f7b4
+      internalID: 6087593989770152673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_180
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 767
+        width: 17
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25892324abed5f0469a915427aeba68f
+      internalID: -6421388917419580390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_181
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 763
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae7e01b05dcacdf499eb15cbb0a633e7
+      internalID: -7459578173351521221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_182
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 726
+        width: 46
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 914e29044ce03154e9b94f9fc57c9792
+      internalID: -8875546721130338071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_183
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 751
+        width: 17
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f55dfe4cd00ae574dbe63bf8cb173e7e
+      internalID: -2012622691454719276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_184
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 743
+        width: 17
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac40d371dabfecc41b3ed701b9ff3e6f
+      internalID: -3111459297663213474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_185
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 707
+        width: 11
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b9a2d6c8e3a48f4cb337b63363ffd11
+      internalID: 1300954193837689436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_186
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 690
+        width: 74
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90adc24183c293d48822c63acf18ef74
+      internalID: -8809075730011246565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_187
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 690
+        width: 74
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83c1865609ce2054aa1d19fb96a3c720
+      internalID: 9096518456717679414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_188
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 719
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 866a4ac724203ca489b3193849b11652
+      internalID: 533381175078883070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_189
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 719
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5676624346236748b847bbb862d4026
+      internalID: 384707408719438217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_190
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 727
+        width: 17
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bd02377a6865044d87bf4687a5429dd
+      internalID: 4699122917577418092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_191
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 695
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18bf7fea8bad3cc47bfa712cd7155723
+      internalID: -7744492981200967446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_192
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 695
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2173abc10d22e4744b4f9ec234b928dd
+      internalID: 1143832034925329534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_193
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 663
+        width: 44
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9264eac1df9780a4081aed5fa05a7546
+      internalID: -6721743850465127773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_194
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 710
+        width: 5
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7334fe2aeddaf75449b7053c76253677
+      internalID: -461277363001374405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_195
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 614
+        width: 51
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbd6e1891c3f0f74c8f5d3a8efb71e88
+      internalID: 2386046281382035235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_196
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 648
+        width: 77
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98c5b768953055f4892b5d9e6ca5aabb
+      internalID: -7996151882862250262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_197
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 648
+        width: 74
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e88bb154793090458baca60c48ab513
+      internalID: 7234311351506719522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_198
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 640
+        width: 14
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab60014a5193f3848b825a5f041e7cf1
+      internalID: 6567235730797022945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_199
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 663
+        width: 42
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4f96e2eda583fe4cb59f48d7266134c
+      internalID: 2144943461399504444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_200
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 640
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adfe2f3b10e7c8b4893ae5bfaed54d21
+      internalID: 2633224093548225620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_201
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 602
+        width: 74
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8b90aae81bb8174c86e48ce67674ddf
+      internalID: -836242985822112227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_202
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 597
+        width: 78
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 874962edd21dc434cbe8f6daa16449db
+      internalID: -7978551090932900678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_203
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 640
+        width: 26
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32134ba7f17ebb14189d8efa9c924a40
+      internalID: 5457328938066563988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_204
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 640
+        width: 26
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01a477a6e9db78b4ab3958438ec286da
+      internalID: -3414796994522925338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_205
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 527
+        width: 42
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcf9098c573bb084998d6bf9afc2e821
+      internalID: 2344920484881903431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_206
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 596
+        width: 36
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af3c0dfa7c047d34aba8e4e2d85f60de
+      internalID: -940265263928287015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_207
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 463
+        width: 63
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04d290f3f8d16a942886d563704e97b1
+      internalID: 7963194481291398907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_208
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 598
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fde69c75f5152a449c19aaa772994b2
+      internalID: -5198779042108175594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_209
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 518
+        width: 74
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a153e1d2f6000b4f90d6d87e6a3a9f0
+      internalID: 5793297752919489569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_210
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 560
+        width: 74
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4389a1a57e2de7c40860c7438ee38373
+      internalID: -3611367880510246562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_211
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 532
+        width: 36
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99b29e22d9834e94a8f89f523df1e667
+      internalID: 741918321024458055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_212
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 533
+        width: 7
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70d51b579cddcfd47a358b8025cbb517
+      internalID: -1594987705488869907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_213
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 519
+        width: 6
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9bdd98a482d29c43a224b47174c34a7
+      internalID: -3485025455551516292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_214
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 519
+        width: 44
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8057bec1d14d7374083235acc2b48c9a
+      internalID: -8568354807631747879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_215
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 529
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a041b196e7e7fd94189481e9e243b16f
+      internalID: 3758102328134966580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_216
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 463
+        width: 68
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed102e6db3f59114382c647a38d474f7
+      internalID: -6450535709336966678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_217
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 450
+        width: 58
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7014e9d4638ceb742909790bc65ee166
+      internalID: 7730356152813617836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_218
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 463
+        width: 34
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a278df635c3a6bc49852cd2085d92862
+      internalID: -5681870943181966249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_219
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 468
+        width: 28
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdb8f638afd49fe48b4ef3c6869f3097
+      internalID: -2747299558498421919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_220
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 497
+        width: 12
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9492e37c656db8046aae69ecf5853de3
+      internalID: 2106770295020292249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_221
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 471
+        width: 6
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0027a186d0aa65e48976768f84e88822
+      internalID: -3273830229389013537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_222
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 469
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 718e54045d3a97349b826c857bc8e101
+      internalID: 3175722888607380826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_223
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 474
+        width: 5
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dba5a0578627484a9c4cd7f7e3ac254
+      internalID: -3913638614336919239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_224
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 415
+        width: 49
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2bf84e6c7ac0234d8564be3af26c614
+      internalID: -4573716019872797101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_225
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 420
+        width: 51
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf643a59ae5d6a84484045394edc4488
+      internalID: 2593070177438965837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_226
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 370
+        width: 76
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61d692030b595d941acfc31a072d6bff
+      internalID: -301119336332504741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_227
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 367
+        width: 117
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 381267b430cc10c4aaa76e2062231e0e
+      internalID: -1187849468372059026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_228
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 377
+        width: 19
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1afc66de70be1548b1e0fd97b677e65
+      internalID: 8597299802146996866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_229
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 370
+        width: 76
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f26b6ce93ec7ef45ad25bfb0ca8dfa9
+      internalID: -5336689290645761770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_230
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 403
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d32b0f9ca07b04f4b9afc1cd733c82f8
+      internalID: 7438279614780884465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_231
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 375
+        width: 15
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac0298bda1c7fe043990a4b2718d80bb
+      internalID: 7038461629861621376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_232
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 374
+        width: 9
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5540f15ec89efb6458b1228d8aa01edb
+      internalID: 4717774031929704463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_233
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 327
+        width: 76
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46f57b7bcde00fe488f7af2e600e9cb5
+      internalID: -8074645150833898707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_234
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 327
+        width: 76
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa98986e8ac9dc94dbb74089389e99a4
+      internalID: -4340594271056247768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_235
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 335
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4553285fd74f2148a4cbcedab95544a
+      internalID: -9005143084372228375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_236
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 335
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5546b67c05f829488c7c471d8e94074
+      internalID: 1355084474105126602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_237
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 351
+        width: 17
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00a13dfc38e3ea848bb08b0a3bb858ad
+      internalID: 7904371013942193889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_238
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 347
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bb1d09c4bb226748bf108cde3098d4c
+      internalID: 4168978588303791270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_239
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 310
+        width: 46
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 243cd2d391a396841ba04bcc672e729e
+      internalID: 3471618209499551887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_240
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 335
+        width: 17
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d39cfb10120c31548ba00f558a92e17a
+      internalID: 9201888886497833352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_241
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 327
+        width: 17
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b364f107860058b4ba07b39319331941
+      internalID: -7098564347456237644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_242
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 291
+        width: 11
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0efab26ef6aaeb14598ea32462c66c06
+      internalID: 1306490946598244774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_243
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 274
+        width: 74
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c0b7e45f39dcff4aaf2bbfe1f9d468b
+      internalID: 6298065818950507487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_244
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 274
+        width: 74
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca2156d40b544334ea5ad606d5433b76
+      internalID: -3944781486123495216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_245
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 303
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57bde36662cfb7a4198f008ffe4795fe
+      internalID: 5349438663397940028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_246
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 303
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a2e201b2d924ce4c8d35656d0948b58
+      internalID: 1692139235941157298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_247
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 311
+        width: 17
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7371f36ba0a84324ab57c82f31c23592
+      internalID: -3672749590679403196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_248
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 279
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b6ff3ed1815f0c40a26d18b6acdd034
+      internalID: -4503999360321688694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_249
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 279
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abe64cecc6be24648a88d8b8d1aac19a
+      internalID: -8920397444762462542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_250
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 224
+        width: 44
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e073935479b3fdf43a98e195cc8e6f69
+      internalID: -415788770926782092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_251
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 295
+        width: 5
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca42888d31a0a4c409a0a0e9c80e1734
+      internalID: 5403917887053149773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_252
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 198
+        width: 51
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1da775b6a10ffd4ba25bf5739484fda
+      internalID: 5162168912016038249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_253
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 232
+        width: 77
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10d203286048e044babd5c6465be7258
+      internalID: -5632281971667351495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_254
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 232
+        width: 74
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60fdd69c2fd040947a49b1878215f761
+      internalID: 8248468288617817233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_255
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 224
+        width: 14
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e6f670b4cc844b41853acb2e84e6d97
+      internalID: 1936827006956961325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_256
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 247
+        width: 42
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1300ac37d73e304888fd0cb25bb2479
+      internalID: -4058285476820856725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_257
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 186
+        width: 74
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 330feaff7f8a53c4e89251fa0d0856ee
+      internalID: 4481991523071904879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_258
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 181
+        width: 78
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bbcf46bd6533584d967ba65db5d2c4b
+      internalID: 6870051595236398271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_259
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 224
+        width: 26
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d51cc7c5fe49f7143aacefebe29c0b12
+      internalID: -5116098267797693724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_260
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 111
+        width: 42
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a2d906a96d4eac4894b861379dc96b7
+      internalID: 3261652997912883852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_261
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 0
+        width: 112
+        height: 191
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 098129bc334116a43947db44ec58fede
+      internalID: 8310349697829313005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_262
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 180
+        width: 36
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be2b1600deae7d443a058c5faacf6db7
+      internalID: 7130476298763972598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_263
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 182
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c3d7cfa540516d4ab8e038e760e8c97
+      internalID: 5016880469753967427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_264
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 102
+        width: 74
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74a0f9fed28c4814ab247372f4a3d5dc
+      internalID: 7020678394411799901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_265
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 144
+        width: 74
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50b97332884fbe54f8a402769400e0a0
+      internalID: -8082723844516779501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_266
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 116
+        width: 36
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f680b0066e8959544a0892e94534bda3
+      internalID: 6213907538243519850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_267
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 117
+        width: 7
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4690a2190de958c4b9b99a0823836f4f
+      internalID: 5168201368304437785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_268
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 103
+        width: 6
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3edaa96e5f7476a4cb60d5218d34a355
+      internalID: 2633074099327879985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_269
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 103
+        width: 44
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99a1776c7c809e342b1a235c176746d4
+      internalID: -3991017314130745733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_270
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 113
+        width: 12
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dc340ce9ba62094b9373611b0bc9141
+      internalID: 1504513589697672356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_271
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 47
+        width: 68
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b3df83d0a3d5874099b8379e3fc2153
+      internalID: 6580858472684480748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_272
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 34
+        width: 58
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e1152cc4b08df741ab9dac6d2a27a7c
+      internalID: 8725348022224479996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_273
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 47
+        width: 34
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32cdbe8723632384999c22202bffbfc8
+      internalID: 6908124965216694941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_274
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 52
+        width: 28
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8eddeed53637a9d4596a788024ceb4fb
+      internalID: -8324637830910567247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_275
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 81
+        width: 12
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 305fe9dbcb4ebed4b842e7d0d75ff96b
+      internalID: 4294479462653166615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_276
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 55
+        width: 6
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f41dde17aed9625438b8d31af6c9b287
+      internalID: 4460511896898811254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_277
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 53
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb41bec002c285f4c8ded163073e587f
+      internalID: -6228486197111340291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_278
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 58
+        width: 5
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c571c520e7052bd448be37c5892f23ab
+      internalID: 629560830330066457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_279
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 49
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b3fdccb0cded864fa0fea356032ebcc
+      internalID: 1865727584544101706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_280
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 4
+        width: 68
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 963b2f878491d0b4d940919bcce541af
+      internalID: 5961605068497820643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_281
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 0
+        width: 66
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 945b9d794edb28645927fef593969e6e
+      internalID: 4333652836277489730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_282
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 7
+        width: 35
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45fa6d19abf7339479fb6bc829923892
+      internalID: -682872968704692206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony-db32-buildings-ready_283
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 7
+        width: 5
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63df820d5b5a4d74bb160db31ebcf271
+      internalID: -4841415395031356917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
