@@ -2,19 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TOWERCREATIONTESTER : Tower
+public class TOWERCREATIONTESTER : MonoBehaviour
 {
-    SpriteRenderer sr;
+    [SerializeField] SpriteRenderer sr;
+    [SerializeField] SpriteRenderer srChild;
 
-    [SerializeField] TurretTop[] tTop;
-    [SerializeField] TowerBase[] tBase;
-    [SerializeField] AmmoType[] tAmmo;
+    [SerializeField] Sprite[] tTop = new Sprite[3];
+    [SerializeField] Sprite[] tBase = new Sprite[3];
+    [SerializeField] Sprite[] tAmmo = new Sprite[3];
 
+    //[SerializeField] TurretTop[] tTop;
+    //[SerializeField] TowerBase[] tBase;
+    //[SerializeField] AmmoType[] tAmmo;
+
+
+    public Sprite ProjSprite { get; set; }
     int r_Top, r_Base, r_Ammo;
 
     private void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
+        srChild = GetComponentInChildren<SpriteRenderer>();
     }
     // Start is called before the first frame update
     void Start()
@@ -22,33 +30,34 @@ public class TOWERCREATIONTESTER : Tower
         r_Top = Random.Range(0, tTop.Length);
         r_Base = Random.Range(0, tBase.Length);
         r_Ammo = Random.Range(0, tAmmo.Length);
-        
-        //CreateTower(r_Top, r_Base, r_Ammo);
 
-        Debug.Log("Damage: " + Damage + " RoF: " + FireRate + " Range " + Range + " SD " + SplashDamage + " Slow " + Slow + " DoT " + DamageOverTime + " DoTA " + DoTAmount);
+        ProjSprite = tAmmo[r_Top];
+        CreateTower(r_Top, r_Base, r_Ammo);
+
+       // Debug.Log("Damage: " + Damage + " RoF: " + FireRate + " Range " + Range + " SD " + SplashDamage + " Slow " + Slow + " DoT " + DamageOverTime + " DoTA " + DoTAmount);
 
     }
 
-    //protected override void CreateTower(int top, int bot, int ammo)
-    //{
-    //    base.CreateTower();
-    //    sr.sprite = tTop[top].TurretSprite;
-    //    Damage = tTop[top].Damage + tAmmo[ammo].ImpactDamage;
-    //    FireRate = tTop[top].FireRate + tBase[bot].FireRateModifier;
-    //    Range = tBase[bot].Range;
+    public void CreateTower(int top, int bot, int ammo)
+    {
+        sr.sprite = tTop[top];
+        //srChild.sprite = tBase[bot];
+        //Damage = tTop[top].Damage + tAmmo[ammo].ImpactDamage;
+        //FireRate = tTop[top].FireRate + tBase[bot].FireRateModifier;
+        //Range = tBase[bot].Range;
 
-    //    SplashDamage = tTop[top].SplashDamage;
-    //    Slow = tAmmo[ammo].Slow;
-        
-    //    DamageOverTime = tAmmo[ammo].DamageOverTime;
-    //    if (DamageOverTime)
-    //    {
-    //        DoTAmount = tAmmo[ammo].DoTAmount;
-    //    }
-    //    else
-    //    {
-    //        DoTAmount = 0;
-    //    }
+        //SplashDamage = tTop[top].SplashDamage;
+        //Slow = tAmmo[ammo].Slow;
 
-    //}
+        //DamageOverTime = tAmmo[ammo].DamageOverTime;
+        //if (DamageOverTime)
+        //{
+        //    DoTAmount = tAmmo[ammo].DoTAmount;
+        //}
+        //else
+        //{
+        //    DoTAmount = 0;
+        //}
+
+    }
 }

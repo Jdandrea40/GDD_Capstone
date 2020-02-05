@@ -22,6 +22,10 @@ public class HUDManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        PiecesCollectedManager.Instance.standardTurretTop = 0;
+        PiecesCollectedManager.Instance.rapidFireTop = 0;
+        PiecesCollectedManager.Instance.cannonTop = 0;
+
         waveSpawnEvent = new WaveSpawnEvent();
         EventManager.AddWaveSpawnInvoker(this);
 
