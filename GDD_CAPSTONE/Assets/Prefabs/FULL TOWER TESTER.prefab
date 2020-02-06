@@ -69,8 +69,8 @@ SpriteRenderer:
   m_SortingLayerID: 980436587
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0d6e7b2ee07142943bc9e2e255788d31, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.5176471}
+  m_Sprite: {fileID: 21300000, guid: f4c1a387d2fdfa6408100eddecd96c8b, type: 3}
+  m_Color: {r: 0.00030589104, g: 1, b: 0, a: 0.29411766}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -172,25 +172,25 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2947338763493039595}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 07b3d6f718b632b41b97b70082a5d52e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyTargets: []
-  projectile: {fileID: 0}
+  sr: {fileID: 8784522025729116819}
+  srChild: {fileID: 2936851541140327195}
   tTop:
-  - {fileID: 11400000, guid: 0c72f7e14297443498eafffb4f1730a5, type: 2}
-  - {fileID: 11400000, guid: a00909d3eba34c34ebe65c3697b88666, type: 2}
-  - {fileID: 11400000, guid: d4dbd329c3459074bbda178f622d2fbf, type: 2}
+  - {fileID: 21300000, guid: 36b08c0a35889a14abcbb65ed94021ef, type: 3}
+  - {fileID: 21300000, guid: 5f0f6a84b08fcdd46a0e476699220e0c, type: 3}
+  - {fileID: 21300000, guid: a1c6a272ee019f240b0e5ee5a20c1e55, type: 3}
   tBase:
-  - {fileID: 11400000, guid: 5599e01025962184784a206ccca915e7, type: 2}
-  - {fileID: 11400000, guid: f85e12c26878bad499de7d4ea1580d21, type: 2}
-  - {fileID: 11400000, guid: 23e9a3f6924529c4385298557daed174, type: 2}
+  - {fileID: 21300000, guid: 959ff3ef593801c489e3af4a8664d63b, type: 3}
+  - {fileID: 21300000, guid: d062cbb0573a9384fb0e6b06cbb4e9f4, type: 3}
+  - {fileID: 21300000, guid: 9f30ce4bd94b05e4aa274a5cba4c4622, type: 3}
   tAmmo:
-  - {fileID: 11400000, guid: 7b22c58bc05ea014095af7a8531459fd, type: 2}
-  - {fileID: 11400000, guid: 08f98a9857c227b4da9038b495a7c63d, type: 2}
-  - {fileID: 11400000, guid: 2a6fa1da62bf56d4681864cc2d4200da, type: 2}
+  - {fileID: 21300000, guid: b591860378b4dab41a75e02a5e6e2f08, type: 3}
+  - {fileID: 21300000, guid: 00f5c98127a4ce34ebb4bf4fb5124d25, type: 3}
+  - {fileID: 21300000, guid: 5b871cd4d9f79fe4c882db6ac60f4741, type: 3}
 --- !u!58 &2947338763493039594
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -9,8 +9,13 @@ using UnityEngine.Events;
 public class Enemy : MonoBehaviour
 {
     CircleCollider2D cc2d;
+
+    // This is hat the enemy drops on death
     [SerializeField] GameObject item;
+
+    // Was being used for dictionary target acquisition
     protected int instanceID;
+
     bool hasTriggered = false;
     //public bool HasTriggered
     //{
@@ -59,6 +64,8 @@ public class Enemy : MonoBehaviour
         removeEnemyTarget = new RemoveEnemyTargetEvent();
         EventManager.RemoveEnemyTargetInvoker(this);
 
+        // Adds itself to the overall in game enemy list
+        // being used to to determine if the level has been won
         GameplayManager.SpawnEnemies.Add(gameObject);
 
 
@@ -96,6 +103,10 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject.layer == (int)CollisionLayers.PROJECTILE)
         {
             TakeDamage(1);
+        }
+        if (collision.gameObject.layer == (int)CollisionLayers.HOME_BASE)
+        {
+            GameplayManager.SpawnEnemies.Remove(gameObject);
         }
     }
     #endregion

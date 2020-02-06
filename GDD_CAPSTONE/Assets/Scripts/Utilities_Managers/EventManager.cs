@@ -18,10 +18,30 @@ public static class EventManager
 
     static HUDManager waveSpawnInvoker;
     static UnityAction waveSpawnListener;
+
+    static ItemDrop itemCollectedInvoker;
+    static UnityAction<int> itemCollectedListener;
     
     #endregion
 
     #region EVENTS
+    public static void AddItemCollectedInvoker(ItemDrop invoker)
+    {
+        itemCollectedInvoker = invoker;
+        if (itemCollectedListener != null)
+        {
+            invoker.AddItemCollectedListener(itemCollectedListener);
+        }
+    }
+
+    public static void AddItemCollectedListener(UnityAction<int> listener)
+    {
+        itemCollectedListener = listener;
+        if (itemCollectedInvoker != null)
+        {
+            itemCollectedInvoker.AddItemCollectedListener(listener);
+        }
+    }
     public static void AddWaveSpawnInvoker(HUDManager invoker)
     {
         waveSpawnInvoker = invoker;

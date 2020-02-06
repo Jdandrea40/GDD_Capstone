@@ -68,12 +68,15 @@
     <Compile Include="Assets\Scripts\Enemies\Enemy_BasicAirplane.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemyMoveTowardsPoint.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemyPathFinder.cs" />
+    <Compile Include="Assets\Scripts\Enemies\ItemDrop.cs" />
     <Compile Include="Assets\Scripts\Enemies\WaveSpawner.cs" />
     <Compile Include="Assets\Scripts\Events\AddEnemyTargetEvent.cs" />
+    <Compile Include="Assets\Scripts\Events\ItemCollectedEvent.cs" />
     <Compile Include="Assets\Scripts\Events\RemoveEnemyTargetEvent.cs" />
     <Compile Include="Assets\Scripts\Events\TowerFireEvent.cs" />
     <Compile Include="Assets\Scripts\Events\WaveSpawnEvent.cs" />
     <Compile Include="Assets\Scripts\HomeBase.cs" />
+    <Compile Include="Assets\Scripts\MouseHoverEffect.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\AmmoType.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\TowerBase.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\TurretTop.cs" />
@@ -91,6 +94,8 @@
     <Compile Include="Assets\Scripts\Utilities_Managers\HUDManager.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\ItemSpawnManager.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\LayersManager.cs" />
+    <Compile Include="Assets\Scripts\Utilities_Managers\ManagerLoader.cs" />
+    <Compile Include="Assets\Scripts\Utilities_Managers\PiecesCollectedManager.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\Singleton.cs" />
     <None Include="Assets\Sprites\FULL TILE SHEET\License.txt" />
     <Reference Include="Unity.Timeline.Editor">

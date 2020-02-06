@@ -17,7 +17,7 @@ public class WaveSpawner : MonoBehaviour
 
     void InvokeSpawner()
     {
-        GameplayManager.CurWaveCount++;
+        
         GameplayManager.WaveInProgress = true;
         StartCoroutine(SpawnEnemies());
         
@@ -25,6 +25,7 @@ public class WaveSpawner : MonoBehaviour
 
     IEnumerator SpawnEnemies()
     {
+        
         i = 0;
         while (i <= enemies.Count - 1)
         {
@@ -32,6 +33,7 @@ public class WaveSpawner : MonoBehaviour
             yield return new WaitForSeconds(1f);
             i++;
         }
+        GameplayManager.CurWaveCount++;
         GameplayManager.WaveInProgress = false;
     }
 }

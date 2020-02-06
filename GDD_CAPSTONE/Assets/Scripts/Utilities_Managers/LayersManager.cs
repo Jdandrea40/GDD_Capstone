@@ -7,4 +7,5 @@
     TOWER = 9,
     PROJECTILE = 10,
     BUILDABLE_AREA = 11,
+    HOME_BASE = 12,
 }
