@@ -35,10 +35,11 @@ public class Projectile : MonoBehaviour
             // Gets the first enemy in the list and stores it
             //EventManager.TowerFireListener(MoveToEnemy);
         }
-        // TODO: figure out why two proj are spawning
+
         else
         {
-            Debug.Log("HMMM");
+            // if the target is detroyed before this proj hits
+            // CASE: two towers are shooting at the same target
             Destroy(gameObject);
         }
     }
@@ -49,6 +50,7 @@ public class Projectile : MonoBehaviour
         targetToHit = target.transform;
     }
 
+    // Collision detection
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.layer == (int)CollisionLayers.ENEMIES)
