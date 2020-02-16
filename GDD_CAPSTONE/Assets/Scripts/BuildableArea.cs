@@ -14,6 +14,9 @@ public class BuildableArea : MonoBehaviour
 
     [SerializeField] GameObject tower;
 
+    PiecesCollectedManager pcm;
+    HUD_CraftingUI hudCUI;
+    
     BoxCollider2D bc2d;
     Vector2 center;   
 
@@ -21,6 +24,10 @@ public class BuildableArea : MonoBehaviour
     { 
         sr = GetComponent<SpriteRenderer>();
         bc2d = GetComponent<BoxCollider2D>();
+
+        pcm = PiecesCollectedManager.Instance;
+        hudCUI = HUD_CraftingUI.Instance;
+
 
         // The center of the tile
         center = bc2d.size / 2;
@@ -55,7 +62,19 @@ public class BuildableArea : MonoBehaviour
         if (hovering && !occupied)
         {
             Instantiate(tower, transform.position, Quaternion.identity);
+            //Instantiate(tower, transform.position, Quaternion.identity);
             occupied = true;
         }
+    }
+
+    public void CreateTower()
+    {
+        TurretTop tTop = pcm.pcTop[hudCUI.SelectedTop];
+        TowerBase tBase = pcm.pcBase[hudCUI.SelectedBot];
+        AmmoType tAmmo = pcm.pcAmmo[hudCUI.SelectedAmmo];
+
+        //Tower tower = new Tower(tTop.TurretSprite, tBase.BaseSprite, (tTop.Damage + tAmmo.ImpactDamage), (tTop.FireRate + tBase.FireRateModifier), tBase.Range, tAmmo.color, tAmmo.AmmoSprite, tTop.SplashDamage, tAmmo.Slow, tAmmo.DamageOverTime, tAmmo.DoTAmount);
+
+        
     }
 }

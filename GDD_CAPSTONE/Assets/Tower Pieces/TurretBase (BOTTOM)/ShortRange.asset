@@ -15,3 +15,5 @@ MonoBehaviour:
   Name: Short Range Base
   Range: 1
   FireRateModifier: 2
+  BaseSprite: {fileID: 21300000, guid: 877e285f22b7ed74ea8d8ce03c5d1a27, type: 3}
+  BaseColor: {r: 1, g: 0.087011404, b: 0, a: 1}

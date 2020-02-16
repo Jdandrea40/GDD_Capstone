@@ -5,15 +5,29 @@ using UnityEngine.UI;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
-public class HUDManager : MonoBehaviour
+public class HUDManager : Singleton<HUDManager>
 {
     [SerializeField] Text enemiesKilledText;
     [SerializeField] Text waveCountText;
     [SerializeField] Text baseHealthText;
+
     [SerializeField] Button spawnButton;
     [SerializeField] Text[] itemCount;
+    
 
     WaveSpawnEvent waveSpawnEvent;
+
+    #region PROPERTIES
+
+    // GAME STAT TEXT SUPPORT
+    public Text EnemiesKilledText { get => enemiesKilledText; set => enemiesKilledText = value; }
+    public Text WaveCountText { get => waveCountText; set => waveCountText = value; }
+    public Text BaseHealthText { get => baseHealthText; set => baseHealthText = value; }
+
+
+
+    #endregion
+
     public void AddWaveSpawnListener(UnityAction listener)
     {
         waveSpawnEvent.AddListener(listener);
@@ -22,9 +36,7 @@ public class HUDManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PiecesCollectedManager.Instance.standardTurretTop = 0;
-        PiecesCollectedManager.Instance.rapidFireTop = 0;
-        PiecesCollectedManager.Instance.cannonTop = 0;
+
 
         waveSpawnEvent = new WaveSpawnEvent();
         EventManager.AddWaveSpawnInvoker(this);
@@ -32,19 +44,12 @@ public class HUDManager : MonoBehaviour
         EventManager.AddItemCollectedListener(UpdateItemCount);
 
         GameplayManager.EnemiesKilled = 0;
-        enemiesKilledText.text = " Enemies Killed: " + GameplayManager.EnemiesKilled;
-        baseHealthText.text = " Base Health: " + GameplayManager.BaseHealth;
-        waveCountText.text = " Wave: " + GameplayManager.CurWaveCount + " / " + GameplayManager.MaxWaveCount;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        enemiesKilledText.text = " Enemies Killed: " + GameplayManager.EnemiesKilled;
-        baseHealthText.text = " Base Health: " + GameplayManager.BaseHealth;
-        waveCountText.text = " Wave: " + GameplayManager.CurWaveCount + " / " + GameplayManager.MaxWaveCount;
-
-
         if (GameplayManager.WaveInProgress)
         {
             spawnButton.interactable = false;
@@ -72,7 +77,7 @@ public class HUDManager : MonoBehaviour
             case 2:
                 {
 
-                    itemCount[turretPeiceCollected].text = PiecesCollectedManager.Instance.cannonTop.ToString();
+                    itemCount[turretPeiceCollected].text = PiecesCollectedManager.Instance.rocketTop.ToString();
                     break;
                 }
         }

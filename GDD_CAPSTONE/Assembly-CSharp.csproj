@@ -91,11 +91,14 @@
     <Compile Include="Assets\Scripts\Utilities_Managers\ConstantsManager.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\EventManager.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\GameplayManager.cs" />
-    <Compile Include="Assets\Scripts\Utilities_Managers\HUDManager.cs" />
+    <Compile Include="Assets\Scripts\Utilities_Managers\HUD\HUD_CraftingUI.cs" />
+    <Compile Include="Assets\Scripts\Utilities_Managers\HUD\HUD_GameStats.cs" />
+    <Compile Include="Assets\Scripts\Utilities_Managers\HUD\HUDManager.cs" />
+    <Compile Include="Assets\Scripts\Utilities_Managers\HUD\PiecesCollectedManager.cs" />
+    <Compile Include="Assets\Scripts\Utilities_Managers\HUD\TowerStatCreation.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\ItemSpawnManager.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\LayersManager.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\ManagerLoader.cs" />
-    <Compile Include="Assets\Scripts\Utilities_Managers\PiecesCollectedManager.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\Singleton.cs" />
     <None Include="Assets\Sprites\FULL TILE SHEET\License.txt" />
     <Reference Include="Unity.Timeline.Editor">

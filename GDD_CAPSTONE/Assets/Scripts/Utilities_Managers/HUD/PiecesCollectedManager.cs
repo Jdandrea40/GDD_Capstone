@@ -7,10 +7,14 @@ using UnityEngine;
 /// </summary>
 public class PiecesCollectedManager : Singleton<PiecesCollectedManager>
 {
+    [SerializeField] public TurretTop[] pcTop;
+    [SerializeField] public TowerBase[] pcBase;
+    [SerializeField] public AmmoType[] pcAmmo;
+
     #region TOP PIECES
     public int standardTurretTop = 0;
     public int rapidFireTop = 0;
-    public int cannonTop = 0;
+    public int rocketTop = 0;
     #endregion
 
     #region BASE PIECES

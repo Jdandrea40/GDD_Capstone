@@ -75,7 +75,7 @@ public class ItemDrop : MonoBehaviour
                 }
             case DroppedItem.CANNON:
                 {
-                    PiecesCollectedManager.Instance.cannonTop++;
+                    PiecesCollectedManager.Instance.rocketTop++;
                     break;
                 }
         }

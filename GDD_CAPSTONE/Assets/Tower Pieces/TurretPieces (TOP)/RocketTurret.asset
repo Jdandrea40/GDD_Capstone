@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c64f87a0e949c71478be44f90b7228e3, type: 3}
-  m_Name: CannonTurret
+  m_Name: RocketTurret
   m_EditorClassIdentifier: 
-  Name: Cannon Turret
+  Name: Rocket Turret
   Damage: 5
   FireRate: 1
   SplashDamage: 1

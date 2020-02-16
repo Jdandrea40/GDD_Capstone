@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TurretRadiusDrawer : Tower
+public class TurretRadiusDrawer : MonoBehaviour
 {
     SpriteRenderer sr;
     float radius;

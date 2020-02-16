@@ -5,6 +5,12 @@ using UnityEngine.Events;
 
 public class Tower : MonoBehaviour
 {
+    PiecesCollectedManager pcm;
+    HUD_CraftingUI hudCUI;
+
+    SpriteRenderer sr;
+    [SerializeField] SpriteRenderer rangeSprite;
+
     TOWERCREATIONTESTER tct;
     Sprite projSPR;
     #region FIELDS
@@ -43,20 +49,40 @@ public class Tower : MonoBehaviour
 
     #region TOWER STATS
 
+    // All Towers Need:
+    // Visuals
+    Sprite turret;
+    Sprite bottom;
     // damage modifiers
-    protected int Damage;             // Ammo + TurretTop
-    protected float FireRate;         // TurretTop + TurretBase
-    protected int DoTAmount;          // Ammo
-    protected int Range;              // Base
-    
-    // visuals
-    protected Color tColor;           // Ammo
-    protected Sprite projSpr;         // Ammo
+    int damage;             // Ammo + TurretTop
+    float fireRate;         // TurretTop + TurretBase
+    int range;              // Base
 
-    // status effects
-    protected bool SplashDamage;      // TurretTop
-    protected bool Slow;              // Ammo  
-    protected bool DamageOverTime;    // Ammo  
+    // Proj visuals
+    Color tColor;           // Ammo
+    Sprite projSpr;         // Ammo
+
+    // special cases effects
+    bool splashDamage;      // TurretTop
+    bool slow;              // Ammo  
+    bool damageOverTime;    // Ammo  
+    int dotAmount;          // Ammo
+
+    //public Tower(Sprite turret, Sprite bottom, int damage, float fireRate, int range, Color tColor, Sprite projSpr, bool splashDamage, bool slow, bool damageOverTime, int dotAmount)
+    //{
+    //    this.turret = turret;
+    //    this.bottom = bottom;
+    //    this.damage = damage;
+    //    this.fireRate = fireRate;
+    //    this.range = range;
+    //    this.tColor = tColor;
+    //    this.projSpr = projSpr;
+    //    this.splashDamage = splashDamage;
+    //    this.slow = slow;
+    //    this.damageOverTime = damageOverTime;
+    //    this.dotAmount = dotAmount;
+    //}
+
 
     #endregion
 
@@ -74,9 +100,15 @@ public class Tower : MonoBehaviour
         // Needs to be set to a variable in order to StopCoroutine()
         fireCoroutine = Fire(); 
         enemyTargets = new List<GameObject>();
-        tct = GetComponent<TOWERCREATIONTESTER>();
-        projSPR = tct.ProjSprite;
+       
+        pcm = PiecesCollectedManager.Instance;
+        hudCUI = HUD_CraftingUI.Instance;
+        sr = GetComponent<SpriteRenderer>();
 
+        tct = GetComponent<TOWERCREATIONTESTER>();
+        //projSPR = tct.ProjSprite;
+
+        CreateTower();
         // cc2d = GetComponent<CircleCollider2D>();     
         //enemies = new Dictionary<int, GameObject>();       
     }
@@ -172,7 +204,7 @@ public class Tower : MonoBehaviour
             // call the method inside Projectile to travel towards target
             proj.MoveToEnemy(targetToShoot);
             // COOLDOWN
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(fireRate);
         }
         
     }
@@ -190,7 +222,23 @@ public class Tower : MonoBehaviour
     }
     void CreateTower()
     {
+        TurretTop tTop = pcm.pcTop[hudCUI.SelectedTop];
+        TowerBase tBase = pcm.pcBase[hudCUI.SelectedBot];
+        AmmoType tAmmo = pcm.pcAmmo[hudCUI.SelectedAmmo];
 
+        sr.sprite = tTop.TurretSprite;
+        rangeSprite.sprite = tBase.BaseSprite;
+        rangeSprite.color = tBase.BaseColor;
+
+        damage = (tTop.Damage + tAmmo.ImpactDamage);
+        fireRate = (tTop.FireRate + tBase.FireRateModifier);
+        range = tBase.Range;
+        tColor = tAmmo.color;
+        projSpr = tAmmo.AmmoSprite;
+        splashDamage = tTop.SplashDamage;
+        slow = tAmmo.Slow;
+        damageOverTime = tAmmo.DamageOverTime;
+        dotAmount = tAmmo.DoTAmount;
     }
 
     #endregion

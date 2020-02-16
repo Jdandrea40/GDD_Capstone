@@ -6,7 +6,7 @@ using UnityEngine.Events;
 /// <summary>
 /// Used to acquire/unacquire Enemy targets
 /// </summary>
-public class TargetAcquisition : Tower
+public class TargetAcquisition : MonoBehaviour
 {
    //List<GameObject> targets = new List<GameObject>();
   
