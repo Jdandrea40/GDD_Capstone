@@ -78,9 +78,6 @@
     <Compile Include="Assets\Scripts\Events\WaveSpawnEvent.cs" />
     <Compile Include="Assets\Scripts\HomeBase.cs" />
     <Compile Include="Assets\Scripts\MouseHoverEffect.cs" />
-    <Compile Include="Assets\Scripts\Scriptable Objects\AmmoType.cs" />
-    <Compile Include="Assets\Scripts\Scriptable Objects\TowerBase.cs" />
-    <Compile Include="Assets\Scripts\Scriptable Objects\TurretTop.cs" />
     <Compile Include="Assets\Scripts\TowerSupport\Ammo\Projectile.cs" />
     <Compile Include="Assets\Scripts\TowerSupport\TargetAcquisition.cs" />
     <Compile Include="Assets\Scripts\TowerSupport\Tower.cs" />
@@ -101,6 +98,9 @@
     <Compile Include="Assets\Scripts\Utilities_Managers\LayersManager.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\ManagerLoader.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\Singleton.cs" />
+    <Compile Include="Assets\Tower Pieces\Scriptable Objects\AmmoType.cs" />
+    <Compile Include="Assets\Tower Pieces\Scriptable Objects\TowerBase.cs" />
+    <Compile Include="Assets\Tower Pieces\Scriptable Objects\TurretTop.cs" />
     <None Include="Assets\Sprites\FULL TILE SHEET\License.txt" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/Josh D'Andrea/Documents/GitHub/GDD_Capstone/GDD_CAPSTONE/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>

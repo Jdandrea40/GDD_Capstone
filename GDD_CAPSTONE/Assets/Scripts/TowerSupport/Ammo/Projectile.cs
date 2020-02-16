@@ -22,6 +22,8 @@ public class Projectile : MonoBehaviour
     bool projDoT;
     int projDotAmount;
     bool projSlow;
+    Color projColor;
+    Sprite projSprite;
 
     BoxCollider2D bc2d;
     
@@ -31,6 +33,11 @@ public class Projectile : MonoBehaviour
 
     float projectileMoveSpeed;
 
+    public int ProjDamage { get => projDamage; set => projDamage = value; }
+    public bool ProjDoT { get => projDoT; set => projDoT = value; }
+    public int ProjDotAmount { get => projDotAmount; set => projDotAmount = value; }
+    public bool ProjSlow { get => projSlow; set => projSlow = value; }
+
     // Called before first frame update
     private void Start()
     {
@@ -39,19 +46,22 @@ public class Projectile : MonoBehaviour
         //targetToHit = tower.TargetToShoot.transform;
         projectileMoveSpeed = ConstantsManager.Instance.PROJECTILE_MOVE_SPEED;
 
-        enemyDamageEvent = new EnemyDamageEvent();
-        EventManager.AddEnemyDamageInvoker(this);
+        //enemyDamageEvent = new EnemyDamageEvent();
+        //EventManager.AddEnemyDamageInvoker(this);
 
         //EventManager.TowerFireListener(SetStats);
-        Debug.Log(projDamage + " " + projDoT);
+        sr.color = projColor;
+        sr.sprite = projSprite;
     }
 
-    public void SetStats(int damage, bool dot, int dotAmount, bool slow)
+    public void SetStats(int damage, bool dot, int dotAmount, bool slow, Color sprColor, Sprite sprite)
     {
         projDamage = damage;
         projDoT = dot;
         projDotAmount = dotAmount;
         projSlow = slow;
+        projColor = sprColor;
+        projSprite = sprite;
 
     }
     // Update is called once per frame
@@ -64,6 +74,13 @@ public class Projectile : MonoBehaviour
             // moves the projectile towards the saved enemy
             transform.position = Vector2.MoveTowards(transform.position,
               targetToHit.position, projectileMoveSpeed * Time.deltaTime);
+
+            // get a line from tower to target
+            Vector2 direction = targetToHit.transform.position - transform.position;
+            // find the angle of that line
+            float angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
+            // rotate the tower to always face the target
+            transform.rotation = Quaternion.AngleAxis(angle, Vector3.back);
             // Gets the first enemy in the list and stores it
             //EventManager.TowerFireListener(MoveToEnemy);
         }
@@ -87,7 +104,8 @@ public class Projectile : MonoBehaviour
     {
         if (collision.gameObject.layer == (int)CollisionLayers.ENEMIES)
         {
-            enemyDamageEvent.Invoke(projDamage, projDoT, projDotAmount, projSlow);
+            
+            //enemyDamageEvent.Invoke(projDamage, projDoT, projDotAmount, projSlow);
             Destroy(gameObject);
         }
     }

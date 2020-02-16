@@ -30,6 +30,7 @@ public class Enemy : MonoBehaviour
     int damage;
     bool takingDamage = false;
     bool slowed = false;
+    EnemyMoveTowardsPoint enemyMove;
 
     #endregion
 
@@ -56,15 +57,15 @@ public class Enemy : MonoBehaviour
     {
         cc2d = GetComponent<CircleCollider2D>();
         moveSpeed = ConstantsManager.Instance.ENEMY_MOVE_SPEED;
-        instanceID = gameObject.GetInstanceID();
-        sr.GetComponent<SpriteRenderer>();
-        EventManager.AddEnemyDamageListener(TakeDamage);
+        
+        //EventManager.AddEnemyDamageListener(TakeDamage);
 
     }
     // Start is called before the first frame update
     void Start()
     {
-        
+        sr = GetComponent<SpriteRenderer>();
+        enemyMove = GetComponent<EnemyMoveTowardsPoint>();
 
         //addEnemyTarget = new AddEnemyTargetEvent();
         //EventManager.AddEnemyTargetInvoker(this);
@@ -109,6 +110,8 @@ public class Enemy : MonoBehaviour
     {
         if (collision.gameObject.layer == (int)CollisionLayers.PROJECTILE)
         {
+            Projectile proj = collision.gameObject.GetComponent<Projectile>();
+            TakeDamage(proj.ProjDamage, proj.ProjDoT, proj.ProjDotAmount, proj.ProjSlow);
             //TakeDamage(1);
         }
         if (collision.gameObject.layer == (int)CollisionLayers.HOME_BASE)
@@ -127,11 +130,13 @@ public class Enemy : MonoBehaviour
         if (dot)
         {
             StartCoroutine(TakeDamageOverTime(dotAmount));
+            Debug.Log("DOT");
         }
         if (slow && !slowed)
         {
             StartCoroutine(SlowEnemy());
             slowed = true;
+            Debug.Log("SLOW");
         }
 
     }
@@ -140,7 +145,7 @@ public class Enemy : MonoBehaviour
     IEnumerator TakeDamageOverTime(int amount)
     {
         takingDamage = true;
-        GetComponent<SpriteRenderer>().color = Color.red;
+        sr.color = Color.red;
         while (takingDamage)
         {
             Health -= amount;
@@ -150,16 +155,17 @@ public class Enemy : MonoBehaviour
             Health -= amount;
 
             takingDamage = false;
-            GetComponent<SpriteRenderer>().color = Color.white;
+            sr.color = Color.white;
         }
     }
 
     IEnumerator SlowEnemy()
     {
         sr.color = Color.blue;
-        moveSpeed /= .5f;
+        enemyMove.enabled = false;
         yield return new WaitForSeconds(2);
         slowed = false;
+        enemyMove.enabled = true;
         sr.color = Color.white;
 
     }

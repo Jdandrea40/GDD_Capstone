@@ -7,12 +7,11 @@ public class Tower : MonoBehaviour
 {
     PiecesCollectedManager pcm;
     HUD_CraftingUI hudCUI;
-
+    CircleCollider2D cc2d;
     SpriteRenderer sr;
     [SerializeField] SpriteRenderer rangeSprite;
 
     TOWERCREATIONTESTER tct;
-    Sprite projSPR;
     #region FIELDS
     // The towers targeting list
     public List<GameObject> enemyTargets;
@@ -50,15 +49,16 @@ public class Tower : MonoBehaviour
 
     // All Towers Need:
     // Visuals
-    Sprite turret;
-    Sprite bottom;
+    Sprite turretSprite;
+    Sprite bottomSprite;
+    Sprite projSprite;
     // damage modifiers
     int damage;             // Ammo + TurretTop
     float fireRate;         // TurretTop + TurretBase
     int range;              // Base
 
     // Proj visuals
-    Color tColor;           // Ammo
+    Color ammoColor;           // Ammo
     Sprite projSpr;         // Ammo
 
     // special cases effects
@@ -101,8 +101,8 @@ public class Tower : MonoBehaviour
     private void Awake()
     {
         // Event for setting the stats of the fired projectile
-        towerFireEvent = new TowerFireEvent();
-        EventManager.TowerFireInvoker(this);
+        // towerFireEvent = new TowerFireEvent();
+        // EventManager.TowerFireInvoker(this);
 
         // Needs to be set to a variable in order to StopCoroutine()
         fireCoroutine = Fire(); 
@@ -111,9 +111,11 @@ public class Tower : MonoBehaviour
         pcm = PiecesCollectedManager.Instance;
         hudCUI = HUD_CraftingUI.Instance;
         sr = GetComponent<SpriteRenderer>();
+        cc2d = GetComponent<CircleCollider2D>();
 
         tct = GetComponent<TOWERCREATIONTESTER>();
         CreateTower();
+        cc2d.radius = range;
 
         //projSPR = tct.ProjSprite;
         // cc2d = GetComponent<CircleCollider2D>();     
@@ -123,15 +125,13 @@ public class Tower : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
-
         // EventManager.AddEnemyTargetListener(AddEnemyTarget);
         // EventManager.RemoveEnemyTargetListener(RemoveEnemyTarget);
         // Not Currently using
         // EventManager.EnemeyDequeueListener(DequeueEnemy);
-        
+
         // range = 2;//cc2d.radius;
-        // InvokeRepeating("UpdateTarget", 0f, .5f); 
+        // InvokeRepeating("UpdateTarget", 0f, .5f);
     }
 
     // Called once a frame
@@ -161,11 +161,11 @@ public class Tower : MonoBehaviour
         // If it has a target
         if (firing)
         {
-            // get a line from tower to target
+            // get a vector from tower to target
             Vector2 direction = targetToShoot.transform.position - transform.position;
             // find the angle of that line
             float angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
-            // rotate the tower to always face the target
+            // rotate the projectile to always face the target
             transform.rotation = Quaternion.AngleAxis(angle, Vector3.back);
         }
     }
@@ -212,7 +212,7 @@ public class Tower : MonoBehaviour
             // instatiate a bullet
             Projectile proj = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Projectile>();
             //towerFireEvent.Invoke
-            proj.SetStats(damage, damageOverTime, dotAmount, slow);
+            proj.SetStats(damage, damageOverTime, dotAmount, slow, ammoColor, projSpr);
             // call the method inside Projectile to travel towards target
             proj.MoveToEnemy(targetToShoot);
             // COOLDOWN
@@ -238,19 +238,22 @@ public class Tower : MonoBehaviour
         TowerBase tBase = pcm.pcBase[hudCUI.SelectedBot];
         AmmoType tAmmo = pcm.pcAmmo[hudCUI.SelectedAmmo];
 
+        // Visuals
         sr.sprite = tTop.TurretSprite;
+        projSpr = tTop.ProjectileSprite;
         rangeSprite.sprite = tBase.BaseSprite;
         rangeSprite.color = tBase.BaseColor;
 
+        // Stat Values
         damage = (tTop.Damage + tAmmo.ImpactDamage);
         fireRate = (tTop.FireRate + tBase.FireRateModifier);
         range = tBase.Range;
-        tColor = tAmmo.color;
-        projSpr = tAmmo.AmmoSprite;
+        ammoColor = tAmmo.color;
         splashDamage = tTop.SplashDamage;
         slow = tAmmo.Slow;
         damageOverTime = tAmmo.DamageOverTime;
         dotAmount = tAmmo.DoTAmount;
+
     }
 
     #endregion

@@ -99,32 +99,32 @@ public static class EventManager
     //    }
     //}
 
-    public static void AddEnemyDamageInvoker(Projectile invoker)
-    {
-        enemyDamageInvoker = invoker;
-        if (enemyDamageListener != null)
-        {
-            invoker.AddEnemyDamageListener(enemyDamageListener);
-        }
-    }
+    //public static void AddEnemyDamageInvoker(Projectile invoker)
+    //{
+    //    enemyDamageInvoker = invoker;
+    //    if (enemyDamageListener != null)
+    //    {
+    //        invoker.AddEnemyDamageListener(enemyDamageListener);
+    //    }
+    //}
 
-    public static void AddEnemyDamageListener(UnityAction<int, bool, int, bool> listener)
-    {
-        enemyDamageListener = listener;
-        if (enemyDamageListener != null)
-        {
-            enemyDamageInvoker.AddEnemyDamageListener(listener);
-        }
-    }
+    //public static void AddEnemyDamageListener(UnityAction<int, bool, int, bool> listener)
+    //{
+    //    enemyDamageListener = listener;
+    //    if (enemyDamageListener != null)
+    //    {
+    //        enemyDamageInvoker.AddEnemyDamageListener(listener);
+    //    }
+    //}
 
-    public static void TowerFireInvoker(Tower invoker)
-    {
-        towerFireInvoker.Add(invoker);
-        foreach (UnityAction<int, bool, int, bool> listener in towerFireListener)
-        {
-            invoker.AddTowerFireListener(listener);
-        }
-    }
+    //public static void TowerFireInvoker(Tower invoker)
+    //{
+    //    towerFireInvoker.Add(invoker);
+    //    foreach (UnityAction<int, bool, int, bool> listener in towerFireListener)
+    //    {
+    //        invoker.AddTowerFireListener(listener);
+    //    }
+    //}
 
     public static void TowerFireListener(UnityAction<int, bool, int, bool> listener)
     {
