@@ -9,6 +9,7 @@ public class ItemDrop : MonoBehaviour
 
     [Tooltip("Standard, Rapid, Cannon")]
     [SerializeField] Sprite[] item = new Sprite[3];
+
     SpriteRenderer sr;
     int itemToDrop;
     DroppedItem itemType;
@@ -23,6 +24,7 @@ public class ItemDrop : MonoBehaviour
     {
         itemCollectedEvent = new ItemCollectedEvent();
         EventManager.AddItemCollectedInvoker(this);
+
         sr = GetComponent<SpriteRenderer>();
         itemToDrop = Random.Range(0, 3);
         DropItem(itemToDrop);
@@ -51,14 +53,6 @@ public class ItemDrop : MonoBehaviour
         }
     }
 
-    private void OnMouseEnter()
-    {
-        
-    }
-    private void OnMouseExit()
-    {
-        
-    }
     private void OnMouseDown()
     {
         switch (itemType)

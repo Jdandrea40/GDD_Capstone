@@ -71,6 +71,7 @@
     <Compile Include="Assets\Scripts\Enemies\ItemDrop.cs" />
     <Compile Include="Assets\Scripts\Enemies\WaveSpawner.cs" />
     <Compile Include="Assets\Scripts\Events\AddEnemyTargetEvent.cs" />
+    <Compile Include="Assets\Scripts\Events\EnemyDamageEvent.cs" />
     <Compile Include="Assets\Scripts\Events\ItemCollectedEvent.cs" />
     <Compile Include="Assets\Scripts\Events\RemoveEnemyTargetEvent.cs" />
     <Compile Include="Assets\Scripts\Events\TowerFireEvent.cs" />

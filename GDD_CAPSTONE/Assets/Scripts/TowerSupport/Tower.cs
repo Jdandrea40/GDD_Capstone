@@ -17,7 +17,6 @@ public class Tower : MonoBehaviour
     // The towers targeting list
     public List<GameObject> enemyTargets;
     
-
     // The Projectile that is shot
     // Used in order to send the targets Transform to Projectile Script
     [SerializeField] GameObject projectile;
@@ -86,17 +85,25 @@ public class Tower : MonoBehaviour
 
     #endregion
 
-    //protected TowerFireEvent towerFireEvent = new TowerFireEvent();
-    //public void AddTowerFireListener(UnityAction<Transform> listener)
-    //{
-    //    towerFireEvent.AddListener(listener);
-    //}
+    #region EVENTS
+    // Passes in (damage, damageOverTime, dotAmount, slow)
+    TowerFireEvent towerFireEvent;
+    public void AddTowerFireListener(UnityAction<int, bool, int, bool> listener)
+    {
+        towerFireEvent.AddListener(listener);
+    }
+
+    #endregion
 
     #region UNITY METHODS
 
     // Called before Start()
     private void Awake()
     {
+        // Event for setting the stats of the fired projectile
+        towerFireEvent = new TowerFireEvent();
+        EventManager.TowerFireInvoker(this);
+
         // Needs to be set to a variable in order to StopCoroutine()
         fireCoroutine = Fire(); 
         enemyTargets = new List<GameObject>();
@@ -106,9 +113,9 @@ public class Tower : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
 
         tct = GetComponent<TOWERCREATIONTESTER>();
-        //projSPR = tct.ProjSprite;
-
         CreateTower();
+
+        //projSPR = tct.ProjSprite;
         // cc2d = GetComponent<CircleCollider2D>();     
         //enemies = new Dictionary<int, GameObject>();       
     }
@@ -116,11 +123,13 @@ public class Tower : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
+
         // EventManager.AddEnemyTargetListener(AddEnemyTarget);
         // EventManager.RemoveEnemyTargetListener(RemoveEnemyTarget);
         // Not Currently using
         // EventManager.EnemeyDequeueListener(DequeueEnemy);
-        // EventManager.TowerFireInvoker(this);
+        
         // range = 2;//cc2d.radius;
         // InvokeRepeating("UpdateTarget", 0f, .5f); 
     }
@@ -199,8 +208,11 @@ public class Tower : MonoBehaviour
         // towerFireEvent.Invoke(target.transform);
         while (firing)
         {
+            //towerFireEvent.Invoke(damage, damageOverTime, dotAmount, slow);
             // instatiate a bullet
             Projectile proj = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Projectile>();
+            //towerFireEvent.Invoke
+            proj.SetStats(damage, damageOverTime, dotAmount, slow);
             // call the method inside Projectile to travel towards target
             proj.MoveToEnemy(targetToShoot);
             // COOLDOWN
