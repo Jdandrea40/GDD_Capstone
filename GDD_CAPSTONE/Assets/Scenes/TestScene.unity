@@ -595,7 +595,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63dab9882d1ec1f4ea153553e1367503, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tower: {fileID: 0}
   tops:
   - {fileID: 740943994}
   - {fileID: 1788400327}
@@ -608,7 +607,6 @@ MonoBehaviour:
   - {fileID: 776618152}
   - {fileID: 1183956492}
   - {fileID: 522958880}
-  topGroup: {fileID: 690140862}
   createdTowerUI:
   - {fileID: 2079710483}
   - {fileID: 1433422299}
@@ -3939,7 +3937,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 0641e8177c22dd64a8e0e512b7bfda6d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

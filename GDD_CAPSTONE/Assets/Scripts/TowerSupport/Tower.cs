@@ -212,7 +212,7 @@ public class Tower : MonoBehaviour
             // instatiate a bullet
             Projectile proj = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Projectile>();
             //towerFireEvent.Invoke
-            proj.SetStats(damage, damageOverTime, dotAmount, slow, ammoColor, projSpr);
+            proj.SetStats(damage, damageOverTime, dotAmount, slow, splashDamage, ammoColor, projSpr);
             // call the method inside Projectile to travel towards target
             proj.MoveToEnemy(targetToShoot);
             // COOLDOWN
@@ -238,6 +238,7 @@ public class Tower : MonoBehaviour
         TowerBase tBase = pcm.pcBase[hudCUI.SelectedBot];
         AmmoType tAmmo = pcm.pcAmmo[hudCUI.SelectedAmmo];
 
+        
         // Visuals
         sr.sprite = tTop.TurretSprite;
         projSpr = tTop.ProjectileSprite;
@@ -253,6 +254,7 @@ public class Tower : MonoBehaviour
         slow = tAmmo.Slow;
         damageOverTime = tAmmo.DamageOverTime;
         dotAmount = tAmmo.DoTAmount;
+        splashDamage = tTop.SplashDamage;
 
     }
 

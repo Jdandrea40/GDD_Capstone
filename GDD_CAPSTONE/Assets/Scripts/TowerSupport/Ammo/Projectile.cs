@@ -11,6 +11,9 @@ public class Projectile : MonoBehaviour
     #region EVENTS
 
     EnemyDamageEvent enemyDamageEvent;
+    CircleCollider2D cc2d;
+    [SerializeField] GameObject explosion;
+
     public void AddEnemyDamageListener(UnityAction<int, bool, int, bool> listener)
     {
         enemyDamageEvent.AddListener(listener);
@@ -22,6 +25,8 @@ public class Projectile : MonoBehaviour
     bool projDoT;
     int projDotAmount;
     bool projSlow;
+
+    bool projSplash;
     Color projColor;
     Sprite projSprite;
 
@@ -43,6 +48,7 @@ public class Projectile : MonoBehaviour
     {
         bc2d = GetComponent<BoxCollider2D>();
         sr = GetComponent<SpriteRenderer>();
+        cc2d = GetComponent<CircleCollider2D>();
         //targetToHit = tower.TargetToShoot.transform;
         projectileMoveSpeed = ConstantsManager.Instance.PROJECTILE_MOVE_SPEED;
 
@@ -54,7 +60,7 @@ public class Projectile : MonoBehaviour
         sr.sprite = projSprite;
     }
 
-    public void SetStats(int damage, bool dot, int dotAmount, bool slow, Color sprColor, Sprite sprite)
+    public void SetStats(int damage, bool dot, int dotAmount, bool slow, bool AoE, Color sprColor, Sprite sprite)
     {
         projDamage = damage;
         projDoT = dot;
@@ -62,6 +68,7 @@ public class Projectile : MonoBehaviour
         projSlow = slow;
         projColor = sprColor;
         projSprite = sprite;
+        projSplash = AoE;
 
     }
     // Update is called once per frame
@@ -104,9 +111,24 @@ public class Projectile : MonoBehaviour
     {
         if (collision.gameObject.layer == (int)CollisionLayers.ENEMIES)
         {
+            if (projSplash)
+            {
+                Debug.Log("SPLASH");
+                cc2d.radius *= 15;
+                StartCoroutine(Explode());
+                //Explosion explode =  Instantiate(explosion, transform.position, Quaternion.identity).GetComponent<Explosion>();
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
             
-            //enemyDamageEvent.Invoke(projDamage, projDoT, projDotAmount, projSlow);
-            Destroy(gameObject);
         }
+    }
+
+    IEnumerator Explode()
+    {
+        yield return new WaitForSeconds(1);
+        Destroy(gameObject);
     }
 }

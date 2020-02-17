@@ -18,13 +18,13 @@ public class HUD_CraftingUI : Singleton<HUD_CraftingUI>
     public int SelectedBot { get => selectedBot; }
     public int SelectedAmmo { get => selectedAmmo; }
 
-    [SerializeField] GameObject tower;
+    //[SerializeField] GameObject tower;
 
     [SerializeField] Toggle[] tops;
     [SerializeField] Toggle[] bots;
     [SerializeField] Toggle[] ammo;
 
-    [SerializeField] ToggleGroup topGroup;
+    //[SerializeField] ToggleGroup topGroup;
 
     Toggle topSelected;
     Toggle botSelected;
@@ -82,11 +82,6 @@ public class HUD_CraftingUI : Singleton<HUD_CraftingUI>
                 break;
         }
 
-    }
-    public GameObject CreateTower(TurretTop top, TowerBase bottom, AmmoType ammo)
-    {
-        
-        return tower;
     }
 
     // 0 = Single Fire, 1 = Rapid Fire, 2 = Cannon"
