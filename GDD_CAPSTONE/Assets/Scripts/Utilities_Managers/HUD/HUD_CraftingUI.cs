@@ -40,19 +40,74 @@ public class HUD_CraftingUI : Singleton<HUD_CraftingUI>
     [SerializeField] TurretTop[] tTop;
     [SerializeField] TowerBase[] tBase;
     [SerializeField] AmmoType[] tAmmo;
-
+    
+    [SerializeField] Text[] itemCount;
 
 
     // Start is called before the first frame update
     void Start()
     {
         hud = HUDManager.Instance;
+        EventManager.AddItemCollectedListener(UpdateItemCount);
 
         PiecesCollectedManager.Instance.standardTurretTop = 0;
         PiecesCollectedManager.Instance.rapidFireTop = 0;
         PiecesCollectedManager.Instance.rocketTop = 0;
     }
+    void UpdateItemCount(int turretPeiceCollected)
+    {
+        switch(turretPeiceCollected)
+        {
+            case 0:
+                {
+                    itemCount[turretPeiceCollected].text = PiecesCollectedManager.Instance.standardTurretTop.ToString();
+                    break;
+                }
+            case 1:
+                {
+                    itemCount[turretPeiceCollected].text = PiecesCollectedManager.Instance.rapidFireTop.ToString();
+                    break;
+                }
+            case 2:
+                {
 
+                    itemCount[turretPeiceCollected].text = PiecesCollectedManager.Instance.rocketTop.ToString();
+                    break;
+                }
+            case 3:
+                {
+                    itemCount[turretPeiceCollected].text = PiecesCollectedManager.Instance.shortRangeBase.ToString();
+                    break;
+                }
+            case 4:
+                {
+                    itemCount[turretPeiceCollected].text = PiecesCollectedManager.Instance.mediumRangeBase.ToString();
+                    break;
+                }
+            case 5:
+                {
+
+                    itemCount[turretPeiceCollected].text = PiecesCollectedManager.Instance.longRangeBase.ToString();
+                    break;
+                }
+            case 6:
+                {
+                    itemCount[turretPeiceCollected].text = PiecesCollectedManager.Instance.standardAmmo.ToString();
+                    break;
+                }
+            case 7:
+                {
+                    itemCount[turretPeiceCollected].text = PiecesCollectedManager.Instance.slowAmmo.ToString();
+                    break;
+                }
+            case 8:
+                {
+
+                    itemCount[turretPeiceCollected].text = PiecesCollectedManager.Instance.fireAmmo.ToString();
+                    break;
+                }
+        }
+    }
     // Responsible for updating the UI image and Text in the Crafting window
     public void TowerUIUpdate(int index, int piece)
     {

@@ -5,10 +5,10 @@ using UnityEngine.Events;
 
 public class ItemDrop : MonoBehaviour
 {
-    enum DroppedItem { STANDARD, RAPID_FIRE, CANNON }
+    enum DroppedItem { SINGLE_FIRE, RAPID_FIRE, CANNON, SHORT, MEDIUM, LONG, STANDARD, SLOW, INCENDIARY }
 
     [Tooltip("Standard, Rapid, Cannon")]
-    [SerializeField] Sprite[] item = new Sprite[3];
+    [SerializeField] Sprite[] item = new Sprite[9];
 
     SpriteRenderer sr;
     int itemToDrop;
@@ -26,7 +26,7 @@ public class ItemDrop : MonoBehaviour
         EventManager.AddItemCollectedInvoker(this);
 
         sr = GetComponent<SpriteRenderer>();
-        itemToDrop = Random.Range(0, 3);
+        itemToDrop = Random.Range(0, 9);
         DropItem(itemToDrop);
     }
 
@@ -35,9 +35,9 @@ public class ItemDrop : MonoBehaviour
         sr.sprite = item[itemToDrop];
         switch(itemToDrop)
         {
-            case (int)DroppedItem.STANDARD:
+            case (int)DroppedItem.SINGLE_FIRE:
                 {
-                    itemType = DroppedItem.STANDARD;
+                    itemType = DroppedItem.SINGLE_FIRE;
                     break;
                 }
             case (int)DroppedItem.RAPID_FIRE:
@@ -50,6 +50,40 @@ public class ItemDrop : MonoBehaviour
                     itemType = DroppedItem.CANNON;
                     break;
                 }
+            case (int)DroppedItem.SHORT:
+                {
+                    itemType = DroppedItem.SHORT;
+                    sr.color = Color.red;
+                    break;
+                }
+            case (int)DroppedItem.MEDIUM:
+                {
+                    itemType = DroppedItem.MEDIUM;
+                    sr.color = Color.yellow;
+                    break;
+                }
+            case (int)DroppedItem.LONG:
+                {
+                    itemType = DroppedItem.LONG;
+                    sr.color = Color.green;
+                    break;
+                }
+            case (int)DroppedItem.STANDARD:
+                {
+                    itemType = DroppedItem.STANDARD;
+                    break;
+                }
+            case (int)DroppedItem.SLOW:
+                {
+                    itemType = DroppedItem.SLOW;
+                    sr.color = Color.blue;
+                    break;
+                }
+            case (int)DroppedItem.INCENDIARY:
+                {
+                    itemType = DroppedItem.INCENDIARY;
+                    break;
+                }
         }
     }
 
@@ -57,7 +91,7 @@ public class ItemDrop : MonoBehaviour
     {
         switch (itemType)
         {
-            case DroppedItem.STANDARD:
+            case DroppedItem.SINGLE_FIRE:
                 {
                     PiecesCollectedManager.Instance.standardTurretTop++;
                     break;
@@ -70,6 +104,36 @@ public class ItemDrop : MonoBehaviour
             case DroppedItem.CANNON:
                 {
                     PiecesCollectedManager.Instance.rocketTop++;
+                    break;
+                }
+            case DroppedItem.SHORT:
+                {
+                    PiecesCollectedManager.Instance.shortRangeBase++;
+                    break;
+                }
+            case DroppedItem.MEDIUM:
+                {
+                    PiecesCollectedManager.Instance.mediumRangeBase++;
+                    break;
+                }
+            case DroppedItem.LONG:
+                {
+                    PiecesCollectedManager.Instance.longRangeBase++;
+                    break;
+                }
+            case DroppedItem.STANDARD:
+                {
+                    PiecesCollectedManager.Instance.standardAmmo++;
+                    break;
+                }
+            case DroppedItem.SLOW:
+                {
+                    PiecesCollectedManager.Instance.slowAmmo++;
+                    break;
+                }
+            case DroppedItem.INCENDIARY:
+                {
+                    PiecesCollectedManager.Instance.fireAmmo++;
                     break;
                 }
         }

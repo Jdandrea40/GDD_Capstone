@@ -25,7 +25,7 @@ public class Enemy : MonoBehaviour
 
     #region ENEMY STATS
 
-    protected int Health = 100;
+    protected int Health = 20;
     float moveSpeed;
     int damage;
     bool takingDamage = false;

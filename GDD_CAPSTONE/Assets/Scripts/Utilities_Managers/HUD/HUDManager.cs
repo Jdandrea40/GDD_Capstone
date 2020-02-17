@@ -12,7 +12,7 @@ public class HUDManager : Singleton<HUDManager>
     [SerializeField] Text baseHealthText;
 
     [SerializeField] Button spawnButton;
-    [SerializeField] Text[] itemCount;
+    
     
 
     WaveSpawnEvent waveSpawnEvent;
@@ -41,7 +41,6 @@ public class HUDManager : Singleton<HUDManager>
         waveSpawnEvent = new WaveSpawnEvent();
         EventManager.AddWaveSpawnInvoker(this);
 
-        EventManager.AddItemCollectedListener(UpdateItemCount);
 
         GameplayManager.EnemiesKilled = 0;
 
@@ -57,29 +56,6 @@ public class HUDManager : Singleton<HUDManager>
         else
         {
             spawnButton.interactable = true;
-        }
-    }
-
-    void UpdateItemCount(int turretPeiceCollected)
-    {
-        switch(turretPeiceCollected)
-        {
-            case 0:
-                {
-                    itemCount[turretPeiceCollected].text = PiecesCollectedManager.Instance.standardTurretTop.ToString();
-                    break;
-                }
-            case 1:
-                {
-                    itemCount[turretPeiceCollected].text = PiecesCollectedManager.Instance.rapidFireTop.ToString();
-                    break;
-                }
-            case 2:
-                {
-
-                    itemCount[turretPeiceCollected].text = PiecesCollectedManager.Instance.rocketTop.ToString();
-                    break;
-                }
         }
     }
 
