@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 773520382}
   - component: {fileID: 7860963965933271372}
   - component: {fileID: 773520387}
-  - component: {fileID: 549873208}
   m_Layer: 8
   m_Name: AirplaneEnemy
   m_TagString: Enemy
@@ -174,16 +173,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &549873208
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1142398865292350821}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d58254a4aeb1ede43ba9a48ebc538cd0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  item: {fileID: 2227389405366438397, guid: 62bc174991f1f404ba475a62425f9ef1, type: 3}

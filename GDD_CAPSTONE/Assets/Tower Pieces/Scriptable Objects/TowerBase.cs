@@ -8,4 +8,7 @@ public class TowerBase : ScriptableObject
     public string Name;
     public int Range;
     public float FireRateModifier;
+    public Sprite BaseSprite;
+    public Color BaseColor;
+
 }

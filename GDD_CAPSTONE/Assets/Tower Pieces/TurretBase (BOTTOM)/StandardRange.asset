@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: StandardRange
   m_EditorClassIdentifier: 
   Name: Standard Range Base
-  Range: 1
+  Range: 3
   FireRateModifier: 0
+  BaseSprite: {fileID: 21300000, guid: 877e285f22b7ed74ea8d8ce03c5d1a27, type: 3}
+  BaseColor: {r: 0.99508846, g: 1, b: 0, a: 1}

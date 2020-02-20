@@ -10,5 +10,6 @@ public class TurretTop : ScriptableObject
     public float FireRate;
     public bool SplashDamage;
     public Sprite TurretSprite;
+    public Sprite ProjectileSprite;
 
 }

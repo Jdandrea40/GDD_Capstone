@@ -25,7 +25,7 @@ public class GameplayManager : Singleton<GameplayManager>
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(SpawnEnemies.Count);
+        //Debug.Log(SpawnEnemies.Count);
         if (BaseHealth <= 0 || (CurWaveCount == MaxWaveCount && SpawnEnemies.Count <= 0))
         {
             CurWaveCount = 0;
