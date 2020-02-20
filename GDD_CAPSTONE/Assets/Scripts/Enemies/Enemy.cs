@@ -12,7 +12,7 @@ public class Enemy : MonoBehaviour
     SpriteRenderer sr;
 
     // This is hat the enemy drops on death
-    [SerializeField] GameObject item;
+    [SerializeField] protected GameObject item;
 
     // Was being used for dictionary target acquisition
     int instanceID;
@@ -25,18 +25,22 @@ public class Enemy : MonoBehaviour
 
     #region ENEMY STATS
 
-    protected int Health = 20;
-    float moveSpeed;
+    protected ENEMY_STATS eStat;
+    protected int Health;
+    protected float moveSpeed;
+
     int damage;
-    bool takingDamage = false;
-    bool slowed = false;
+    protected bool TakingDamage = false;
+    protected bool Slowed = false;
     EnemyMoveTowardsPoint enemyMove;
+
+    public float MoveSpeed { get => moveSpeed; set => moveSpeed = value; }
 
     #endregion
 
     #region EVENTS
 
- 
+
     //AddEnemyTargetEvent addEnemyTarget;
     //public void AddEnemyTargetListener(UnityAction<int, GameObject> listener)
     //{
@@ -53,20 +57,19 @@ public class Enemy : MonoBehaviour
 
     #region UNITY METHODS
 
-    private void Awake()
+    public virtual void Awake()
     {
         cc2d = GetComponent<CircleCollider2D>();
-        moveSpeed = ConstantsManager.Instance.ENEMY_MOVE_SPEED;
-        
+        eStat = ENEMY_STATS.Instance;
         //EventManager.AddEnemyDamageListener(TakeDamage);
 
     }
     // Start is called before the first frame update
-    void Start()
+    public virtual void Start()
     {
         sr = GetComponent<SpriteRenderer>();
         enemyMove = GetComponent<EnemyMoveTowardsPoint>();
-
+        //Debug.Log(Health);
         //addEnemyTarget = new AddEnemyTargetEvent();
         //EventManager.AddEnemyTargetInvoker(this);
         //removeEnemyTarget = new RemoveEnemyTargetEvent();
@@ -75,18 +78,11 @@ public class Enemy : MonoBehaviour
         // Adds itself to the overall in game enemy list
         // being used to to determine if the level has been won
         GameplayManager.SpawnEnemies.Add(gameObject);
-
-
     }
-    private void Update()
+
+    public virtual void Update()
     {
-        if (Health <= 0)
-        {
-            Instantiate(item, transform.position, Quaternion.identity);
-            GameplayManager.EnemiesKilled++;
-            GameplayManager.SpawnEnemies.Remove(gameObject);
-            Destroy(gameObject);
-        }
+
     }
 
     //private void OnTriggerEnter2D(Collider2D collision)
@@ -106,13 +102,13 @@ public class Enemy : MonoBehaviour
     //        hasTriggered = false;
     //    }
     //}
-    private void OnCollisionEnter2D(Collision2D collision)
+
+    public virtual void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.layer == (int)CollisionLayers.PROJECTILE)
         {
             Projectile proj = collision.gameObject.GetComponent<Projectile>();
             TakeDamage(proj.ProjDamage, proj.ProjDoT, proj.ProjDotAmount, proj.ProjSlow);
-            //TakeDamage(1);
         }
         if (collision.gameObject.layer == (int)CollisionLayers.HOME_BASE)
         {
@@ -124,29 +120,16 @@ public class Enemy : MonoBehaviour
     #region CUSTOM METHODS
 
 
-    void TakeDamage(int amount, bool dot, int dotAmount, bool slow)
+    public virtual void TakeDamage(int amount, bool dot, int dotAmount, bool slow)
     {
-        Health -= amount;
-        if (dot)
-        {
-            StartCoroutine(TakeDamageOverTime(dotAmount));
-            Debug.Log("DOT");
-        }
-        if (slow && !slowed)
-        {
-            StartCoroutine(SlowEnemy());
-            slowed = true;
-            Debug.Log("SLOW");
-        }
 
     }
 
-
-    IEnumerator TakeDamageOverTime(int amount)
+    public virtual IEnumerator TakeDamageOverTime(int amount)
     {
-        takingDamage = true;
+        TakingDamage = true;
         sr.color = Color.red;
-        while (takingDamage)
+        while (TakingDamage)
         {
             Health -= amount;
             yield return new WaitForSeconds(1);
@@ -154,17 +137,17 @@ public class Enemy : MonoBehaviour
             yield return new WaitForSeconds(1);
             Health -= amount;
 
-            takingDamage = false;
+            TakingDamage = false;
             sr.color = Color.white;
         }
     }
 
-    IEnumerator SlowEnemy()
+    public virtual IEnumerator SlowEnemy()
     {
         sr.color = Color.blue;
         enemyMove.enabled = false;
         yield return new WaitForSeconds(2);
-        slowed = false;
+        Slowed = false;
         enemyMove.enabled = true;
         sr.color = Color.white;
 
