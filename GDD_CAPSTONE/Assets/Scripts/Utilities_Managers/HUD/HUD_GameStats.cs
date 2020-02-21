@@ -4,24 +4,24 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class HUD_GameStats : MonoBehaviour
-{
-    HUDManager hud;
+{   
+    [SerializeField] Text enemiesKilledText;
+    [SerializeField] Text waveCountText;
+    [SerializeField] Text baseHealthText;
     
     // Start is called before the first frame update
     void Start()
-    {
-        hud = HUDManager.Instance;
-        
-        hud.EnemiesKilledText.text = " Enemies Killed: " + GameplayManager.EnemiesKilled;
-        hud.BaseHealthText.text = " Base Health: " + GameplayManager.BaseHealth;
-        hud.WaveCountText.text = " Wave: " + GameplayManager.CurWaveCount + " / " + GameplayManager.MaxWaveCount;
+    {       
+        enemiesKilledText.text = " Enemies Killed: " + GameplayManager.EnemiesKilled;
+        baseHealthText.text = " Base Health: " + GameplayManager.BaseHealth;
+        waveCountText.text = " Wave: " + GameplayManager.CurWaveCount + " / " + GameplayManager.MaxWaveCount;
     }
 
     // Update is called once per frame
     void Update()
     {
-        hud.EnemiesKilledText.text = " Enemies Killed: " + GameplayManager.EnemiesKilled;
-        hud.BaseHealthText.text = " Base Health: " + GameplayManager.BaseHealth;
-        hud.WaveCountText.text = " Wave: " + GameplayManager.CurWaveCount + " / " + GameplayManager.MaxWaveCount;
+        enemiesKilledText.text = " Enemies Killed: " + GameplayManager.EnemiesKilled;
+        baseHealthText.text = " Base Health: " + GameplayManager.BaseHealth;
+        waveCountText.text = " Wave: " + GameplayManager.CurWaveCount + " / " + GameplayManager.MaxWaveCount;
     }
 }
