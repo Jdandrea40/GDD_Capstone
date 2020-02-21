@@ -9,7 +9,7 @@ using UnityEngine.Events;
 public class Enemy : MonoBehaviour
 {
     CircleCollider2D cc2d;
-    SpriteRenderer sr;
+    protected SpriteRenderer sr;
 
     // This is hat the enemy drops on death
     [SerializeField] protected GameObject item;
@@ -131,14 +131,14 @@ public class Enemy : MonoBehaviour
         Health -= amount;
         if (dot)
         {
+            TakingDamage = true;
             StartCoroutine(TakeDamageOverTime(dotAmount));
-            Debug.Log("DOT");
         }
         if (slow && !Slowed)
         {
-            StartCoroutine(SlowEnemy());
             Slowed = true;
-            Debug.Log("SLOW");
+            StartCoroutine(SlowEnemy());
+            
         }
     }
 
@@ -149,7 +149,7 @@ public class Enemy : MonoBehaviour
     /// <returns></returns>
     public virtual IEnumerator TakeDamageOverTime(int amount)
     {
-        TakingDamage = true;
+        
         sr.color = Color.red;
         while (TakingDamage)
         {

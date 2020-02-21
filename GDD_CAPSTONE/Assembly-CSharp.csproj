@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\BuildableArea.cs" />
     <Compile Include="Assets\Scripts\EnemySupport\Enemies\Enemy_BasicAirplane.cs" />
     <Compile Include="Assets\Scripts\EnemySupport\Enemies\Enemy_BasicTrooper.cs" />
+    <Compile Include="Assets\Scripts\EnemySupport\Enemies\Enemy_BossPlane1.cs" />
     <Compile Include="Assets\Scripts\EnemySupport\Enemies\ENEMY_STATS.cs" />
     <Compile Include="Assets\Scripts\EnemySupport\Enemy.cs" />
     <Compile Include="Assets\Scripts\EnemySupport\EnemyMoveTowardsPoint.cs" />
