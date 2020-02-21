@@ -126,13 +126,13 @@ public static class EventManager
     //    }
     //}
 
-    public static void TowerFireListener(UnityAction<int, bool, int, bool> listener)
-    {
-        towerFireListener.Add(listener);
-        foreach (Tower invoker in towerFireInvoker)
-        {
-            invoker.AddTowerFireListener(listener);
-        }
-    }
+    //public static void TowerFireListener(UnityAction<int, bool, int, bool> listener)
+    //{
+    //    towerFireListener.Add(listener);
+    //    foreach (Tower invoker in towerFireInvoker)
+    //    {
+    //        invoker.AddTowerFireListener(listener);
+    //    }
+    //}
     #endregion
 }

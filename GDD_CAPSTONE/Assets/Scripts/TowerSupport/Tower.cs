@@ -5,16 +5,19 @@ using UnityEngine.Events;
 
 public class Tower : MonoBehaviour
 {
+    // Singleton Instances
     PiecesCollectedManager pcm;
     HUD_CraftingUI hudCUI;
+
+    // Components
     CircleCollider2D cc2d;
     SpriteRenderer sr;
     [SerializeField] SpriteRenderer rangeSprite;
 
-    TOWERCREATIONTESTER tct;
     #region FIELDS
     // The towers targeting list
     public List<GameObject> enemyTargets;
+    GameObject tToShoot;
     
     // The Projectile that is shot
     // Used in order to send the targets Transform to Projectile Script
@@ -52,13 +55,14 @@ public class Tower : MonoBehaviour
     Sprite turretSprite;
     Sprite bottomSprite;
     Sprite projSprite;
+
     // damage modifiers
     int damage;             // Ammo + TurretTop
     float fireRate;         // TurretTop + TurretBase
     int range;              // Base
 
     // Proj visuals
-    Color ammoColor;           // Ammo
+    Color ammoColor;        // Ammo
     Sprite projSpr;         // Ammo
 
     // special cases effects
@@ -67,31 +71,15 @@ public class Tower : MonoBehaviour
     bool damageOverTime;    // Ammo  
     int dotAmount;          // Ammo
 
-    //public Tower(Sprite turret, Sprite bottom, int damage, float fireRate, int range, Color tColor, Sprite projSpr, bool splashDamage, bool slow, bool damageOverTime, int dotAmount)
-    //{
-    //    this.turret = turret;
-    //    this.bottom = bottom;
-    //    this.damage = damage;
-    //    this.fireRate = fireRate;
-    //    this.range = range;
-    //    this.tColor = tColor;
-    //    this.projSpr = projSpr;
-    //    this.splashDamage = splashDamage;
-    //    this.slow = slow;
-    //    this.damageOverTime = damageOverTime;
-    //    this.dotAmount = dotAmount;
-    //}
-
-
     #endregion
 
     #region EVENTS
     // Passes in (damage, damageOverTime, dotAmount, slow)
-    TowerFireEvent towerFireEvent;
-    public void AddTowerFireListener(UnityAction<int, bool, int, bool> listener)
-    {
-        towerFireEvent.AddListener(listener);
-    }
+    //TowerFireEvent towerFireEvent;
+    //public void AddTowerFireListener(UnityAction<int, bool, int, bool> listener)
+    //{
+    //    towerFireEvent.AddListener(listener);
+    //}
 
     #endregion
 
@@ -113,7 +101,6 @@ public class Tower : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         cc2d = GetComponent<CircleCollider2D>();
 
-        tct = GetComponent<TOWERCREATIONTESTER>();
         CreateTower();
         cc2d.radius = range;
 
@@ -132,6 +119,7 @@ public class Tower : MonoBehaviour
 
         // range = 2;//cc2d.radius;
         // InvokeRepeating("UpdateTarget", 0f, .5f);
+        Debug.Log(damage);
     }
 
     // Called once a frame
@@ -140,6 +128,10 @@ public class Tower : MonoBehaviour
         // Check for a non empty List (List<GO> enemyTarget)
         if (enemyTargets.Count > 0)
         {
+            if (targetToShoot != GameplayManager.Instance.SpawnEnemies[0])
+            {
+                targetToShoot = GameplayManager.Instance.SpawnEnemies[0];
+            }
             // sets the current target to the fist one in the List
             targetToShoot = enemyTargets[0];
             // Makes sure Fire() is only called if it isn't currently shooting

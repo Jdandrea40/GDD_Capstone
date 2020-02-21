@@ -14,8 +14,8 @@ public class BuildableArea : MonoBehaviour
 
     [SerializeField] GameObject tower;
 
-    PiecesCollectedManager pcm;
-    HUD_CraftingUI hudCUI;
+    //PiecesCollectedManager pcm;
+    //HUD_CraftingUI hudCUI;
     
     BoxCollider2D bc2d;
     Vector2 center;   
@@ -25,9 +25,7 @@ public class BuildableArea : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         bc2d = GetComponent<BoxCollider2D>();
 
-        pcm = PiecesCollectedManager.Instance;
-        hudCUI = HUD_CraftingUI.Instance;
-
+        //hudCUI = HUD_CraftingUI.Instance;
 
         // The center of the tile
         center = bc2d.size / 2;
@@ -69,9 +67,9 @@ public class BuildableArea : MonoBehaviour
 
     public void CreateTower()
     {
-        TurretTop tTop = pcm.pcTop[hudCUI.SelectedTop];
-        TowerBase tBase = pcm.pcBase[hudCUI.SelectedBot];
-        AmmoType tAmmo = pcm.pcAmmo[hudCUI.SelectedAmmo];
+        TurretTop tTop = PiecesCollectedManager.Instance.pcTop[HUD_CraftingUI.Instance.SelectedTop];
+        TowerBase tBase = PiecesCollectedManager.Instance.pcBase[HUD_CraftingUI.Instance.SelectedBot];
+        AmmoType tAmmo = PiecesCollectedManager.Instance.pcAmmo[HUD_CraftingUI.Instance.SelectedAmmo];
 
         //Tower tower = new Tower(tTop.TurretSprite, tBase.BaseSprite, (tTop.Damage + tAmmo.ImpactDamage), (tTop.FireRate + tBase.FireRateModifier), tBase.Range, tAmmo.color, tAmmo.AmmoSprite, tTop.SplashDamage, tAmmo.Slow, tAmmo.DamageOverTime, tAmmo.DoTAmount);
 

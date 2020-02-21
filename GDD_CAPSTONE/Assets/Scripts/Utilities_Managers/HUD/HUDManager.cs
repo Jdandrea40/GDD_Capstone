@@ -7,24 +7,10 @@ using UnityEngine.SceneManagement;
 
 public class HUDManager : Singleton<HUDManager>
 {
-    [SerializeField] Text enemiesKilledText;
-    [SerializeField] Text waveCountText;
-    [SerializeField] Text baseHealthText;
-
-    [SerializeField] Button spawnButton;
-    
-    
-
+    [SerializeField] Button spawnButton;    
     WaveSpawnEvent waveSpawnEvent;
 
     #region PROPERTIES
-
-    // GAME STAT TEXT SUPPORT
-    public Text EnemiesKilledText { get => enemiesKilledText; set => enemiesKilledText = value; }
-    public Text WaveCountText { get => waveCountText; set => waveCountText = value; }
-    public Text BaseHealthText { get => baseHealthText; set => baseHealthText = value; }
-
-
 
     #endregion
 
@@ -36,20 +22,16 @@ public class HUDManager : Singleton<HUDManager>
     // Start is called before the first frame update
     void Start()
     {
-
-
         waveSpawnEvent = new WaveSpawnEvent();
         EventManager.AddWaveSpawnInvoker(this);
 
-
-        GameplayManager.EnemiesKilled = 0;
-
+        GameplayManager.Instance.EnemiesKilled = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (GameplayManager.WaveInProgress)
+        if (GameplayManager.Instance.WaveInProgress)
         {
             spawnButton.interactable = false;
         }
@@ -66,7 +48,7 @@ public class HUDManager : Singleton<HUDManager>
 
     public void SpawnWave()
     {
-        if (!GameplayManager.WaveInProgress && (GameplayManager.CurWaveCount < GameplayManager.MaxWaveCount))
+        if (!GameplayManager.Instance.WaveInProgress && (GameplayManager.Instance.CurWaveCount < GameplayManager.Instance.MaxWaveCount))
         {
             waveSpawnEvent.Invoke();
         }

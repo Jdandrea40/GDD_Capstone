@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: 1142398865292350823}
   - component: {fileID: 6573078363687911490}
   - component: {fileID: 773520388}
-  - component: {fileID: 773520382}
   - component: {fileID: 7860963965933271372}
   - component: {fileID: 773520387}
+  - component: {fileID: 5195860804957612591}
   m_Layer: 8
-  m_Name: AirplaneEnemy
+  m_Name: BasicTrooper
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: -1775645601
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1a750bc8adf19c84486d70f32544195a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6340107d04012c047b6a3f153b7ddcc4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -127,19 +127,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.32
---- !u!114 &773520382
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1142398865292350821}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40e962796f7ced14d9888743f9eff61f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  item: {fileID: 2227389405366438397, guid: 62bc174991f1f404ba475a62425f9ef1, type: 3}
 --- !u!114 &7860963965933271372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,3 +160,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &5195860804957612591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1142398865292350821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8a797f6edb4da441a7e9708386921c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 2227389405366438397, guid: 62bc174991f1f404ba475a62425f9ef1, type: 3}

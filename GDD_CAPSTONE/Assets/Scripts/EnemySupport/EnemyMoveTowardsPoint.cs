@@ -10,12 +10,14 @@ public class EnemyMoveTowardsPoint : MonoBehaviour
 {
     int currentPoint = 0;
     private Transform target;
+    float moveSpeed;
 
     // Start is called before the first frame update
     void Start()
     {
         // Sets the target to the first point in the array
-        target = EnemyPathFinder.points[0];
+        target = EnemyPathFinder.points[0];        
+        moveSpeed = GetComponent<Enemy>().MoveSpeed;
     }
 
     // Update is called once per frame
@@ -30,7 +32,7 @@ public class EnemyMoveTowardsPoint : MonoBehaviour
         // Gets the distance of the current point of travel
         Vector3 dir = target.position - transform.position;
         // moves the enemy
-        transform.Translate(dir.normalized * 2 * Time.deltaTime, Space.World);
+        transform.Translate(dir.normalized * GetComponent<Enemy>().MoveSpeed * Time.deltaTime, Space.World);
 
         // detects if it has reach its destination (with buffer)
         if (Vector3.Distance(transform.position, target.position) <= .2f)
@@ -38,7 +40,6 @@ public class EnemyMoveTowardsPoint : MonoBehaviour
             // increments the waypoint
             GetNextWaypoint();
         }
-        //Debug.Log("GO " + gameObject.transform.position + " MT: " + movePoints[currentPoint].position + " CP " + currentPoint);
     }
     
     // Used to increment waypoint and rotate based on its position

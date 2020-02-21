@@ -7,8 +7,6 @@ public class HUD_CraftingUI : Singleton<HUD_CraftingUI>
 {
     enum Piece { TOP, BOT, AMMO };
 
-    HUDManager hud;
-
     // being used to select the index of the current selected piece
     int selectedTop;
     int selectedBot;
@@ -47,12 +45,11 @@ public class HUD_CraftingUI : Singleton<HUD_CraftingUI>
     // Start is called before the first frame update
     void Start()
     {
-        hud = HUDManager.Instance;
         EventManager.AddItemCollectedListener(UpdateItemCount);
 
-        PiecesCollectedManager.Instance.standardTurretTop = 0;
-        PiecesCollectedManager.Instance.rapidFireTop = 0;
-        PiecesCollectedManager.Instance.rocketTop = 0;
+        //PiecesCollectedManager.Instance.standardTurretTop = 0;
+        //PiecesCollectedManager.Instance.rapidFireTop = 0;
+        //PiecesCollectedManager.Instance.rocketTop = 0;
     }
     void UpdateItemCount(int turretPeiceCollected)
     {
@@ -102,7 +99,6 @@ public class HUD_CraftingUI : Singleton<HUD_CraftingUI>
                 }
             case 8:
                 {
-
                     itemCount[turretPeiceCollected].text = PiecesCollectedManager.Instance.fireAmmo.ToString();
                     break;
                 }
@@ -142,60 +138,20 @@ public class HUD_CraftingUI : Singleton<HUD_CraftingUI>
     // 0 = Single Fire, 1 = Rapid Fire, 2 = Cannon"
     public void TopPieceSelected(int pieceSelected)
     {
-        //switch (pieceSelected)
-        //{
-        //    case 0:
-        //        Debug.Log(pieceSelected);
-        //        break;
-        //    case 1:
-        //        Debug.Log(pieceSelected);
-        //        break;
-        //    case 2:
-        //        Debug.Log(pieceSelected);
-        //        break;
-        //}
-
         selectedTop = pieceSelected;
         TowerUIUpdate(selectedTop, (int)Piece.TOP);
         
     }
     public void BotPieceSelected(int pieceSelected)
     {
-        //switch (pieceSelected)
-        //{
-        //    case 0:
-        //        Debug.Log(pieceSelected);
-        //        break;
-        //    case 1:
-        //        Debug.Log(pieceSelected);
-        //        break;
-        //    case 2:
-        //        Debug.Log(pieceSelected);
-        //        break;
-        //}
-
         selectedBot = pieceSelected;
         TowerUIUpdate(selectedBot, (int)Piece.BOT);
 
     }
     public void AmmoPieceSelected(int pieceSelected)
     {
-        //switch (pieceSelected)
-        //{
-        //    case 0:
-        //        Debug.Log(pieceSelected);
-        //        break;
-        //    case 1:
-        //        Debug.Log(pieceSelected);
-        //        break;
-        //    case 2:
-        //        Debug.Log(pieceSelected);
-        //        break;
-        //}
-
         selectedAmmo = pieceSelected;
         TowerUIUpdate(selectedAmmo, (int)Piece.AMMO);
-
     }
 
 }

@@ -63,20 +63,24 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Explosion.cs" />
+    <Compile Include="Assets\EnemyWaves\EnemyWave.cs" />
     <Compile Include="Assets\Scripts\BuildableArea.cs" />
-    <Compile Include="Assets\Scripts\Enemies\Enemy.cs" />
-    <Compile Include="Assets\Scripts\Enemies\Enemy_BasicAirplane.cs" />
-    <Compile Include="Assets\Scripts\Enemies\EnemyMoveTowardsPoint.cs" />
-    <Compile Include="Assets\Scripts\Enemies\EnemyPathFinder.cs" />
-    <Compile Include="Assets\Scripts\Enemies\ItemDrop.cs" />
-    <Compile Include="Assets\Scripts\Enemies\WaveSpawner.cs" />
+    <Compile Include="Assets\Scripts\EnemySupport\Enemies\Enemy_BasicAirplane.cs" />
+    <Compile Include="Assets\Scripts\EnemySupport\Enemies\Enemy_BasicTrooper.cs" />
+    <Compile Include="Assets\Scripts\EnemySupport\Enemies\Enemy_BossPlane1.cs" />
+    <Compile Include="Assets\Scripts\EnemySupport\Enemies\ENEMY_STATS.cs" />
+    <Compile Include="Assets\Scripts\EnemySupport\Enemy.cs" />
+    <Compile Include="Assets\Scripts\EnemySupport\EnemyMoveTowardsPoint.cs" />
+    <Compile Include="Assets\Scripts\EnemySupport\EnemyPathFinder.cs" />
+    <Compile Include="Assets\Scripts\EnemySupport\ItemDrop.cs" />
+    <Compile Include="Assets\Scripts\EnemySupport\WaveSpawner.cs" />
     <Compile Include="Assets\Scripts\Events\AddEnemyTargetEvent.cs" />
     <Compile Include="Assets\Scripts\Events\EnemyDamageEvent.cs" />
     <Compile Include="Assets\Scripts\Events\ItemCollectedEvent.cs" />
     <Compile Include="Assets\Scripts\Events\RemoveEnemyTargetEvent.cs" />
     <Compile Include="Assets\Scripts\Events\TowerFireEvent.cs" />
     <Compile Include="Assets\Scripts\Events\WaveSpawnEvent.cs" />
+    <Compile Include="Assets\Scripts\Explosion.cs" />
     <Compile Include="Assets\Scripts\HomeBase.cs" />
     <Compile Include="Assets\Scripts\MouseHoverEffect.cs" />
     <Compile Include="Assets\Scripts\TowerSupport\Ammo\Projectile.cs" />

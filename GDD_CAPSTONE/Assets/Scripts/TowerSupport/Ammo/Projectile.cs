@@ -114,7 +114,8 @@ public class Projectile : MonoBehaviour
             if (projSplash)
             {
                 Debug.Log("SPLASH");
-                cc2d.radius *= 15;
+                cc2d.radius = 10;
+                Debug.Log(cc2d.radius);
                 StartCoroutine(Explode());
                 //Explosion explode =  Instantiate(explosion, transform.position, Quaternion.identity).GetComponent<Explosion>();
             }
