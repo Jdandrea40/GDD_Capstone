@@ -7,8 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class HUDManager : Singleton<HUDManager>
 {
-    [SerializeField] Button spawnButton;
-    
+    [SerializeField] Button spawnButton;    
     WaveSpawnEvent waveSpawnEvent;
 
     #region PROPERTIES
@@ -26,14 +25,13 @@ public class HUDManager : Singleton<HUDManager>
         waveSpawnEvent = new WaveSpawnEvent();
         EventManager.AddWaveSpawnInvoker(this);
 
-        GameplayManager.EnemiesKilled = 0;
-
+        GameplayManager.Instance.EnemiesKilled = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (GameplayManager.WaveInProgress)
+        if (GameplayManager.Instance.WaveInProgress)
         {
             spawnButton.interactable = false;
         }
@@ -50,7 +48,7 @@ public class HUDManager : Singleton<HUDManager>
 
     public void SpawnWave()
     {
-        if (!GameplayManager.WaveInProgress && (GameplayManager.CurWaveCount < GameplayManager.MaxWaveCount))
+        if (!GameplayManager.Instance.WaveInProgress && (GameplayManager.Instance.CurWaveCount < GameplayManager.Instance.MaxWaveCount))
         {
             waveSpawnEvent.Invoke();
         }

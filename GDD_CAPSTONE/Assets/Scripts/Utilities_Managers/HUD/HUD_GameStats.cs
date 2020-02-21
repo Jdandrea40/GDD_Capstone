@@ -12,16 +12,16 @@ public class HUD_GameStats : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {       
-        enemiesKilledText.text = " Enemies Killed: " + GameplayManager.EnemiesKilled;
-        baseHealthText.text = " Base Health: " + GameplayManager.BaseHealth;
-        waveCountText.text = " Wave: " + GameplayManager.CurWaveCount + " / " + GameplayManager.MaxWaveCount;
+        enemiesKilledText.text = " Enemies Killed: " + GameplayManager.Instance.EnemiesKilled;
+        baseHealthText.text = " Base Health: " + GameplayManager.Instance.BaseHealth;
+        waveCountText.text = " Wave: " + GameplayManager.Instance.CurWaveCount + " / " + GameplayManager.Instance.MaxWaveCount;
     }
 
     // Update is called once per frame
     void Update()
     {
-        enemiesKilledText.text = " Enemies Killed: " + GameplayManager.EnemiesKilled;
-        baseHealthText.text = " Base Health: " + GameplayManager.BaseHealth;
-        waveCountText.text = " Wave: " + GameplayManager.CurWaveCount + " / " + GameplayManager.MaxWaveCount;
+        enemiesKilledText.text = " Enemies Killed: " + GameplayManager.Instance.EnemiesKilled;
+        baseHealthText.text = " Base Health: " + GameplayManager.Instance.BaseHealth;
+        waveCountText.text = " Wave: " + GameplayManager.Instance.CurWaveCount + " / " + GameplayManager.Instance.MaxWaveCount;
     }
 }

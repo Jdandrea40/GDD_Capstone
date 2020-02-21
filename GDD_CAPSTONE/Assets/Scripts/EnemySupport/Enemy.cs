@@ -66,10 +66,10 @@ public class Enemy : MonoBehaviour
         
         // Adds itself to the overall in game enemy list
         // being used to to determine if the level has been won
-        GameplayManager.SpawnEnemies.Add(gameObject);
+        GameplayManager.Instance.SpawnEnemies.Add(gameObject);
 
         // Will Increase the base Health PLus the Modifier (EHM += CurrWave)
-        Health += GameplayManager.EnemyHealthModifier;
+        Health += GameplayManager.Instance.EnemyHealthModifier;
         Debug.Log(Health);
 
         #region UNUSED STUFF
@@ -90,8 +90,8 @@ public class Enemy : MonoBehaviour
         {
             // Spawns collectable item
             Instantiate(item, transform.position, Quaternion.identity);
-            GameplayManager.EnemiesKilled++;
-            GameplayManager.SpawnEnemies.Remove(gameObject);
+            GameplayManager.Instance.EnemiesKilled++;
+            GameplayManager.Instance.SpawnEnemies.Remove(gameObject);
             Destroy(gameObject);
         }
     }
@@ -112,7 +112,7 @@ public class Enemy : MonoBehaviour
         // Removes itself from the the "In=Play" list (GAMEMANAGER)
         if (collision.gameObject.layer == (int)CollisionLayers.HOME_BASE)
         {
-            GameplayManager.SpawnEnemies.Remove(gameObject);
+            GameplayManager.Instance.SpawnEnemies.Remove(gameObject);
         }
     }
     #endregion

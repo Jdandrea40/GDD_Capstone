@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WaveSpawner : MonoBehaviour
+public class WaveSpawner : Singleton<WaveSpawner>
 {
     int currentWave = 0;
-    [SerializeField] List<EnemyWave> Wave = new List<EnemyWave>();
+    [SerializeField] public List<EnemyWave> Wave = new List<EnemyWave>();
 
     private static int totalWaves;   
 
@@ -20,22 +20,23 @@ public class WaveSpawner : MonoBehaviour
 
     void InvokeSpawner()
     {
-        
-        GameplayManager.WaveInProgress = true;
+        GameplayManager.Instance.WaveInProgress = true;
         if (currentWave < Wave.Count)
-        StartCoroutine(SpawnEnemies());
-        
+        {
+            StartCoroutine(SpawnEnemies());
+        }
     }
 
     IEnumerator SpawnEnemies()
-    {    
+    {
+       
         for (int enemy = 0; enemy < Wave[currentWave].Enemies.Length; enemy++)
         {
             Instantiate(Wave[currentWave].Enemies[enemy], transform.position, Quaternion.identity);
             yield return new WaitForSeconds(.3f);
         }
         currentWave++;
-        GameplayManager.CurWaveCount++;
-        GameplayManager.WaveInProgress = false;
+        GameplayManager.Instance.CurWaveCount++;
+        GameplayManager.Instance.WaveInProgress = false;
     }
 }

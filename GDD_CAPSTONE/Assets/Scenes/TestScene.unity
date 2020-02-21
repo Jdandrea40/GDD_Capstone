@@ -6767,7 +6767,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 380595325}
         m_MethodName: SpawnWave
         m_Mode: 1
         m_Arguments:

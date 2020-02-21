@@ -128,9 +128,9 @@ public class Tower : MonoBehaviour
         // Check for a non empty List (List<GO> enemyTarget)
         if (enemyTargets.Count > 0)
         {
-            if (targetToShoot != GameplayManager.SpawnEnemies[0])
+            if (targetToShoot != GameplayManager.Instance.SpawnEnemies[0])
             {
-                targetToShoot = GameplayManager.SpawnEnemies[0];
+                targetToShoot = GameplayManager.Instance.SpawnEnemies[0];
             }
             // sets the current target to the fist one in the List
             targetToShoot = enemyTargets[0];

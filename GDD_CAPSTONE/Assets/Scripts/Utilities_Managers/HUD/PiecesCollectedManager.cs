@@ -29,5 +29,6 @@ public class PiecesCollectedManager : Singleton<PiecesCollectedManager>
     public int standardAmmo = 0;
     public int fireAmmo = 0;
     public int slowAmmo = 0;
+    
     #endregion
 }

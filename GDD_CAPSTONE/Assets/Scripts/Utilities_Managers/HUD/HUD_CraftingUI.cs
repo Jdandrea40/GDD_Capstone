@@ -47,9 +47,9 @@ public class HUD_CraftingUI : Singleton<HUD_CraftingUI>
     {
         EventManager.AddItemCollectedListener(UpdateItemCount);
 
-        PiecesCollectedManager.Instance.standardTurretTop = 0;
-        PiecesCollectedManager.Instance.rapidFireTop = 0;
-        PiecesCollectedManager.Instance.rocketTop = 0;
+        //PiecesCollectedManager.Instance.standardTurretTop = 0;
+        //PiecesCollectedManager.Instance.rapidFireTop = 0;
+        //PiecesCollectedManager.Instance.rocketTop = 0;
     }
     void UpdateItemCount(int turretPeiceCollected)
     {

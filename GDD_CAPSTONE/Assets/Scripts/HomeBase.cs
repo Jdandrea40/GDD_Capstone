@@ -6,13 +6,13 @@ public class HomeBase : MonoBehaviour
 {
     private void Start()
     {
-        GameplayManager.BaseHealth = 100;
+        GameplayManager.Instance.BaseHealth = 100;
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.layer == (int)CollisionLayers.ENEMIES)
         {
-            GameplayManager.BaseHealth -= 10;
+            GameplayManager.Instance.BaseHealth -= 10;
         }
     }
 }
