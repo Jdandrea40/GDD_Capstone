@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class BuildableArea : MonoBehaviour
 {
@@ -14,18 +15,22 @@ public class BuildableArea : MonoBehaviour
 
     [SerializeField] GameObject tower;
 
-    //PiecesCollectedManager pcm;
-    //HUD_CraftingUI hudCUI;
-    
-    BoxCollider2D bc2d;
-    Vector2 center;   
 
+    BoxCollider2D bc2d;
+    Vector2 center;
+
+    #region EVENTS
+
+
+
+    #endregion
     private void Start()
-    { 
+    {
+
+
+        // Components
         sr = GetComponent<SpriteRenderer>();
         bc2d = GetComponent<BoxCollider2D>();
-
-        //hudCUI = HUD_CraftingUI.Instance;
 
         // The center of the tile
         center = bc2d.size / 2;
@@ -40,7 +45,6 @@ public class BuildableArea : MonoBehaviour
     {
         if (!occupied)
         {
-            // TODO: Invoke creation HUD
             sr.material.color = hoverColor;
             hovering = true;
         }
@@ -58,21 +62,10 @@ public class BuildableArea : MonoBehaviour
     private void OnMouseDown()
     {
         if (hovering && !occupied)
-        {
-            Instantiate(tower, transform.position, Quaternion.identity);
-            //Instantiate(tower, transform.position, Quaternion.identity);
+        { 
             occupied = true;
+            Instantiate(tower, transform.position, Quaternion.identity);
+
         }
-    }
-
-    public void CreateTower()
-    {
-        TurretTop tTop = PiecesCollectedManager.Instance.pcTop[HUD_CraftingUI.Instance.SelectedTop];
-        TowerBase tBase = PiecesCollectedManager.Instance.pcBase[HUD_CraftingUI.Instance.SelectedBot];
-        AmmoType tAmmo = PiecesCollectedManager.Instance.pcAmmo[HUD_CraftingUI.Instance.SelectedAmmo];
-
-        //Tower tower = new Tower(tTop.TurretSprite, tBase.BaseSprite, (tTop.Damage + tAmmo.ImpactDamage), (tTop.FireRate + tBase.FireRateModifier), tBase.Range, tAmmo.color, tAmmo.AmmoSprite, tTop.SplashDamage, tAmmo.Slow, tAmmo.DamageOverTime, tAmmo.DoTAmount);
-
-        
     }
 }

@@ -81,6 +81,12 @@ public class Tower : MonoBehaviour
     //    towerFireEvent.AddListener(listener);
     //}
 
+    ScrapUsedEvent scrapUsedEvent;
+    public void AddScrapUsedListener(UnityAction listener)
+    {
+        scrapUsedEvent.AddListener(listener);
+    }
+
     #endregion
 
     #region UNITY METHODS
@@ -116,9 +122,16 @@ public class Tower : MonoBehaviour
         // EventManager.RemoveEnemyTargetListener(RemoveEnemyTarget);
         // Not Currently using
         // EventManager.EnemeyDequeueListener(DequeueEnemy);
+        // EVENTS
+        scrapUsedEvent = new ScrapUsedEvent();
+        EventManager.ScrapUsedInvoker(this);
 
-        // range = 2;//cc2d.radius;
-        // InvokeRepeating("UpdateTarget", 0f, .5f);
+        // TODO: right now, +3/+6 are implemetned to account for the NEW DICTIONARY I AM USING ---> FIX THIS
+        PiecesCollectedManager.Instance.CollectedPieces[(PiecesCollectedManager.TowerPieceEnum)HUD_CraftingUI.Instance.SelectedTop]--;
+        PiecesCollectedManager.Instance.CollectedPieces[(PiecesCollectedManager.TowerPieceEnum)HUD_CraftingUI.Instance.SelectedBot + 3]--;
+        PiecesCollectedManager.Instance.CollectedPieces[(PiecesCollectedManager.TowerPieceEnum)HUD_CraftingUI.Instance.SelectedAmmo + 6]--;
+
+        scrapUsedEvent.Invoke();
         Debug.Log(damage);
     }
 

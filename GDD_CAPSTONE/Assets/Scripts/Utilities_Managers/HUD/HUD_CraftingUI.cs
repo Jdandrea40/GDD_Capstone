@@ -18,9 +18,9 @@ public class HUD_CraftingUI : Singleton<HUD_CraftingUI>
 
     //[SerializeField] GameObject tower;
 
-    [SerializeField] Toggle[] tops;
-    [SerializeField] Toggle[] bots;
-    [SerializeField] Toggle[] ammo;
+    [SerializeField] Toggle[] toggleTops;
+    [SerializeField] Toggle[] toggleBots;
+    [SerializeField] Toggle[] toggleAmmo;
 
     //[SerializeField] ToggleGroup topGroup;
 
@@ -31,77 +31,60 @@ public class HUD_CraftingUI : Singleton<HUD_CraftingUI>
     [SerializeField] Image[] createdTowerUI;
     [SerializeField] Text[] createdTowerText;
 
-    [SerializeField] Text[] topAmountText;
-    [SerializeField] Text[] botAmountText;
-    [SerializeField] Text[] ammoAmountText;
+    //[SerializeField] Text[] topAmountText;
+    //[SerializeField] Text[] botAmountText;
+    //[SerializeField] Text[] ammoAmountText;
 
     [SerializeField] TurretTop[] tTop;
     [SerializeField] TowerBase[] tBase;
     [SerializeField] AmmoType[] tAmmo;
     
-    [SerializeField] Text[] itemCount;
-
+    [SerializeField] Text[] itemCountText;
 
     // Start is called before the first frame update
     void Start()
     {
         EventManager.AddItemCollectedListener(UpdateItemCount);
-
-        //PiecesCollectedManager.Instance.standardTurretTop = 0;
-        //PiecesCollectedManager.Instance.rapidFireTop = 0;
-        //PiecesCollectedManager.Instance.rocketTop = 0;
+        EventManager.ScrapUsedListener(UpdateItemCount);
+        UpdateItemCount();
     }
-    void UpdateItemCount(int turretPeiceCollected)
+
+    void UpdateItemCount()
     {
-        switch(turretPeiceCollected)
-        {
-            case 0:
+        
+        for (int i = 0; i < PiecesCollectedManager.Instance.CollectedPieces.Count; i++)
+        {Debug.Log("POOP");
+            itemCountText[i].text = PiecesCollectedManager.Instance.CollectedPieces[(PiecesCollectedManager.TowerPieceEnum)i].ToString();
+            if (PiecesCollectedManager.Instance.CollectedPieces[(PiecesCollectedManager.TowerPieceEnum)i] <= 0)
+            {
+                if (i < 3)
                 {
-                    itemCount[turretPeiceCollected].text = PiecesCollectedManager.Instance.standardTurretTop.ToString();
-                    break;
+                    toggleTops[i].interactable = false;
                 }
-            case 1:
+                else if (i > 2 && i <= 5)
                 {
-                    itemCount[turretPeiceCollected].text = PiecesCollectedManager.Instance.rapidFireTop.ToString();
-                    break;
+                    toggleBots[i - 3].interactable = false;
                 }
-            case 2:
+                else
                 {
-
-                    itemCount[turretPeiceCollected].text = PiecesCollectedManager.Instance.rocketTop.ToString();
-                    break;
+                    toggleAmmo[i - 6].interactable = false;
                 }
-            case 3:
+            }
+            else
+            {
+                if (i < 3)
                 {
-                    itemCount[turretPeiceCollected].text = PiecesCollectedManager.Instance.shortRangeBase.ToString();
-                    break;
+                    toggleTops[i].interactable = true;
                 }
-            case 4:
+                else if (i > 2 && i <= 5)
                 {
-                    itemCount[turretPeiceCollected].text = PiecesCollectedManager.Instance.mediumRangeBase.ToString();
-                    break;
+                    toggleBots[i - 3].interactable = true;
                 }
-            case 5:
+                else
                 {
-
-                    itemCount[turretPeiceCollected].text = PiecesCollectedManager.Instance.longRangeBase.ToString();
-                    break;
+                    toggleAmmo[i - 6].interactable = true;
                 }
-            case 6:
-                {
-                    itemCount[turretPeiceCollected].text = PiecesCollectedManager.Instance.standardAmmo.ToString();
-                    break;
-                }
-            case 7:
-                {
-                    itemCount[turretPeiceCollected].text = PiecesCollectedManager.Instance.slowAmmo.ToString();
-                    break;
-                }
-            case 8:
-                {
-                    itemCount[turretPeiceCollected].text = PiecesCollectedManager.Instance.fireAmmo.ToString();
-                    break;
-                }
+            }
         }
     }
     // Responsible for updating the UI image and Text in the Crafting window
@@ -112,7 +95,7 @@ public class HUD_CraftingUI : Singleton<HUD_CraftingUI>
             case (int)Piece.TOP:
                 // Sprite
                 createdTowerUI[0].sprite = tTop[index].TurretSprite;
-
+                createdTowerUI[0].color = Color.white;
                 // Text
                 createdTowerText[0].text = tTop[index].Name;
                 break;
@@ -127,7 +110,7 @@ public class HUD_CraftingUI : Singleton<HUD_CraftingUI>
             case (int)Piece.AMMO:
                 // Sprite
                 createdTowerUI[2].sprite = tAmmo[index].AmmoSprite;
-
+                createdTowerUI[2].color = Color.white;
                 // Text
                 createdTowerText[2].text = tAmmo[index].Name;
                 break;

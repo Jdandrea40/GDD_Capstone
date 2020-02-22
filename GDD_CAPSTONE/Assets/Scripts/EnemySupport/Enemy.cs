@@ -29,7 +29,7 @@ public class Enemy : MonoBehaviour
     EnemyMoveTowardsPoint enemyMove;
 
     public float MoveSpeed { get => moveSpeed; set => moveSpeed = value; }
-
+    public int HealthBarHealth { get => Health; }
     #endregion
 
     #region EVENTS

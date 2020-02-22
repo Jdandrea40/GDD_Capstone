@@ -63,7 +63,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\EnemyWaves\EnemyWave.cs" />
+    <Compile Include="Assets\Enemy_HealthBar.cs" />
+    <Compile Include="Assets\EnemyWaves\SO_Script\EnemyWave.cs" />
     <Compile Include="Assets\Scripts\BuildableArea.cs" />
     <Compile Include="Assets\Scripts\EnemySupport\Enemies\Enemy_BasicAirplane.cs" />
     <Compile Include="Assets\Scripts\EnemySupport\Enemies\Enemy_BasicTrooper.cs" />
@@ -78,6 +79,7 @@
     <Compile Include="Assets\Scripts\Events\EnemyDamageEvent.cs" />
     <Compile Include="Assets\Scripts\Events\ItemCollectedEvent.cs" />
     <Compile Include="Assets\Scripts\Events\RemoveEnemyTargetEvent.cs" />
+    <Compile Include="Assets\Scripts\Events\ScrapUsedEvent.cs" />
     <Compile Include="Assets\Scripts\Events\TowerFireEvent.cs" />
     <Compile Include="Assets\Scripts\Events\WaveSpawnEvent.cs" />
     <Compile Include="Assets\Scripts\Explosion.cs" />
