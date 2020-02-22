@@ -5,6 +5,7 @@ using UnityEngine.Events;
 
 public class Tower : MonoBehaviour
 {
+    #region FIELDS
     // Singleton Instances
     PiecesCollectedManager pcm;
     HUD_CraftingUI hudCUI;
@@ -12,9 +13,8 @@ public class Tower : MonoBehaviour
     // Components
     CircleCollider2D cc2d;
     SpriteRenderer sr;
-    [SerializeField] SpriteRenderer rangeSprite;
+    [SerializeField] SpriteRenderer turretBaseSprite;
 
-    #region FIELDS
     // The towers targeting list
     public List<GameObject> enemyTargets;
     GameObject tToShoot;
@@ -45,6 +45,9 @@ public class Tower : MonoBehaviour
     {
         get { return targetToShoot; }
     }
+
+    // Accesor for TurretRangeIndicator
+    public int TurretRadius { get => range; }
 
     #endregion
 
@@ -81,6 +84,7 @@ public class Tower : MonoBehaviour
     //    towerFireEvent.AddListener(listener);
     //}
 
+    // Event used to decrement from the Pieces Collected Manager
     ScrapUsedEvent scrapUsedEvent;
     public void AddScrapUsedListener(UnityAction listener)
     {
@@ -99,20 +103,20 @@ public class Tower : MonoBehaviour
         // EventManager.TowerFireInvoker(this);
 
         // Needs to be set to a variable in order to StopCoroutine()
-        fireCoroutine = Fire(); 
+        fireCoroutine = Fire();
+        
+        // List of targetable enemies in range
         enemyTargets = new List<GameObject>();
        
+        // Component Grabbing
         pcm = PiecesCollectedManager.Instance;
         hudCUI = HUD_CraftingUI.Instance;
         sr = GetComponent<SpriteRenderer>();
         cc2d = GetComponent<CircleCollider2D>();
 
+        // Turret Initializer
         CreateTower();
-        cc2d.radius = range;
-
-        //projSPR = tct.ProjSprite;
-        // cc2d = GetComponent<CircleCollider2D>();     
-        //enemies = new Dictionary<int, GameObject>();       
+        cc2d.radius = range;    
     }
 
     // Start is called before the first frame update
@@ -132,7 +136,8 @@ public class Tower : MonoBehaviour
         PiecesCollectedManager.Instance.CollectedPieces[(PiecesCollectedManager.TowerPieceEnum)HUD_CraftingUI.Instance.SelectedAmmo + 6]--;
 
         scrapUsedEvent.Invoke();
-        Debug.Log(damage);
+        
+        //Debug.Log(damage);
     }
 
     // Called once a frame
@@ -141,7 +146,7 @@ public class Tower : MonoBehaviour
         // Check for a non empty List (List<GO> enemyTarget)
         if (enemyTargets.Count > 0)
         {
-            if (targetToShoot != GameplayManager.Instance.SpawnEnemies[0])
+            if (targetToShoot != GameplayManager.Instance.SpawnEnemies[0])// && GameplayManager.Instance.SpawnEnemies[0].transform.position - transform.position <= range)
             {
                 targetToShoot = GameplayManager.Instance.SpawnEnemies[0];
             }
@@ -247,8 +252,8 @@ public class Tower : MonoBehaviour
         // Visuals
         sr.sprite = tTop.TurretSprite;
         projSpr = tTop.ProjectileSprite;
-        rangeSprite.sprite = tBase.BaseSprite;
-        rangeSprite.color = tBase.BaseColor;
+        turretBaseSprite.sprite = tBase.BaseSprite;
+        turretBaseSprite.color = tBase.BaseColor;
 
         // Stat Values
         damage = (tTop.Damage + tAmmo.ImpactDamage);

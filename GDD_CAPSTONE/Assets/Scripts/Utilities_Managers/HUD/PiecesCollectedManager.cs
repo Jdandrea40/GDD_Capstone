@@ -7,6 +7,7 @@ using UnityEngine;
 /// </summary>
 public class PiecesCollectedManager : Singleton<PiecesCollectedManager>
 {
+    // Enumeration for the dictionary
     public enum TowerPieceEnum 
     { 
         SINGLEFIRE_TOP, RAPIDFIRE_TOP, CANNON_TOP,
@@ -14,6 +15,7 @@ public class PiecesCollectedManager : Singleton<PiecesCollectedManager>
         KINETIC_AMMO, CRYO_AMMO, INCENDIARY_AMMO 
     };
 
+    // Used for tower creation (contains the Scriptable Objects)
     [SerializeField] public TurretTop[] pcTop;
     [SerializeField] public TowerBase[] pcBase;
     [SerializeField] public AmmoType[] pcAmmo;
@@ -22,6 +24,7 @@ public class PiecesCollectedManager : Singleton<PiecesCollectedManager>
 
     private void Awake()
     {
+        // intialize the dictionary of collected pieces
         for (int i = 0; i < 9; i++)
         {
             CollectedPieces[(TowerPieceEnum)i] = 1;
