@@ -14,6 +14,7 @@ public class Tower : MonoBehaviour
     CircleCollider2D cc2d;
     SpriteRenderer sr;
     [SerializeField] SpriteRenderer turretBaseSprite;
+    [SerializeField] CanvasGroup sellCanvas;
 
     // The towers targeting list
     public List<GameObject> enemyTargets;
@@ -34,6 +35,7 @@ public class Tower : MonoBehaviour
 
     // Used for tower rotation to target
     bool firing = false;
+    bool hovering = false;
 
     #endregion
 
@@ -116,7 +118,7 @@ public class Tower : MonoBehaviour
 
         // Turret Initializer
         CreateTower();
-        cc2d.radius = range;    
+        //cc2d.radius = range;    
     }
 
     // Start is called before the first frame update
@@ -135,82 +137,113 @@ public class Tower : MonoBehaviour
         PiecesCollectedManager.Instance.CollectedPieces[(PiecesCollectedManager.TowerPieceEnum)HUD_CraftingUI.Instance.SelectedBot + 3]--;
         PiecesCollectedManager.Instance.CollectedPieces[(PiecesCollectedManager.TowerPieceEnum)HUD_CraftingUI.Instance.SelectedAmmo + 6]--;
 
+        sellCanvas.alpha = 0;
+        sellCanvas.interactable = false;
+        sellCanvas.blocksRaycasts = false;
+
         scrapUsedEvent.Invoke();
-        
+        InvokeRepeating("UpdateTarget", 0, .5f);
         //Debug.Log(damage);
     }
 
     // Called once a frame
     void Update()
     {
-        // Check for a non empty List (List<GO> enemyTarget)
-        if (enemyTargets.Count > 0)
+        if (targetToShoot == null)
         {
-            if (targetToShoot != GameplayManager.Instance.SpawnEnemies[0])// && GameplayManager.Instance.SpawnEnemies[0].transform.position - transform.position <= range)
-            {
-                targetToShoot = GameplayManager.Instance.SpawnEnemies[0];
-            }
-            // sets the current target to the fist one in the List
-            targetToShoot = enemyTargets[0];
-            // Makes sure Fire() is only called if it isn't currently shooting
-            if(!firing)
-            {
-                // Stop the ability to call Fire/call Fire()
-                firing = true;
-                StartCoroutine(fireCoroutine);              
-            }
-        }
-        // Nothing to shoot at
-        else if (enemyTargets.Count < 1)
-        {
-            // Stop shooting
-            StopCoroutine(fireCoroutine);
             firing = false;
+            StopCoroutine(fireCoroutine);
+            return;
         }
-
-        // If it has a target
-        if (firing)
+        else
         {
-            // get a vector from tower to target
-            Vector2 direction = targetToShoot.transform.position - transform.position;
-            // find the angle of that line
-            float angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
-            // rotate the projectile to always face the target
-            transform.rotation = Quaternion.AngleAxis(angle, Vector3.back);
+            if (!firing)
+            {
+                firing = true;
+                StartCoroutine(fireCoroutine);
+
+                //// get a vector from tower to target
+                //Vector2 direction = targetToShoot.transform.position - transform.position;
+                //// find the angle of that line
+                //float angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
+                //// rotate the projectile to always face the target
+                //transform.rotation = Quaternion.AngleAxis(angle, Vector3.back);
+            }
+
+            if (firing)
+            {
+                // get a vector from tower to target
+                Vector2 direction = targetToShoot.transform.position - transform.position;
+                // find the angle of that line
+                float angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
+                // rotate the projectile to always face the target
+                transform.rotation = Quaternion.AngleAxis(angle, Vector3.back);
+            }
         }
     }
 
-    // Target acquired
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnMouseEnter()
     {
-        // Debug.Log(collision.name + " " + collision.gameObject.GetInstanceID());
-        if (collision.gameObject.layer == (int)CollisionLayers.ENEMIES)
-        {
-            //if (enemies.ContainsKey(collision.GetInstanceID()))
-            //{
-            //enemies.Add(collision.gameObject.GetInstanceID(), collision.gameObject);
-            //}
-            enemyTargets.Add(collision.gameObject);
-        }
+        hovering = true;
     }
 
-    // Target unacquired
-    private void OnTriggerExit2D(Collider2D collision)
+    // Mouse Exit support
+    private void OnMouseExit()
     {
-        if (collision.gameObject.layer == (int)CollisionLayers.ENEMIES)
-        {
-            //if (enemies.ContainsKey(collision.GetInstanceID()))
-            //{
-            //    enemies.Remove(collision.GetInstanceID());
-            //}
+        hovering = false;
+        sellCanvas.alpha = 0;
+        sellCanvas.interactable = false;
+        sellCanvas.blocksRaycasts = false;
+    }
 
-            enemyTargets.Remove(collision.gameObject);
+    // Click support
+    private void OnMouseDown()
+    {
+        if (hovering)
+        {
+            sellCanvas.alpha = 1;
+            sellCanvas.interactable = true;
+            sellCanvas.blocksRaycasts = true;
         }
     }
+
+    
     #endregion
 
     #region CUSTOM METHODS
+    public void RemoveTower()
+    {
+        BuildableArea ba = GetComponentInParent<BuildableArea>();
+        ba.Occupied = false;
+        Destroy(gameObject);
+    }
+    /// <summary>
+    /// https://www.youtube.com/watch?v=QKhn2kl9_8I&list=PLPV2KyIb3jR4u5jX8za5iU1cqnQPmbzG0&index=5&t=1047s
+    /// Brackeys tutorial for ClosestTarget Acquisition
+    /// </summary>
+    void UpdateTarget()
+    {
+        float shortestDistace = Mathf.Infinity;
+        GameObject closestEnemy = null;
+        foreach(GameObject enemy in GameplayManager.Instance.SpawnedEnemies)
+        {
+            float distanceToEnemy = Vector2.Distance(transform.position, enemy.transform.position);
+            if (distanceToEnemy < shortestDistace)
+            {
+                shortestDistace = distanceToEnemy;
+                closestEnemy = enemy;
+            }
+        }
 
+        if (closestEnemy != null && shortestDistace <= range)
+        {
+            targetToShoot = closestEnemy;
+        }
+        else
+        {
+            targetToShoot = null;
+        }
+    }
     // Fire Coroutine
     IEnumerator Fire()
     {
@@ -229,18 +262,6 @@ public class Tower : MonoBehaviour
             yield return new WaitForSeconds(fireRate);
         }
         
-    }
-
-    void AddEnemyTarget(int targetID, GameObject enemy)
-    {
-        //if (!enemies.ContainsKey(targetID))
-        //{
-        //    enemies.Add(targetID, enemy);
-        //}
-    }
-    void RemoveEnemyTarget(int targetID, GameObject enemy)
-    {
-        //enemies.Remove(targetID);
     }
     void CreateTower()
     {

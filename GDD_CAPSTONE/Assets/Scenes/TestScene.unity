@@ -1643,7 +1643,7 @@ PrefabInstance:
     - target: {fileID: 7162016370687946181, guid: 46823a0127c800344b16fe917e64cce2,
         type: 3}
       propertyPath: m_IsOn
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7162016370687946181, guid: 46823a0127c800344b16fe917e64cce2,
         type: 3}
@@ -3052,7 +3052,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fafe2cfe61f6974895a912c3755e8f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AllowSwitchOff: 1
+  m_AllowSwitchOff: 0
 --- !u!1001 &691298414
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7474,7 +7474,7 @@ PrefabInstance:
     - target: {fileID: 7162016370687946181, guid: 46823a0127c800344b16fe917e64cce2,
         type: 3}
       propertyPath: m_IsOn
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7162016370687946181, guid: 46823a0127c800344b16fe917e64cce2,
         type: 3}
@@ -9641,7 +9641,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fafe2cfe61f6974895a912c3755e8f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AllowSwitchOff: 1
+  m_AllowSwitchOff: 0
 --- !u!1 &2121017250
 GameObject:
   m_ObjectHideFlags: 0
@@ -9757,7 +9757,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fafe2cfe61f6974895a912c3755e8f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AllowSwitchOff: 1
+  m_AllowSwitchOff: 0
 --- !u!1 &2138545274
 GameObject:
   m_ObjectHideFlags: 0

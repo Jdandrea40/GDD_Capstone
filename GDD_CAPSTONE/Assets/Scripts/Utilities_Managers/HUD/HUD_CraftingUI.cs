@@ -46,12 +46,23 @@ public class HUD_CraftingUI : Singleton<HUD_CraftingUI>
     {
         EventManager.AddItemCollectedListener(UpdateItemCount);
         EventManager.ScrapUsedListener(UpdateItemCount);
+        
+        // Game Start Initialization
         UpdateItemCount();
+        TowerUIUpdate(0, 0);
+        TowerUIUpdate(0, 1);
+        TowerUIUpdate(0, 2);
+
     }
 
+    /// <summary>
+    /// Updates the amount of scrap pieces collected
+    /// uses the Dictionary in PCM as well as the TPE type casting
+    /// -3/6 accounts for the different arrays of Scriptable objects currently impemented
+    /// dictionary has 9 elements, so must subtract to get proper index
+    /// </summary>
     void UpdateItemCount()
-    {
-        
+    {       
         for (int i = 0; i < PiecesCollectedManager.Instance.CollectedPieces.Count; i++)
         {
             itemCountText[i].text = PiecesCollectedManager.Instance.CollectedPieces[(PiecesCollectedManager.TowerPieceEnum)i].ToString();

@@ -19,6 +19,8 @@ public class BuildableArea : MonoBehaviour
     BoxCollider2D bc2d;
     Vector2 center;
 
+    public bool Occupied { get => occupied; set => occupied = value; }
+
     #region EVENTS
 
 
@@ -26,8 +28,6 @@ public class BuildableArea : MonoBehaviour
     #endregion
     private void Start()
     {
-
-
         // Components
         sr = GetComponent<SpriteRenderer>();
         bc2d = GetComponent<BoxCollider2D>();
@@ -68,7 +68,10 @@ public class BuildableArea : MonoBehaviour
                 PiecesCollectedManager.Instance.CollectedPieces[(PiecesCollectedManager.TowerPieceEnum)HUD_CraftingUI.Instance.SelectedAmmo + 6] > 0)
             {
                 occupied = true;
-                Instantiate(tower, transform.position, Quaternion.identity);
+
+                // Instantiates the Tower, and sets the Area to its Parent
+                Instantiate(tower, transform.position, Quaternion.identity, transform);
+
             }
             else
             {
