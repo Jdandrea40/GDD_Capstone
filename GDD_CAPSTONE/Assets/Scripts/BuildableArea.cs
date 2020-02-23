@@ -8,8 +8,12 @@ public class BuildableArea : MonoBehaviour
     SpriteRenderer sr;
 
     // Hover/Dehover Color support
-    public Color hoverColor;
-    public Color startColor;
+    Color hoverColor;
+    Color cantPlaceColor;
+    Color startColor;
+
+    [SerializeField] CanvasGroup cantPlaceCanvas;
+    bool cantPlaceBool = false;
     bool hovering = false;
     bool occupied = false;                      // used to disallow reclicking a occupied tile
 
@@ -36,8 +40,13 @@ public class BuildableArea : MonoBehaviour
         center = bc2d.size / 2;
 
         // Dehovering support
-        startColor = sr.material.color;
-        hoverColor = Color.gray;      
+        startColor = Color.white;
+        hoverColor = Color.gray;
+        cantPlaceColor = Color.red;
+
+        cantPlaceCanvas.alpha = 0;
+        cantPlaceCanvas.interactable = false;
+        cantPlaceCanvas.blocksRaycasts = false;
     }
 
     // Mouse Enter support
@@ -45,8 +54,18 @@ public class BuildableArea : MonoBehaviour
     {
         if (!occupied)
         {
-            sr.material.color = hoverColor;
-            hovering = true;
+            if (PiecesCollectedManager.Instance.CollectedPieces[(PiecesCollectedManager.TowerPieceEnum)HUD_CraftingUI.Instance.SelectedTop] > 0 &&
+                PiecesCollectedManager.Instance.CollectedPieces[(PiecesCollectedManager.TowerPieceEnum)HUD_CraftingUI.Instance.SelectedBot + 3] > 0 &&
+                PiecesCollectedManager.Instance.CollectedPieces[(PiecesCollectedManager.TowerPieceEnum)HUD_CraftingUI.Instance.SelectedAmmo + 6] > 0)
+            {
+                sr.material.color = hoverColor;
+                hovering = true;
+            }
+            else
+            {
+                sr.material.color = cantPlaceColor;
+                cantPlaceBool = true;
+            }
         }
     }
 
@@ -56,29 +75,31 @@ public class BuildableArea : MonoBehaviour
         // reverts to the original tile color
         sr.material.color = startColor;
         hovering = false;
+
+        cantPlaceCanvas.alpha = 0;
+        cantPlaceCanvas.interactable = false;
+        cantPlaceCanvas.blocksRaycasts = false;
     }
 
     // Click support
     private void OnMouseDown()
     {
         if (hovering && !occupied)
-        { 
-            if (PiecesCollectedManager.Instance.CollectedPieces[(PiecesCollectedManager.TowerPieceEnum)HUD_CraftingUI.Instance.SelectedTop] > 0 &&
-                PiecesCollectedManager.Instance.CollectedPieces[(PiecesCollectedManager.TowerPieceEnum)HUD_CraftingUI.Instance.SelectedBot + 3] > 0 &&
-                PiecesCollectedManager.Instance.CollectedPieces[(PiecesCollectedManager.TowerPieceEnum)HUD_CraftingUI.Instance.SelectedAmmo + 6] > 0)
-            {
-                occupied = true;
+        {
+            occupied = true;
 
-                // Instantiates the Tower, and sets the Area to its Parent
-                Instantiate(tower, transform.position, Quaternion.identity, transform);
-
-            }
-            else
-            {
-                Debug.Log("CANT");
-            }
-            
+            // Instantiates the Tower, and sets the Area to its Parent
+            Instantiate(tower, transform.position, Quaternion.identity, transform);
 
         }
+        else
+        {
+            cantPlaceCanvas.alpha = 1;
+            cantPlaceCanvas.interactable = true;
+            cantPlaceCanvas.blocksRaycasts = true;
+        }
+            
+
+        
     }
 }

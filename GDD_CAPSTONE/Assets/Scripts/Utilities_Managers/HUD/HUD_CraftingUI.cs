@@ -106,7 +106,8 @@ public class HUD_CraftingUI : Singleton<HUD_CraftingUI>
             case (int)Piece.TOP:
                 // Sprite
                 createdTowerUI[0].sprite = tTop[index].TurretSprite;
-                createdTowerUI[0].color = Color.white;
+                 createdTowerUI[0].color = Color.white;
+
                 // Text
                 createdTowerText[0].text = tTop[index].Name;
                 break;

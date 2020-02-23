@@ -15,6 +15,7 @@ public class Tower : MonoBehaviour
     SpriteRenderer sr;
     [SerializeField] SpriteRenderer turretBaseSprite;
     [SerializeField] CanvasGroup sellCanvas;
+    [SerializeField] GameObject rangeIndicator;
 
     // The towers targeting list
     public List<GameObject> enemyTargets;
@@ -118,6 +119,7 @@ public class Tower : MonoBehaviour
 
         // Turret Initializer
         CreateTower();
+        rangeIndicator.SetActive(false);
         //cc2d.radius = range;    
     }
 
@@ -185,12 +187,16 @@ public class Tower : MonoBehaviour
     private void OnMouseEnter()
     {
         hovering = true;
+        rangeIndicator.SetActive(true);
     }
 
     // Mouse Exit support
     private void OnMouseExit()
     {
         hovering = false;
+
+        rangeIndicator.SetActive(false);
+
         sellCanvas.alpha = 0;
         sellCanvas.interactable = false;
         sellCanvas.blocksRaycasts = false;
