@@ -63,8 +63,18 @@ public class BuildableArea : MonoBehaviour
     {
         if (hovering && !occupied)
         { 
-            occupied = true;
-            Instantiate(tower, transform.position, Quaternion.identity);
+            if (PiecesCollectedManager.Instance.CollectedPieces[(PiecesCollectedManager.TowerPieceEnum)HUD_CraftingUI.Instance.SelectedTop] > 0 &&
+                PiecesCollectedManager.Instance.CollectedPieces[(PiecesCollectedManager.TowerPieceEnum)HUD_CraftingUI.Instance.SelectedBot + 3] > 0 &&
+                PiecesCollectedManager.Instance.CollectedPieces[(PiecesCollectedManager.TowerPieceEnum)HUD_CraftingUI.Instance.SelectedAmmo + 6] > 0)
+            {
+                occupied = true;
+                Instantiate(tower, transform.position, Quaternion.identity);
+            }
+            else
+            {
+                Debug.Log("CANT");
+            }
+            
 
         }
     }

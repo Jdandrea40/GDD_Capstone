@@ -53,7 +53,7 @@ public class HUD_CraftingUI : Singleton<HUD_CraftingUI>
     {
         
         for (int i = 0; i < PiecesCollectedManager.Instance.CollectedPieces.Count; i++)
-        {Debug.Log("POOP");
+        {
             itemCountText[i].text = PiecesCollectedManager.Instance.CollectedPieces[(PiecesCollectedManager.TowerPieceEnum)i].ToString();
             if (PiecesCollectedManager.Instance.CollectedPieces[(PiecesCollectedManager.TowerPieceEnum)i] <= 0)
             {

@@ -111,9 +111,10 @@ public class Projectile : MonoBehaviour
     {
         if (collision.gameObject.layer == (int)CollisionLayers.ENEMIES)
         {
+            Debug.Log("SPLASH");
             if (projSplash)
             {
-                Debug.Log("SPLASH");
+                
                 cc2d.radius = 10;
                 Debug.Log(cc2d.radius);
                 StartCoroutine(Explode());
