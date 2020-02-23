@@ -20,14 +20,49 @@ public static class EventManager
     static UnityAction waveSpawnListener;
 
     static ItemDrop itemCollectedInvoker;
-    static UnityAction<int> itemCollectedListener;
+    static UnityAction itemCollectedListener;
+
+    static Tower scrapUsedInvoker;
+    static UnityAction scrapUsedListener;
 
     static Projectile enemyDamageInvoker;
     static UnityAction<int, bool, int, bool> enemyDamageListener;
-    
+
     #endregion
 
     #region EVENTS
+    #region Scrap Used
+    /// <summary>
+    /// This event is being used to update the UI After a tower has been built
+    /// this will determine if the user is still able to select pieces to craft with
+    /// </summary>
+    /// <param name="invoker"></param>
+    public static void ScrapUsedInvoker(Tower invoker)
+    {
+        scrapUsedInvoker = invoker;
+        if (scrapUsedListener != null)
+        {
+            invoker.AddScrapUsedListener(scrapUsedListener);
+        }
+    }
+
+    public static void ScrapUsedListener(UnityAction listener)
+    {
+        scrapUsedListener = listener;
+        if (scrapUsedInvoker != null)
+        {
+            scrapUsedInvoker.AddScrapUsedListener(listener);
+        }
+    }
+
+    #endregion
+
+    #region Item Pickup
+    /// <summary>
+    /// This event is being used to update the UI when an Item (scrap)
+    /// is collected. Will update the text of the specific item collected
+    /// </summary>
+    /// <param name="invoker"></param>
     public static void AddItemCollectedInvoker(ItemDrop invoker)
     {
         itemCollectedInvoker = invoker;
@@ -37,7 +72,7 @@ public static class EventManager
         }
     }
 
-    public static void AddItemCollectedListener(UnityAction<int> listener)
+    public static void AddItemCollectedListener(UnityAction listener)
     {
         itemCollectedListener = listener;
         if (itemCollectedInvoker != null)
@@ -45,6 +80,8 @@ public static class EventManager
             itemCollectedInvoker.AddItemCollectedListener(listener);
         }
     }
+
+    #endregion
     public static void AddWaveSpawnInvoker(HUDManager invoker)
     {
         waveSpawnInvoker = invoker;

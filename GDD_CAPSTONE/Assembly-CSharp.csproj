@@ -63,7 +63,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\EnemyWaves\EnemyWave.cs" />
+    <Compile Include="Assets\Enemy_HealthBar.cs" />
+    <Compile Include="Assets\EnemyWaves\SO_Script\EnemyWave.cs" />
     <Compile Include="Assets\Scripts\BuildableArea.cs" />
     <Compile Include="Assets\Scripts\EnemySupport\Enemies\Enemy_BasicAirplane.cs" />
     <Compile Include="Assets\Scripts\EnemySupport\Enemies\Enemy_BasicTrooper.cs" />
@@ -78,6 +79,7 @@
     <Compile Include="Assets\Scripts\Events\EnemyDamageEvent.cs" />
     <Compile Include="Assets\Scripts\Events\ItemCollectedEvent.cs" />
     <Compile Include="Assets\Scripts\Events\RemoveEnemyTargetEvent.cs" />
+    <Compile Include="Assets\Scripts\Events\ScrapUsedEvent.cs" />
     <Compile Include="Assets\Scripts\Events\TowerFireEvent.cs" />
     <Compile Include="Assets\Scripts\Events\WaveSpawnEvent.cs" />
     <Compile Include="Assets\Scripts\Explosion.cs" />
@@ -106,7 +108,25 @@
     <Compile Include="Assets\Tower Pieces\Scriptable Objects\AmmoType.cs" />
     <Compile Include="Assets\Tower Pieces\Scriptable Objects\TowerBase.cs" />
     <Compile Include="Assets\Tower Pieces\Scriptable Objects\TurretTop.cs" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\Sprites\FULL TILE SHEET\License.txt" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+    <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF Overlay.shader" />
+    <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/Josh D'Andrea/Documents/GitHub/GDD_Capstone/GDD_CAPSTONE/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

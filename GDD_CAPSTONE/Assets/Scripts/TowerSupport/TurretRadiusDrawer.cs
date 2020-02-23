@@ -2,30 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Used to show the range of the turret
+/// </summary>
 public class TurretRadiusDrawer : MonoBehaviour
 {
     SpriteRenderer sr;
-    float radius;
-
-    private void Awake()
-    {
-        sr = GetComponent<SpriteRenderer>();
-        
-        
-        //UpdateSpriteSize();
-       
-    }
+    Tower radiusSupport;
+    int radius;
 
     // Start is called before the first frame update
     void Start()
     {
-        //sprRadius.localScale.x = cc2d.radius;//new Vector2(cc2d.radius,cc2d.radius) * 2;
-         // radius = cc2d.radius;
-    }
-
-    private void OnDrawGizmos()
-    {
-       // Gizmos.color = Color.red;
-       // Gizmos.DrawWireSphere(transform.position, radius);
+        sr = GetComponent<SpriteRenderer>();
+        // gets the cc2d radius from the parent (range of base)
+        radiusSupport = GetComponentInParent<Tower>();
+        // the scale of the sprite is equal to 2 * radius of cc2d
+        radius = radiusSupport.TurretRadius * 2;
+        // sprite scale edit
+        sr.transform.localScale = new Vector3(radius, radius);
     }
 }

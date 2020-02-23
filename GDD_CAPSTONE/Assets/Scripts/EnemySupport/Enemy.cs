@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Events;
 
 /// <summary>
@@ -11,6 +12,7 @@ public class Enemy : MonoBehaviour
     CircleCollider2D cc2d;
     protected SpriteRenderer sr;
 
+    [SerializeField] Image healthBar;
     // This is hat the enemy drops on death
     [SerializeField] protected GameObject item;
 
@@ -20,7 +22,8 @@ public class Enemy : MonoBehaviour
     #region ENEMY STATS
 
     protected ENEMY_STATS eStat;
-    protected int Health = 1;
+    protected float Health = 1;
+    float fullHealth;
     protected float moveSpeed;
 
     int damage;
@@ -29,7 +32,7 @@ public class Enemy : MonoBehaviour
     EnemyMoveTowardsPoint enemyMove;
 
     public float MoveSpeed { get => moveSpeed; set => moveSpeed = value; }
-
+    public float HealthBarHealth { get => Health; }
     #endregion
 
     #region EVENTS
@@ -66,10 +69,12 @@ public class Enemy : MonoBehaviour
         
         // Adds itself to the overall in game enemy list
         // being used to to determine if the level has been won
-        GameplayManager.Instance.SpawnEnemies.Add(gameObject);
+        GameplayManager.Instance.SpawnedEnemies.Add(gameObject);
 
         // Will Increase the base Health PLus the Modifier (EHM += CurrWave)
         Health += GameplayManager.Instance.EnemyHealthModifier;
+        fullHealth = Health;
+        
         Debug.Log(Health);
 
         #region UNUSED STUFF
@@ -85,13 +90,17 @@ public class Enemy : MonoBehaviour
 
     public virtual void Update()
     {
-        // Life Checking
+        if (Health > 0)
+        {
+            healthBar.fillAmount = Health / fullHealth;
+        }
+            // Life Checking
         if (Health <= 0)
         {
             // Spawns collectable item
             Instantiate(item, transform.position, Quaternion.identity);
             GameplayManager.Instance.EnemiesKilled++;
-            GameplayManager.Instance.SpawnEnemies.Remove(gameObject);
+            GameplayManager.Instance.SpawnedEnemies.Remove(gameObject);
             Destroy(gameObject);
         }
     }
@@ -112,7 +121,7 @@ public class Enemy : MonoBehaviour
         // Removes itself from the the "In=Play" list (GAMEMANAGER)
         if (collision.gameObject.layer == (int)CollisionLayers.HOME_BASE)
         {
-            GameplayManager.Instance.SpawnEnemies.Remove(gameObject);
+            GameplayManager.Instance.SpawnedEnemies.Remove(gameObject);
         }
     }
     #endregion

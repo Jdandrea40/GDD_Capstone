@@ -1,19 +1,27 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - AmmoType
     - BuildableArea
-    - Enemy
     - EnemyMoveTowardsPoint
     - EnemyPathFinder
+    - EnemyWave
     - Enemy_BasicAirplane
+    - Enemy_BasicTrooper
+    - Enemy_BossPlane1
     - HUDManager
+    - HUD_CraftingUI
+    - HUD_GameStats
     - HomeBase
     - ItemDrop
     - ManagerLoader
     - MouseHoverEffect
+    - PiecesCollectedManager
     - Projectile
-    - TOWERCREATIONTESTER
     - Tower
+    - TowerBase
+    - TurretRadiusDrawer
+    - TurretTop
     - WaveSpawner
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridBrush
@@ -25,6 +33,12 @@ ScriptsOnlyBuild:
     - UnityEditor.Tilemaps.PaintableSceneViewGrid
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.TileDragAndDropManager
+    Unity.TextMeshPro.dll:
+    - TMPro.TMP_FontAsset
+    - TMPro.TMP_Settings
+    - TMPro.TMP_SpriteAsset
+    - TMPro.TMP_StyleSheet
+    - TMPro.TextMeshProUGUI
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -35,8 +49,11 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.GridLayoutGroup
+    - UnityEngine.UI.HorizontalLayoutGroup
     - UnityEngine.UI.Image
     - UnityEngine.UI.Text
+    - UnityEngine.UI.Toggle
+    - UnityEngine.UI.ToggleGroup
     - UnityEngine.UI.VerticalLayoutGroup
   sceneClasses:
     Assets/Scenes/TestScene.unity:
@@ -52,6 +69,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
+    - Class: 49
+      Script: {instanceID: 0}
     - Class: 50
       Script: {instanceID: 0}
     - Class: 58
@@ -62,54 +81,88 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
+    - Class: 109
+      Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 576}
+      Script: {instanceID: 598}
     - Class: 114
-      Script: {instanceID: 9674}
+      Script: {instanceID: 9696}
     - Class: 114
-      Script: {instanceID: 9740}
+      Script: {instanceID: 9762}
     - Class: 114
-      Script: {instanceID: 9794}
+      Script: {instanceID: 9764}
     - Class: 114
-      Script: {instanceID: 9848}
+      Script: {instanceID: 9816}
     - Class: 114
-      Script: {instanceID: 9888}
+      Script: {instanceID: 9870}
     - Class: 114
-      Script: {instanceID: 9940}
+      Script: {instanceID: 9910}
     - Class: 114
-      Script: {instanceID: 10266}
+      Script: {instanceID: 9964}
     - Class: 114
-      Script: {instanceID: 10280}
+      Script: {instanceID: 10018}
     - Class: 114
-      Script: {instanceID: 10298}
+      Script: {instanceID: 10262}
     - Class: 114
-      Script: {instanceID: 10404}
+      Script: {instanceID: 10292}
     - Class: 114
-      Script: {instanceID: 10562}
+      Script: {instanceID: 10306}
     - Class: 114
-      Script: {instanceID: 10586}
+      Script: {instanceID: 10324}
+    - Class: 114
+      Script: {instanceID: 10344}
+    - Class: 114
+      Script: {instanceID: 10430}
+    - Class: 114
+      Script: {instanceID: 10522}
     - Class: 114
       Script: {instanceID: 10590}
     - Class: 114
-      Script: {instanceID: 10680}
+      Script: {instanceID: 10614}
     - Class: 114
-      Script: {instanceID: 10780}
+      Script: {instanceID: 10694}
     - Class: 114
-      Script: {instanceID: 10790}
+      Script: {instanceID: 10710}
     - Class: 114
-      Script: {instanceID: 10830}
+      Script: {instanceID: 10758}
     - Class: 114
-      Script: {instanceID: 11002}
+      Script: {instanceID: 10760}
     - Class: 114
-      Script: {instanceID: 11036}
+      Script: {instanceID: 10812}
     - Class: 114
-      Script: {instanceID: 11176}
+      Script: {instanceID: 10862}
     - Class: 114
-      Script: {instanceID: 11212}
+      Script: {instanceID: 10902}
+    - Class: 114
+      Script: {instanceID: 10950}
+    - Class: 114
+      Script: {instanceID: 10954}
+    - Class: 114
+      Script: {instanceID: 10968}
+    - Class: 114
+      Script: {instanceID: 11040}
+    - Class: 114
+      Script: {instanceID: 11076}
+    - Class: 114
+      Script: {instanceID: 11152}
+    - Class: 114
+      Script: {instanceID: 11218}
     - Class: 114
       Script: {instanceID: 11254}
     - Class: 114
-      Script: {instanceID: 11556}
+      Script: {instanceID: 11296}
+    - Class: 114
+      Script: {instanceID: 11354}
+    - Class: 114
+      Script: {instanceID: 11392}
+    - Class: 114
+      Script: {instanceID: 11466}
+    - Class: 114
+      Script: {instanceID: 11598}
+    - Class: 114
+      Script: {instanceID: 11614}
+    - Class: 114
+      Script: {instanceID: 11650}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -125,6 +178,8 @@ ScriptsOnlyBuild:
     - Class: 223
       Script: {instanceID: 0}
     - Class: 224
+      Script: {instanceID: 0}
+    - Class: 225
       Script: {instanceID: 0}
     - Class: 156049354
       Script: {instanceID: 0}
@@ -165,7 +220,7 @@ ScriptsOnlyBuild:
     className: HomeBase
   - hash:
       serializedVersion: 2
-      Hash: 88c727f65016bd758f4a20b263071b4f
+      Hash: 4dac5c346738f89a844830ee5ae79534
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: TurretTop
@@ -183,7 +238,7 @@ ScriptsOnlyBuild:
     className: TMP_ScrollbarEventHandler
   - hash:
       serializedVersion: 2
-      Hash: a104461777379b336527166e36639f36
+      Hash: 435e5612d67f5fc6f524fbcd73edb8b1
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: WaveSpawner
@@ -229,6 +284,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Image
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Explosion
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -321,7 +382,13 @@ ScriptsOnlyBuild:
     className: Shadow
   - hash:
       serializedVersion: 2
-      Hash: 87012adc37f81cdf1ed059308467ba68
+      Hash: 7622dcebcb26fb60523e7cef0d5d3d2c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Enemy_BossPlane1
+  - hash:
+      serializedVersion: 2
+      Hash: 7622dcebcb26fb60523e7cef0d5d3d2c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Enemy_BasicAirplane
@@ -381,6 +448,12 @@ ScriptsOnlyBuild:
     className: ScrollRect
   - hash:
       serializedVersion: 2
+      Hash: 7622dcebcb26fb60523e7cef0d5d3d2c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Enemy_BasicTrooper
+  - hash:
+      serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -393,7 +466,7 @@ ScriptsOnlyBuild:
     className: TMP_SpriteAnimator
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: d8f4bf2bc1a75f1882afcbbe788b3e30
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Projectile
@@ -405,7 +478,7 @@ ScriptsOnlyBuild:
     className: ManagerLoader
   - hash:
       serializedVersion: 2
-      Hash: 084e5e3f70a9c5bf9ad3725bb678b718
+      Hash: 55791a94dd98b0a981951364435bfdc6
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: TOWERCREATIONTESTER
@@ -421,6 +494,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TextContainer
+  - hash:
+      serializedVersion: 2
+      Hash: 8c52787e3bb0ce4da0a8b5dd9e166eb8
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: HUD_CraftingUI
   - hash:
       serializedVersion: 2
       Hash: 5f1752ed2092162f016c19510c28a8b9
@@ -447,10 +526,16 @@ ScriptsOnlyBuild:
     className: AudioManager
   - hash:
       serializedVersion: 2
-      Hash: 86f229392326914975277d41d113161d
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: TurretRadiusDrawer
+  - hash:
+      serializedVersion: 2
+      Hash: 1300815425fdd0039c5b0602271107a3
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: EnemyWave
   - hash:
       serializedVersion: 2
       Hash: 5ad4aa237d47ac2bab17bacb672edf7a
@@ -459,16 +544,22 @@ ScriptsOnlyBuild:
     className: VerticalLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: 87012adc37f81cdf1ed059308467ba68
+      Hash: 7622dcebcb26fb60523e7cef0d5d3d2c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Enemy
   - hash:
       serializedVersion: 2
-      Hash: 86f229392326914975277d41d113161d
+      Hash: 10af03f983ea6a558b02ea185f2333f8
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Tower
+  - hash:
+      serializedVersion: 2
+      Hash: 59ef708a21c5332767a3a47501d1e78d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: HUD_GameStats
   - hash:
       serializedVersion: 2
       Hash: 783f593b9380cf72d0f7ebfd4a0d4bcd
@@ -481,6 +572,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: SignalReceiver
+  - hash:
+      serializedVersion: 2
+      Hash: 55791a94dd98b0a981951364435bfdc6
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: TowerStatCreation
   - hash:
       serializedVersion: 2
       Hash: 5ad4aa237d47ac2bab17bacb672edf7a
@@ -543,6 +640,12 @@ ScriptsOnlyBuild:
     className: TextMeshProUGUI
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Enemy_HealthBar
+  - hash:
+      serializedVersion: 2
       Hash: 0289d00f5561d56f245c4908c33fcd96
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -567,19 +670,19 @@ ScriptsOnlyBuild:
     className: BeforeAfterTestCommandState
   - hash:
       serializedVersion: 2
-      Hash: 0970056930f399f1af23e52786f7a3f3
+      Hash: e57e3b5babd8c28e984a06423900ef05
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: BuildableArea
   - hash:
       serializedVersion: 2
-      Hash: 7195f1070943fa94934db15906b740b5
+      Hash: b1f1657f31eaccb0d44247f0fd770844
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: HUDManager
   - hash:
       serializedVersion: 2
-      Hash: be0314d8988e1eb330cb3cad686010b4
+      Hash: e5b7e529118d02f6adf8dae2eb52fa6e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PiecesCollectedManager
@@ -597,7 +700,7 @@ ScriptsOnlyBuild:
     className: TMP_StyleSheet
   - hash:
       serializedVersion: 2
-      Hash: 3be77183d622e63dcc4af703ada05d46
+      Hash: 3ebe21cac8dc890d85d19e7dddb2e320
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: TowerBase
@@ -681,13 +784,19 @@ ScriptsOnlyBuild:
     className: Slider
   - hash:
       serializedVersion: 2
+      Hash: 0f3b046dbf79463b533641f786f8d6fb
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ENEMY_STATS
+  - hash:
+      serializedVersion: 2
       Hash: 0fd6822f6177297bd0eb4d83cc7a9030
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: ToggleGroup
   - hash:
       serializedVersion: 2
-      Hash: 873fdf691b8af880bf125ed5eb8d87af
+      Hash: a1a5d4c218fc55e16e506e660dfa6827
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: TargetAcquisition

@@ -12,10 +12,11 @@ public class ItemDrop : MonoBehaviour
 
     SpriteRenderer sr;
     int itemToDrop;
-    DroppedItem itemType;
+
+    PiecesCollectedManager.TowerPieceEnum itemType;
 
     ItemCollectedEvent itemCollectedEvent;
-    public void AddItemCollectedListener(UnityAction<int> listener)
+    public void AddItemCollectedListener(UnityAction listener)
     {
         itemCollectedEvent.AddListener(listener);
     }
@@ -37,51 +38,51 @@ public class ItemDrop : MonoBehaviour
         {
             case (int)DroppedItem.SINGLE_FIRE:
                 {
-                    itemType = DroppedItem.SINGLE_FIRE;
+                    itemType = PiecesCollectedManager.TowerPieceEnum.SINGLEFIRE_TOP;
                     break;
                 }
             case (int)DroppedItem.RAPID_FIRE:
                 {
-                    itemType = DroppedItem.RAPID_FIRE;
+                    itemType = PiecesCollectedManager.TowerPieceEnum.RAPIDFIRE_TOP;
                     break;
                 }
             case (int)DroppedItem.CANNON:
                 {
-                    itemType = DroppedItem.CANNON;
+                    itemType = PiecesCollectedManager.TowerPieceEnum.CANNON_TOP;
                     break;
                 }
             case (int)DroppedItem.SHORT:
                 {
-                    itemType = DroppedItem.SHORT;
+                    itemType = PiecesCollectedManager.TowerPieceEnum.SHORTRANGE_BASE;
                     sr.color = Color.red;
                     break;
                 }
             case (int)DroppedItem.MEDIUM:
                 {
-                    itemType = DroppedItem.MEDIUM;
+                    itemType = PiecesCollectedManager.TowerPieceEnum.MIDRANGE_BASE;
                     sr.color = Color.yellow;
                     break;
                 }
             case (int)DroppedItem.LONG:
                 {
-                    itemType = DroppedItem.LONG;
+                    itemType = PiecesCollectedManager.TowerPieceEnum.LONGRANGE_BASE;
                     sr.color = Color.green;
                     break;
                 }
             case (int)DroppedItem.STANDARD:
                 {
-                    itemType = DroppedItem.STANDARD;
+                    itemType = PiecesCollectedManager.TowerPieceEnum.KINETIC_AMMO;
                     break;
                 }
             case (int)DroppedItem.SLOW:
                 {
-                    itemType = DroppedItem.SLOW;
+                    itemType = PiecesCollectedManager.TowerPieceEnum.CRYO_AMMO;
                     sr.color = Color.blue;
                     break;
                 }
             case (int)DroppedItem.INCENDIARY:
                 {
-                    itemType = DroppedItem.INCENDIARY;
+                    itemType = PiecesCollectedManager.TowerPieceEnum.INCENDIARY_AMMO;
                     break;
                 }
         }
@@ -89,60 +90,8 @@ public class ItemDrop : MonoBehaviour
 
     private void OnMouseDown()
     {
-        switch (itemType)
-        {
-            case DroppedItem.SINGLE_FIRE:
-                {
-                    PiecesCollectedManager.Instance.standardTurretTop++;
-                    break;
-                }
-            case DroppedItem.RAPID_FIRE:
-                {
-                    PiecesCollectedManager.Instance.rapidFireTop++;
-                    break;
-                }
-            case DroppedItem.CANNON:
-                {
-                    PiecesCollectedManager.Instance.rocketTop++;
-                    break;
-                }
-            case DroppedItem.SHORT:
-                {
-                    PiecesCollectedManager.Instance.shortRangeBase++;
-                    break;
-                }
-            case DroppedItem.MEDIUM:
-                {
-                    PiecesCollectedManager.Instance.mediumRangeBase++;
-                    break;
-                }
-            case DroppedItem.LONG:
-                {
-                    PiecesCollectedManager.Instance.longRangeBase++;
-                    break;
-                }
-            case DroppedItem.STANDARD:
-                {
-                    PiecesCollectedManager.Instance.standardAmmo++;
-                    break;
-                }
-            case DroppedItem.SLOW:
-                {
-                    PiecesCollectedManager.Instance.slowAmmo++;
-                    break;
-                }
-            case DroppedItem.INCENDIARY:
-                {
-                    PiecesCollectedManager.Instance.fireAmmo++;
-                    break;
-                }
-        }
-        itemCollectedEvent.Invoke((int)itemType);
+        PiecesCollectedManager.Instance.CollectedPieces[itemType]++;
+        itemCollectedEvent.Invoke();
         Destroy(gameObject);
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

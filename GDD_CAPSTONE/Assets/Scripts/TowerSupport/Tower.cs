@@ -5,6 +5,7 @@ using UnityEngine.Events;
 
 public class Tower : MonoBehaviour
 {
+    #region FIELDS
     // Singleton Instances
     PiecesCollectedManager pcm;
     HUD_CraftingUI hudCUI;
@@ -12,9 +13,10 @@ public class Tower : MonoBehaviour
     // Components
     CircleCollider2D cc2d;
     SpriteRenderer sr;
-    [SerializeField] SpriteRenderer rangeSprite;
+    [SerializeField] SpriteRenderer turretBaseSprite;
+    [SerializeField] CanvasGroup sellCanvas;
+    [SerializeField] GameObject rangeIndicator;
 
-    #region FIELDS
     // The towers targeting list
     public List<GameObject> enemyTargets;
     GameObject tToShoot;
@@ -34,6 +36,7 @@ public class Tower : MonoBehaviour
 
     // Used for tower rotation to target
     bool firing = false;
+    bool hovering = false;
 
     #endregion
 
@@ -45,6 +48,9 @@ public class Tower : MonoBehaviour
     {
         get { return targetToShoot; }
     }
+
+    // Accesor for TurretRangeIndicator
+    public int TurretRadius { get => range; }
 
     #endregion
 
@@ -81,6 +87,13 @@ public class Tower : MonoBehaviour
     //    towerFireEvent.AddListener(listener);
     //}
 
+    // Event used to decrement from the Pieces Collected Manager
+    ScrapUsedEvent scrapUsedEvent;
+    public void AddScrapUsedListener(UnityAction listener)
+    {
+        scrapUsedEvent.AddListener(listener);
+    }
+
     #endregion
 
     #region UNITY METHODS
@@ -93,20 +106,21 @@ public class Tower : MonoBehaviour
         // EventManager.TowerFireInvoker(this);
 
         // Needs to be set to a variable in order to StopCoroutine()
-        fireCoroutine = Fire(); 
+        fireCoroutine = Fire();
+        
+        // List of targetable enemies in range
         enemyTargets = new List<GameObject>();
        
+        // Component Grabbing
         pcm = PiecesCollectedManager.Instance;
         hudCUI = HUD_CraftingUI.Instance;
         sr = GetComponent<SpriteRenderer>();
         cc2d = GetComponent<CircleCollider2D>();
 
+        // Turret Initializer
         CreateTower();
-        cc2d.radius = range;
-
-        //projSPR = tct.ProjSprite;
-        // cc2d = GetComponent<CircleCollider2D>();     
-        //enemies = new Dictionary<int, GameObject>();       
+        rangeIndicator.SetActive(false);
+        //cc2d.radius = range;    
     }
 
     // Start is called before the first frame update
@@ -116,83 +130,126 @@ public class Tower : MonoBehaviour
         // EventManager.RemoveEnemyTargetListener(RemoveEnemyTarget);
         // Not Currently using
         // EventManager.EnemeyDequeueListener(DequeueEnemy);
+        // EVENTS
+        scrapUsedEvent = new ScrapUsedEvent();
+        EventManager.ScrapUsedInvoker(this);
 
-        // range = 2;//cc2d.radius;
-        // InvokeRepeating("UpdateTarget", 0f, .5f);
-        Debug.Log(damage);
+        // TODO: right now, +3/+6 are implemetned to account for the NEW DICTIONARY I AM USING ---> FIX THIS
+        PiecesCollectedManager.Instance.CollectedPieces[(PiecesCollectedManager.TowerPieceEnum)HUD_CraftingUI.Instance.SelectedTop]--;
+        PiecesCollectedManager.Instance.CollectedPieces[(PiecesCollectedManager.TowerPieceEnum)HUD_CraftingUI.Instance.SelectedBot + 3]--;
+        PiecesCollectedManager.Instance.CollectedPieces[(PiecesCollectedManager.TowerPieceEnum)HUD_CraftingUI.Instance.SelectedAmmo + 6]--;
+
+        sellCanvas.alpha = 0;
+        sellCanvas.interactable = false;
+        sellCanvas.blocksRaycasts = false;
+
+        scrapUsedEvent.Invoke();
+        InvokeRepeating("UpdateTarget", 0, .5f);
+        //Debug.Log(damage);
     }
 
     // Called once a frame
     void Update()
     {
-        // Check for a non empty List (List<GO> enemyTarget)
-        if (enemyTargets.Count > 0)
+        if (targetToShoot == null)
         {
-            if (targetToShoot != GameplayManager.Instance.SpawnEnemies[0])
-            {
-                targetToShoot = GameplayManager.Instance.SpawnEnemies[0];
-            }
-            // sets the current target to the fist one in the List
-            targetToShoot = enemyTargets[0];
-            // Makes sure Fire() is only called if it isn't currently shooting
-            if(!firing)
-            {
-                // Stop the ability to call Fire/call Fire()
-                firing = true;
-                StartCoroutine(fireCoroutine);              
-            }
-        }
-        // Nothing to shoot at
-        else if (enemyTargets.Count < 1)
-        {
-            // Stop shooting
-            StopCoroutine(fireCoroutine);
             firing = false;
+            StopCoroutine(fireCoroutine);
+            return;
         }
-
-        // If it has a target
-        if (firing)
+        else
         {
-            // get a vector from tower to target
-            Vector2 direction = targetToShoot.transform.position - transform.position;
-            // find the angle of that line
-            float angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
-            // rotate the projectile to always face the target
-            transform.rotation = Quaternion.AngleAxis(angle, Vector3.back);
+            if (!firing)
+            {
+                firing = true;
+                StartCoroutine(fireCoroutine);
+
+                //// get a vector from tower to target
+                //Vector2 direction = targetToShoot.transform.position - transform.position;
+                //// find the angle of that line
+                //float angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
+                //// rotate the projectile to always face the target
+                //transform.rotation = Quaternion.AngleAxis(angle, Vector3.back);
+            }
+
+            if (firing)
+            {
+                // get a vector from tower to target
+                Vector2 direction = targetToShoot.transform.position - transform.position;
+                // find the angle of that line
+                float angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
+                // rotate the projectile to always face the target
+                transform.rotation = Quaternion.AngleAxis(angle, Vector3.back);
+            }
         }
     }
 
-    // Target acquired
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnMouseEnter()
     {
-        // Debug.Log(collision.name + " " + collision.gameObject.GetInstanceID());
-        if (collision.gameObject.layer == (int)CollisionLayers.ENEMIES)
-        {
-            //if (enemies.ContainsKey(collision.GetInstanceID()))
-            //{
-            //enemies.Add(collision.gameObject.GetInstanceID(), collision.gameObject);
-            //}
-            enemyTargets.Add(collision.gameObject);
-        }
+        hovering = true;
+        rangeIndicator.SetActive(true);
     }
 
-    // Target unacquired
-    private void OnTriggerExit2D(Collider2D collision)
+    // Mouse Exit support
+    private void OnMouseExit()
     {
-        if (collision.gameObject.layer == (int)CollisionLayers.ENEMIES)
-        {
-            //if (enemies.ContainsKey(collision.GetInstanceID()))
-            //{
-            //    enemies.Remove(collision.GetInstanceID());
-            //}
+        hovering = false;
 
-            enemyTargets.Remove(collision.gameObject);
+        rangeIndicator.SetActive(false);
+
+        sellCanvas.alpha = 0;
+        sellCanvas.interactable = false;
+        sellCanvas.blocksRaycasts = false;
+    }
+
+    // Click support
+    private void OnMouseDown()
+    {
+        if (hovering)
+        {
+            sellCanvas.alpha = 1;
+            sellCanvas.interactable = true;
+            sellCanvas.blocksRaycasts = true;
         }
     }
+
+    
     #endregion
 
     #region CUSTOM METHODS
+    public void RemoveTower()
+    {
+        BuildableArea ba = GetComponentInParent<BuildableArea>();
+        ba.Occupied = false;
+        Destroy(gameObject);
+    }
+    /// <summary>
+    /// https://www.youtube.com/watch?v=QKhn2kl9_8I&list=PLPV2KyIb3jR4u5jX8za5iU1cqnQPmbzG0&index=5&t=1047s
+    /// Brackeys tutorial for ClosestTarget Acquisition
+    /// </summary>
+    void UpdateTarget()
+    {
+        float shortestDistace = Mathf.Infinity;
+        GameObject closestEnemy = null;
+        foreach(GameObject enemy in GameplayManager.Instance.SpawnedEnemies)
+        {
+            float distanceToEnemy = Vector2.Distance(transform.position, enemy.transform.position);
+            if (distanceToEnemy < shortestDistace)
+            {
+                shortestDistace = distanceToEnemy;
+                closestEnemy = enemy;
+            }
+        }
 
+        if (closestEnemy != null && shortestDistace <= range)
+        {
+            targetToShoot = closestEnemy;
+        }
+        else
+        {
+            targetToShoot = null;
+        }
+    }
     // Fire Coroutine
     IEnumerator Fire()
     {
@@ -212,18 +269,6 @@ public class Tower : MonoBehaviour
         }
         
     }
-
-    void AddEnemyTarget(int targetID, GameObject enemy)
-    {
-        //if (!enemies.ContainsKey(targetID))
-        //{
-        //    enemies.Add(targetID, enemy);
-        //}
-    }
-    void RemoveEnemyTarget(int targetID, GameObject enemy)
-    {
-        //enemies.Remove(targetID);
-    }
     void CreateTower()
     {
         TurretTop tTop = pcm.pcTop[hudCUI.SelectedTop];
@@ -234,8 +279,8 @@ public class Tower : MonoBehaviour
         // Visuals
         sr.sprite = tTop.TurretSprite;
         projSpr = tTop.ProjectileSprite;
-        rangeSprite.sprite = tBase.BaseSprite;
-        rangeSprite.color = tBase.BaseColor;
+        turretBaseSprite.sprite = tBase.BaseSprite;
+        turretBaseSprite.color = tBase.BaseColor;
 
         // Stat Values
         damage = (tTop.Damage + tAmmo.ImpactDamage);

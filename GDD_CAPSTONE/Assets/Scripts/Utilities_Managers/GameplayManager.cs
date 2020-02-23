@@ -12,7 +12,7 @@ public class GameplayManager : Singleton<GameplayManager>
     public int MaxWaveCount { get; set; }
     public int CurWaveCount { get; set; }
     public bool WaveInProgress { get; set; }
-    public List<GameObject> SpawnEnemies { get; set; }
+    public List<GameObject> SpawnedEnemies { get; set; }
 
 
     // Start is called before the first frame update
@@ -22,7 +22,7 @@ public class GameplayManager : Singleton<GameplayManager>
         Debug.Log(MaxWaveCount);
         CurWaveCount = 0;
         WaveInProgress = false;
-        SpawnEnemies = new List<GameObject>();
+        SpawnedEnemies = new List<GameObject>();
         currWave = CurWaveCount;
     }
 
@@ -36,7 +36,7 @@ public class GameplayManager : Singleton<GameplayManager>
             currWave = CurWaveCount;
         }
         //Debug.Log(SpawnEnemies.Count);
-        if (BaseHealth <= 0 || (CurWaveCount == MaxWaveCount && SpawnEnemies.Count <= 0))
+        if (BaseHealth <= 0 || (CurWaveCount == MaxWaveCount && SpawnedEnemies.Count <= 0))
         {
             CurWaveCount = 0;
             Scene scene = SceneManager.GetActiveScene();
