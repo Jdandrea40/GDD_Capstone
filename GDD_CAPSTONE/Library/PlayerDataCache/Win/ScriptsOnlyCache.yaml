@@ -18,9 +18,9 @@ ScriptsOnlyBuild:
     - MouseHoverEffect
     - PiecesCollectedManager
     - Projectile
-    - TOWERCREATIONTESTER
     - Tower
     - TowerBase
+    - TurretRadiusDrawer
     - TurretTop
     - WaveSpawner
     Unity.2D.Tilemap.Editor.dll:
@@ -33,8 +33,15 @@ ScriptsOnlyBuild:
     - UnityEditor.Tilemaps.PaintableSceneViewGrid
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.TileDragAndDropManager
+    Unity.TextMeshPro.dll:
+    - TMPro.TMP_FontAsset
+    - TMPro.TMP_Settings
+    - TMPro.TMP_SpriteAsset
+    - TMPro.TMP_StyleSheet
+    - TMPro.TextMeshProUGUI
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
+    - UnityEditor.TestTools.TestRunner.TestListCacheData
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
@@ -62,6 +69,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
+    - Class: 49
+      Script: {instanceID: 0}
     - Class: 50
       Script: {instanceID: 0}
     - Class: 58
@@ -72,74 +81,88 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
+    - Class: 109
+      Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 576}
+      Script: {instanceID: 598}
     - Class: 114
-      Script: {instanceID: 9674}
+      Script: {instanceID: 9696}
     - Class: 114
-      Script: {instanceID: 9740}
+      Script: {instanceID: 9762}
     - Class: 114
-      Script: {instanceID: 9742}
+      Script: {instanceID: 9764}
     - Class: 114
-      Script: {instanceID: 9794}
+      Script: {instanceID: 9816}
     - Class: 114
-      Script: {instanceID: 9848}
+      Script: {instanceID: 9870}
     - Class: 114
-      Script: {instanceID: 9888}
+      Script: {instanceID: 9910}
     - Class: 114
-      Script: {instanceID: 9942}
+      Script: {instanceID: 9964}
     - Class: 114
-      Script: {instanceID: 9996}
+      Script: {instanceID: 10018}
     - Class: 114
-      Script: {instanceID: 10240}
+      Script: {instanceID: 10262}
     - Class: 114
-      Script: {instanceID: 10270}
+      Script: {instanceID: 10292}
     - Class: 114
-      Script: {instanceID: 10284}
+      Script: {instanceID: 10306}
     - Class: 114
-      Script: {instanceID: 10302}
+      Script: {instanceID: 10324}
     - Class: 114
-      Script: {instanceID: 10408}
+      Script: {instanceID: 10344}
     - Class: 114
-      Script: {instanceID: 10500}
+      Script: {instanceID: 10430}
     - Class: 114
-      Script: {instanceID: 10568}
+      Script: {instanceID: 10522}
     - Class: 114
-      Script: {instanceID: 10592}
+      Script: {instanceID: 10590}
     - Class: 114
-      Script: {instanceID: 10672}
+      Script: {instanceID: 10614}
     - Class: 114
-      Script: {instanceID: 10688}
+      Script: {instanceID: 10694}
     - Class: 114
-      Script: {instanceID: 10738}
+      Script: {instanceID: 10710}
     - Class: 114
-      Script: {instanceID: 10790}
+      Script: {instanceID: 10758}
     - Class: 114
-      Script: {instanceID: 10840}
+      Script: {instanceID: 10760}
     - Class: 114
-      Script: {instanceID: 10880}
+      Script: {instanceID: 10812}
     - Class: 114
-      Script: {instanceID: 10928}
+      Script: {instanceID: 10862}
     - Class: 114
-      Script: {instanceID: 11018}
+      Script: {instanceID: 10902}
     - Class: 114
-      Script: {instanceID: 11054}
+      Script: {instanceID: 10950}
     - Class: 114
-      Script: {instanceID: 11196}
+      Script: {instanceID: 10954}
     - Class: 114
-      Script: {instanceID: 11232}
+      Script: {instanceID: 10968}
     - Class: 114
-      Script: {instanceID: 11274}
+      Script: {instanceID: 11040}
     - Class: 114
-      Script: {instanceID: 11332}
+      Script: {instanceID: 11076}
     - Class: 114
-      Script: {instanceID: 11444}
+      Script: {instanceID: 11152}
     - Class: 114
-      Script: {instanceID: 11576}
+      Script: {instanceID: 11218}
     - Class: 114
-      Script: {instanceID: 11592}
+      Script: {instanceID: 11254}
     - Class: 114
-      Script: {instanceID: 11628}
+      Script: {instanceID: 11296}
+    - Class: 114
+      Script: {instanceID: 11354}
+    - Class: 114
+      Script: {instanceID: 11392}
+    - Class: 114
+      Script: {instanceID: 11466}
+    - Class: 114
+      Script: {instanceID: 11598}
+    - Class: 114
+      Script: {instanceID: 11614}
+    - Class: 114
+      Script: {instanceID: 11650}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -155,6 +178,8 @@ ScriptsOnlyBuild:
     - Class: 223
       Script: {instanceID: 0}
     - Class: 224
+      Script: {instanceID: 0}
+    - Class: 225
       Script: {instanceID: 0}
     - Class: 156049354
       Script: {instanceID: 0}
@@ -357,13 +382,13 @@ ScriptsOnlyBuild:
     className: Shadow
   - hash:
       serializedVersion: 2
-      Hash: 87012adc37f81cdf1ed059308467ba68
+      Hash: 7622dcebcb26fb60523e7cef0d5d3d2c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Enemy_BossPlane1
   - hash:
       serializedVersion: 2
-      Hash: 87012adc37f81cdf1ed059308467ba68
+      Hash: 7622dcebcb26fb60523e7cef0d5d3d2c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Enemy_BasicAirplane
@@ -423,7 +448,7 @@ ScriptsOnlyBuild:
     className: ScrollRect
   - hash:
       serializedVersion: 2
-      Hash: 87012adc37f81cdf1ed059308467ba68
+      Hash: 7622dcebcb26fb60523e7cef0d5d3d2c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Enemy_BasicTrooper
@@ -519,13 +544,13 @@ ScriptsOnlyBuild:
     className: VerticalLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: 87012adc37f81cdf1ed059308467ba68
+      Hash: 7622dcebcb26fb60523e7cef0d5d3d2c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Enemy
   - hash:
       serializedVersion: 2
-      Hash: 188a770b58256cc2417037bb7eb66b8b
+      Hash: 10af03f983ea6a558b02ea185f2333f8
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Tower
@@ -645,7 +670,7 @@ ScriptsOnlyBuild:
     className: BeforeAfterTestCommandState
   - hash:
       serializedVersion: 2
-      Hash: 0970056930f399f1af23e52786f7a3f3
+      Hash: e57e3b5babd8c28e984a06423900ef05
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: BuildableArea

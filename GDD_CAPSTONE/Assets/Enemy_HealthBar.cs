@@ -10,8 +10,7 @@ public class Enemy_HealthBar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        enemyHealth = GetComponentInParent<Enemy>();
-        healthBarScale = enemyHealth.HealthBarHealth;
+
 
     }
 
