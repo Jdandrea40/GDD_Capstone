@@ -63,7 +63,6 @@ public class HUD_CraftingUI : Singleton<HUD_CraftingUI>
     /// </summary>
     public void UpdateItemCount()
     {
-        Debug.Log(PiecesCollectedManager.Instance.CollectedPieces.Count);
         for (int i = 0; i < PiecesCollectedManager.Instance.CollectedPieces.Count; i++)
         {
             itemCountText[i].text = PiecesCollectedManager.Instance.CollectedPieces[(PiecesCollectedManager.TowerPieceEnum)i].ToString();

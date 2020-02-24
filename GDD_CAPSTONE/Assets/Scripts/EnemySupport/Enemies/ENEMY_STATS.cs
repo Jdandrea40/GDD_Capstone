@@ -14,7 +14,7 @@ public class ENEMY_STATS : Singleton<ENEMY_STATS>
     #region BASIC TROOPER
 
     public int BASIC_TROOPER_HEALTH = 40;
-    public int BASIC_TROOPER_MOVE_SPEED = 10;
+    public int BASIC_TROOPER_MOVE_SPEED = 1;
 
     #endregion
 

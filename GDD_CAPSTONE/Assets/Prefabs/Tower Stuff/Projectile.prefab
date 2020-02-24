@@ -94,7 +94,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2bec3b7e2f511048996d2fc6164bbee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 0}
+  explosion: {fileID: 4774619831586304854, guid: 6e3c57c20d3f9cf4791a9687f34b38ea,
+    type: 3}
 --- !u!58 &6940713297896488492
 CircleCollider2D:
   m_ObjectHideFlags: 0

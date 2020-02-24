@@ -116,9 +116,7 @@ public class Projectile : MonoBehaviour
             {
                 
                 cc2d.radius = 1;
-                
                 StartCoroutine(Explode());
-                //Explosion explode =  Instantiate(explosion, transform.position, Quaternion.identity).GetComponent<Explosion>();
             }
             else
             {
@@ -129,7 +127,9 @@ public class Projectile : MonoBehaviour
     }
 
     IEnumerator Explode()
-    {
+    { 
+        Instantiate(explosion, transform.position, Quaternion.identity);
+
         yield return new WaitForSeconds(.1f);
         Destroy(gameObject);
     }

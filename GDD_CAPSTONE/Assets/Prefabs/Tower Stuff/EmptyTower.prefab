@@ -386,7 +386,6 @@ GameObject:
   - component: {fileID: 1901797927721683582}
   - component: {fileID: 1583746775108329516}
   - component: {fileID: 4969002614932944727}
-  - component: {fileID: 4969002614932944712}
   - component: {fileID: 7589645309595770845}
   - component: {fileID: 6036816077857217279}
   m_Layer: 9
@@ -480,27 +479,6 @@ MonoBehaviour:
   enemyTargets: []
   projectile: {fileID: 498285652798417211, guid: e896772b2a513dd4c84480ea43f3c559,
     type: 3}
---- !u!50 &4969002614932944712
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4969002614932944724}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!114 &7589645309595770845
 MonoBehaviour:
   m_ObjectHideFlags: 0

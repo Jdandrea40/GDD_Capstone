@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2aadbf8e9295c646820ed6fd5608959, type: 3}
+  m_Name: BossWave2
+  m_EditorClassIdentifier: 
+  Name: BossWave2
+  Enemies:
+  - {fileID: 1142398865292350821, guid: f6087b7d3528b9e41840cd8e2eea32cd, type: 3}
+  - {fileID: 1142398865292350821, guid: ecd702b8ce38a1548b67c7dabf661bdf, type: 3}
+  - {fileID: 1142398865292350821, guid: ecd702b8ce38a1548b67c7dabf661bdf, type: 3}
+  - {fileID: 1142398865292350821, guid: ecd702b8ce38a1548b67c7dabf661bdf, type: 3}
+  - {fileID: 1142398865292350821, guid: ecd702b8ce38a1548b67c7dabf661bdf, type: 3}
+  - {fileID: 1142398865292350821, guid: ecd702b8ce38a1548b67c7dabf661bdf, type: 3}
+  - {fileID: 1142398865292350821, guid: ecd702b8ce38a1548b67c7dabf661bdf, type: 3}
+  - {fileID: 1142398865292350821, guid: ecd702b8ce38a1548b67c7dabf661bdf, type: 3}
+  - {fileID: 1142398865292350821, guid: ecd702b8ce38a1548b67c7dabf661bdf, type: 3}
+  - {fileID: 1142398865292350821, guid: f6087b7d3528b9e41840cd8e2eea32cd, type: 3}

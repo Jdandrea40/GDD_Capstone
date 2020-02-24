@@ -278,6 +278,7 @@ public class Tower : MonoBehaviour
         
         // Visuals
         sr.sprite = tTop.TurretSprite;
+        sr.color = tAmmo.color;
         projSpr = tTop.ProjectileSprite;
         turretBaseSprite.sprite = tBase.BaseSprite;
         turretBaseSprite.color = tBase.BaseColor;
