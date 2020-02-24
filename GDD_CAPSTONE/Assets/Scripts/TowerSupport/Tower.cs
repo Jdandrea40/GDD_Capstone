@@ -119,8 +119,7 @@ public class Tower : MonoBehaviour
 
         // Turret Initializer
         CreateTower();
-        rangeIndicator.SetActive(false);
-        //cc2d.radius = range;    
+        rangeIndicator.SetActive(false); 
     }
 
     // Start is called before the first frame update
@@ -257,6 +256,7 @@ public class Tower : MonoBehaviour
         // towerFireEvent.Invoke(target.transform);
         while (firing)
         {
+
             //towerFireEvent.Invoke(damage, damageOverTime, dotAmount, slow);
             // instatiate a bullet
             Projectile proj = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Projectile>();

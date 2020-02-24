@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f2b383e81c7c0040ab30953dfacfadd, type: 3}
   m_Name: StandardRange
   m_EditorClassIdentifier: 
-  Name: Standard Range Base
+  Name: Mid-Range Targeter
   Range: 3
   FireRateModifier: 0
   BaseSprite: {fileID: 21300000, guid: 877e285f22b7ed74ea8d8ce03c5d1a27, type: 3}
