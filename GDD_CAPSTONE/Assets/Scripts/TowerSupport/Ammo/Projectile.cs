@@ -58,6 +58,7 @@ public class Projectile : MonoBehaviour
         //EventManager.TowerFireListener(SetStats);
         sr.color = projColor;
         sr.sprite = projSprite;
+        AudioManager.Instance.PlaySFX(AudioManager.Sounds.GUN_SHOT);
     }
 
     public void SetStats(int damage, bool dot, int dotAmount, bool slow, bool AoE, Color sprColor, Sprite sprite)
@@ -114,10 +115,8 @@ public class Projectile : MonoBehaviour
             if (projSplash)
             {
                 
-                cc2d.radius = 10;
-                Debug.Log(cc2d.radius);
+                cc2d.radius = 1;
                 StartCoroutine(Explode());
-                //Explosion explode =  Instantiate(explosion, transform.position, Quaternion.identity).GetComponent<Explosion>();
             }
             else
             {
@@ -128,8 +127,10 @@ public class Projectile : MonoBehaviour
     }
 
     IEnumerator Explode()
-    {
-        yield return new WaitForSeconds(1);
+    { 
+        Instantiate(explosion, transform.position, Quaternion.identity);
+
+        yield return new WaitForSeconds(.1f);
         Destroy(gameObject);
     }
 }

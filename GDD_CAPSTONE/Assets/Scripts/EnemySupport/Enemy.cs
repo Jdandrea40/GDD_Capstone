@@ -74,8 +74,6 @@ public class Enemy : MonoBehaviour
         // Will Increase the base Health PLus the Modifier (EHM += CurrWave)
         Health += GameplayManager.Instance.EnemyHealthModifier;
         fullHealth = Health;
-        
-        Debug.Log(Health);
 
         #region UNUSED STUFF
         //Debug.Log(Health);
@@ -97,8 +95,12 @@ public class Enemy : MonoBehaviour
             // Life Checking
         if (Health <= 0)
         {
-            // Spawns collectable item
-            Instantiate(item, transform.position, Quaternion.identity);
+            if (Random.Range(0, 5) > 1)
+            {
+                // Spawns collectable item
+                Instantiate(item, transform.position, Quaternion.identity);
+            }
+            
             GameplayManager.Instance.EnemiesKilled++;
             GameplayManager.Instance.SpawnedEnemies.Remove(gameObject);
             Destroy(gameObject);
@@ -138,7 +140,7 @@ public class Enemy : MonoBehaviour
     public virtual void TakeDamage(int amount, bool dot, int dotAmount, bool slow)
     {        
         Health -= amount;
-        if (dot)
+        if (dot && !TakingDamage)
         {
             TakingDamage = true;
             StartCoroutine(TakeDamageOverTime(dotAmount));

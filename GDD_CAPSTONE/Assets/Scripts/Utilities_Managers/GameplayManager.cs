@@ -19,11 +19,11 @@ public class GameplayManager : Singleton<GameplayManager>
     void Start()
     {
         MaxWaveCount = WaveSpawner.Instance.Wave.Count;
-        Debug.Log(MaxWaveCount);
         CurWaveCount = 0;
         WaveInProgress = false;
         SpawnedEnemies = new List<GameObject>();
         currWave = CurWaveCount;
+        AudioManager.Instance.PlayLoop(AudioManager.Sounds.BKG_LOOP);
     }
 
     // Update is called once per frame
@@ -39,6 +39,14 @@ public class GameplayManager : Singleton<GameplayManager>
         if (BaseHealth <= 0 || (CurWaveCount == MaxWaveCount && SpawnedEnemies.Count <= 0))
         {
             CurWaveCount = 0;
+            // intialize the dictionary of collected pieces
+            for (int i = 0; i < 9; i++)
+            {
+                PiecesCollectedManager.Instance.CollectedPieces[(PiecesCollectedManager.TowerPieceEnum)i] = 1;
+            }
+
+            HUD_CraftingUI.Instance.UpdateItemCount();
+
             Scene scene = SceneManager.GetActiveScene();
             SceneManager.LoadScene(scene.name);
         }

@@ -12,14 +12,9 @@ public class Explosion : MonoBehaviour
         
     }
 
-    public void SetEffect(bool slow, bool DoT, int DoTAmount)
-    {
-
-    }
-
     IEnumerator Explode()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(.2f);
         Destroy(gameObject);
     }
 }

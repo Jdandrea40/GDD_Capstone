@@ -61,8 +61,8 @@ public class HUD_CraftingUI : Singleton<HUD_CraftingUI>
     /// -3/6 accounts for the different arrays of Scriptable objects currently impemented
     /// dictionary has 9 elements, so must subtract to get proper index
     /// </summary>
-    void UpdateItemCount()
-    {       
+    public void UpdateItemCount()
+    {
         for (int i = 0; i < PiecesCollectedManager.Instance.CollectedPieces.Count; i++)
         {
             itemCountText[i].text = PiecesCollectedManager.Instance.CollectedPieces[(PiecesCollectedManager.TowerPieceEnum)i].ToString();
