@@ -16,9 +16,9 @@ public class PiecesCollectedManager : Singleton<PiecesCollectedManager>
     };
 
     // Used for tower creation (contains the Scriptable Objects)
-    [SerializeField] public TurretTop[] pcTop;
-    [SerializeField] public TowerBase[] pcBase;
-    [SerializeField] public AmmoType[] pcAmmo;
+    public TurretTop[] pcTop;
+    public TowerBase[] pcBase;
+    public AmmoType[] pcAmmo;
 
     public Dictionary<TowerPieceEnum, int> CollectedPieces = new Dictionary<TowerPieceEnum, int>();
 
@@ -28,7 +28,8 @@ public class PiecesCollectedManager : Singleton<PiecesCollectedManager>
         for (int i = 0; i < 9; i++)
         {
             CollectedPieces[(TowerPieceEnum)i] = 1;
+            
         }
-        
+        DontDestroyOnLoad(this);
     }
 }

@@ -3,19 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HUD_CraftingUI : Singleton<HUD_CraftingUI>
+public class HUD_CraftingUI : MonoBehaviour
 {
     enum Piece { TOP, BOT, AMMO };
 
     // being used to select the index of the current selected piece
-    int selectedTop;
-    int selectedBot;
-    int selectedAmmo;
-
-    public int SelectedTop { get => selectedTop; }
-    public int SelectedBot { get => selectedBot; }
-    public int SelectedAmmo { get => selectedAmmo; }
-
+    static int selectedTop;
+    static int selectedBot;
+    static int selectedAmmo;
+    public static int SelectedTop { get => selectedTop; set => selectedTop = value; }
+    public static int SelectedBot { get => selectedBot; set => selectedBot = value; }
+    public static int SelectedAmmo { get => selectedAmmo; set => selectedAmmo = value; }
     //[SerializeField] GameObject tower;
 
     [SerializeField] Toggle[] toggleTops;
@@ -41,6 +39,8 @@ public class HUD_CraftingUI : Singleton<HUD_CraftingUI>
     
     [SerializeField] Text[] itemCountText;
 
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -49,9 +49,9 @@ public class HUD_CraftingUI : Singleton<HUD_CraftingUI>
         
         // Game Start Initialization
         UpdateItemCount();
-        TowerUIUpdate(0, 0);
-        TowerUIUpdate(0, 1);
-        TowerUIUpdate(0, 2);
+        //TowerUIUpdate(0, 0);
+        //TowerUIUpdate(0, 1);
+        //TowerUIUpdate(0, 2);
 
     }
 
@@ -106,7 +106,7 @@ public class HUD_CraftingUI : Singleton<HUD_CraftingUI>
             case (int)Piece.TOP:
                 // Sprite
                 createdTowerUI[0].sprite = tTop[index].TurretSprite;
-                 createdTowerUI[0].color = Color.white;
+                createdTowerUI[0].color = Color.white;
 
                 // Text
                 createdTowerText[0].text = tTop[index].Name;

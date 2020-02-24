@@ -113,7 +113,7 @@ public class Tower : MonoBehaviour
        
         // Component Grabbing
         pcm = PiecesCollectedManager.Instance;
-        hudCUI = HUD_CraftingUI.Instance;
+        //hudCUI = HUD_CraftingUI.Instance;
         sr = GetComponent<SpriteRenderer>();
         cc2d = GetComponent<CircleCollider2D>();
 
@@ -134,9 +134,9 @@ public class Tower : MonoBehaviour
         EventManager.ScrapUsedInvoker(this);
 
         // TODO: right now, +3/+6 are implemetned to account for the NEW DICTIONARY I AM USING ---> FIX THIS
-        PiecesCollectedManager.Instance.CollectedPieces[(PiecesCollectedManager.TowerPieceEnum)HUD_CraftingUI.Instance.SelectedTop]--;
-        PiecesCollectedManager.Instance.CollectedPieces[(PiecesCollectedManager.TowerPieceEnum)HUD_CraftingUI.Instance.SelectedBot + 3]--;
-        PiecesCollectedManager.Instance.CollectedPieces[(PiecesCollectedManager.TowerPieceEnum)HUD_CraftingUI.Instance.SelectedAmmo + 6]--;
+        PiecesCollectedManager.Instance.CollectedPieces[(PiecesCollectedManager.TowerPieceEnum)HUD_CraftingUI.SelectedTop]--;
+        PiecesCollectedManager.Instance.CollectedPieces[(PiecesCollectedManager.TowerPieceEnum)HUD_CraftingUI.SelectedBot + 3]--;
+        PiecesCollectedManager.Instance.CollectedPieces[(PiecesCollectedManager.TowerPieceEnum)HUD_CraftingUI.SelectedAmmo + 6]--;
 
         sellCanvas.alpha = 0;
         sellCanvas.interactable = false;
@@ -271,9 +271,9 @@ public class Tower : MonoBehaviour
     }
     void CreateTower()
     {
-        TurretTop tTop = pcm.pcTop[hudCUI.SelectedTop];
-        TowerBase tBase = pcm.pcBase[hudCUI.SelectedBot];
-        AmmoType tAmmo = pcm.pcAmmo[hudCUI.SelectedAmmo];
+        TurretTop tTop = pcm.pcTop[HUD_CraftingUI.SelectedTop];
+        TowerBase tBase = pcm.pcBase[HUD_CraftingUI.SelectedBot];
+        AmmoType tAmmo = pcm.pcAmmo[HUD_CraftingUI.SelectedAmmo];
 
         
         // Visuals

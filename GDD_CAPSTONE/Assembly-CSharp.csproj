@@ -65,6 +65,9 @@
   <ItemGroup>
     <Compile Include="Assets\Enemy_HealthBar.cs" />
     <Compile Include="Assets\EnemyWaves\SO_Script\EnemyWave.cs" />
+    <Compile Include="Assets\Resources\Tower Pieces\Scriptable Objects\AmmoType.cs" />
+    <Compile Include="Assets\Resources\Tower Pieces\Scriptable Objects\TowerBase.cs" />
+    <Compile Include="Assets\Resources\Tower Pieces\Scriptable Objects\TurretTop.cs" />
     <Compile Include="Assets\Scripts\BuildableArea.cs" />
     <Compile Include="Assets\Scripts\EnemySupport\Enemies\Enemy_BasicAirplane.cs" />
     <Compile Include="Assets\Scripts\EnemySupport\Enemies\Enemy_BasicTrooper.cs" />
@@ -105,9 +108,6 @@
     <Compile Include="Assets\Scripts\Utilities_Managers\LayersManager.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\ManagerLoader.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\Singleton.cs" />
-    <Compile Include="Assets\Tower Pieces\Scriptable Objects\AmmoType.cs" />
-    <Compile Include="Assets\Tower Pieces\Scriptable Objects\TowerBase.cs" />
-    <Compile Include="Assets\Tower Pieces\Scriptable Objects\TurretTop.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />

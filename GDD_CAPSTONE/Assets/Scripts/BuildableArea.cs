@@ -13,7 +13,6 @@ public class BuildableArea : MonoBehaviour
     Color startColor;
 
     [SerializeField] CanvasGroup cantPlaceCanvas;
-    bool cantPlaceBool = false;
     bool hovering = false;
     bool occupied = false;                      // used to disallow reclicking a occupied tile
 
@@ -54,9 +53,9 @@ public class BuildableArea : MonoBehaviour
     {
         if (!occupied)
         {
-            if (PiecesCollectedManager.Instance.CollectedPieces[(PiecesCollectedManager.TowerPieceEnum)HUD_CraftingUI.Instance.SelectedTop] > 0 &&
-                PiecesCollectedManager.Instance.CollectedPieces[(PiecesCollectedManager.TowerPieceEnum)HUD_CraftingUI.Instance.SelectedBot + 3] > 0 &&
-                PiecesCollectedManager.Instance.CollectedPieces[(PiecesCollectedManager.TowerPieceEnum)HUD_CraftingUI.Instance.SelectedAmmo + 6] > 0)
+            if (PiecesCollectedManager.Instance.CollectedPieces[(PiecesCollectedManager.TowerPieceEnum)HUD_CraftingUI.SelectedTop] > 0 &&
+                PiecesCollectedManager.Instance.CollectedPieces[(PiecesCollectedManager.TowerPieceEnum)HUD_CraftingUI.SelectedBot + 3] > 0 &&
+                PiecesCollectedManager.Instance.CollectedPieces[(PiecesCollectedManager.TowerPieceEnum)HUD_CraftingUI.SelectedAmmo + 6] > 0)
             {
                 sr.material.color = hoverColor;
                 hovering = true;
@@ -64,7 +63,6 @@ public class BuildableArea : MonoBehaviour
             else
             {
                 sr.material.color = cantPlaceColor;
-                cantPlaceBool = true;
             }
         }
     }
@@ -97,9 +95,6 @@ public class BuildableArea : MonoBehaviour
             cantPlaceCanvas.alpha = 1;
             cantPlaceCanvas.interactable = true;
             cantPlaceCanvas.blocksRaycasts = true;
-        }
-            
-
-        
+        }        
     }
 }

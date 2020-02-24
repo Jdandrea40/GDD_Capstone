@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bc4455a2fb151aa4bb0b67d218426164, type: 3}
-  m_Name: StandardAmmo
+  m_Name: ArmorPiercingAmmo
   m_EditorClassIdentifier: 
-  Name: Kinetic Ammo
+  Name: Armor Piercing Ammo
   ImpactDamage: 5
   DamageOverTime: 0
   DoTAmount: 0
