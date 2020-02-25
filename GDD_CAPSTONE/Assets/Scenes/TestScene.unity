@@ -7693,6 +7693,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Wave:
   - {fileID: 11400000, guid: b9eba9b697500ac40a52fab5e6d0a13e, type: 2}
+  - {fileID: 11400000, guid: 94c3b16633b3f5d4f98ba4ee8aeebcfe, type: 2}
+  - {fileID: 11400000, guid: 88ca0b5f2b8df924f890195f7f876259, type: 2}
+  - {fileID: 11400000, guid: 9c888c3073647a54080676b210ca3a48, type: 2}
+  - {fileID: 11400000, guid: 93e9377329a8c6d418bb9cf7e5f024c1, type: 2}
+  - {fileID: 11400000, guid: cf516b6d8b001b34d8ffbe20d7ab224f, type: 2}
+  - {fileID: 11400000, guid: c492546d824c55e47ab68a8a51dec41f, type: 2}
+  - {fileID: 11400000, guid: d3ba43da9e0d0b847ae8716eabf9d549, type: 2}
+  - {fileID: 11400000, guid: 13876f309daaffa408c086a25c7aebbe, type: 2}
+  - {fileID: 11400000, guid: ac814c421a8ab0b4198f0a759d3b89c8, type: 2}
 --- !u!4 &2081600391
 Transform:
   m_ObjectHideFlags: 0
