@@ -12,24 +12,32 @@ public class GameplayManager : Singleton<GameplayManager>
     public int MaxWaveCount { get; set; }
     public int CurWaveCount { get; set; }
     public bool WaveInProgress { get; set; }
+    public bool IsPause { get; set; }
     public List<GameObject> SpawnedEnemies { get; set; }
+
+    GameObject pauseMenu;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        MaxWaveCount = WaveSpawner.Instance.Wave.Count;
+        pauseMenu = Resources.Load<GameObject>("PauseCanvas");
+        MaxWaveCount = WaveSpawner.TotalWaves;
         CurWaveCount = 0;
         WaveInProgress = false;
+        IsPause = false;
         SpawnedEnemies = new List<GameObject>();
         currWave = CurWaveCount;
-        AudioManager.Instance.PlayLoop(AudioManager.Sounds.BKG_LOOP);
         LoadGame();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!IsPause && Input.GetKey(KeyCode.Escape))
+        {
+            Instantiate(pauseMenu);
+        }
         // Used to increase the Health Modifier of Enemies
         if (currWave != CurWaveCount)
         {
@@ -40,13 +48,9 @@ public class GameplayManager : Singleton<GameplayManager>
         if (BaseHealth <= 0 || (CurWaveCount == MaxWaveCount && SpawnedEnemies.Count <= 0))
         {
             CurWaveCount = 0;
-
-            Scene scene = SceneManager.GetActiveScene();
-            SceneManager.LoadScene(scene.name);
+            SceneManager.LoadScene("TitleScreen");
             
             LoadGame();
-
-
         }
     }
 

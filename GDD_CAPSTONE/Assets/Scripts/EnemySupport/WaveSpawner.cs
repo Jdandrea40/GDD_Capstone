@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WaveSpawner : Singleton<WaveSpawner>
+public class WaveSpawner : MonoBehaviour
 {
     int currentWave = 0;
     [SerializeField] public List<EnemyWave> Wave = new List<EnemyWave>();
@@ -12,12 +12,15 @@ public class WaveSpawner : Singleton<WaveSpawner>
     public static int TotalWaves { get => totalWaves; set => totalWaves = value; }
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         totalWaves = Wave.Count;
         EventManager.AddWaveSpawnListener(InvokeSpawner);
     }
+    private void Start()
+    {
 
+    }
     void InvokeSpawner()
     {
         GameplayManager.Instance.WaveInProgress = true;

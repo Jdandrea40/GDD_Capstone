@@ -44,6 +44,7 @@ public class HUDManager : Singleton<HUDManager>
     public void QuitGame()
     {
         Application.Quit();
+        //SceneManager.LoadScene("TitleScreen");
     }
 
     public void SpawnWave()
