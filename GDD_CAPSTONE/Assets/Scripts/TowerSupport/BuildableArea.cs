@@ -51,7 +51,7 @@ public class BuildableArea : MonoBehaviour
     // Mouse Enter support
     private void OnMouseEnter()
     {
-        if (!occupied)
+        if (!occupied && !GameplayManager.Instance.IsPause)
         {
             if (PiecesCollectedManager.Instance.CollectedPieces[(PiecesCollectedManager.TowerPieceEnum)HUD_CraftingUI.SelectedTop] > 0 &&
                 PiecesCollectedManager.Instance.CollectedPieces[(PiecesCollectedManager.TowerPieceEnum)HUD_CraftingUI.SelectedBot + 3] > 0 &&
@@ -82,19 +82,22 @@ public class BuildableArea : MonoBehaviour
     // Click support
     private void OnMouseDown()
     {
-        if (hovering && !occupied)
+        if (!GameplayManager.Instance.IsPause)
         {
-            occupied = true;
+            if (hovering && !occupied)
+            {
+                occupied = true;
 
-            // Instantiates the Tower, and sets the Area to its Parent
-            Instantiate(tower, transform.position, Quaternion.identity, transform);
+                // Instantiates the Tower, and sets the Area to its Parent
+                Instantiate(tower, transform.position, Quaternion.identity, transform);
 
+            }
+            else
+            {
+                cantPlaceCanvas.alpha = 1;
+                cantPlaceCanvas.interactable = true;
+                cantPlaceCanvas.blocksRaycasts = true;
+            }
         }
-        else
-        {
-            cantPlaceCanvas.alpha = 1;
-            cantPlaceCanvas.interactable = true;
-            cantPlaceCanvas.blocksRaycasts = true;
-        }        
     }
 }

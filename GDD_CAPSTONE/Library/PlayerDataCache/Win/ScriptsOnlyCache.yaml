@@ -783,12 +783,6 @@ ScriptsOnlyBuild:
     className: Enemy_HealthBar
   - hash:
       serializedVersion: 2
-      Hash: 0289d00f5561d56f245c4908c33fcd96
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: TurretTopDisplay
-  - hash:
-      serializedVersion: 2
       Hash: f336e086360abe49a3323e5f1583c35a
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -954,4 +948,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/TitleScreen.unity
   - Assets/Scenes/HelpMenu.unity
   - Assets/Scenes/TestScene.unity
-  playerPath: C:/Users/Josh D'Andrea/Documents/GitHub/GDD_Capstone/GDD_CAPSTONE/BUILD/GDD_CAPSTONE.exe
+  playerPath: C:/Users/Josh/Documents/GitHub/GDD_Capstone/GDD_CAPSTONE/BUILD/GDD_CAPSTONE.exe
