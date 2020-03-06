@@ -45,13 +45,13 @@ public class GameplayManager : Singleton<GameplayManager>
             currWave = CurWaveCount;
         }
         //Debug.Log(SpawnEnemies.Count);
-        if (BaseHealth <= 0 || (CurWaveCount == MaxWaveCount && SpawnedEnemies.Count <= 0))
-        {
-            CurWaveCount = 0;
-            SceneManager.LoadScene("TitleScreen");
+        //if (BaseHealth <= 0 || (CurWaveCount == MaxWaveCount && SpawnedEnemies.Count <= 0))
+        //{
+        //    CurWaveCount = 0;
+        //    SceneManager.LoadScene("TitleScreen");
             
-            LoadGame();
-        }
+        //    LoadGame();
+        //}
     }
 
     public void LoadGame()
