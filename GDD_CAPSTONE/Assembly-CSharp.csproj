@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\EnemyWaves\SO_Script\EnemyWave.cs" />
+    <Compile Include="Assets\LevelSelect.cs" />
     <Compile Include="Assets\Resources\Tower Pieces\Scriptable Objects\AmmoType.cs" />
     <Compile Include="Assets\Resources\Tower Pieces\Scriptable Objects\TowerBase.cs" />
     <Compile Include="Assets\Resources\Tower Pieces\Scriptable Objects\TurretTop.cs" />
@@ -105,6 +106,7 @@
     <Compile Include="Assets\Scripts\Utilities_Managers\HUD\TowerStatCreation.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\ItemSpawnManager.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\LayersManager.cs" />
+    <Compile Include="Assets\Scripts\Utilities_Managers\LevelLoader.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\ManagerLoader.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\MenuNavigation\HelpMenu.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\MenuNavigation\MenuManager.cs" />

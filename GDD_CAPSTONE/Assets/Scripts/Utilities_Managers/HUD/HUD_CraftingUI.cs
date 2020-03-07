@@ -39,8 +39,6 @@ public class HUD_CraftingUI : MonoBehaviour
     
     [SerializeField] Text[] itemCountText;
 
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -49,9 +47,9 @@ public class HUD_CraftingUI : MonoBehaviour
         
         // Game Start Initialization
         UpdateItemCount();
-        //TowerUIUpdate(0, 0);
-        //TowerUIUpdate(0, 1);
-        //TowerUIUpdate(0, 2);
+        TowerUIUpdate(0, 0);
+        TowerUIUpdate(0, 1);
+        TowerUIUpdate(0, 2);
 
     }
 
