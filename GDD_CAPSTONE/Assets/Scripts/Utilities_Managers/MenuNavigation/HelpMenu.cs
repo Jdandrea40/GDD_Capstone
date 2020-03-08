@@ -3,10 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// Class to handle all things on the Help Menu Screen
+/// </summary>
 public class HelpMenu : MonoBehaviour
 {
-    public void GoToTitle()
+    /// <summary>
+    /// Method to go to the levelSelected
+    /// Scene name must be passed in through Inspector Button OnClick()
+    /// </summary>
+    /// <param name="levelSelected"></param>
+    public void GoTo(string levelSelected)
     {
-        SceneManager.LoadScene("TitleScreen");
+        SceneManager.LoadScene(levelSelected);
     }
 }

@@ -30,6 +30,5 @@ public class PiecesCollectedManager : Singleton<PiecesCollectedManager>
             CollectedPieces[(TowerPieceEnum)i] = 1;
             
         }
-        DontDestroyOnLoad(this);
     }
 }

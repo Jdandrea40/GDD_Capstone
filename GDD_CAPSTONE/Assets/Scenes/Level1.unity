@@ -7101,49 +7101,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1 &2057712201
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2057712203}
-  - component: {fileID: 2057712202}
-  m_Layer: 0
-  m_Name: LevelLoader
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2057712202
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2057712201}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: baefe473d6b90a44395ca566707bbfd4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &2057712203
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2057712201}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.23442, y: -6.0231147, z: -2.4058654}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2134251055
 GameObject:
   m_ObjectHideFlags: 0
@@ -7609,3 +7566,72 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1001 &6897502124315539928
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6897502124762090385, guid: 48fe9995b34243245bb5050abaade2f5,
+        type: 3}
+      propertyPath: m_Name
+      value: LevelLoader
+      objectReference: {fileID: 0}
+    - target: {fileID: 6897502124762090387, guid: 48fe9995b34243245bb5050abaade2f5,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -12.23442
+      objectReference: {fileID: 0}
+    - target: {fileID: 6897502124762090387, guid: 48fe9995b34243245bb5050abaade2f5,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -6.0231147
+      objectReference: {fileID: 0}
+    - target: {fileID: 6897502124762090387, guid: 48fe9995b34243245bb5050abaade2f5,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.4058654
+      objectReference: {fileID: 0}
+    - target: {fileID: 6897502124762090387, guid: 48fe9995b34243245bb5050abaade2f5,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6897502124762090387, guid: 48fe9995b34243245bb5050abaade2f5,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6897502124762090387, guid: 48fe9995b34243245bb5050abaade2f5,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6897502124762090387, guid: 48fe9995b34243245bb5050abaade2f5,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6897502124762090387, guid: 48fe9995b34243245bb5050abaade2f5,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6897502124762090387, guid: 48fe9995b34243245bb5050abaade2f5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6897502124762090387, guid: 48fe9995b34243245bb5050abaade2f5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6897502124762090387, guid: 48fe9995b34243245bb5050abaade2f5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 48fe9995b34243245bb5050abaade2f5, type: 3}

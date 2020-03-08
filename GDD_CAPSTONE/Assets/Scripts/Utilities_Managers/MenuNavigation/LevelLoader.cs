@@ -7,16 +7,12 @@ using UnityEngine;
 /// </summary>
 public class LevelLoader : MonoBehaviour
 {   
-    GameplayManager GM;
-
     private void Awake()
     {
-        GM = GameplayManager.Instance;
-
         // Starting stats
-        GM.BaseHealth = 100;
-        GM.CurWaveCount = 0;
-        GM.SpawnedEnemies = new List<GameObject>();
+        GameplayManager.Instance.BaseHealth = 100;
+        GameplayManager.Instance.CurWaveCount = 0;
+        GameplayManager.Instance.SpawnedEnemies = new List<GameObject>();
         
 
         // Sets all inventory pieces to 1

@@ -8,11 +8,9 @@ public class ManagerLoader : MonoBehaviour
     {
         GameplayManager GM = GameplayManager.Instance;
         AudioManager AM = AudioManager.Instance;
-        ItemSpawnManager ISM = ItemSpawnManager.Instance;
         PiecesCollectedManager PCM = PiecesCollectedManager.Instance;
-        //MenuManager MM = MenuManager.Instance;
 
-        if (GM != null && AM != null && ISM != null && PCM != null)// && MM != null)
+        if (GM != null && AM != null && PCM != null)
         {
             Destroy(gameObject);
         }
@@ -23,11 +21,9 @@ public class ManagerLoader : MonoBehaviour
     {
         GameplayManager GM = GameplayManager.Instance;
         AudioManager AM = AudioManager.Instance;
-        ItemSpawnManager ISM = ItemSpawnManager.Instance;
         PiecesCollectedManager PCM = PiecesCollectedManager.Instance;
-        //MenuManager MM = MenuManager.Instance;
 
-        if (GM != null && AM != null && ISM != null && PCM != null)// && MM != null)
+        if (GM != null && AM != null && PCM != null)
         {
             Destroy(gameObject);
         }
