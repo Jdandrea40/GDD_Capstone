@@ -9,6 +9,7 @@ public class HUDManager : MonoBehaviour
 {
     [SerializeField] Button spawnButton;    
     WaveSpawnEvent waveSpawnEvent;
+    int spawnTimer;
 
     #region PROPERTIES
 
