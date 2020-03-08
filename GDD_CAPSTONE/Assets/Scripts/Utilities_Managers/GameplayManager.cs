@@ -23,10 +23,8 @@ public class GameplayManager : Singleton<GameplayManager>
     {
         pauseMenu = Resources.Load<GameObject>("PauseCanvas");
         MaxWaveCount = WaveSpawner.TotalWaves;
-        CurWaveCount = 0;
         WaveInProgress = false;
         IsPause = false;
-        SpawnedEnemies = new List<GameObject>();
         currWave = CurWaveCount;
         LoadGame();
     }
@@ -49,7 +47,7 @@ public class GameplayManager : Singleton<GameplayManager>
         {
             CurWaveCount = 0;
             SceneManager.LoadScene("TitleScreen");
-            
+
             LoadGame();
         }
     }
@@ -71,18 +69,5 @@ public class GameplayManager : Singleton<GameplayManager>
             Resources.Load<AmmoType>("Tower Pieces/SO_AmmoTypes/CryoAmmo"),
             Resources.Load<AmmoType>("Tower Pieces/SO_AmmoTypes/IncendiaryAmmo"),
         };
-
-        for (int i = 0; i < 9; i++)
-        {
-            PiecesCollectedManager.Instance.CollectedPieces[(PiecesCollectedManager.TowerPieceEnum)i] = 1;
-
-        }
-
-        HUD_CraftingUI.SelectedTop = 0;
-        HUD_CraftingUI.SelectedBot = 0;
-        HUD_CraftingUI.SelectedAmmo = 0;
-
-
-        //HUD_CraftingUI.UpdateItemCount();
     }
 }
