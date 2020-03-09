@@ -90,6 +90,7 @@
     <Compile Include="Assets\Scripts\MouseHoverEffect.cs" />
     <Compile Include="Assets\Scripts\TowerSupport\Ammo\Projectile.cs" />
     <Compile Include="Assets\Scripts\TowerSupport\Ammo\Tower.cs" />
+    <Compile Include="Assets\Scripts\TowerSupport\BA_RangeIndicator.cs" />
     <Compile Include="Assets\Scripts\TowerSupport\BuildableArea.cs" />
     <Compile Include="Assets\Scripts\TowerSupport\TargetAcquisition.cs" />
     <Compile Include="Assets\Scripts\TowerSupport\TowerAttack.cs" />

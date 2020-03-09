@@ -44,7 +44,7 @@ public class HUDManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameplayManager.Instance.WaveInProgress)
+        if (GameplayManager.Instance.WaveInProgress || GameplayManager.Instance.IsPause)
         {
             spawnButton.interactable = false;
         }

@@ -183,6 +183,9 @@ public class Tower : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// When moused over tower, Show its range
+    /// </summary>
     private void OnMouseEnter()
     {
         hovering = true;
@@ -216,8 +219,12 @@ public class Tower : MonoBehaviour
     #endregion
 
     #region CUSTOM METHODS
+    /// <summary>
+    /// Destroys a placed tower
+    /// </summary>
     public void RemoveTower()
     {
+        // Sets the BuildableArea occupied boolean to false
         BuildableArea ba = GetComponentInParent<BuildableArea>();
         ba.Occupied = false;
         Destroy(gameObject);
@@ -252,12 +259,8 @@ public class Tower : MonoBehaviour
     // Fire Coroutine
     IEnumerator Fire()
     {
-        // TODO: REMOVE HARDCODED VALUES
-        // towerFireEvent.Invoke(target.transform);
         while (firing)
         {
-
-            //towerFireEvent.Invoke(damage, damageOverTime, dotAmount, slow);
             // instatiate a bullet
             Projectile proj = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Projectile>();
             //towerFireEvent.Invoke
