@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// This class is repsonsible for updating
+/// all HUD text located at the top of the screen
+/// </summary>
 public class HUD_GameStats : MonoBehaviour
 {   
     [SerializeField] Text enemiesKilledText;
@@ -14,7 +18,7 @@ public class HUD_GameStats : MonoBehaviour
     {       
         enemiesKilledText.text = " Enemies Killed: " + GameplayManager.Instance.EnemiesKilled;
         baseHealthText.text = " Base Health: " + GameplayManager.Instance.BaseHealth;
-        waveCountText.text = " Wave: " + GameplayManager.Instance.CurWaveCount + " / " + GameplayManager.Instance.MaxWaveCount;
+        waveCountText.text = " Wave: " + GameplayManager.Instance.CurWaveCount + " : " + GameplayManager.Instance.MaxWaveCount;
     }
 
     // Update is called once per frame
@@ -22,6 +26,6 @@ public class HUD_GameStats : MonoBehaviour
     {
         enemiesKilledText.text = " Enemies Killed: " + GameplayManager.Instance.EnemiesKilled;
         baseHealthText.text = " Base Health: " + GameplayManager.Instance.BaseHealth;
-        waveCountText.text = " Wave: " + GameplayManager.Instance.CurWaveCount + " / " + GameplayManager.Instance.MaxWaveCount;
+        waveCountText.text = " Wave: " + GameplayManager.Instance.CurWaveCount + " : " + GameplayManager.Instance.MaxWaveCount;
     }
 }

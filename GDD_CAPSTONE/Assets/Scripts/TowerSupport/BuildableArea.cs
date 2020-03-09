@@ -22,6 +22,7 @@ public class BuildableArea : MonoBehaviour
     BoxCollider2D bc2d;
     Vector2 center;
 
+    // Used to revert to unoccupied when a tower is removed (Tower.cs)
     public bool Occupied { get => occupied; set => occupied = value; }
 
     #region EVENTS
@@ -51,15 +52,19 @@ public class BuildableArea : MonoBehaviour
     // Mouse Enter support
     private void OnMouseEnter()
     {
+        // Prevents placement during paused and inssuffiecnt piece inventory
         if (!occupied && !GameplayManager.Instance.IsPause)
         {
+            // Checks the currently selected components
             if (PiecesCollectedManager.Instance.CollectedPieces[(PiecesCollectedManager.TowerPieceEnum)HUD_CraftingUI.SelectedTop] > 0 &&
                 PiecesCollectedManager.Instance.CollectedPieces[(PiecesCollectedManager.TowerPieceEnum)HUD_CraftingUI.SelectedBot + 3] > 0 &&
                 PiecesCollectedManager.Instance.CollectedPieces[(PiecesCollectedManager.TowerPieceEnum)HUD_CraftingUI.SelectedAmmo + 6] > 0)
             {
+                // Can place color
                 sr.material.color = hoverColor;
                 hovering = true;
             }
+            // Hover color will be red
             else
             {
                 sr.material.color = cantPlaceColor;
@@ -74,6 +79,7 @@ public class BuildableArea : MonoBehaviour
         sr.material.color = startColor;
         hovering = false;
 
+        // Canvas group removal
         cantPlaceCanvas.alpha = 0;
         cantPlaceCanvas.interactable = false;
         cantPlaceCanvas.blocksRaycasts = false;
@@ -82,8 +88,11 @@ public class BuildableArea : MonoBehaviour
     // Click support
     private void OnMouseDown()
     {
+        // Dissallows placement during Paused
         if (!GameplayManager.Instance.IsPause)
         {
+            // will only instantiate a tower when it is
+            // hovered and not occupied
             if (hovering && !occupied)
             {
                 occupied = true;
@@ -92,7 +101,8 @@ public class BuildableArea : MonoBehaviour
                 Instantiate(tower, transform.position, Quaternion.identity, transform);
 
             }
-            else
+            // needed this to prevent showing canvas when occupied
+            else if (!occupied)
             {
                 cantPlaceCanvas.alpha = 1;
                 cantPlaceCanvas.interactable = true;

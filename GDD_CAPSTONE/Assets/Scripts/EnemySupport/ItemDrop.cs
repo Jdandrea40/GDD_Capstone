@@ -7,7 +7,7 @@ public class ItemDrop : MonoBehaviour
 {
     enum DroppedItem { SINGLE_FIRE, RAPID_FIRE, CANNON, SHORT, MEDIUM, LONG, STANDARD, SLOW, INCENDIARY }
 
-    [Tooltip("Standard, Rapid, Cannon")]
+    // An array of items to drop sprites
     [SerializeField] Sprite[] item = new Sprite[9];
 
     SpriteRenderer sr;
@@ -29,11 +29,13 @@ public class ItemDrop : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         itemToDrop = Random.Range(0, 9);
         DropItem(itemToDrop);
+        Pulse();
     }
 
     void DropItem(int itemToDrop)
     {
         sr.sprite = item[itemToDrop];
+
         switch(itemToDrop)
         {
             case (int)DroppedItem.SINGLE_FIRE:
@@ -87,8 +89,11 @@ public class ItemDrop : MonoBehaviour
                 }
         }
     }
+    public void Pulse()
+    {
 
-    private void OnMouseDown()
+    }
+    private void OnMouseEnter()
     {
         PiecesCollectedManager.Instance.CollectedPieces[itemType]++;
         itemCollectedEvent.Invoke();

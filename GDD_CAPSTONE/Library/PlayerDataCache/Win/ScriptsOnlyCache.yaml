@@ -18,11 +18,10 @@ ScriptsOnlyBuild:
     - ItemDrop
     - LevelLoader
     - LevelSelect
-    - ManagerLoader
-    - MenuManager
     - MouseHoverEffect
     - PauseMenu
     - Projectile
+    - TitleScreenManager
     - Tower
     - TowerBase
     - TurretRadiusDrawer
@@ -43,6 +42,7 @@ ScriptsOnlyBuild:
     - TMPro.TMP_Settings
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
+    - TMPro.TMP_SubMeshUI
     - TMPro.TextMeshProUGUI
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -246,7 +246,11 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 20
       Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
     - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
@@ -255,16 +259,26 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9696}
     - Class: 114
+      Script: {instanceID: 9870}
+    - Class: 114
       Script: {instanceID: 9910}
     - Class: 114
       Script: {instanceID: 9964}
     - Class: 114
       Script: {instanceID: 9978}
     - Class: 114
+      Script: {instanceID: 10328}
+    - Class: 114
       Script: {instanceID: 10714}
     - Class: 114
+      Script: {instanceID: 10958}
+    - Class: 114
       Script: {instanceID: 11224}
+    - Class: 114
+      Script: {instanceID: 11606}
     - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
@@ -320,6 +334,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10020}
     - Class: 114
+      Script: {instanceID: 10116}
+    - Class: 114
       Script: {instanceID: 10266}
     - Class: 114
       Script: {instanceID: 10296}
@@ -333,8 +349,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 10526}
     - Class: 114
       Script: {instanceID: 10594}
-    - Class: 114
-      Script: {instanceID: 10618}
     - Class: 114
       Script: {instanceID: 10698}
     - Class: 114
@@ -430,6 +444,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 9910}
     - Class: 114
       Script: {instanceID: 10020}
+    - Class: 114
+      Script: {instanceID: 10144}
     - Class: 114
       Script: {instanceID: 10328}
     - Class: 114
@@ -593,7 +609,7 @@ ScriptsOnlyBuild:
     className: GridLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 8dd7eeae5fbc27965d5726b12372a852
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: LevelSelect
@@ -872,7 +888,7 @@ ScriptsOnlyBuild:
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: MenuManager
+    className: TitleScreenManager
   - hash:
       serializedVersion: 2
       Hash: c9a8b80298a116835b51ba1cf9284367
@@ -977,7 +993,7 @@ ScriptsOnlyBuild:
     className: BuildableArea
   - hash:
       serializedVersion: 2
-      Hash: b1f1657f31eaccb0d44247f0fd770844
+      Hash: 204b690b906fc814d9a4dba51ce1fa97
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: HUDManager
