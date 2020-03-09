@@ -21,6 +21,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Quit()
     {
+        GameplayManager.Instance.IsPause = false;
         Time.timeScale = 1;
         SceneManager.LoadScene("TitleScreen");
     }
