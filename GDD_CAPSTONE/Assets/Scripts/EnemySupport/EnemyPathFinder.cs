@@ -11,6 +11,9 @@ public class EnemyPathFinder : MonoBehaviour
 {
     public static Transform[] points;
 
+    /// <summary>
+    /// Finds all POI the enemy must move to
+    /// </summary>
     private void Awake()
     {
         points = new Transform[transform.childCount];

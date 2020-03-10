@@ -23,7 +23,11 @@ public class EnemyMoveTowardsPoint : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Move();
+        // returns out when paused
+        if (!GameplayManager.Instance.IsPaused)
+        {
+            Move();
+        }
     }
 
     // Moves the enemy
@@ -41,21 +45,25 @@ public class EnemyMoveTowardsPoint : MonoBehaviour
             GetNextWaypoint();
         }
     }
-    
-    // Used to increment waypoint and rotate based on its position
+
+    /// <summary>
+    ///  Used to increment waypoint and rotate based on its position
+    /// </summary>
     void GetNextWaypoint()
     {
+        // checks if its current point is the end
         if (currentPoint >= EnemyPathFinder.points.Length - 1)
-        {
+        { 
+            // KYS
             Destroy(gameObject);
-            Debug.Log("Boom");
             return;
         }
+
         // Increment and set
         currentPoint++;
         target = EnemyPathFinder.points[currentPoint];
 
-        // Rotates
+        // Rotates the sprite to face to right direction
         Vector2 direction = target.transform.position - transform.position;
         float angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.back);

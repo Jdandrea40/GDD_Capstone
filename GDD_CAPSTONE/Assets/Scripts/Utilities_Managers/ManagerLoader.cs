@@ -6,11 +6,10 @@ public class ManagerLoader : MonoBehaviour
 {
     private void Awake()
     {
-        GameplayManager GM = GameplayManager.Instance;
         AudioManager AM = AudioManager.Instance;
-        PiecesCollectedManager PCM = PiecesCollectedManager.Instance;
+        ParticleEffectManager PM = ParticleEffectManager.Instance;
 
-        if (GM != null && AM != null && PCM != null)
+        if (AM != null && PM != null)
         {
             Destroy(gameObject);
         }
@@ -19,11 +18,10 @@ public class ManagerLoader : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GameplayManager GM = GameplayManager.Instance;
         AudioManager AM = AudioManager.Instance;
-        PiecesCollectedManager PCM = PiecesCollectedManager.Instance;
+        ParticleEffectManager PM = ParticleEffectManager.Instance;
 
-        if (GM != null && AM != null && PCM != null)
+        if (AM != null && PM != null)
         {
             Destroy(gameObject);
         }

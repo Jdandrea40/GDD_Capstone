@@ -14,13 +14,13 @@ public class PopUpCanvases : MonoBehaviour
     void Start()
     {
         //Time.timeScale = 0;
-        GameplayManager.Instance.IsPause = true;
+        GameplayManager.Instance.IsPaused = true;
     }
 
     // Resumes the Game
     public void Resume()
     { 
-        GameplayManager.Instance.IsPause = false;
+        GameplayManager.Instance.IsPaused = false;
         //Time.timeScale = 1;
         Destroy(gameObject);
     }
@@ -33,7 +33,7 @@ public class PopUpCanvases : MonoBehaviour
     public void GoToScene(string sceneName)
     {
         GameplayManager.Instance.InGame = false;
-        GameplayManager.Instance.IsPause = false;
+        GameplayManager.Instance.IsPaused = false;
         //Time.timeScale = 1;
         SceneManager.LoadScene(sceneName);
     }
@@ -43,7 +43,7 @@ public class PopUpCanvases : MonoBehaviour
     /// </summary>
     public void RestartCurrentLevel()
     {
-        GameplayManager.Instance.IsPause = false;
+        GameplayManager.Instance.IsPaused = false;
         //Time.timeScale = 1;
         Scene thisLevel = SceneManager.GetActiveScene();
         SceneManager.LoadScene(thisLevel.name);

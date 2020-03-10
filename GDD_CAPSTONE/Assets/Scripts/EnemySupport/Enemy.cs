@@ -86,13 +86,18 @@ public class Enemy : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// Does not need to return from update on pause since this is just health checking
+    /// which only changes during a collision
+    /// </summary>
     public virtual void Update()
     {
         if (Health > 0)
         {
             healthBar.fillAmount = Health / fullHealth;
         }
-            // Life Checking
+
+        // Life Checking
         if (Health <= 0)
         {
             if (Random.Range(0, 5) > 1)
@@ -138,8 +143,11 @@ public class Enemy : MonoBehaviour
     /// <param name="dotAmount"></param>
     /// <param name="slow"></param>
     public virtual void TakeDamage(int amount, bool dot, int dotAmount, bool slow)
-    {        
+    {     
+        // initial impact damge health loss
         Health -= amount;
+
+        // Follwed by any additional status effects
         if (dot && !TakingDamage)
         {
             TakingDamage = true;
@@ -148,8 +156,7 @@ public class Enemy : MonoBehaviour
         if (slow && !Slowed)
         {
             Slowed = true;
-            StartCoroutine(SlowEnemy());
-            
+            StartCoroutine(SlowEnemy());           
         }
     }
 
@@ -159,32 +166,51 @@ public class Enemy : MonoBehaviour
     /// <param name="amount"></param>
     /// <returns></returns>
     public virtual IEnumerator TakeDamageOverTime(int amount)
-    {
-        
+    {        
         sr.color = Color.red;
-        while (TakingDamage)
+        for (int i = 0; i < ConstantsManager.DOT_TIME; i++)
         {
-            Health -= amount;
-            yield return new WaitForSeconds(1);
-            Health -= amount;
-            yield return new WaitForSeconds(1);
-            Health -= amount;
-
+            if (!GameplayManager.Instance.IsPaused)
+            {
+                Health -= amount;
+                yield return new WaitForSeconds(ConstantsManager.DOT_WAIT_TIME);
+            }
+            else
+            {
+                yield return new WaitUntil(() => !GameplayManager.Instance.IsPaused);
+                yield return new WaitForSeconds(ConstantsManager.DOT_WAIT_TIME);
+            }
+        }
             TakingDamage = false;
             sr.color = Color.white;
-        }
     }
 
-    // Slows enemy
+    /// <summary>
+    /// Handles the slow down of the enemy
+    /// the for loop is set to the time it is slow for since in the loop
+    /// iu use 1 second to wait, this ensure it loops every second
+    /// </summary>
+    /// <returns></returns>
     public virtual IEnumerator SlowEnemy()
     {
-        sr.color = Color.blue;
-        moveSpeed *= .5f;
-        //enemyMove.enabled = false;
-        yield return new WaitForSeconds(2);
+        for (int i = 0; i < ConstantsManager.SLOW_TIME; i++)
+        {
+            if (!GameplayManager.Instance.IsPaused)
+            {
+                sr.color = Color.blue;
+                moveSpeed *= .5f;
+                yield return new WaitForSeconds(1);
+            }
+            else
+            {
+                yield return new WaitUntil(() => !GameplayManager.Instance.IsPaused);
+                yield return new WaitForSeconds(1);
+            }
+
+        }
+
         Slowed = false;
         moveSpeed /= .5f;
-        //enemyMove.enabled = true;
         sr.color = Color.white;
 
     }

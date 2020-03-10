@@ -150,7 +150,7 @@ public class Tower : MonoBehaviour
     // Called once a frame
     void Update()
     {
-        if (!GameplayManager.Instance.IsPause)
+        if (!GameplayManager.Instance.IsPaused)
         {
             if (targetToShoot == null)
             {
@@ -259,22 +259,42 @@ public class Tower : MonoBehaviour
             targetToShoot = null;
         }
     }
-    // Fire Coroutine
+    /// <summary>
+    /// Fire Coroutine
+    /// spawns a Projectile and passes in the necessary attributes:
+    /// this is: ImpactDamage, DamageOverTime (bool) -> Amount, Slow (bool), SplashDamge (bool), color, and sprite
+    /// as well as the current target it is aiming at so that the proj can MoveTowards this enemy
+    /// </summary>
+    /// <returns></returns>
     IEnumerator Fire()
     {
         while (firing)
         {
-            // instatiate a bullet
-            Projectile proj = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Projectile>();
-            //towerFireEvent.Invoke
-            proj.SetStats(damage, damageOverTime, dotAmount, slow, splashDamage, ammoColor, projSpr);
-            // call the method inside Projectile to travel towards target
-            proj.MoveToEnemy(targetToShoot);
-            // COOLDOWN
+            if (!GameplayManager.Instance.IsPaused)
+            {
+                // instatiate a bullet
+                Projectile proj = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Projectile>();
+                //towerFireEvent.Invoke
+                proj.SetStats(damage, damageOverTime, dotAmount, slow, splashDamage, ammoColor, projSpr);
+                // call the method inside Projectile to travel towards target
+                proj.MoveToEnemy(targetToShoot);
+                // COOLDOWN
+
+            }
+            else
+            {                
+                yield return new WaitUntil(() => !GameplayManager.Instance.IsPaused);
+                
+            }
             yield return new WaitForSeconds(fireRate);
         }
         
     }
+
+    /// <summary>
+    /// Once the tower is instantiated it takes in all the attributes from
+    /// the HUD_CUI and takes the Scriptable Objects stats associated with the selected piece
+    /// </summary>
     void CreateTower()
     {
         TurretTop tTop = pcm.pcTop[HUD_CraftingUI.SelectedTop];
@@ -299,7 +319,6 @@ public class Tower : MonoBehaviour
         damageOverTime = tAmmo.DamageOverTime;
         dotAmount = tAmmo.DoTAmount;
         splashDamage = tTop.SplashDamage;
-
     }
 
     #endregion

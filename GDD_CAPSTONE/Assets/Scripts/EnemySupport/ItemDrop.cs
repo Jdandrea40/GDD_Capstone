@@ -5,6 +5,7 @@ using UnityEngine.Events;
 
 public class ItemDrop : MonoBehaviour
 {
+    // TODO: DO THIS BETTER, CASE STATMENT IS A MILE LONG, Condense (Dictionary?)
     enum DroppedItem { SINGLE_FIRE, RAPID_FIRE, CANNON, SHORT, MEDIUM, LONG, STANDARD, SLOW, INCENDIARY }
 
     // An array of items to drop sprites
@@ -15,6 +16,7 @@ public class ItemDrop : MonoBehaviour
 
     PiecesCollectedManager.TowerPieceEnum itemType;
 
+    // Event for HUI_CUI updating
     ItemCollectedEvent itemCollectedEvent;
     public void AddItemCollectedListener(UnityAction listener)
     {
@@ -23,13 +25,13 @@ public class ItemDrop : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Event for HUI_CUI updating
         itemCollectedEvent = new ItemCollectedEvent();
         EventManager.AddItemCollectedInvoker(this);
 
         sr = GetComponent<SpriteRenderer>();
         itemToDrop = Random.Range(0, 9);
         DropItem(itemToDrop);
-        Pulse();
     }
 
     void DropItem(int itemToDrop)
@@ -89,12 +91,13 @@ public class ItemDrop : MonoBehaviour
                 }
         }
     }
-    public void Pulse()
-    {
 
-    }
+    /// <summary>
+    /// Collects the Item on Mouse Enter, and Invokes the event
+    /// </summary>
     private void OnMouseEnter()
     {
+        // Increments the PCM
         PiecesCollectedManager.Instance.CollectedPieces[itemType]++;
         itemCollectedEvent.Invoke();
         Destroy(gameObject);

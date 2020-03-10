@@ -37,6 +37,7 @@ public class Projectile : MonoBehaviour
     SpriteRenderer sr;
 
     float projectileMoveSpeed;
+    ParticleSystem particle;
 
     public int ProjDamage { get => projDamage; set => projDamage = value; }
     public bool ProjDoT { get => projDoT; set => projDoT = value; }
@@ -49,8 +50,9 @@ public class Projectile : MonoBehaviour
         bc2d = GetComponent<BoxCollider2D>();
         sr = GetComponent<SpriteRenderer>();
         cc2d = GetComponent<CircleCollider2D>();
+       
         //targetToHit = tower.TargetToShoot.transform;
-        projectileMoveSpeed = ConstantsManager.Instance.PROJECTILE_MOVE_SPEED;
+        projectileMoveSpeed = ConstantsManager.PROJECTILE_MOVE_SPEED;
 
         //enemyDamageEvent = new EnemyDamageEvent();
         //EventManager.AddEnemyDamageInvoker(this);
@@ -75,7 +77,7 @@ public class Projectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!GameplayManager.Instance.IsPause)
+        if (!GameplayManager.Instance.IsPaused)
         {
             // so long as there is a target to hit, go to it
             if (targetToHit != null)
@@ -114,6 +116,7 @@ public class Projectile : MonoBehaviour
     {
         if (collision.gameObject.layer == (int)CollisionLayers.ENEMIES)
         {
+            Instantiate(ParticleEffectManager.Instance.particleDictionary[ParticleEffectManager.ParticleToPlay.NORMAL_EXPLODE], transform.position, Quaternion.identity);
             if (projSplash)
             {
                 
@@ -122,16 +125,22 @@ public class Projectile : MonoBehaviour
             }
             else
             {
-                Destroy(gameObject);
+                //Destroy(gameObject);
             }
             
         }
     }
 
+    /// <summary>
+    /// Only called on a rocket projectile
+    /// TODO: Handle Explosion Animation
+    /// </summary>
+    /// <returns></returns>
     IEnumerator Explode()
     { 
         Instantiate(explosion, transform.position, Quaternion.identity);
 
+        // Waits for a second so that Splach damage can occur
         yield return new WaitForSeconds(.1f);
         Destroy(gameObject);
     }

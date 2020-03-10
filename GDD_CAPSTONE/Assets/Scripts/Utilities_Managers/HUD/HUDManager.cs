@@ -13,7 +13,7 @@ public class HUDManager : MonoBehaviour
 
     bool firstClick = true;
     WaveSpawnEvent waveSpawnEvent;
-    int spawnTimer = 15;
+    int spawnTimer = ConstantsManager.TIME_TILL_SPAWN;
     IEnumerator countdownCoRout;
     
     #region PROPERTIES
@@ -44,7 +44,8 @@ public class HUDManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameplayManager.Instance.WaveInProgress || GameplayManager.Instance.IsPause)
+        // Enables and Disables the abilty to press the spawn button based on Paused
+        if (GameplayManager.Instance.WaveInProgress || GameplayManager.Instance.IsPaused)
         {
             spawnButton.interactable = false;
         }
@@ -61,13 +62,22 @@ public class HUDManager : MonoBehaviour
     /// <returns></returns>
     IEnumerator CountDown()
     {
+        // Used to countodwn until next wave comes
+        // as well as convert the int to a string to be displayed on screen
         countDownText.text = spawnTimer.ToString();
-        spawnTimer = 15;
+        spawnTimer = ConstantsManager.TIME_TILL_SPAWN;
         yield return new WaitForSeconds(2);
         while (spawnTimer > 0)
         {
-            spawnTimer-= 1;
-            countDownText.text = spawnTimer.ToString();
+            if (!GameplayManager.Instance.IsPaused)
+            {
+                spawnTimer -= 1;
+                countDownText.text = spawnTimer.ToString();             
+            }
+            else
+            {
+                yield return new WaitUntil(() => !GameplayManager.Instance.IsPaused);
+            }
             yield return new WaitForSeconds(1);
         }
         SpawnWave();

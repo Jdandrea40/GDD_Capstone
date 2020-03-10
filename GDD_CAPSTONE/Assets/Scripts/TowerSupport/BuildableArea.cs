@@ -70,7 +70,7 @@ public class BuildableArea : MonoBehaviour
         rangeIndicator.transform.localScale = new Vector2(currTowerRange, currTowerRange);
 
         // Prevents placement during paused and inssuffiecnt piece inventory
-        if (!occupied && !GameplayManager.Instance.IsPause)
+        if (!occupied && !GameplayManager.Instance.IsPaused)
         {
             
             // Checks the currently selected components
@@ -111,7 +111,7 @@ public class BuildableArea : MonoBehaviour
     private void OnMouseDown()
     {
         // Dissallows placement during Paused
-        if (!GameplayManager.Instance.IsPause)
+        if (!GameplayManager.Instance.IsPaused)
         {
             // will only instantiate a tower when it is
             // hovered and not occupied

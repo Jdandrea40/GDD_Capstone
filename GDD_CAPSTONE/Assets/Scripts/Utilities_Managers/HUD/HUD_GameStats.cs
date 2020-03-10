@@ -18,7 +18,7 @@ public class HUD_GameStats : MonoBehaviour
     {       
         enemiesKilledText.text = " Enemies Killed: " + GameplayManager.Instance.EnemiesKilled;
         baseHealthText.text = " Base Health: " + GameplayManager.Instance.BaseHealth;
-        waveCountText.text = " Wave: " + GameplayManager.Instance.CurWaveCount + " : " + GameplayManager.Instance.MaxWaveCount;
+        waveCountText.text = " Wave: " + GameplayManager.Instance.CurrWaveText + " : " + GameplayManager.Instance.MaxWaveCount;
     }
 
     // Update is called once per frame
@@ -26,6 +26,6 @@ public class HUD_GameStats : MonoBehaviour
     {
         enemiesKilledText.text = " Enemies Killed: " + GameplayManager.Instance.EnemiesKilled;
         baseHealthText.text = " Base Health: " + GameplayManager.Instance.BaseHealth;
-        waveCountText.text = " Wave: " + GameplayManager.Instance.CurWaveCount + " : " + GameplayManager.Instance.MaxWaveCount;
+        waveCountText.text = " Wave: " + GameplayManager.Instance.CurrWaveText + " : " + GameplayManager.Instance.MaxWaveCount;
     }
 }

@@ -2,17 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ConstantsManager : Singleton<ConstantsManager>
+public class ConstantsManager : MonoBehaviour
 {
     #region Tower Support
 
-    public float PROJECTILE_MOVE_SPEED = 20;
+    public static float PROJECTILE_MOVE_SPEED = 20;
+    
+    public static int DOT_TIME = 3;
+    public static int DOT_WAIT_TIME = 1;
+
+    public static int SLOW_TIME = 2;
+    public static float SLOW_MODIFIER = .5f;
 
     #endregion
 
-    #region Enemy Support
-
-    public float ENEMY_MOVE_SPEED = 2;
+    #region OTHER
+    public static int TIME_TILL_SPAWN = 15;
 
     #endregion
 }

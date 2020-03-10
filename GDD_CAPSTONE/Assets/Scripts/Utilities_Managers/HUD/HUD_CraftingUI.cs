@@ -131,20 +131,28 @@ public class HUD_CraftingUI : MonoBehaviour
     // 0 = Single Fire, 1 = Rapid Fire, 2 = Cannon"
     public void TopPieceSelected(int pieceSelected)
     {
-        selectedTop = pieceSelected;
-        TowerUIUpdate(selectedTop, (int)Piece.TOP);
-        
+        if (!GameplayManager.Instance.IsPaused)
+        {
+            selectedTop = pieceSelected;
+            TowerUIUpdate(selectedTop, (int)Piece.TOP);
+        }
     }
     public void BotPieceSelected(int pieceSelected)
     {
-        selectedBot = pieceSelected;
-        TowerUIUpdate(selectedBot, (int)Piece.BOT);
+        if (!GameplayManager.Instance.IsPaused)
+        {
+            selectedBot = pieceSelected;
+            TowerUIUpdate(selectedBot, (int)Piece.BOT);
+        }
 
     }
     public void AmmoPieceSelected(int pieceSelected)
     {
-        selectedAmmo = pieceSelected;
-        TowerUIUpdate(selectedAmmo, (int)Piece.AMMO);
+        if (!GameplayManager.Instance.IsPaused)
+        {
+            selectedAmmo = pieceSelected;
+            TowerUIUpdate(selectedAmmo, (int)Piece.AMMO);
+        }
     }
 
 }
