@@ -7,13 +7,14 @@ using UnityEngine;
 /// </summary>
 public class LevelLoader : MonoBehaviour
 {   
+    // Called before Start()
     private void Awake()
     {
         // Starting stats
         GameplayManager.Instance.BaseHealth = 100;
         GameplayManager.Instance.CurWaveCount = 0;
         GameplayManager.Instance.SpawnedEnemies = new List<GameObject>();
-        
+        GameplayManager.Instance.InGame = true;
 
         // Sets all inventory pieces to 1
         for (int i = 0; i < 9; i++)
@@ -31,6 +32,7 @@ public class LevelLoader : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Destroys itself after running Awake()
         Destroy(gameObject);
     }
 

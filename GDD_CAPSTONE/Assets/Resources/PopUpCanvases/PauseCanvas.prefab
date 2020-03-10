@@ -118,15 +118,15 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4549170398704860545}
-        m_MethodName: Quit
-        m_Mode: 1
+      - m_Target: {fileID: 938229614621993698}
+        m_MethodName: GoToScene
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: LevelSelect
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &1340423237038808560
@@ -348,7 +348,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4549170398704860545}
+      - m_Target: {fileID: 938229614621993698}
         m_MethodName: Resume
         m_Mode: 1
         m_Arguments:
@@ -520,7 +520,7 @@ GameObject:
   - component: {fileID: 7074536533302160267}
   - component: {fileID: 4851375145512202504}
   - component: {fileID: 3504818410169355178}
-  - component: {fileID: 4549170398704860545}
+  - component: {fileID: 938229614621993698}
   m_Layer: 5
   m_Name: PauseCanvas
   m_TagString: Untagged
@@ -608,7 +608,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &4549170398704860545
+--- !u!114 &938229614621993698
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -617,7 +617,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2114698392800250723}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24757f3ddb141d04682f1b99471bcb12, type: 3}
+  m_Script: {fileID: 11500000, guid: c332bfccf65b8ed45af7ed3bacd1f3ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2621420827116590492

@@ -64,7 +64,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\EnemyWaves\SO_Script\EnemyWave.cs" />
-    <Compile Include="Assets\LevelSelect.cs" />
     <Compile Include="Assets\Resources\Tower Pieces\Scriptable Objects\AmmoType.cs" />
     <Compile Include="Assets\Resources\Tower Pieces\Scriptable Objects\TowerBase.cs" />
     <Compile Include="Assets\Resources\Tower Pieces\Scriptable Objects\TurretTop.cs" />
@@ -110,7 +109,8 @@
     <Compile Include="Assets\Scripts\Utilities_Managers\ManagerLoader.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\MenuNavigation\HelpMenu.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\MenuNavigation\LevelLoader.cs" />
-    <Compile Include="Assets\Scripts\Utilities_Managers\MenuNavigation\PauseMenu.cs" />
+    <Compile Include="Assets\Scripts\Utilities_Managers\MenuNavigation\LevelSelect.cs" />
+    <Compile Include="Assets\Scripts\Utilities_Managers\MenuNavigation\PopUpCanvases.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\MenuNavigation\TitleScreenManager.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\Singleton.cs" />
     <None Include="Assets\Fonts\viper_nora\text.txt" />

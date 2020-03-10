@@ -4,22 +4,25 @@ using UnityEngine;
 
 public class WaveSpawner : MonoBehaviour
 {
+    // Starts the "queue" at 0
     int currentWave = 0;
+    // A list of EnemyWave (ScriptableObjects)
     [SerializeField] public List<EnemyWave> Wave = new List<EnemyWave>();
 
-    private static int totalWaves;   
 
+    // The total number of waves in the List, is passe dto the HUD for unpdating text
+    private static int totalWaves;   
     public static int TotalWaves { get => totalWaves; set => totalWaves = value; }
 
     // Start is called before the first frame update
     void Awake()
     {
-        totalWaves = Wave.Count;
-        EventManager.AddWaveSpawnListener(InvokeSpawner);
+
     }
     private void Start()
     {
-
+        totalWaves = Wave.Count;
+        EventManager.AddWaveSpawnListener(InvokeSpawner);
     }
     void InvokeSpawner()
     {

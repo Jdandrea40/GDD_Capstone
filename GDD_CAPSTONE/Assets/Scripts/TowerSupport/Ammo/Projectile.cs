@@ -75,29 +75,31 @@ public class Projectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        // so long as there is a target to hit, go to it
-        if (targetToHit != null)
+        if (!GameplayManager.Instance.IsPause)
         {
-            // moves the projectile towards the saved enemy
-            transform.position = Vector2.MoveTowards(transform.position,
-              targetToHit.position, projectileMoveSpeed * Time.deltaTime);
+            // so long as there is a target to hit, go to it
+            if (targetToHit != null)
+            {
+                // moves the projectile towards the saved enemy
+                transform.position = Vector2.MoveTowards(transform.position,
+                  targetToHit.position, projectileMoveSpeed * Time.deltaTime);
 
-            // get a line from tower to target
-            Vector2 direction = targetToHit.transform.position - transform.position;
-            // find the angle of that line
-            float angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
-            // rotate the tower to always face the target
-            transform.rotation = Quaternion.AngleAxis(angle, Vector3.back);
-            // Gets the first enemy in the list and stores it
-            //EventManager.TowerFireListener(MoveToEnemy);
-        }
+                // get a line from tower to target
+                Vector2 direction = targetToHit.transform.position - transform.position;
+                // find the angle of that line
+                float angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
+                // rotate the tower to always face the target
+                transform.rotation = Quaternion.AngleAxis(angle, Vector3.back);
+                // Gets the first enemy in the list and stores it
+                //EventManager.TowerFireListener(MoveToEnemy);
+            }
 
-        else
-        {
-            // if the target is detroyed before this proj hits
-            // CASE: two towers are shooting at the same target
-            Destroy(gameObject);
+            else
+            {
+                // if the target is detroyed before this proj hits
+                // CASE: two towers are shooting at the same target
+                Destroy(gameObject);
+            }
         }
     }
 

@@ -12,7 +12,10 @@ public class GameplayManager : Singleton<GameplayManager>
     public int MaxWaveCount { get; set; }
     public int CurWaveCount { get; set; }
     public bool WaveInProgress { get; set; }
+    // Checks if the pause menu (or any pop up canvas) is currently active
     public bool IsPause { get; set; }
+    // Used to only allow the PauseMenu to be activated while in a game
+    public bool InGame { get; set; } = false;
     public List<GameObject> SpawnedEnemies { get; set; }
 
     GameObject pauseMenu;
@@ -21,7 +24,7 @@ public class GameplayManager : Singleton<GameplayManager>
     // Start is called before the first frame update
     void Start()
     {
-        pauseMenu = Resources.Load<GameObject>("PauseCanvas");
+        pauseMenu = Resources.Load<GameObject>("PopUpCanvases/PauseCanvas");
         MaxWaveCount = WaveSpawner.TotalWaves;
         WaveInProgress = false;
         IsPause = false;
@@ -32,7 +35,7 @@ public class GameplayManager : Singleton<GameplayManager>
     // Update is called once per frame
     void Update()
     {
-        if (!IsPause && Input.GetKey(KeyCode.Escape))
+        if (InGame && !IsPause && Input.GetKey(KeyCode.Escape))
         {
             Instantiate(pauseMenu);
         }

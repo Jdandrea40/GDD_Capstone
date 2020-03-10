@@ -150,35 +150,38 @@ public class Tower : MonoBehaviour
     // Called once a frame
     void Update()
     {
-        if (targetToShoot == null)
+        if (!GameplayManager.Instance.IsPause)
         {
-            firing = false;
-            StopCoroutine(fireCoroutine);
-            return;
-        }
-        else
-        {
-            if (!firing)
+            if (targetToShoot == null)
             {
-                firing = true;
-                StartCoroutine(fireCoroutine);
-
-                //// get a vector from tower to target
-                //Vector2 direction = targetToShoot.transform.position - transform.position;
-                //// find the angle of that line
-                //float angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
-                //// rotate the projectile to always face the target
-                //transform.rotation = Quaternion.AngleAxis(angle, Vector3.back);
+                firing = false;
+                StopCoroutine(fireCoroutine);
+                return;
             }
-
-            if (firing)
+            else
             {
-                // get a vector from tower to target
-                Vector2 direction = targetToShoot.transform.position - transform.position;
-                // find the angle of that line
-                float angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
-                // rotate the projectile to always face the target
-                transform.rotation = Quaternion.AngleAxis(angle, Vector3.back);
+                if (!firing)
+                {
+                    firing = true;
+                    StartCoroutine(fireCoroutine);
+
+                    //// get a vector from tower to target
+                    //Vector2 direction = targetToShoot.transform.position - transform.position;
+                    //// find the angle of that line
+                    //float angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
+                    //// rotate the projectile to always face the target
+                    //transform.rotation = Quaternion.AngleAxis(angle, Vector3.back);
+                }
+
+                if (firing)
+                {
+                    // get a vector from tower to target
+                    Vector2 direction = targetToShoot.transform.position - transform.position;
+                    // find the angle of that line
+                    float angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
+                    // rotate the projectile to always face the target
+                    transform.rotation = Quaternion.AngleAxis(angle, Vector3.back);
+                }
             }
         }
     }
