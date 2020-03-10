@@ -43,6 +43,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: TM_Bottom
+    uniqueID: 2764463265
+    locked: 0
+  - name: TM-Mid
+    uniqueID: 2427066641
+    locked: 0
+  - name: TM_Top
+    uniqueID: 4142283809
+    locked: 0
   - name: GROUND
     uniqueID: 3897557765
     locked: 0
