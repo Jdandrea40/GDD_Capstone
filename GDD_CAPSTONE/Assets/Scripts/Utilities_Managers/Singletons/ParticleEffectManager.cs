@@ -22,6 +22,8 @@ public class ParticleEffectManager : Singleton<ParticleEffectManager>
     private void AddParticlesToDictionary()
     {
         particleDictionary.Add(ParticleToPlay.NORMAL_EXPLODE, Resources.Load<ParticleSystem>("ParticleEffects/NormalExplode"));
+        particleDictionary.Add(ParticleToPlay.CRYO_EXPLODE, Resources.Load<ParticleSystem>("ParticleEffects/CryoExplode"));
+        particleDictionary.Add(ParticleToPlay.INCENDIARY_EXPLODE, Resources.Load<ParticleSystem>("ParticleEffects/IncendiaryExplode"));
     }
     // Called before Start()
     void Awake()

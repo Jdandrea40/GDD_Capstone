@@ -116,16 +116,29 @@ public class Projectile : MonoBehaviour
     {
         if (collision.gameObject.layer == (int)CollisionLayers.ENEMIES)
         {
-            Instantiate(ParticleEffectManager.Instance.particleDictionary[ParticleEffectManager.ParticleToPlay.NORMAL_EXPLODE], transform.position, Quaternion.identity);
+           
             if (projSplash)
             {
-                
+                if (projSlow)
+                {
+                    Instantiate(ParticleEffectManager.Instance.particleDictionary[ParticleEffectManager.ParticleToPlay.CRYO_EXPLODE], transform.position, Quaternion.identity);
+
+                }
+                else if (projDoT)
+                {
+                    Instantiate(ParticleEffectManager.Instance.particleDictionary[ParticleEffectManager.ParticleToPlay.INCENDIARY_EXPLODE], transform.position, Quaternion.identity);
+                }
+                else
+                {
+                    Instantiate(ParticleEffectManager.Instance.particleDictionary[ParticleEffectManager.ParticleToPlay.NORMAL_EXPLODE], transform.position, Quaternion.identity);
+
+                }
                 cc2d.radius = 1;
                 StartCoroutine(Explode());
             }
             else
             {
-                //Destroy(gameObject);
+                Destroy(gameObject);
             }
             
         }

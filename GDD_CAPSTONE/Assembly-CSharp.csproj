@@ -87,6 +87,7 @@
     <Compile Include="Assets\Scripts\Explosion.cs" />
     <Compile Include="Assets\Scripts\HomeBase.cs" />
     <Compile Include="Assets\Scripts\MouseHoverEffect.cs" />
+    <Compile Include="Assets\Scripts\TowerSupport\Ammo\ParticleEffectDestroy.cs" />
     <Compile Include="Assets\Scripts\TowerSupport\Ammo\Projectile.cs" />
     <Compile Include="Assets\Scripts\TowerSupport\Ammo\Tower.cs" />
     <Compile Include="Assets\Scripts\TowerSupport\BA_RangeIndicator.cs" />
