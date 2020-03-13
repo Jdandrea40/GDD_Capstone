@@ -164,13 +164,6 @@ public class Tower : MonoBehaviour
                 {
                     firing = true;
                     StartCoroutine(fireCoroutine);
-
-                    //// get a vector from tower to target
-                    //Vector2 direction = targetToShoot.transform.position - transform.position;
-                    //// find the angle of that line
-                    //float angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
-                    //// rotate the projectile to always face the target
-                    //transform.rotation = Quaternion.AngleAxis(angle, Vector3.back);
                 }
 
                 if (firing)
@@ -274,6 +267,14 @@ public class Tower : MonoBehaviour
             {
                 // instatiate a bullet
                 Projectile proj = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Projectile>();
+                if (splashDamage)
+                {
+                   //AudioManager.Instance.PlaySFX(AudioManager.Sounds.MISSLE_LAUNCH);
+                }
+                else
+                {
+                    AudioManager.Instance.PlaySFX(AudioManager.Sounds.GUN_SHOT);
+                }
                 //towerFireEvent.Invoke
                 proj.SetStats(damage, damageOverTime, dotAmount, slow, splashDamage, ammoColor, projSpr);
                 // call the method inside Projectile to travel towards target

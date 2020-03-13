@@ -8,7 +8,9 @@ public class AudioManager : Singleton<AudioManager>
     {
         // PLAYER_WALK1,
         GUN_SHOT,
-        BKG_LOOP,
+        CRYO_EXPLODE1,
+        CRYO_EXPLODE2,
+        MISSLE_LAUNCH
 
         //as sounds are added to the project, add an enum for each sound
     }
@@ -21,7 +23,11 @@ public class AudioManager : Singleton<AudioManager>
     {
         //soundDictionary.Add(Sounds.PLAYER_WALK1, Resources.Load<AudioClip>("Sounds/Walking"));
         soundDictionary.Add(Sounds.GUN_SHOT, Resources.Load<AudioClip>("Sounds/SFX_gunshot"));
-        soundDictionary.Add(Sounds.BKG_LOOP, Resources.Load<AudioClip>("Sounds/SFX_backgroundLoop"));
+        soundDictionary.Add(Sounds.CRYO_EXPLODE1, Resources.Load<AudioClip>("Sounds/SFX_cryoExplode1"));
+        soundDictionary.Add(Sounds.CRYO_EXPLODE2, Resources.Load<AudioClip>("Sounds/SFX_cryoExplode2"));
+        soundDictionary.Add(Sounds.MISSLE_LAUNCH, Resources.Load<AudioClip>("Sounds/SFX_missleLaunch1"));
+
+
 
         //add each sound to the dictionary here
     }

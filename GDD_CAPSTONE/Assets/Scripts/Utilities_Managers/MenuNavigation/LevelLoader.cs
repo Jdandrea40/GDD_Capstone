@@ -16,6 +16,7 @@ public class LevelLoader : MonoBehaviour
         GameplayManager.Instance.CurrWaveText = 0;
         GameplayManager.Instance.SpawnedEnemies = new List<GameObject>();
         GameplayManager.Instance.InGame = true;
+        GameplayManager.Instance.WaveInProgress = false;
 
         // Sets all inventory pieces to 1
         for (int i = 0; i < 9; i++)

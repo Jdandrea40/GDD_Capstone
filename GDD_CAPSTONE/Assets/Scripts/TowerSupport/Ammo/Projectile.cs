@@ -60,7 +60,7 @@ public class Projectile : MonoBehaviour
         //EventManager.TowerFireListener(SetStats);
         sr.color = projColor;
         sr.sprite = projSprite;
-        AudioManager.Instance.PlaySFX(AudioManager.Sounds.GUN_SHOT);
+
     }
 
     public void SetStats(int damage, bool dot, int dotAmount, bool slow, bool AoE, Color sprColor, Sprite sprite)
@@ -122,6 +122,7 @@ public class Projectile : MonoBehaviour
                 if (projSlow)
                 {
                     Instantiate(ParticleEffectManager.Instance.particleDictionary[ParticleEffectManager.ParticleToPlay.CRYO_EXPLODE], transform.position, Quaternion.identity);
+                    AudioManager.Instance.PlaySFX(AudioManager.Sounds.CRYO_EXPLODE2);
 
                 }
                 else if (projDoT)
@@ -131,7 +132,7 @@ public class Projectile : MonoBehaviour
                 else
                 {
                     Instantiate(ParticleEffectManager.Instance.particleDictionary[ParticleEffectManager.ParticleToPlay.NORMAL_EXPLODE], transform.position, Quaternion.identity);
-
+                    
                 }
                 cc2d.radius = 1;
                 StartCoroutine(Explode());
