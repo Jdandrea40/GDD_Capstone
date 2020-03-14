@@ -62,6 +62,10 @@ public class GameplayManager : Singleton<GameplayManager>
             // WIN CONDITION
             if (CurWaveCount == MaxWaveCount && SpawnedEnemies.Count < 1)
             {
+                if (LevelCompletionManager.Instance.completeledLevels[LevelCompletionManager.Instance.currentLevel] == false)
+                {
+                    LevelCompletionManager.Instance.completeledLevels[LevelCompletionManager.Instance.currentLevel] = true;
+                }
                 Instantiate(winMenu);
             }
         }

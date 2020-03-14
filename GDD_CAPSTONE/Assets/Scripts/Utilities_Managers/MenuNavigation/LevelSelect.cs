@@ -10,6 +10,27 @@ using UnityEngine.SceneManagement;
 public class LevelSelect : MonoBehaviour
 {
     [SerializeField] GameObject[] panels;
+    [SerializeField] GameObject[] completedImage;
+
+    private void Start()
+    {
+        LevelImageUpdate();
+    }
+
+    //TODO: this whol process needs to be better, require too much preknown knowledge to set up
+    // LevelCompletionManager -> here -> LevelSelectButton -> GameplayManager -> LCM -> here
+    void LevelImageUpdate()
+    {
+        for (int i = 0; i < LevelCompletionManager.Instance.completeledLevels.Count; i++)
+        {
+            Debug.Log(LevelCompletionManager.Instance.completeledLevels[(LevelCompletionManager.LevelNames)i]);
+            if(LevelCompletionManager.Instance.completeledLevels[(LevelCompletionManager.LevelNames)i] == true && completedImage[i].activeSelf == false)
+            {
+                completedImage[i].SetActive(true);
+            }
+        }
+
+    }
 
     /// <summary>
     /// Method will take in a value passed in by the corresponding button
@@ -41,6 +62,18 @@ public class LevelSelect : MonoBehaviour
     /// <param name="levelName"></param>
     public void LoadLevel(string levelName)
     {
+        switch(levelName)
+        {
+            case ("DesertDefense"):
+                LevelCompletionManager.Instance.currentLevel = LevelCompletionManager.LevelNames.DESERT_DEFENSE;
+                break;
+            case ("TheGrasslands"):
+                LevelCompletionManager.Instance.currentLevel = LevelCompletionManager.LevelNames.THE_GRASSLANDS;
+                break;
+            default:
+                System.Console.WriteLine("NOT A LEVEL");
+                break;
+        }
         SceneManager.LoadScene(levelName);
     }
 }

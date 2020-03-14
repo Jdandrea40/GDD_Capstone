@@ -112,6 +112,7 @@
     <Compile Include="Assets\Scripts\Utilities_Managers\MenuNavigation\TitleScreenManager.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\Singletons\AudioManager.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\Singletons\GameplayManager.cs" />
+    <Compile Include="Assets\Scripts\Utilities_Managers\Singletons\LevelCompletionManager.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\Singletons\ParticleEffectManager.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\Singletons\PiecesCollectedManager.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\Singletons\Singleton.cs" />

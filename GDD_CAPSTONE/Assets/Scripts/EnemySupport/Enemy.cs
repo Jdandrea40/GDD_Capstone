@@ -25,13 +25,15 @@ public class Enemy : MonoBehaviour
     protected float Health = 1;
     float fullHealth;
     protected float moveSpeed;
+    float slowSpeed;
+    float currentSpeed;
 
     int damage;
     protected bool TakingDamage = false;
     protected bool Slowed = false;
     EnemyMoveTowardsPoint enemyMove;
 
-    public float MoveSpeed { get => moveSpeed; set => moveSpeed = value; }
+    public float CurrentSpeed { get => currentSpeed; set => currentSpeed = value; }
     public float HealthBarHealth { get => Health; }
     #endregion
 
@@ -74,6 +76,9 @@ public class Enemy : MonoBehaviour
         // Will Increase the base Health PLus the Modifier (EHM += CurrWave)
         Health += GameplayManager.Instance.EnemyHealthModifier;
         fullHealth = Health;
+
+        currentSpeed = moveSpeed;
+        slowSpeed = moveSpeed * .5f;
 
         #region UNUSED STUFF
         //Debug.Log(Health);
@@ -198,7 +203,7 @@ public class Enemy : MonoBehaviour
             if (!GameplayManager.Instance.IsPaused)
             {
                 sr.color = Color.blue;
-                moveSpeed *= .5f;
+                currentSpeed = slowSpeed;
                 yield return new WaitForSeconds(1);
             }
             else
@@ -210,7 +215,7 @@ public class Enemy : MonoBehaviour
         }
 
         Slowed = false;
-        moveSpeed /= .5f;
+        currentSpeed = moveSpeed;
         sr.color = Color.white;
 
     }

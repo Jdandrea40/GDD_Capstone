@@ -17,7 +17,7 @@ public class EnemyMoveTowardsPoint : MonoBehaviour
     {
         // Sets the target to the first point in the array
         target = EnemyPathFinder.points[0];        
-        moveSpeed = GetComponent<Enemy>().MoveSpeed;
+        moveSpeed = GetComponent<Enemy>().CurrentSpeed;
     }
 
     // Update is called once per frame
@@ -36,7 +36,7 @@ public class EnemyMoveTowardsPoint : MonoBehaviour
         // Gets the distance of the current point of travel
         Vector3 dir = target.position - transform.position;
         // moves the enemy
-        transform.Translate(dir.normalized * GetComponent<Enemy>().MoveSpeed * Time.deltaTime, Space.World);
+        transform.Translate(dir.normalized * GetComponent<Enemy>().CurrentSpeed * Time.deltaTime, Space.World);
 
         // detects if it has reach its destination (with buffer)
         if (Vector3.Distance(transform.position, target.position) <= .2f)
