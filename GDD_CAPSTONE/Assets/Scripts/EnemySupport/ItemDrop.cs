@@ -100,6 +100,7 @@ public class ItemDrop : MonoBehaviour
         // Increments the PCM
         PiecesCollectedManager.Instance.CollectedPieces[itemType]++;
         itemCollectedEvent.Invoke();
+        AudioManager.Instance.PlaySFX(AudioManager.Sounds.ITEM_PICKUP);
         Destroy(gameObject);
     }
 }

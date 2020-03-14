@@ -13,6 +13,7 @@ public class ManagerLoader : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        //AM.PlayLoop(AudioManager.Sounds.BKG_LOOP);
     }
 
     // Update is called once per frame

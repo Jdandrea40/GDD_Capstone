@@ -10,7 +10,13 @@ public class AudioManager : Singleton<AudioManager>
         GUN_SHOT,
         CRYO_EXPLODE1,
         CRYO_EXPLODE2,
-        MISSLE_LAUNCH
+        INCEND_EXPLODE1,
+        NORM_EXPLODE,
+        MISSLE_LAUNCH,
+        BKG_LOOP,
+        ITEM_PICKUP,
+        TOGGLE_CLICK,
+        PLACE_TOWER
 
         //as sounds are added to the project, add an enum for each sound
     }
@@ -21,11 +27,23 @@ public class AudioManager : Singleton<AudioManager>
     //Adds Sounds to the dictionary
     private void AddSoundsToDictionary()
     {
-        //soundDictionary.Add(Sounds.PLAYER_WALK1, Resources.Load<AudioClip>("Sounds/Walking"));
-        soundDictionary.Add(Sounds.GUN_SHOT, Resources.Load<AudioClip>("Sounds/SFX_gunshot"));
-        soundDictionary.Add(Sounds.CRYO_EXPLODE1, Resources.Load<AudioClip>("Sounds/SFX_cryoExplode1"));
-        soundDictionary.Add(Sounds.CRYO_EXPLODE2, Resources.Load<AudioClip>("Sounds/SFX_cryoExplode2"));
-        soundDictionary.Add(Sounds.MISSLE_LAUNCH, Resources.Load<AudioClip>("Sounds/SFX_missleLaunch1"));
+        #region PROJECTILES
+        soundDictionary.Add(Sounds.GUN_SHOT, Resources.Load<AudioClip>("Sounds/Projectile/SFX_gunshot"));
+        soundDictionary.Add(Sounds.CRYO_EXPLODE1, Resources.Load<AudioClip>("Sounds/Projectile/SFX_cryoExplode1.2"));
+        soundDictionary.Add(Sounds.CRYO_EXPLODE2, Resources.Load<AudioClip>("Sounds/Projectile/SFX_cryoExplode2"));
+        soundDictionary.Add(Sounds.INCEND_EXPLODE1, Resources.Load<AudioClip>("Sounds/Projectile/SFX_incendiaryExplode"));
+        soundDictionary.Add(Sounds.NORM_EXPLODE, Resources.Load<AudioClip>("Sounds/Projectile/SFX_normalExplode1"));
+        soundDictionary.Add(Sounds.MISSLE_LAUNCH, Resources.Load<AudioClip>("Sounds/Projectile/SFX_missleLaunch1"));
+        #endregion
+
+        soundDictionary.Add(Sounds.BKG_LOOP, Resources.Load<AudioClip>("Sounds/SFX_bkgLoop1"));
+        soundDictionary.Add(Sounds.ITEM_PICKUP, Resources.Load<AudioClip>("Sounds/SFX_itemPickUp"));
+
+        #region UI
+        soundDictionary.Add(Sounds.PLACE_TOWER, Resources.Load<AudioClip>("Sounds/UI/SFX_placeTower"));
+        soundDictionary.Add(Sounds.TOGGLE_CLICK, Resources.Load<AudioClip>("Sounds/UI/SFX_toggleClick"));
+        #endregion
+
 
 
 
@@ -34,7 +52,7 @@ public class AudioManager : Singleton<AudioManager>
 
     //audio player components
     private AudioSource SFXSource;
-    private AudioSource MusicSource;
+    public AudioSource MusicSource;
     private AudioSource LoopSource;
     private List<AudioSource> Loops = new List<AudioSource>();
 
@@ -48,10 +66,10 @@ public class AudioManager : Singleton<AudioManager>
     //play a single sound effect through SFXSource
     public void PlaySFX(Sounds sound)
     {
-        if (!SFXSource.isPlaying)
-        {
+        //if (!SFXSource.isPlaying)
+        //{
             SFXSource.PlayOneShot(soundDictionary[sound]);
-        }
+        //}
     }
 
     //play a music clip through MusicSource

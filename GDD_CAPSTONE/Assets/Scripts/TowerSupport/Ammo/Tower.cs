@@ -35,7 +35,8 @@ public class Tower : MonoBehaviour
     //public Dictionary<int, GameObject> enemies; 
 
     // Used for tower rotation to target
-    bool firing = false;
+    bool canFire = true;
+    bool targeting = false;
     bool hovering = false;
 
     #endregion
@@ -104,9 +105,6 @@ public class Tower : MonoBehaviour
         // Event for setting the stats of the fired projectile
         // towerFireEvent = new TowerFireEvent();
         // EventManager.TowerFireInvoker(this);
-
-        // Needs to be set to a variable in order to StopCoroutine()
-        fireCoroutine = Fire();
         
         // List of targetable enemies in range
         enemyTargets = new List<GameObject>();
@@ -154,19 +152,38 @@ public class Tower : MonoBehaviour
         {
             if (targetToShoot == null)
             {
-                firing = false;
-                StopCoroutine(fireCoroutine);
+                targeting = false;
                 return;
             }
             else
             {
-                if (!firing)
+                if(canFire)
                 {
-                    firing = true;
-                    StartCoroutine(fireCoroutine);
+                    // spawns a Projectile and passes in the necessary attributes:
+                    // this is: ImpactDamage, DamageOverTime (bool) -> Amount, Slow (bool), SplashDamge (bool), color, and sprite
+                    // as well as the current target it is aiming at so that the proj can MoveTowards this enemy
+                    Projectile proj = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Projectile>();
+                    proj.SetStats(damage, damageOverTime, dotAmount, slow, splashDamage, ammoColor, projSpr);
+                    // call the method inside Projectile to travel towards target
+                    proj.MoveToEnemy(targetToShoot);
+                    if (!splashDamage)
+                    {
+                        AudioManager.Instance.PlaySFX(AudioManager.Sounds.GUN_SHOT);
+                    }
+                    else
+                    {
+                        AudioManager.Instance.PlaySFX(AudioManager.Sounds.MISSLE_LAUNCH);
+                    }
+                    canFire = false;
+                    StartCoroutine(WaitToFire());
+
+                }
+                if (!targeting)
+                {
+                    targeting = true;
                 }
 
-                if (firing)
+                if (targeting)
                 {
                     // get a vector from tower to target
                     Vector2 direction = targetToShoot.transform.position - transform.position;
@@ -211,10 +228,33 @@ public class Tower : MonoBehaviour
         }
     }
 
-    
+
     #endregion
 
     #region CUSTOM METHODS
+
+    /// <summary>
+    /// Coroutine used to handle the rate of fire waiting
+    /// sets the canfire (Update()) boll to true when done
+    /// </summary>
+    /// <returns></returns>
+    IEnumerator WaitToFire()
+    {
+
+        for (int i = 0; i < fireRate; i++)
+        {
+            if (!GameplayManager.Instance.IsPaused)
+            {
+                yield return new WaitForSeconds(1);
+            }
+            else
+            {
+                yield return new WaitUntil(() => !GameplayManager.Instance.IsPaused);
+            }
+        }
+        canFire = true;
+    }
+
     /// <summary>
     /// Destroys a placed tower
     /// </summary>
@@ -225,6 +265,7 @@ public class Tower : MonoBehaviour
         ba.Occupied = false;
         Destroy(gameObject);
     }
+
     /// <summary>
     /// https://www.youtube.com/watch?v=QKhn2kl9_8I&list=PLPV2KyIb3jR4u5jX8za5iU1cqnQPmbzG0&index=5&t=1047s
     /// Brackeys tutorial for ClosestTarget Acquisition
@@ -251,45 +292,6 @@ public class Tower : MonoBehaviour
         {
             targetToShoot = null;
         }
-    }
-    /// <summary>
-    /// Fire Coroutine
-    /// spawns a Projectile and passes in the necessary attributes:
-    /// this is: ImpactDamage, DamageOverTime (bool) -> Amount, Slow (bool), SplashDamge (bool), color, and sprite
-    /// as well as the current target it is aiming at so that the proj can MoveTowards this enemy
-    /// </summary>
-    /// <returns></returns>
-    IEnumerator Fire()
-    {
-        while (firing)
-        {
-            if (!GameplayManager.Instance.IsPaused)
-            {
-                // instatiate a bullet
-                Projectile proj = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Projectile>();
-                if (splashDamage)
-                {
-                   //AudioManager.Instance.PlaySFX(AudioManager.Sounds.MISSLE_LAUNCH);
-                }
-                else
-                {
-                    AudioManager.Instance.PlaySFX(AudioManager.Sounds.GUN_SHOT);
-                }
-                //towerFireEvent.Invoke
-                proj.SetStats(damage, damageOverTime, dotAmount, slow, splashDamage, ammoColor, projSpr);
-                // call the method inside Projectile to travel towards target
-                proj.MoveToEnemy(targetToShoot);
-                // COOLDOWN
-
-            }
-            else
-            {                
-                yield return new WaitUntil(() => !GameplayManager.Instance.IsPaused);
-                
-            }
-            yield return new WaitForSeconds(fireRate);
-        }
-        
     }
 
     /// <summary>

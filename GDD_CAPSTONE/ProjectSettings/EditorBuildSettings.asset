@@ -15,9 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/HelpMenu.unity
     guid: e2e27be279e59cb4aa6c46ccd10a5e86
   - enabled: 1
-    path: Assets/Scenes/TestScene.unity
+    path: Assets/Scenes/Levels/DesertDefense.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/Level1.unity
+    path: Assets/Scenes/Levels/TheGrasslands.unity
     guid: 2c542f2006d1a7846ac1abb99fc77996
   m_configObjects: {}

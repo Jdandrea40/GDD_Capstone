@@ -127,6 +127,9 @@ public class HUD_CraftingUI : MonoBehaviour
         }
 
     }
+    /// <summary>
+    /// Below handles all swapping between toggles in the crafting panel
+    /// </summary>
 
     // 0 = Single Fire, 1 = Rapid Fire, 2 = Cannon"
     public void TopPieceSelected(int pieceSelected)
@@ -135,6 +138,7 @@ public class HUD_CraftingUI : MonoBehaviour
         {
             selectedTop = pieceSelected;
             TowerUIUpdate(selectedTop, (int)Piece.TOP);
+            AudioManager.Instance.PlaySFX(AudioManager.Sounds.TOGGLE_CLICK);
         }
     }
     public void BotPieceSelected(int pieceSelected)
@@ -143,6 +147,8 @@ public class HUD_CraftingUI : MonoBehaviour
         {
             selectedBot = pieceSelected;
             TowerUIUpdate(selectedBot, (int)Piece.BOT);
+            AudioManager.Instance.PlaySFX(AudioManager.Sounds.TOGGLE_CLICK);
+
         }
 
     }
@@ -152,6 +158,8 @@ public class HUD_CraftingUI : MonoBehaviour
         {
             selectedAmmo = pieceSelected;
             TowerUIUpdate(selectedAmmo, (int)Piece.AMMO);
+            AudioManager.Instance.PlaySFX(AudioManager.Sounds.TOGGLE_CLICK);
+
         }
     }
 

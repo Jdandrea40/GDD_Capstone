@@ -118,7 +118,7 @@ public class BuildableArea : MonoBehaviour
             if (hovering && !occupied)
             {
                 occupied = true;
-
+                AudioManager.Instance.PlaySFX(AudioManager.Sounds.TOGGLE_CLICK);
                 // Instantiates the Tower, and sets the Area to its Parent
                 Instantiate(tower, transform.position, Quaternion.identity, transform);
 

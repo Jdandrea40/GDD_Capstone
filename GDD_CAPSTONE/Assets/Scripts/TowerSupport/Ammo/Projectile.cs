@@ -108,31 +108,36 @@ public class Projectile : MonoBehaviour
     // used to indetify the target to move towards
     public void MoveToEnemy(GameObject target)
     {
-        targetToHit = target.transform;
+        if (target != null)
+        {
+            targetToHit = target.transform;
+        }
     }
 
     // Collision detection
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.layer == (int)CollisionLayers.ENEMIES)
-        {
-           
+        {          
             if (projSplash)
             {
                 if (projSlow)
                 {
                     Instantiate(ParticleEffectManager.Instance.particleDictionary[ParticleEffectManager.ParticleToPlay.CRYO_EXPLODE], transform.position, Quaternion.identity);
-                    AudioManager.Instance.PlaySFX(AudioManager.Sounds.CRYO_EXPLODE2);
+                    AudioManager.Instance.PlaySFX(AudioManager.Sounds.CRYO_EXPLODE1);
 
                 }
                 else if (projDoT)
                 {
                     Instantiate(ParticleEffectManager.Instance.particleDictionary[ParticleEffectManager.ParticleToPlay.INCENDIARY_EXPLODE], transform.position, Quaternion.identity);
+                    AudioManager.Instance.PlaySFX(AudioManager.Sounds.INCEND_EXPLODE1);
+
                 }
                 else
                 {
                     Instantiate(ParticleEffectManager.Instance.particleDictionary[ParticleEffectManager.ParticleToPlay.NORMAL_EXPLODE], transform.position, Quaternion.identity);
-                    
+                    AudioManager.Instance.PlaySFX(AudioManager.Sounds.NORM_EXPLODE);
+
                 }
                 cc2d.radius = 1;
                 StartCoroutine(Explode());

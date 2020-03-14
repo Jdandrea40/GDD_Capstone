@@ -39,28 +39,31 @@ public class GameplayManager : Singleton<GameplayManager>
     // Update is called once per frame
     void Update()
     {
-        // Used to pause the game
-        if (InGame && !IsPaused && Input.GetKey(KeyCode.Escape))
+        if (!IsPaused)
         {
-            Instantiate(pauseMenu);
-        }
+            // Used to pause the game
+            if (InGame && Input.GetKey(KeyCode.Escape))
+            {
+                Instantiate(pauseMenu);
+            }
 
-        // Used to increase the Health Modifier of Enemies
-        if (currWave != CurWaveCount)
-        {
-            EnemyHealthModifier += CurWaveCount;
-            currWave = CurWaveCount;
-        }
+            // Used to increase the Health Modifier of Enemies
+            if (currWave != CurWaveCount)
+            {
+                EnemyHealthModifier += CurWaveCount;
+                currWave = CurWaveCount;
+            }
 
-        // LOSE CONDITION
-        if (BaseHealth <= 0)
-        {
-            Instantiate(loseMenu);
-        }
-        // WIN CONDITION
-        if (CurWaveCount == MaxWaveCount && SpawnedEnemies.Count < 1)
-        {
-            Instantiate(winMenu);
+            // LOSE CONDITION
+            if (BaseHealth <= 0)
+            {
+                Instantiate(loseMenu);
+            }
+            // WIN CONDITION
+            if (CurWaveCount == MaxWaveCount && SpawnedEnemies.Count < 1)
+            {
+                Instantiate(winMenu);
+            }
         }
     }
 
