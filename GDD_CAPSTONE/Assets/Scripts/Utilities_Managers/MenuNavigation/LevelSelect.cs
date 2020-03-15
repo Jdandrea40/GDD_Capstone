@@ -70,6 +70,9 @@ public class LevelSelect : MonoBehaviour
             case ("TheGrasslands"):
                 LevelCompletionManager.Instance.currentLevel = LevelCompletionManager.LevelNames.THE_GRASSLANDS;
                 break;
+            case ("RoundAbout"):
+                LevelCompletionManager.Instance.currentLevel = LevelCompletionManager.LevelNames.ROUNDABOUT;
+                break;
             default:
                 System.Console.WriteLine("NOT A LEVEL");
                 break;

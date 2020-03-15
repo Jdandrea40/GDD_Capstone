@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/TheGrasslands.unity
     guid: 2c542f2006d1a7846ac1abb99fc77996
+  - enabled: 1
+    path: Assets/Scenes/Levels/RoundAbout.unity
+    guid: df91302e75a7298439e47591e5fca5fa
   m_configObjects: {}

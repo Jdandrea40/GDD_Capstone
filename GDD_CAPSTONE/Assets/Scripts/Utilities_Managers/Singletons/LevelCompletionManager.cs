@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LevelCompletionManager : Singleton<LevelCompletionManager>
 {
-    public enum LevelNames { DESERT_DEFENSE, THE_GRASSLANDS };
+    public enum LevelNames { DESERT_DEFENSE, THE_GRASSLANDS, ROUNDABOUT };
     public Dictionary<LevelNames, bool> completeledLevels = new Dictionary<LevelNames, bool>();
     public LevelNames currentLevel;
 
@@ -12,6 +12,7 @@ public class LevelCompletionManager : Singleton<LevelCompletionManager>
     {
         completeledLevels[LevelNames.DESERT_DEFENSE] = false;
         completeledLevels[LevelNames.THE_GRASSLANDS] = false;
+        completeledLevels[LevelNames.ROUNDABOUT] = false;
     }
 
 }
