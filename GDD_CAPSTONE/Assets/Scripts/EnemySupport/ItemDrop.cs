@@ -28,11 +28,15 @@ public class ItemDrop : MonoBehaviour
         // Event for HUI_CUI updating
         itemCollectedEvent = new ItemCollectedEvent();
         EventManager.AddItemCollectedInvoker(this);
-
+        Pulse();
         sr = GetComponent<SpriteRenderer>();
         itemToDrop = Random.Range(0, 9);
         DropItem(itemToDrop);
     }
+
+    // Just used to call the pulsing animation
+    public void Pulse()
+    { }
 
     void DropItem(int itemToDrop)
     {
@@ -97,10 +101,13 @@ public class ItemDrop : MonoBehaviour
     /// </summary>
     private void OnMouseEnter()
     {
-        // Increments the PCM
-        PiecesCollectedManager.Instance.CollectedPieces[itemType]++;
-        itemCollectedEvent.Invoke();
-        AudioManager.Instance.PlaySFX(AudioManager.Sounds.ITEM_PICKUP);
-        Destroy(gameObject);
+        if (!GameplayManager.Instance.IsPaused)
+        {
+            // Increments the PCM
+            PiecesCollectedManager.Instance.CollectedPieces[itemType]++;
+            itemCollectedEvent.Invoke();
+            AudioManager.Instance.PlaySFX(AudioManager.Sounds.ITEM_PICKUP);
+            Destroy(gameObject);
+        }
     }
 }

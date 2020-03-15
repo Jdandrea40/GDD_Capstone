@@ -37,6 +37,7 @@ public class Projectile : MonoBehaviour
     SpriteRenderer sr;
 
     float projectileMoveSpeed;
+    bool hasHit = false;
     ParticleSystem particle;
 
     public int ProjDamage { get => projDamage; set => projDamage = value; }
@@ -117,8 +118,9 @@ public class Projectile : MonoBehaviour
     // Collision detection
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.layer == (int)CollisionLayers.ENEMIES)
-        {          
+        if (collision.gameObject.layer == (int)CollisionLayers.ENEMIES && !hasHit)
+        {
+            hasHit = true;
             if (projSplash)
             {
                 if (projSlow)

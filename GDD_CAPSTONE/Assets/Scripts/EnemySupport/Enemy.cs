@@ -24,6 +24,8 @@ public class Enemy : MonoBehaviour
     protected ENEMY_STATS eStat;
     protected float Health = 1;
     float fullHealth;
+
+    // Enemy slow speed changin
     protected float moveSpeed;
     float slowSpeed;
     float currentSpeed;
@@ -95,7 +97,7 @@ public class Enemy : MonoBehaviour
     /// Does not need to return from update on pause since this is just health checking
     /// which only changes during a collision
     /// </summary>
-    public virtual void Update()
+    protected virtual void Update()
     {
         if (Health > 0)
         {
@@ -105,11 +107,8 @@ public class Enemy : MonoBehaviour
         // Life Checking
         if (Health <= 0)
         {
-            if (Random.Range(0, 5) > 1)
-            {
-                // Spawns collectable item
-                Instantiate(item, transform.position, Quaternion.identity);
-            }
+
+            SpawnItem();
             
             GameplayManager.Instance.EnemiesKilled++;
             GameplayManager.Instance.SpawnedEnemies.Remove(gameObject);
@@ -117,6 +116,14 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    protected virtual void SpawnItem()
+    {
+        if (Random.Range(0, 5) > 1)
+        {
+            // Spawns collectable item
+            Instantiate(item, transform.position, Quaternion.identity);
+        }
+    }
     /// <summary>
     /// Collision Checking
     /// </summary>

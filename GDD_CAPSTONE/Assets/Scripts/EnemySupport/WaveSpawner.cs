@@ -33,7 +33,7 @@ public class WaveSpawner : MonoBehaviour
         // boolean so that you dont Spam Spawn enemies
         // waits till the last enemy is spawned
         GameplayManager.Instance.WaveInProgress = true;
-        
+
         // Wont spawn more than the max wave amount
         if (currentWave < Wave.Count)
         {

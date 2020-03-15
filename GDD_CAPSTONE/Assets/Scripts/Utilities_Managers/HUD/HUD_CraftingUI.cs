@@ -14,13 +14,14 @@ public class HUD_CraftingUI : MonoBehaviour
     public static int SelectedTop { get => selectedTop; set => selectedTop = value; }
     public static int SelectedBot { get => selectedBot; set => selectedBot = value; }
     public static int SelectedAmmo { get => selectedAmmo; set => selectedAmmo = value; }
-    //[SerializeField] GameObject tower;
 
+    // Collection of toggles to swap interactable
     [SerializeField] Toggle[] toggleTops;
     [SerializeField] Toggle[] toggleBots;
     [SerializeField] Toggle[] toggleAmmo;
-
-    //[SerializeField] ToggleGroup topGroup;
+    
+    // An array of the BKG images so that they can be swapped to red/normal based on amount
+    [SerializeField] Image[] imageBKGS;
 
     Toggle topSelected;
     Toggle botSelected;
@@ -69,6 +70,7 @@ public class HUD_CraftingUI : MonoBehaviour
                 if (i < 3)
                 {
                     toggleTops[i].interactable = false;
+
                 }
                 else if (i > 2 && i <= 5)
                 {
@@ -78,6 +80,7 @@ public class HUD_CraftingUI : MonoBehaviour
                 {
                     toggleAmmo[i - 6].interactable = false;
                 }
+                imageBKGS[i].color = Color.red;
             }
             else
             {
@@ -93,6 +96,7 @@ public class HUD_CraftingUI : MonoBehaviour
                 {
                     toggleAmmo[i - 6].interactable = true;
                 }
+                imageBKGS[i].color = Color.white;
             }
         }
     }

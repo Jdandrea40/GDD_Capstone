@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SingleFireTurret
   m_EditorClassIdentifier: 
   Name: Single Fire Turret
-  Damage: 5
+  Damage: 10
   FireRate: 1
   SplashDamage: 0
   TurretSprite: {fileID: 21300000, guid: 5f0f6a84b08fcdd46a0e476699220e0c, type: 3}

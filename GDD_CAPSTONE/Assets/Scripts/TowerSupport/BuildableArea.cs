@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class BuildableArea : MonoBehaviour
 {
     SpriteRenderer sr;
+    public BoxCollider2D bc2d;
 
     // Hover/Dehover Color support
     Color hoverColor;
@@ -23,7 +24,7 @@ public class BuildableArea : MonoBehaviour
     float currTowerRange;
     Color rangeColor;
 
-    BoxCollider2D bc2d;
+   
     Vector2 center;
 
     // Used to revert to unoccupied when a tower is removed (Tower.cs)
@@ -38,6 +39,7 @@ public class BuildableArea : MonoBehaviour
 
 
     #endregion
+
     private void Start()
     {
         // Components
@@ -72,7 +74,6 @@ public class BuildableArea : MonoBehaviour
         // Prevents placement during paused and inssuffiecnt piece inventory
         if (!occupied && !GameplayManager.Instance.IsPaused)
         {
-            
             // Checks the currently selected components
             if (PiecesCollectedManager.Instance.CollectedPieces[(PiecesCollectedManager.TowerPieceEnum)HUD_CraftingUI.SelectedTop] > 0 &&
                 PiecesCollectedManager.Instance.CollectedPieces[(PiecesCollectedManager.TowerPieceEnum)HUD_CraftingUI.SelectedBot + 3] > 0 &&
@@ -118,7 +119,8 @@ public class BuildableArea : MonoBehaviour
             if (hovering && !occupied)
             {
                 occupied = true;
-                AudioManager.Instance.PlaySFX(AudioManager.Sounds.TOGGLE_CLICK);
+                bc2d.enabled = false;
+                AudioManager.Instance.PlaySFX(AudioManager.Sounds.PLACE_TOWER);
                 // Instantiates the Tower, and sets the Area to its Parent
                 Instantiate(tower, transform.position, Quaternion.identity, transform);
 

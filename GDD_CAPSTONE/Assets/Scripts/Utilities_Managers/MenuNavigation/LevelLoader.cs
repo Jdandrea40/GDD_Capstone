@@ -14,6 +14,7 @@ public class LevelLoader : MonoBehaviour
         GameplayManager.Instance.BaseHealth = 100;
         GameplayManager.Instance.CurWaveCount = 0;
         GameplayManager.Instance.CurrWaveText = 0;
+        GameplayManager.Instance.EnemyHealthModifier = 0;
         GameplayManager.Instance.SpawnedEnemies = new List<GameObject>();
         GameplayManager.Instance.InGame = true;
         GameplayManager.Instance.IsPaused = false;

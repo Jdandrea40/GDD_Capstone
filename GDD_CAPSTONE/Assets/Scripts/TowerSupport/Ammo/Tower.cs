@@ -142,7 +142,7 @@ public class Tower : MonoBehaviour
 
         scrapUsedEvent.Invoke();
         InvokeRepeating("UpdateTarget", 0, .5f);
-        //Debug.Log(damage);
+        Debug.Log(fireRate);
     }
 
     // Called once a frame
@@ -263,6 +263,7 @@ public class Tower : MonoBehaviour
         // Sets the BuildableArea occupied boolean to false
         BuildableArea ba = GetComponentInParent<BuildableArea>();
         ba.Occupied = false;
+        ba.bc2d.enabled = true;
         Destroy(gameObject);
     }
 
