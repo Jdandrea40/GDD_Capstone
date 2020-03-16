@@ -23,6 +23,8 @@ public class PopUpCanvases : MonoBehaviour
         GameplayManager.Instance.IsPaused = false;
         //Time.timeScale = 1;
         Destroy(gameObject);
+        AudioManager.Instance.PlaySFX(AudioManager.Sounds.BUTTON_CLICK);
+
     }
 
     /// <summary>
@@ -35,6 +37,8 @@ public class PopUpCanvases : MonoBehaviour
         GameplayManager.Instance.InGame = false;
         GameplayManager.Instance.IsPaused = false;
         //Time.timeScale = 1;
+        AudioManager.Instance.PlaySFX(AudioManager.Sounds.BUTTON_CLICK);
+
         SceneManager.LoadScene(sceneName);
     }
 
@@ -45,6 +49,8 @@ public class PopUpCanvases : MonoBehaviour
     {
         GameplayManager.Instance.IsPaused = false;
         //Time.timeScale = 1;
+        AudioManager.Instance.PlaySFX(AudioManager.Sounds.BUTTON_CLICK);
+
         Scene thisLevel = SceneManager.GetActiveScene();
         SceneManager.LoadScene(thisLevel.name);
     }

@@ -57,7 +57,7 @@ public class Enemy : MonoBehaviour
 
     #region UNITY METHODS
 
-    public virtual void Awake()
+    protected virtual void Awake()
     {
         cc2d = GetComponent<CircleCollider2D>();
         eStat = ENEMY_STATS.Instance;

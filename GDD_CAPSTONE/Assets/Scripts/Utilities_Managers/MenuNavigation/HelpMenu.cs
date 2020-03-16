@@ -15,6 +15,7 @@ public class HelpMenu : MonoBehaviour
     /// <param name="levelSelected"></param>
     public void GoTo(string levelSelected)
     {
+        AudioManager.Instance.PlaySFX(AudioManager.Sounds.BUTTON_CLICK);
         SceneManager.LoadScene(levelSelected);
     }
 }
