@@ -20,7 +20,7 @@ public class ENEMY_STATS : Singleton<ENEMY_STATS>
 
     #region BOSS PLANE 1
     
-    public int BOSS_PLANE_1_HEALTH = 150;
+    public int BOSS_PLANE_1_HEALTH = 100;
     public int BOSS_PLANE_1_MOVE_SPEED = 2;
     public Color BOSS_PLANE_1_COLOR = new Color(53, 53, 53);
     #endregion

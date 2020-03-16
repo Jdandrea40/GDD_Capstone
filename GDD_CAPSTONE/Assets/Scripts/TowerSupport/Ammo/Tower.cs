@@ -35,7 +35,8 @@ public class Tower : MonoBehaviour
     //public Dictionary<int, GameObject> enemies; 
 
     // Used for tower rotation to target
-    bool firing = false;
+    bool canFire = true;
+    bool targeting = false;
     bool hovering = false;
 
     #endregion
@@ -104,9 +105,6 @@ public class Tower : MonoBehaviour
         // Event for setting the stats of the fired projectile
         // towerFireEvent = new TowerFireEvent();
         // EventManager.TowerFireInvoker(this);
-
-        // Needs to be set to a variable in order to StopCoroutine()
-        fireCoroutine = Fire();
         
         // List of targetable enemies in range
         enemyTargets = new List<GameObject>();
@@ -144,45 +142,63 @@ public class Tower : MonoBehaviour
 
         scrapUsedEvent.Invoke();
         InvokeRepeating("UpdateTarget", 0, .5f);
-        //Debug.Log(damage);
+        Debug.Log(fireRate);
     }
 
     // Called once a frame
     void Update()
     {
-        if (targetToShoot == null)
+        if (!GameplayManager.Instance.IsPaused)
         {
-            firing = false;
-            StopCoroutine(fireCoroutine);
-            return;
-        }
-        else
-        {
-            if (!firing)
+            if (targetToShoot == null)
             {
-                firing = true;
-                StartCoroutine(fireCoroutine);
-
-                //// get a vector from tower to target
-                //Vector2 direction = targetToShoot.transform.position - transform.position;
-                //// find the angle of that line
-                //float angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
-                //// rotate the projectile to always face the target
-                //transform.rotation = Quaternion.AngleAxis(angle, Vector3.back);
+                targeting = false;
+                return;
             }
-
-            if (firing)
+            else
             {
-                // get a vector from tower to target
-                Vector2 direction = targetToShoot.transform.position - transform.position;
-                // find the angle of that line
-                float angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
-                // rotate the projectile to always face the target
-                transform.rotation = Quaternion.AngleAxis(angle, Vector3.back);
+                if(canFire)
+                {
+                    // spawns a Projectile and passes in the necessary attributes:
+                    // this is: ImpactDamage, DamageOverTime (bool) -> Amount, Slow (bool), SplashDamge (bool), color, and sprite
+                    // as well as the current target it is aiming at so that the proj can MoveTowards this enemy
+                    Projectile proj = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Projectile>();
+                    proj.SetStats(damage, damageOverTime, dotAmount, slow, splashDamage, ammoColor, projSpr);
+                    // call the method inside Projectile to travel towards target
+                    proj.MoveToEnemy(targetToShoot);
+                    if (!splashDamage)
+                    {
+                        AudioManager.Instance.PlaySFX(AudioManager.Sounds.GUN_SHOT);
+                    }
+                    else
+                    {
+                        AudioManager.Instance.PlaySFX(AudioManager.Sounds.MISSLE_LAUNCH);
+                    }
+                    canFire = false;
+                    StartCoroutine(WaitToFire());
+
+                }
+                if (!targeting)
+                {
+                    targeting = true;
+                }
+
+                if (targeting)
+                {
+                    // get a vector from tower to target
+                    Vector2 direction = targetToShoot.transform.position - transform.position;
+                    // find the angle of that line
+                    float angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
+                    // rotate the projectile to always face the target
+                    transform.rotation = Quaternion.AngleAxis(angle, Vector3.back);
+                }
             }
         }
     }
 
+    /// <summary>
+    /// When moused over tower, Show its range
+    /// </summary>
     private void OnMouseEnter()
     {
         hovering = true;
@@ -212,16 +228,45 @@ public class Tower : MonoBehaviour
         }
     }
 
-    
+
     #endregion
 
     #region CUSTOM METHODS
+
+    /// <summary>
+    /// Coroutine used to handle the rate of fire waiting
+    /// sets the canfire (Update()) boll to true when done
+    /// </summary>
+    /// <returns></returns>
+    IEnumerator WaitToFire()
+    {
+
+        for (int i = 0; i < fireRate; i++)
+        {
+            if (!GameplayManager.Instance.IsPaused)
+            {
+                yield return new WaitForSeconds(1);
+            }
+            else
+            {
+                yield return new WaitUntil(() => !GameplayManager.Instance.IsPaused);
+            }
+        }
+        canFire = true;
+    }
+
+    /// <summary>
+    /// Destroys a placed tower
+    /// </summary>
     public void RemoveTower()
     {
+        // Sets the BuildableArea occupied boolean to false
         BuildableArea ba = GetComponentInParent<BuildableArea>();
         ba.Occupied = false;
+        ba.bc2d.enabled = true;
         Destroy(gameObject);
     }
+
     /// <summary>
     /// https://www.youtube.com/watch?v=QKhn2kl9_8I&list=PLPV2KyIb3jR4u5jX8za5iU1cqnQPmbzG0&index=5&t=1047s
     /// Brackeys tutorial for ClosestTarget Acquisition
@@ -249,26 +294,11 @@ public class Tower : MonoBehaviour
             targetToShoot = null;
         }
     }
-    // Fire Coroutine
-    IEnumerator Fire()
-    {
-        // TODO: REMOVE HARDCODED VALUES
-        // towerFireEvent.Invoke(target.transform);
-        while (firing)
-        {
 
-            //towerFireEvent.Invoke(damage, damageOverTime, dotAmount, slow);
-            // instatiate a bullet
-            Projectile proj = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Projectile>();
-            //towerFireEvent.Invoke
-            proj.SetStats(damage, damageOverTime, dotAmount, slow, splashDamage, ammoColor, projSpr);
-            // call the method inside Projectile to travel towards target
-            proj.MoveToEnemy(targetToShoot);
-            // COOLDOWN
-            yield return new WaitForSeconds(fireRate);
-        }
-        
-    }
+    /// <summary>
+    /// Once the tower is instantiated it takes in all the attributes from
+    /// the HUD_CUI and takes the Scriptable Objects stats associated with the selected piece
+    /// </summary>
     void CreateTower()
     {
         TurretTop tTop = pcm.pcTop[HUD_CraftingUI.SelectedTop];
@@ -293,7 +323,6 @@ public class Tower : MonoBehaviour
         damageOverTime = tAmmo.DamageOverTime;
         dotAmount = tAmmo.DoTAmount;
         splashDamage = tTop.SplashDamage;
-
     }
 
     #endregion

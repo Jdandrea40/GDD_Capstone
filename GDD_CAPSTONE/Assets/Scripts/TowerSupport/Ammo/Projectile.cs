@@ -37,6 +37,8 @@ public class Projectile : MonoBehaviour
     SpriteRenderer sr;
 
     float projectileMoveSpeed;
+    bool hasHit = false;
+    ParticleSystem particle;
 
     public int ProjDamage { get => projDamage; set => projDamage = value; }
     public bool ProjDoT { get => projDoT; set => projDoT = value; }
@@ -49,8 +51,9 @@ public class Projectile : MonoBehaviour
         bc2d = GetComponent<BoxCollider2D>();
         sr = GetComponent<SpriteRenderer>();
         cc2d = GetComponent<CircleCollider2D>();
+       
         //targetToHit = tower.TargetToShoot.transform;
-        projectileMoveSpeed = ConstantsManager.Instance.PROJECTILE_MOVE_SPEED;
+        projectileMoveSpeed = ConstantsManager.PROJECTILE_MOVE_SPEED;
 
         //enemyDamageEvent = new EnemyDamageEvent();
         //EventManager.AddEnemyDamageInvoker(this);
@@ -58,7 +61,7 @@ public class Projectile : MonoBehaviour
         //EventManager.TowerFireListener(SetStats);
         sr.color = projColor;
         sr.sprite = projSprite;
-        AudioManager.Instance.PlaySFX(AudioManager.Sounds.GUN_SHOT);
+
     }
 
     public void SetStats(int damage, bool dot, int dotAmount, bool slow, bool AoE, Color sprColor, Sprite sprite)
@@ -75,46 +78,69 @@ public class Projectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        // so long as there is a target to hit, go to it
-        if (targetToHit != null)
+        if (!GameplayManager.Instance.IsPaused)
         {
-            // moves the projectile towards the saved enemy
-            transform.position = Vector2.MoveTowards(transform.position,
-              targetToHit.position, projectileMoveSpeed * Time.deltaTime);
+            // so long as there is a target to hit, go to it
+            if (targetToHit != null)
+            {
+                // moves the projectile towards the saved enemy
+                transform.position = Vector2.MoveTowards(transform.position,
+                  targetToHit.position, projectileMoveSpeed * Time.deltaTime);
 
-            // get a line from tower to target
-            Vector2 direction = targetToHit.transform.position - transform.position;
-            // find the angle of that line
-            float angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
-            // rotate the tower to always face the target
-            transform.rotation = Quaternion.AngleAxis(angle, Vector3.back);
-            // Gets the first enemy in the list and stores it
-            //EventManager.TowerFireListener(MoveToEnemy);
-        }
+                // get a line from tower to target
+                Vector2 direction = targetToHit.transform.position - transform.position;
+                // find the angle of that line
+                float angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
+                // rotate the tower to always face the target
+                transform.rotation = Quaternion.AngleAxis(angle, Vector3.back);
+                // Gets the first enemy in the list and stores it
+                //EventManager.TowerFireListener(MoveToEnemy);
+            }
 
-        else
-        {
-            // if the target is detroyed before this proj hits
-            // CASE: two towers are shooting at the same target
-            Destroy(gameObject);
+            else
+            {
+                // if the target is detroyed before this proj hits
+                // CASE: two towers are shooting at the same target
+                Destroy(gameObject);
+            }
         }
     }
 
     // used to indetify the target to move towards
     public void MoveToEnemy(GameObject target)
     {
-        targetToHit = target.transform;
+        if (target != null)
+        {
+            targetToHit = target.transform;
+        }
     }
 
     // Collision detection
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.layer == (int)CollisionLayers.ENEMIES)
+        if (collision.gameObject.layer == (int)CollisionLayers.ENEMIES && !hasHit)
         {
+            hasHit = true;
             if (projSplash)
             {
-                
+                if (projSlow)
+                {
+                    Instantiate(ParticleEffectManager.Instance.particleDictionary[ParticleEffectManager.ParticleToPlay.CRYO_EXPLODE], transform.position, Quaternion.identity);
+                    AudioManager.Instance.PlaySFX(AudioManager.Sounds.CRYO_EXPLODE1);
+
+                }
+                else if (projDoT)
+                {
+                    Instantiate(ParticleEffectManager.Instance.particleDictionary[ParticleEffectManager.ParticleToPlay.INCENDIARY_EXPLODE], transform.position, Quaternion.identity);
+                    AudioManager.Instance.PlaySFX(AudioManager.Sounds.INCEND_EXPLODE1);
+
+                }
+                else
+                {
+                    Instantiate(ParticleEffectManager.Instance.particleDictionary[ParticleEffectManager.ParticleToPlay.NORMAL_EXPLODE], transform.position, Quaternion.identity);
+                    AudioManager.Instance.PlaySFX(AudioManager.Sounds.NORM_EXPLODE);
+
+                }
                 cc2d.radius = 1;
                 StartCoroutine(Explode());
             }
@@ -126,10 +152,16 @@ public class Projectile : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Only called on a rocket projectile
+    /// TODO: Handle Explosion Animation
+    /// </summary>
+    /// <returns></returns>
     IEnumerator Explode()
     { 
         Instantiate(explosion, transform.position, Quaternion.identity);
 
+        // Waits for a second so that Splach damage can occur
         yield return new WaitForSeconds(.1f);
         Destroy(gameObject);
     }

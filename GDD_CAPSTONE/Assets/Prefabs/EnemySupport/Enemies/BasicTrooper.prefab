@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 1142398865292350821}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.42, y: 3.54, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children:
   - {fileID: 8914444692285699730}
   m_Father: {fileID: 0}
@@ -72,9 +72,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1775645601
-  m_SortingLayer: 2
+  m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6340107d04012c047b6a3f153b7ddcc4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f311106d02eadea4b8f4b89451f42717, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -274,6 +274,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HealthCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 474261858362048626, guid: cd5fad2e268c1534b9215b3e40ba263a,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 474261858362048626, guid: cd5fad2e268c1534b9215b3e40ba263a,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 474261858362048626, guid: cd5fad2e268c1534b9215b3e40ba263a,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 474261858362048626, guid: cd5fad2e268c1534b9215b3e40ba263a,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 474261858362048626, guid: cd5fad2e268c1534b9215b3e40ba263a,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 474261858362048626, guid: cd5fad2e268c1534b9215b3e40ba263a,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7460422856985139569, guid: cd5fad2e268c1534b9215b3e40ba263a,
         type: 3}

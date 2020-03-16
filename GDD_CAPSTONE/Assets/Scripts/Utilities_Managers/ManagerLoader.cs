@@ -6,28 +6,23 @@ public class ManagerLoader : MonoBehaviour
 {
     private void Awake()
     {
-        GameplayManager GM = GameplayManager.Instance;
         AudioManager AM = AudioManager.Instance;
-        ItemSpawnManager ISM = ItemSpawnManager.Instance;
-        PiecesCollectedManager PCM = PiecesCollectedManager.Instance;
-        //MenuManager MM = MenuManager.Instance;
+        ParticleEffectManager PM = ParticleEffectManager.Instance;
 
-        if (GM != null && AM != null && ISM != null && PCM != null)// && MM != null)
+        if (AM != null && PM != null)
         {
             Destroy(gameObject);
         }
+        //AM.PlayLoop(AudioManager.Sounds.BKG_LOOP);
     }
 
     // Update is called once per frame
     void Update()
     {
-        GameplayManager GM = GameplayManager.Instance;
         AudioManager AM = AudioManager.Instance;
-        ItemSpawnManager ISM = ItemSpawnManager.Instance;
-        PiecesCollectedManager PCM = PiecesCollectedManager.Instance;
-        //MenuManager MM = MenuManager.Instance;
+        ParticleEffectManager PM = ParticleEffectManager.Instance;
 
-        if (GM != null && AM != null && ISM != null && PCM != null)// && MM != null)
+        if (AM != null && PM != null)
         {
             Destroy(gameObject);
         }

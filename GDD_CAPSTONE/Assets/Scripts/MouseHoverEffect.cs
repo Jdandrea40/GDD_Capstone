@@ -13,7 +13,7 @@ public class MouseHoverEffect : MonoBehaviour
     {
         sr = GetComponent<SpriteRenderer>();
         startColor = sr.material.color;
-        hoverColor = Color.gray;
+        hoverColor = Color.black;
         
     }
     private void OnMouseEnter()

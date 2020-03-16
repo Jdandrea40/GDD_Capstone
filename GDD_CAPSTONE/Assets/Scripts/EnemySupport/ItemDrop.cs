@@ -5,9 +5,10 @@ using UnityEngine.Events;
 
 public class ItemDrop : MonoBehaviour
 {
+    // TODO: DO THIS BETTER, CASE STATMENT IS A MILE LONG, Condense (Dictionary?)
     enum DroppedItem { SINGLE_FIRE, RAPID_FIRE, CANNON, SHORT, MEDIUM, LONG, STANDARD, SLOW, INCENDIARY }
 
-    [Tooltip("Standard, Rapid, Cannon")]
+    // An array of items to drop sprites
     [SerializeField] Sprite[] item = new Sprite[9];
 
     SpriteRenderer sr;
@@ -15,6 +16,7 @@ public class ItemDrop : MonoBehaviour
 
     PiecesCollectedManager.TowerPieceEnum itemType;
 
+    // Event for HUI_CUI updating
     ItemCollectedEvent itemCollectedEvent;
     public void AddItemCollectedListener(UnityAction listener)
     {
@@ -23,17 +25,23 @@ public class ItemDrop : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Event for HUI_CUI updating
         itemCollectedEvent = new ItemCollectedEvent();
         EventManager.AddItemCollectedInvoker(this);
-
+        Pulse();
         sr = GetComponent<SpriteRenderer>();
         itemToDrop = Random.Range(0, 9);
         DropItem(itemToDrop);
     }
 
+    // Just used to call the pulsing animation
+    public void Pulse()
+    { }
+
     void DropItem(int itemToDrop)
     {
         sr.sprite = item[itemToDrop];
+
         switch(itemToDrop)
         {
             case (int)DroppedItem.SINGLE_FIRE:
@@ -88,10 +96,18 @@ public class ItemDrop : MonoBehaviour
         }
     }
 
-    private void OnMouseDown()
+    /// <summary>
+    /// Collects the Item on Mouse Enter, and Invokes the event
+    /// </summary>
+    private void OnMouseEnter()
     {
-        PiecesCollectedManager.Instance.CollectedPieces[itemType]++;
-        itemCollectedEvent.Invoke();
-        Destroy(gameObject);
+        if (!GameplayManager.Instance.IsPaused)
+        {
+            // Increments the PCM
+            PiecesCollectedManager.Instance.CollectedPieces[itemType]++;
+            itemCollectedEvent.Invoke();
+            AudioManager.Instance.PlaySFX(AudioManager.Sounds.ITEM_PICKUP);
+            Destroy(gameObject);
+        }
     }
 }

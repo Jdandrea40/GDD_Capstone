@@ -17,13 +17,17 @@ public class EnemyMoveTowardsPoint : MonoBehaviour
     {
         // Sets the target to the first point in the array
         target = EnemyPathFinder.points[0];        
-        moveSpeed = GetComponent<Enemy>().MoveSpeed;
+        moveSpeed = GetComponent<Enemy>().CurrentSpeed;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Move();
+        // returns out when paused
+        if (!GameplayManager.Instance.IsPaused)
+        {
+            Move();
+        }
     }
 
     // Moves the enemy
@@ -32,7 +36,7 @@ public class EnemyMoveTowardsPoint : MonoBehaviour
         // Gets the distance of the current point of travel
         Vector3 dir = target.position - transform.position;
         // moves the enemy
-        transform.Translate(dir.normalized * GetComponent<Enemy>().MoveSpeed * Time.deltaTime, Space.World);
+        transform.Translate(dir.normalized * GetComponent<Enemy>().CurrentSpeed * Time.deltaTime, Space.World);
 
         // detects if it has reach its destination (with buffer)
         if (Vector3.Distance(transform.position, target.position) <= .2f)
@@ -41,21 +45,25 @@ public class EnemyMoveTowardsPoint : MonoBehaviour
             GetNextWaypoint();
         }
     }
-    
-    // Used to increment waypoint and rotate based on its position
+
+    /// <summary>
+    ///  Used to increment waypoint and rotate based on its position
+    /// </summary>
     void GetNextWaypoint()
     {
+        // checks if its current point is the end
         if (currentPoint >= EnemyPathFinder.points.Length - 1)
-        {
+        { 
+            // KYS
             Destroy(gameObject);
-            Debug.Log("Boom");
             return;
         }
+
         // Increment and set
         currentPoint++;
         target = EnemyPathFinder.points[currentPoint];
 
-        // Rotates
+        // Rotates the sprite to face to right direction
         Vector2 direction = target.transform.position - transform.position;
         float angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.back);

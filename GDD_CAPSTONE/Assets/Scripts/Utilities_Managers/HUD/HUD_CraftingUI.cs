@@ -14,13 +14,14 @@ public class HUD_CraftingUI : MonoBehaviour
     public static int SelectedTop { get => selectedTop; set => selectedTop = value; }
     public static int SelectedBot { get => selectedBot; set => selectedBot = value; }
     public static int SelectedAmmo { get => selectedAmmo; set => selectedAmmo = value; }
-    //[SerializeField] GameObject tower;
 
+    // Collection of toggles to swap interactable
     [SerializeField] Toggle[] toggleTops;
     [SerializeField] Toggle[] toggleBots;
     [SerializeField] Toggle[] toggleAmmo;
-
-    //[SerializeField] ToggleGroup topGroup;
+    
+    // An array of the BKG images so that they can be swapped to red/normal based on amount
+    [SerializeField] Image[] imageBKGS;
 
     Toggle topSelected;
     Toggle botSelected;
@@ -39,8 +40,6 @@ public class HUD_CraftingUI : MonoBehaviour
     
     [SerializeField] Text[] itemCountText;
 
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -49,9 +48,9 @@ public class HUD_CraftingUI : MonoBehaviour
         
         // Game Start Initialization
         UpdateItemCount();
-        //TowerUIUpdate(0, 0);
-        //TowerUIUpdate(0, 1);
-        //TowerUIUpdate(0, 2);
+        TowerUIUpdate(0, 0);
+        TowerUIUpdate(0, 1);
+        TowerUIUpdate(0, 2);
 
     }
 
@@ -71,6 +70,7 @@ public class HUD_CraftingUI : MonoBehaviour
                 if (i < 3)
                 {
                     toggleTops[i].interactable = false;
+
                 }
                 else if (i > 2 && i <= 5)
                 {
@@ -80,6 +80,7 @@ public class HUD_CraftingUI : MonoBehaviour
                 {
                     toggleAmmo[i - 6].interactable = false;
                 }
+                imageBKGS[i].color = Color.red;
             }
             else
             {
@@ -95,6 +96,7 @@ public class HUD_CraftingUI : MonoBehaviour
                 {
                     toggleAmmo[i - 6].interactable = true;
                 }
+                imageBKGS[i].color = Color.white;
             }
         }
     }
@@ -129,24 +131,40 @@ public class HUD_CraftingUI : MonoBehaviour
         }
 
     }
+    /// <summary>
+    /// Below handles all swapping between toggles in the crafting panel
+    /// </summary>
 
     // 0 = Single Fire, 1 = Rapid Fire, 2 = Cannon"
     public void TopPieceSelected(int pieceSelected)
     {
-        selectedTop = pieceSelected;
-        TowerUIUpdate(selectedTop, (int)Piece.TOP);
-        
+        if (!GameplayManager.Instance.IsPaused)
+        {
+            selectedTop = pieceSelected;
+            TowerUIUpdate(selectedTop, (int)Piece.TOP);
+            AudioManager.Instance.PlaySFX(AudioManager.Sounds.TOGGLE_CLICK);
+        }
     }
     public void BotPieceSelected(int pieceSelected)
     {
-        selectedBot = pieceSelected;
-        TowerUIUpdate(selectedBot, (int)Piece.BOT);
+        if (!GameplayManager.Instance.IsPaused)
+        {
+            selectedBot = pieceSelected;
+            TowerUIUpdate(selectedBot, (int)Piece.BOT);
+            AudioManager.Instance.PlaySFX(AudioManager.Sounds.TOGGLE_CLICK);
+
+        }
 
     }
     public void AmmoPieceSelected(int pieceSelected)
     {
-        selectedAmmo = pieceSelected;
-        TowerUIUpdate(selectedAmmo, (int)Piece.AMMO);
+        if (!GameplayManager.Instance.IsPaused)
+        {
+            selectedAmmo = pieceSelected;
+            TowerUIUpdate(selectedAmmo, (int)Piece.AMMO);
+            AudioManager.Instance.PlaySFX(AudioManager.Sounds.TOGGLE_CLICK);
+
+        }
     }
 
 }

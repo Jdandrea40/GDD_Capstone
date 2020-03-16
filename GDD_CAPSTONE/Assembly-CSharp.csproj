@@ -71,6 +71,7 @@
     <Compile Include="Assets\Scripts\EnemySupport\Enemies\Enemy_BasicTrooper.cs" />
     <Compile Include="Assets\Scripts\EnemySupport\Enemies\Enemy_BossPlane1.cs" />
     <Compile Include="Assets\Scripts\EnemySupport\Enemies\ENEMY_STATS.cs" />
+    <Compile Include="Assets\Scripts\EnemySupport\Enemies\Enemy_TestAirplane.cs" />
     <Compile Include="Assets\Scripts\EnemySupport\Enemy.cs" />
     <Compile Include="Assets\Scripts\EnemySupport\Enemy_HealthBar.cs" />
     <Compile Include="Assets\Scripts\EnemySupport\EnemyMoveTowardsPoint.cs" />
@@ -87,29 +88,37 @@
     <Compile Include="Assets\Scripts\Explosion.cs" />
     <Compile Include="Assets\Scripts\HomeBase.cs" />
     <Compile Include="Assets\Scripts\MouseHoverEffect.cs" />
+    <Compile Include="Assets\Scripts\TowerSupport\Ammo\ParticleEffectDestroy.cs" />
     <Compile Include="Assets\Scripts\TowerSupport\Ammo\Projectile.cs" />
     <Compile Include="Assets\Scripts\TowerSupport\Ammo\Tower.cs" />
+    <Compile Include="Assets\Scripts\TowerSupport\BA_RangeIndicator.cs" />
     <Compile Include="Assets\Scripts\TowerSupport\BuildableArea.cs" />
     <Compile Include="Assets\Scripts\TowerSupport\TargetAcquisition.cs" />
     <Compile Include="Assets\Scripts\TowerSupport\TowerAttack.cs" />
     <Compile Include="Assets\Scripts\TowerSupport\TOWERCREATIONTESTER.cs" />
     <Compile Include="Assets\Scripts\TowerSupport\TurretRadiusDrawer.cs" />
-    <Compile Include="Assets\Scripts\Utilities_Managers\AudioManager.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\ConstantsManager.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\EventManager.cs" />
-    <Compile Include="Assets\Scripts\Utilities_Managers\GameplayManager.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\HUD\HUD_CraftingUI.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\HUD\HUD_GameStats.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\HUD\HUDManager.cs" />
-    <Compile Include="Assets\Scripts\Utilities_Managers\HUD\PiecesCollectedManager.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\HUD\TowerStatCreation.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\ItemSpawnManager.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\LayersManager.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\ManagerLoader.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\MenuNavigation\HelpMenu.cs" />
-    <Compile Include="Assets\Scripts\Utilities_Managers\MenuNavigation\MenuManager.cs" />
-    <Compile Include="Assets\Scripts\Utilities_Managers\MenuNavigation\PauseMenu.cs" />
-    <Compile Include="Assets\Scripts\Utilities_Managers\Singleton.cs" />
+    <Compile Include="Assets\Scripts\Utilities_Managers\MenuNavigation\LevelLoader.cs" />
+    <Compile Include="Assets\Scripts\Utilities_Managers\MenuNavigation\LevelLoaderTest.cs" />
+    <Compile Include="Assets\Scripts\Utilities_Managers\MenuNavigation\LevelSelect.cs" />
+    <Compile Include="Assets\Scripts\Utilities_Managers\MenuNavigation\PopUpCanvases.cs" />
+    <Compile Include="Assets\Scripts\Utilities_Managers\MenuNavigation\TitleScreenManager.cs" />
+    <Compile Include="Assets\Scripts\Utilities_Managers\Singletons\AudioManager.cs" />
+    <Compile Include="Assets\Scripts\Utilities_Managers\Singletons\GameplayManager.cs" />
+    <Compile Include="Assets\Scripts\Utilities_Managers\Singletons\LevelCompletionManager.cs" />
+    <Compile Include="Assets\Scripts\Utilities_Managers\Singletons\ParticleEffectManager.cs" />
+    <Compile Include="Assets\Scripts\Utilities_Managers\Singletons\PiecesCollectedManager.cs" />
+    <Compile Include="Assets\Scripts\Utilities_Managers\Singletons\Singleton.cs" />
+    <None Include="Assets\Fonts\viper_nora\text.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
@@ -130,37 +139,37 @@
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>C:/Users/Josh/Documents/GitHub/GDD_Capstone/GDD_CAPSTONE/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>C:/Users/Josh D'Andrea/Documents/GitHub/GDD_Capstone/GDD_CAPSTONE/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>C:/Users/Josh/Documents/GitHub/GDD_Capstone/GDD_CAPSTONE/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>C:/Users/Josh D'Andrea/Documents/GitHub/GDD_Capstone/GDD_CAPSTONE/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/Josh/Documents/GitHub/GDD_Capstone/GDD_CAPSTONE/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/Josh D'Andrea/Documents/GitHub/GDD_Capstone/GDD_CAPSTONE/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>C:/Users/Josh/Documents/GitHub/GDD_Capstone/GDD_CAPSTONE/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>C:/Users/Josh D'Andrea/Documents/GitHub/GDD_Capstone/GDD_CAPSTONE/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>C:/Users/Josh/Documents/GitHub/GDD_Capstone/GDD_CAPSTONE/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>C:/Users/Josh D'Andrea/Documents/GitHub/GDD_Capstone/GDD_CAPSTONE/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/Users/Josh/Documents/GitHub/GDD_Capstone/GDD_CAPSTONE/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>C:/Users/Josh D'Andrea/Documents/GitHub/GDD_Capstone/GDD_CAPSTONE/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>C:/Users/Josh/Documents/GitHub/GDD_Capstone/GDD_CAPSTONE/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>C:/Users/Josh D'Andrea/Documents/GitHub/GDD_Capstone/GDD_CAPSTONE/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Sprite.Editor">
-      <HintPath>C:/Users/Josh/Documents/GitHub/GDD_Capstone/GDD_CAPSTONE/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+      <HintPath>C:/Users/Josh D'Andrea/Documents/GitHub/GDD_Capstone/GDD_CAPSTONE/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Tilemap.Editor">
-      <HintPath>C:/Users/Josh/Documents/GitHub/GDD_Capstone/GDD_CAPSTONE/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
+      <HintPath>C:/Users/Josh D'Andrea/Documents/GitHub/GDD_Capstone/GDD_CAPSTONE/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/Josh/Documents/GitHub/GDD_Capstone/GDD_CAPSTONE/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/Josh D'Andrea/Documents/GitHub/GDD_Capstone/GDD_CAPSTONE/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>C:/Users/Josh/Documents/GitHub/GDD_Capstone/GDD_CAPSTONE/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>C:/Users/Josh D'Andrea/Documents/GitHub/GDD_Capstone/GDD_CAPSTONE/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.17f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
