@@ -67,12 +67,12 @@
     <Compile Include="Assets\Resources\Tower Pieces\Scriptable Objects\AmmoType.cs" />
     <Compile Include="Assets\Resources\Tower Pieces\Scriptable Objects\TowerBase.cs" />
     <Compile Include="Assets\Resources\Tower Pieces\Scriptable Objects\TurretTop.cs" />
+    <Compile Include="Assets\Scripts\EnemySupport\Enemies\Enemy.cs" />
     <Compile Include="Assets\Scripts\EnemySupport\Enemies\Enemy_BasicAirplane.cs" />
     <Compile Include="Assets\Scripts\EnemySupport\Enemies\Enemy_BasicTrooper.cs" />
     <Compile Include="Assets\Scripts\EnemySupport\Enemies\Enemy_BossPlane1.cs" />
     <Compile Include="Assets\Scripts\EnemySupport\Enemies\ENEMY_STATS.cs" />
     <Compile Include="Assets\Scripts\EnemySupport\Enemies\Enemy_TestAirplane.cs" />
-    <Compile Include="Assets\Scripts\EnemySupport\Enemy.cs" />
     <Compile Include="Assets\Scripts\EnemySupport\Enemy_HealthBar.cs" />
     <Compile Include="Assets\Scripts\EnemySupport\EnemyMoveTowardsPoint.cs" />
     <Compile Include="Assets\Scripts\EnemySupport\EnemyPathFinder.cs" />
@@ -96,7 +96,6 @@
     <Compile Include="Assets\Scripts\TowerSupport\BuildableArea.cs" />
     <Compile Include="Assets\Scripts\TowerSupport\TargetAcquisition.cs" />
     <Compile Include="Assets\Scripts\TowerSupport\TowerAttack.cs" />
-    <Compile Include="Assets\Scripts\TowerSupport\TOWERCREATIONTESTER.cs" />
     <Compile Include="Assets\Scripts\TowerSupport\TurretRadiusDrawer.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\ConstantsManager.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\EventManager.cs" />

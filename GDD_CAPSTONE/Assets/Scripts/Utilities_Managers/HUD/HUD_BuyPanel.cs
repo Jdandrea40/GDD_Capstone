@@ -16,6 +16,7 @@ public class HUD_BuyPanel : MonoBehaviour
         itemBoughtEvent = new ItemCollectedEvent();
         EventManager.AddItemBoughtInvoker(this);
     }
+
     /// <summary>
     /// 0 = single fire
     /// 1 = rapid fire
@@ -33,9 +34,14 @@ public class HUD_BuyPanel : MonoBehaviour
         if (GameplayManager.Instance.ScrapCollected >= 100)
         {
             GameplayManager.Instance.ScrapCollected -= 100;
-
+            PiecesCollectedManager.Instance.CollectedPieces[(PiecesCollectedManager.TowerPieceEnum)towerToBuy]++;
+            itemBoughtEvent.Invoke();
+            AudioManager.Instance.PlaySFX(AudioManager.Sounds.ITEM_PICKUP);
         }
-        PiecesCollectedManager.Instance.CollectedPieces[(PiecesCollectedManager.TowerPieceEnum)towerToBuy]++;
-        itemBoughtEvent.Invoke();
+        else
+        {
+            //TODO: ERROR SOUND / Inssufucient Funds
+        }
+        
     }
 }
