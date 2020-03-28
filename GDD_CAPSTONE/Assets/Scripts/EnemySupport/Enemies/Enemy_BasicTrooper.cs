@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy_BasicTrooper : Enemy
 {
-    public override void Awake()
+    protected override void Awake()
     {
         base.Awake();
         Health = eStat.BASIC_TROOPER_HEALTH;

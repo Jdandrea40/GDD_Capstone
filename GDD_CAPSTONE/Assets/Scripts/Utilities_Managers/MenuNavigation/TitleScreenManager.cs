@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class TitleScreenManager : MonoBehaviour
 {
+    
     public void Start()
     {
         if (!AudioManager.Instance.MusicSource.isPlaying)
@@ -14,21 +15,20 @@ public class TitleScreenManager : MonoBehaviour
     }
     public void PlayGame()
     {
-        AudioManager.Instance.PlaySFX(AudioManager.Sounds.GUN_SHOT);
+        AudioManager.Instance.PlaySFX(AudioManager.Sounds.BUTTON_CLICK);
         SceneManager.LoadScene("LevelSelect");
         
     }
 
     public void QuitGame()
     {
-        AudioManager.Instance.PlaySFX(AudioManager.Sounds.GUN_SHOT);
-
+        AudioManager.Instance.PlayButtonClick(AudioManager.Sounds.BUTTON_CLICK);
         Application.Quit();
     }
     
     public void HelpMenu()
     {
-
+        AudioManager.Instance.PlaySFX(AudioManager.Sounds.BUTTON_CLICK);
         SceneManager.LoadScene("HelpMenu");
     }
 }

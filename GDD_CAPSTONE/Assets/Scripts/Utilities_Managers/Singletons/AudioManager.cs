@@ -16,7 +16,8 @@ public class AudioManager : Singleton<AudioManager>
         BKG_LOOP,
         ITEM_PICKUP,
         TOGGLE_CLICK,
-        PLACE_TOWER
+        PLACE_TOWER,
+        BUTTON_CLICK
 
         //as sounds are added to the project, add an enum for each sound
     }
@@ -42,6 +43,8 @@ public class AudioManager : Singleton<AudioManager>
         #region UI
         soundDictionary.Add(Sounds.PLACE_TOWER, Resources.Load<AudioClip>("Sounds/UI/SFX_placeTower"));
         soundDictionary.Add(Sounds.TOGGLE_CLICK, Resources.Load<AudioClip>("Sounds/UI/SFX_toggleClick"));
+        soundDictionary.Add(Sounds.BUTTON_CLICK, Resources.Load<AudioClip>("Sounds/UI/SFX_toggleClick"));
+
         #endregion
 
 
@@ -71,7 +74,13 @@ public class AudioManager : Singleton<AudioManager>
             SFXSource.PlayOneShot(soundDictionary[sound]);
         //}
     }
+    public void PlayButtonClick(Sounds sound)
+    {
+        SFXSource.clip = soundDictionary[sound];
+        SFXSource.loop = false;
+        SFXSource.Play();
 
+    }
     //play a music clip through MusicSource
     public void PlayMusic(Sounds sound, bool loop)
     {

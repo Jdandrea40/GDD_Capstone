@@ -23,7 +23,6 @@ public class LevelSelect : MonoBehaviour
     {
         for (int i = 0; i < LevelCompletionManager.Instance.completeledLevels.Count; i++)
         {
-            Debug.Log(LevelCompletionManager.Instance.completeledLevels[(LevelCompletionManager.LevelNames)i]);
             if(LevelCompletionManager.Instance.completeledLevels[(LevelCompletionManager.LevelNames)i] == true && completedImage[i].activeSelf == false)
             {
                 completedImage[i].SetActive(true);
@@ -40,6 +39,7 @@ public class LevelSelect : MonoBehaviour
     /// <param name="difficulty"></param>
     public void TabChange(int difficulty)
     {
+        AudioManager.Instance.PlaySFX(AudioManager.Sounds.BUTTON_CLICK);
         // Loops through the list of panels
         // populated in the Inspector
         for (int i = 0; i < panels.Length; i++)
@@ -77,6 +77,7 @@ public class LevelSelect : MonoBehaviour
                 System.Console.WriteLine("NOT A LEVEL");
                 break;
         }
+        AudioManager.Instance.PlaySFX(AudioManager.Sounds.BUTTON_CLICK);
         SceneManager.LoadScene(levelName);
     }
 }

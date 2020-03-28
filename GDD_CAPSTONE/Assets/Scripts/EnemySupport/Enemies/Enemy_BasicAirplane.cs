@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy_BasicAirplane : Enemy
 {
-    public override void Awake()
+    protected override void Awake()
     {
         base.Awake();
         Health = eStat.BASIC_AIRPLANE_HEALTH;

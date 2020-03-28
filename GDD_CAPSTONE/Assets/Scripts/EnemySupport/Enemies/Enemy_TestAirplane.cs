@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy_TestAirplane : Enemy
 {
-    public override void Awake()
+    protected override void Awake()
     {
         base.Awake();
         Health = 500;
