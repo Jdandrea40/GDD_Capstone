@@ -109,8 +109,8 @@ public class Enemy : MonoBehaviour
         {
 
             SpawnItem();
-            
-            GameplayManager.Instance.EnemiesKilled++;
+            //TODO: SCRAP COLLECTED
+            //GameplayManager.Instance.EnemiesKilled++;
             GameplayManager.Instance.SpawnedEnemies.Remove(gameObject);
             Destroy(gameObject);
         }

@@ -9,14 +9,14 @@ using UnityEngine.UI;
 /// </summary>
 public class HUD_GameStats : MonoBehaviour
 {   
-    [SerializeField] Text enemiesKilledText;
+    [SerializeField] Text scrapCollectedText;
     [SerializeField] Text waveCountText;
     [SerializeField] Text baseHealthText;
     
     // Start is called before the first frame update
     void Start()
     {       
-        enemiesKilledText.text = " Enemies Killed: " + GameplayManager.Instance.EnemiesKilled;
+        scrapCollectedText.text = " Scrap Collected: " + GameplayManager.Instance.ScrapCollected;
         baseHealthText.text = " Base Health: " + GameplayManager.Instance.BaseHealth;
         waveCountText.text = " Wave: " + GameplayManager.Instance.CurrWaveText + " : " + GameplayManager.Instance.MaxWaveCount;
     }
@@ -24,7 +24,7 @@ public class HUD_GameStats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        enemiesKilledText.text = " Enemies Killed: " + GameplayManager.Instance.EnemiesKilled;
+        scrapCollectedText.text = " Scrap Collected: " + GameplayManager.Instance.ScrapCollected;
         baseHealthText.text = " Base Health: " + GameplayManager.Instance.BaseHealth;
         waveCountText.text = " Wave: " + GameplayManager.Instance.CurrWaveText + " : " + GameplayManager.Instance.MaxWaveCount;
     }

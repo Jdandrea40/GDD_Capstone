@@ -80,6 +80,7 @@
     <Compile Include="Assets\Scripts\EnemySupport\WaveSpawner.cs" />
     <Compile Include="Assets\Scripts\Events\AddEnemyTargetEvent.cs" />
     <Compile Include="Assets\Scripts\Events\EnemyDamageEvent.cs" />
+    <Compile Include="Assets\Scripts\Events\ItemBoughtEvent.cs" />
     <Compile Include="Assets\Scripts\Events\ItemCollectedEvent.cs" />
     <Compile Include="Assets\Scripts\Events\RemoveEnemyTargetEvent.cs" />
     <Compile Include="Assets\Scripts\Events\ScrapUsedEvent.cs" />
@@ -99,8 +100,10 @@
     <Compile Include="Assets\Scripts\TowerSupport\TurretRadiusDrawer.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\ConstantsManager.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\EventManager.cs" />
+    <Compile Include="Assets\Scripts\Utilities_Managers\HUD\HUD_BuyPanel.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\HUD\HUD_CraftingUI.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\HUD\HUD_GameStats.cs" />
+    <Compile Include="Assets\Scripts\Utilities_Managers\HUD\HUD_PanelSwap.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\HUD\HUDManager.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\HUD\TowerStatCreation.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\ItemSpawnManager.cs" />
