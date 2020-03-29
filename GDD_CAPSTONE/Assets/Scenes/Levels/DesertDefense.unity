@@ -4075,7 +4075,7 @@ PrefabInstance:
     - target: {fileID: 4504601223620811003, guid: 6a441a04752f54543a787df9b259c929,
         type: 3}
       propertyPath: m_Name
-      value: HUD (1)
+      value: HUD
       objectReference: {fileID: 0}
     - target: {fileID: 4504601223620811007, guid: 6a441a04752f54543a787df9b259c929,
         type: 3}
@@ -5379,6 +5379,11 @@ PrefabInstance:
     - target: {fileID: 8070576667370529653, guid: 78b9c9304f218564599375990fa941fc,
         type: 3}
       propertyPath: m_Name
+      value: Base
+      objectReference: {fileID: 0}
+    - target: {fileID: 8070576667370529653, guid: 78b9c9304f218564599375990fa941fc,
+        type: 3}
+      propertyPath: m_TagString
       value: Base
       objectReference: {fileID: 0}
     - target: {fileID: 8070576667370529654, guid: 78b9c9304f218564599375990fa941fc,

@@ -112,6 +112,10 @@ public class Enemy : MonoBehaviour
             SpawnItem();
             //TODO: SCRAP COLLECTED
             GameplayManager.Instance.ScrapCollected += scrapGiven;
+            for (int i = 0; i < scrapGiven/5; i++)
+            {
+                ParticleEffectManager.Instance.CreateParticle(ParticleEffectManager.ParticleToPlay.SCRAP_COLLECT, transform);
+            }
             //GameplayManager.Instance.EnemiesKilled++;
             GameplayManager.Instance.SpawnedEnemies.Remove(gameObject);
             Destroy(gameObject);
