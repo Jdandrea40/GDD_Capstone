@@ -12,6 +12,7 @@ public class HUD_GameStats : MonoBehaviour
     [SerializeField] Text scrapCollectedText;
     [SerializeField] Text waveCountText;
     [SerializeField] Text baseHealthText;
+
     
     // Start is called before the first frame update
     void Start()
@@ -28,4 +29,5 @@ public class HUD_GameStats : MonoBehaviour
         baseHealthText.text = " Base Health: " + GameplayManager.Instance.BaseHealth;
         waveCountText.text = " Wave: " + GameplayManager.Instance.CurrWaveText + " : " + GameplayManager.Instance.MaxWaveCount;
     }
+
 }

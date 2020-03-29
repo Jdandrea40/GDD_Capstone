@@ -142,7 +142,6 @@ public class Tower : MonoBehaviour
 
         scrapUsedEvent.Invoke();
         InvokeRepeating("UpdateTarget", 0, .5f);
-        Debug.Log(fireRate);
     }
 
     // Called once a frame
