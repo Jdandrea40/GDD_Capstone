@@ -24,3 +24,4 @@ MonoBehaviour:
   - {fileID: 1142398865292350821, guid: ecd702b8ce38a1548b67c7dabf661bdf, type: 3}
   - {fileID: 1142398865292350821, guid: 1b56908a80f80d542947f43d02f29b3a, type: 3}
   - {fileID: 1142398865292350821, guid: 1b56908a80f80d542947f43d02f29b3a, type: 3}
+  ScrapGiven: 15

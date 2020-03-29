@@ -23,6 +23,7 @@ public class Enemy : MonoBehaviour
 
     protected ENEMY_STATS eStat;
     protected float Health = 1;
+    protected int scrapGiven;
     float fullHealth;
 
     // Enemy slow speed changin
@@ -109,8 +110,13 @@ public class Enemy : MonoBehaviour
         {
 
             SpawnItem();
-            
-            GameplayManager.Instance.EnemiesKilled++;
+            //TODO: SCRAP COLLECTED
+            GameplayManager.Instance.ScrapCollected += scrapGiven;
+            for (int i = 0; i < scrapGiven/5; i++)
+            {
+                ParticleEffectManager.Instance.CreateParticle(ParticleEffectManager.ParticleToPlay.SCRAP_COLLECT, transform);
+            }
+            //GameplayManager.Instance.EnemiesKilled++;
             GameplayManager.Instance.SpawnedEnemies.Remove(gameObject);
             Destroy(gameObject);
         }

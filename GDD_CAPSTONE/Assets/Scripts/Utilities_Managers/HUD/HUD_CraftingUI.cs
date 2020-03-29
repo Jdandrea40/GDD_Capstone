@@ -44,6 +44,7 @@ public class HUD_CraftingUI : MonoBehaviour
     void Start()
     {
         EventManager.AddItemCollectedListener(UpdateItemCount);
+        EventManager.AddItemBoughtListener(UpdateItemCount);
         EventManager.ScrapUsedListener(UpdateItemCount);
         
         // Game Start Initialization

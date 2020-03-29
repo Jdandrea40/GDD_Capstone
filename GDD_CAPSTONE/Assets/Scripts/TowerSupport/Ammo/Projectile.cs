@@ -125,19 +125,23 @@ public class Projectile : MonoBehaviour
             {
                 if (projSlow)
                 {
-                    Instantiate(ParticleEffectManager.Instance.particleDictionary[ParticleEffectManager.ParticleToPlay.CRYO_EXPLODE], transform.position, Quaternion.identity);
+                    ParticleEffectManager.Instance.CreateParticle(ParticleEffectManager.ParticleToPlay.CRYO_EXPLODE, transform);
+                    //Instantiate(ParticleEffectManager.Instance.particleDictionary[ParticleEffectManager.ParticleToPlay.CRYO_EXPLODE], transform.position, Quaternion.identity);
                     AudioManager.Instance.PlaySFX(AudioManager.Sounds.CRYO_EXPLODE1);
 
                 }
                 else if (projDoT)
                 {
-                    Instantiate(ParticleEffectManager.Instance.particleDictionary[ParticleEffectManager.ParticleToPlay.INCENDIARY_EXPLODE], transform.position, Quaternion.identity);
+                    ParticleEffectManager.Instance.CreateParticle(ParticleEffectManager.ParticleToPlay.INCENDIARY_EXPLODE, transform);
+
+                    //Instantiate(ParticleEffectManager.Instance.particleDictionary[ParticleEffectManager.ParticleToPlay.INCENDIARY_EXPLODE], transform.position, Quaternion.identity);
                     AudioManager.Instance.PlaySFX(AudioManager.Sounds.INCEND_EXPLODE1);
 
                 }
                 else
                 {
-                    Instantiate(ParticleEffectManager.Instance.particleDictionary[ParticleEffectManager.ParticleToPlay.NORMAL_EXPLODE], transform.position, Quaternion.identity);
+                    ParticleEffectManager.Instance.CreateParticle(ParticleEffectManager.ParticleToPlay.NORMAL_EXPLODE, transform);
+                    //Instantiate(ParticleEffectManager.Instance.particleDictionary[ParticleEffectManager.ParticleToPlay.NORMAL_EXPLODE], transform.position, Quaternion.identity);
                     AudioManager.Instance.PlaySFX(AudioManager.Sounds.NORM_EXPLODE);
 
                 }

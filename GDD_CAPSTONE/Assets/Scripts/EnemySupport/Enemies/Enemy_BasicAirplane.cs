@@ -9,5 +9,6 @@ public class Enemy_BasicAirplane : Enemy
         base.Awake();
         Health = eStat.BASIC_AIRPLANE_HEALTH;
         moveSpeed = eStat.BASIC_AIRPLANE_MOVE_SPEED;
+        scrapGiven = 10;
     }
 }

@@ -7,4 +7,5 @@ public class EnemyWave : ScriptableObject
 {
     public string Name;
     public GameObject[] Enemies;
+    public int ScrapGiven;
 }

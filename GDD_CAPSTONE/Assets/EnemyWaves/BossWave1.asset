@@ -15,3 +15,4 @@ MonoBehaviour:
   Name: BossWave1
   Enemies:
   - {fileID: 1142398865292350821, guid: f6087b7d3528b9e41840cd8e2eea32cd, type: 3}
+  ScrapGiven: 50

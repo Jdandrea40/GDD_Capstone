@@ -19,6 +19,9 @@ public static class EventManager
     static HUDManager waveSpawnInvoker;
     static UnityAction waveSpawnListener;
 
+    static HUD_BuyPanel itemBoughtInvoker;
+    static UnityAction itemBoughtListener;
+
     static ItemDrop itemCollectedInvoker;
     static UnityAction itemCollectedListener;
 
@@ -56,7 +59,23 @@ public static class EventManager
     }
 
     #endregion
+    public static void AddItemBoughtInvoker(HUD_BuyPanel invoker)
+    {
+        itemBoughtInvoker = invoker;
+        if (itemCollectedListener != null)
+        {
+            invoker.AddItemBoughtListener(itemCollectedListener);
+        }
+    }
 
+    public static void AddItemBoughtListener(UnityAction listener)
+    {
+        itemBoughtListener = listener;
+        if (itemBoughtInvoker != null)
+        {
+            itemBoughtInvoker.AddItemBoughtListener(listener);
+        }
+    }
     #region Item Pickup
     /// <summary>
     /// This event is being used to update the UI when an Item (scrap)
@@ -71,6 +90,7 @@ public static class EventManager
             invoker.AddItemCollectedListener(itemCollectedListener);
         }
     }
+
 
     public static void AddItemCollectedListener(UnityAction listener)
     {

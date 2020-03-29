@@ -31,9 +31,10 @@ public class HUDManager : MonoBehaviour
         // Event used to spawn a new wave (WaveSpawner.cs listener)
         waveSpawnEvent = new WaveSpawnEvent();
         EventManager.AddWaveSpawnInvoker(this);
-
+        
+        // TODO: Scrap Collected
         // Tracks the amount ofenemies killed for text changing
-        GameplayManager.Instance.EnemiesKilled = 0;
+        // GameplayManager.Instance.EnemiesKilled = 0;
 
         // The Countdown text located on the HUD
         countDownText.text = " ";

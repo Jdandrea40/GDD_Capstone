@@ -8,7 +8,7 @@ public class Enemy_BasicTrooper : Enemy
     {
         base.Awake();
         Health = eStat.BASIC_TROOPER_HEALTH;
-        moveSpeed = eStat.BASIC_TROOPER_MOVE_SPEED;
+        moveSpeed = eStat.BASIC_TROOPER_MOVE_SPEED;scrapGiven = 5;
     }
 
 }
