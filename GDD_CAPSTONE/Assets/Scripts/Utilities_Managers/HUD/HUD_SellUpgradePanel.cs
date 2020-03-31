@@ -16,7 +16,7 @@ public class HUD_SellUpgradePanel : MonoBehaviour
     /// </summary>
     public void SellTower()
     {
-        if (GameplayManager.Instance.TowerToSell != null)
+        if (GameplayManager.Instance.TowerToSell != null && !GameplayManager.Instance.IsPaused)
         {
             // Sets the Buildable area back to a normal Unoccupiead Area
             // bc2d needs to be reneabled due to it being disabled to avoid double triggering of
@@ -32,8 +32,11 @@ public class HUD_SellUpgradePanel : MonoBehaviour
     }
     public void CloseMenu()
     {
-        sellPanel.SetActive(false);
-        GameplayManager.Instance.TowerToSell = null;
+        if (!GameplayManager.Instance.IsPaused)
+        {
+            sellPanel.SetActive(false);
+            GameplayManager.Instance.TowerToSell = null;
+        }
     }
 
     void OpenPanel()

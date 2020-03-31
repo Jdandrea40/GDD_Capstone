@@ -207,8 +207,11 @@ public class Tower : MonoBehaviour
     /// </summary>
     private void OnMouseEnter()
     {
-        hovering = true;
-        rangeIndicator.SetActive(true);
+        if (!GameplayManager.Instance.IsPaused)
+        {
+            hovering = true;
+            rangeIndicator.SetActive(true);
+        }
     }
 
     // Mouse Exit support
@@ -226,20 +229,14 @@ public class Tower : MonoBehaviour
     // Click support
     private void OnMouseDown()
     {
-        if (hovering)
+        if (hovering && !GameplayManager.Instance.IsPaused)
         {
             GameplayManager.Instance.TowerToSell = gameObject;
-            //TODO: INVOKE the SellCanvas
             towerPanelEvent.Invoke();
             //sellCanvas.alpha = 1;
             //sellCanvas.interactable = true;
             //sellCanvas.blocksRaycasts = true;
         }
-        //else
-        //{
-        //    GameplayManager.Instance.TowerToSell = null;
-
-        //}
     }
 
 

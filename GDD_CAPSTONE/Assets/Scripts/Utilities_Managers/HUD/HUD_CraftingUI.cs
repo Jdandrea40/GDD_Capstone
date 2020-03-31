@@ -54,7 +54,26 @@ public class HUD_CraftingUI : MonoBehaviour
         TowerUIUpdate(0, 2);
 
     }
-
+    /// <summary>
+    /// called every frame
+    /// </summary>
+    private void Update()
+    {
+        // dissalows the toggle swapping during pause
+        if (GameplayManager.Instance.IsPaused)
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                toggleTops[i].interactable = false;
+                toggleBots[i].interactable = false;
+                toggleAmmo[i].interactable = false;
+            }
+        }
+        else
+        {
+            UpdateItemCount();
+        }
+    }
     /// <summary>
     /// Updates the amount of scrap pieces collected
     /// uses the Dictionary in PCM as well as the TPE type casting
