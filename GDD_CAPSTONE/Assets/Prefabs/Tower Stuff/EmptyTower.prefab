@@ -474,7 +474,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turretBaseSprite: {fileID: 4959509490376843684}
-  sellCanvas: {fileID: 5857503542484712838}
   rangeIndicator: {fileID: 3329363464149156458}
   enemyTargets: []
   projectile: {fileID: 498285652798417211, guid: e896772b2a513dd4c84480ea43f3c559,
@@ -536,7 +535,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4339992314242826762
 RectTransform:
   m_ObjectHideFlags: 0

@@ -28,12 +28,35 @@ public static class EventManager
     static Tower scrapUsedInvoker;
     static UnityAction scrapUsedListener;
 
+    static Tower towerPanelInvoker;
+    static UnityAction towerPanelListener;
+
     static Projectile enemyDamageInvoker;
     static UnityAction<int, bool, int, bool> enemyDamageListener;
 
     #endregion
 
     #region EVENTS
+
+    #region Tower Panel
+    public static void ActivateTowerPanelInvoker(Tower invoker)
+    {
+        towerPanelInvoker = invoker;
+        if (towerPanelListener != null)
+        {
+            invoker.AddTowerPanelListener(towerPanelListener);
+        }
+    }
+
+    public static void ActivateTowerPanelListener(UnityAction listener)
+    {
+        towerPanelListener = listener;
+        if (towerPanelInvoker != null)
+        {
+            towerPanelInvoker.AddTowerPanelListener(listener);
+        }
+    }
+    #endregion
     #region Scrap Used
     /// <summary>
     /// This event is being used to update the UI After a tower has been built
