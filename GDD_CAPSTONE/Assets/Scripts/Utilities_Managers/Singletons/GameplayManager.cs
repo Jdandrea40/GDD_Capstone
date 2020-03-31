@@ -18,11 +18,15 @@ public class GameplayManager : Singleton<GameplayManager>
     public bool IsPaused { get; set; }
     // Used to only allow the PauseMenu to be activated while in a game
     public bool InGame { get; set; } = false;
+    // Used to communicate between the Tower and the Sell Panel
+    public GameObject TowerToSell { get; set; } = null;
     public List<GameObject> SpawnedEnemies { get; set; }
 
     GameObject pauseMenu;
     GameObject winMenu;
     GameObject loseMenu;
+    
+    
 
     // Start is called before the first frame update
     void Start()

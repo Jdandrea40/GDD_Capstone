@@ -86,6 +86,7 @@
     <Compile Include="Assets\Scripts\Events\RemoveEnemyTargetEvent.cs" />
     <Compile Include="Assets\Scripts\Events\ScrapUsedEvent.cs" />
     <Compile Include="Assets\Scripts\Events\TowerFireEvent.cs" />
+    <Compile Include="Assets\Scripts\Events\TowerPanelEvent.cs" />
     <Compile Include="Assets\Scripts\Events\WaveSpawnEvent.cs" />
     <Compile Include="Assets\Scripts\Explosion.cs" />
     <Compile Include="Assets\Scripts\HomeBase.cs" />
@@ -104,6 +105,7 @@
     <Compile Include="Assets\Scripts\Utilities_Managers\HUD\HUD_CraftingUI.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\HUD\HUD_GameStats.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\HUD\HUD_PanelSwap.cs" />
+    <Compile Include="Assets\Scripts\Utilities_Managers\HUD\HUD_SellUpgradePanel.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\HUD\HUDManager.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\HUD\TowerStatCreation.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\ItemSpawnManager.cs" />

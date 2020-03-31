@@ -14,7 +14,7 @@ public class Tower : MonoBehaviour
     CircleCollider2D cc2d;
     SpriteRenderer sr;
     [SerializeField] SpriteRenderer turretBaseSprite;
-    [SerializeField] CanvasGroup sellCanvas;
+    //[SerializeField] CanvasGroup sellCanvas;
     [SerializeField] GameObject rangeIndicator;
 
     // The towers targeting list
@@ -25,9 +25,6 @@ public class Tower : MonoBehaviour
     // Used in order to send the targets Transform to Projectile Script
     [SerializeField] GameObject projectile;
     
-    // TODO: make this affect the range of the turret
-    //CircleCollider2D cc2d;
-
     // Coroutine for tower shooting
     IEnumerator fireCoroutine;
 
@@ -88,6 +85,13 @@ public class Tower : MonoBehaviour
     //    towerFireEvent.AddListener(listener);
     //}
 
+    // Event used to activate the sell/upgrade Panel
+    TowerPanelEvent towerPanelEvent;
+    public void AddTowerPanelListener(UnityAction listener)
+    {
+        towerPanelEvent.AddListener(listener);
+    }
+
     // Event used to decrement from the Pieces Collected Manager
     ScrapUsedEvent scrapUsedEvent;
     public void AddScrapUsedListener(UnityAction listener)
@@ -131,14 +135,17 @@ public class Tower : MonoBehaviour
         scrapUsedEvent = new ScrapUsedEvent();
         EventManager.ScrapUsedInvoker(this);
 
+        towerPanelEvent = new TowerPanelEvent();
+        EventManager.ActivateTowerPanelInvoker(this);
+
         // TODO: right now, +3/+6 are implemetned to account for the NEW DICTIONARY I AM USING ---> FIX THIS
         PiecesCollectedManager.Instance.CollectedPieces[(PiecesCollectedManager.TowerPieceEnum)HUD_CraftingUI.SelectedTop]--;
         PiecesCollectedManager.Instance.CollectedPieces[(PiecesCollectedManager.TowerPieceEnum)HUD_CraftingUI.SelectedBot + 3]--;
         PiecesCollectedManager.Instance.CollectedPieces[(PiecesCollectedManager.TowerPieceEnum)HUD_CraftingUI.SelectedAmmo + 6]--;
 
-        sellCanvas.alpha = 0;
-        sellCanvas.interactable = false;
-        sellCanvas.blocksRaycasts = false;
+        //sellCanvas.alpha = 0;
+        //sellCanvas.interactable = false;
+        //sellCanvas.blocksRaycasts = false;
 
         scrapUsedEvent.Invoke();
         InvokeRepeating("UpdateTarget", 0, .5f);
@@ -211,9 +218,9 @@ public class Tower : MonoBehaviour
 
         rangeIndicator.SetActive(false);
 
-        sellCanvas.alpha = 0;
-        sellCanvas.interactable = false;
-        sellCanvas.blocksRaycasts = false;
+        //sellCanvas.alpha = 0;
+        //sellCanvas.interactable = false;
+        //sellCanvas.blocksRaycasts = false;
     }
 
     // Click support
@@ -221,10 +228,18 @@ public class Tower : MonoBehaviour
     {
         if (hovering)
         {
-            sellCanvas.alpha = 1;
-            sellCanvas.interactable = true;
-            sellCanvas.blocksRaycasts = true;
+            GameplayManager.Instance.TowerToSell = gameObject;
+            //TODO: INVOKE the SellCanvas
+            towerPanelEvent.Invoke();
+            //sellCanvas.alpha = 1;
+            //sellCanvas.interactable = true;
+            //sellCanvas.blocksRaycasts = true;
         }
+        //else
+        //{
+        //    GameplayManager.Instance.TowerToSell = null;
+
+        //}
     }
 
 
