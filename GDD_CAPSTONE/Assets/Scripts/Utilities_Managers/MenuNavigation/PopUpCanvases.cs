@@ -16,7 +16,13 @@ public class PopUpCanvases : MonoBehaviour
         //Time.timeScale = 0;
         GameplayManager.Instance.IsPaused = true;
     }
-
+    private void Update()
+    {
+        if (GameplayManager.Instance.IsPaused && Input.GetKeyDown(KeyCode.Escape))
+        {
+            Resume();
+        }
+    }
     // Resumes the Game
     public void Resume()
     { 

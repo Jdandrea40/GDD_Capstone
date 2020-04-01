@@ -16,7 +16,7 @@ public class ScrapCollectionMove : MonoBehaviour
     void Start()
     {
         homeBase = GameObject.FindGameObjectWithTag("Base");
-        screenCent = Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height + 100));
+        screenCent = Camera.main.ScreenToWorldPoint(new Vector2(Screen.width/2, Screen.height + 100));
         pSystem = GetComponent<ParticleSystem>();
         StartCoroutine(WaitToMove());
     }

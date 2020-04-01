@@ -17,7 +17,8 @@ public class AudioManager : Singleton<AudioManager>
         ITEM_PICKUP,
         TOGGLE_CLICK,
         PLACE_TOWER,
-        BUTTON_CLICK
+        BUTTON_CLICK,
+        WAVE_WARNING
 
         //as sounds are added to the project, add an enum for each sound
     }
@@ -44,6 +45,7 @@ public class AudioManager : Singleton<AudioManager>
         soundDictionary.Add(Sounds.PLACE_TOWER, Resources.Load<AudioClip>("Sounds/UI/SFX_placeTower"));
         soundDictionary.Add(Sounds.TOGGLE_CLICK, Resources.Load<AudioClip>("Sounds/UI/SFX_toggleClick"));
         soundDictionary.Add(Sounds.BUTTON_CLICK, Resources.Load<AudioClip>("Sounds/UI/SFX_toggleClick"));
+        soundDictionary.Add(Sounds.WAVE_WARNING, Resources.Load<AudioClip>("Sounds/UI/SFX_waveWarning"));
 
         #endregion
 

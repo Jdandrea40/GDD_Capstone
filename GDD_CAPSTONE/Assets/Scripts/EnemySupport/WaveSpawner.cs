@@ -9,7 +9,7 @@ public class WaveSpawner : MonoBehaviour
     int resumeFrom = 0;
     // A list of EnemyWave (ScriptableObjects)
     [SerializeField] public List<EnemyWave> Wave = new List<EnemyWave>();
-
+    GameObject waveIncoming;
 
     // The total number of waves in the List, is passe dto the HUD for unpdating text
     private static int totalWaves;   
@@ -20,6 +20,7 @@ public class WaveSpawner : MonoBehaviour
     // Need this so that game gets the Max before it checks win con
     private void Awake()
     {
+        waveIncoming = Resources.Load<GameObject>("PopUpCanvases/WaveIncomingCanvas");
         totalWaves = Wave.Count;
         EventManager.AddWaveSpawnListener(InvokeSpawner);
     }
@@ -37,6 +38,7 @@ public class WaveSpawner : MonoBehaviour
         // Wont spawn more than the max wave amount
         if (currentWave < Wave.Count)
         {
+            Instantiate(waveIncoming);
             StartCoroutine(SpawnEnemies());
         }
     }

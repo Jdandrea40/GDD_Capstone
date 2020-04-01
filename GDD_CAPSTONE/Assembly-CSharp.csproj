@@ -106,6 +106,7 @@
     <Compile Include="Assets\Scripts\Utilities_Managers\HUD\HUD_GameStats.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\HUD\HUD_PanelSwap.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\HUD\HUD_SellUpgradePanel.cs" />
+    <Compile Include="Assets\Scripts\Utilities_Managers\HUD\HUD_WaveIncoming.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\HUD\HUDManager.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\HUD\TowerStatCreation.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\ItemSpawnManager.cs" />

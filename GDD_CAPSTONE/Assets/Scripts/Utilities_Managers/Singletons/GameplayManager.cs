@@ -25,7 +25,7 @@ public class GameplayManager : Singleton<GameplayManager>
     GameObject pauseMenu;
     GameObject winMenu;
     GameObject loseMenu;
-    
+   
     
 
     // Start is called before the first frame update
@@ -34,6 +34,7 @@ public class GameplayManager : Singleton<GameplayManager>
         pauseMenu = Resources.Load<GameObject>("PopUpCanvases/PauseCanvas");
         winMenu = Resources.Load<GameObject>("PopUpCanvases/WinCanvas");
         loseMenu = Resources.Load<GameObject>("PopUpCanvases/LoseCanvas");
+
         MaxWaveCount = WaveSpawner.TotalWaves;
         WaveInProgress = false;
         IsPaused = false;
@@ -47,10 +48,11 @@ public class GameplayManager : Singleton<GameplayManager>
         if (!IsPaused)
         {
             // Used to pause the game
-            if (InGame && Input.GetKey(KeyCode.Escape))
+            if (InGame && Input.GetKeyDown(KeyCode.Escape))
             {
                 Instantiate(pauseMenu);
             }
+            
 
             // Used to increase the Health Modifier of Enemies
             if (currWave != CurWaveCount)
