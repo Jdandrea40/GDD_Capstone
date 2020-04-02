@@ -67,6 +67,7 @@
     <Compile Include="Assets\Resources\Tower Pieces\Scriptable Objects\AmmoType.cs" />
     <Compile Include="Assets\Resources\Tower Pieces\Scriptable Objects\TowerBase.cs" />
     <Compile Include="Assets\Resources\Tower Pieces\Scriptable Objects\TurretTop.cs" />
+    <Compile Include="Assets\Scripts\A Test Folder\TileMapTester.cs" />
     <Compile Include="Assets\Scripts\EnemySupport\Enemies\Enemy.cs" />
     <Compile Include="Assets\Scripts\EnemySupport\Enemies\Enemy_BasicAirplane.cs" />
     <Compile Include="Assets\Scripts\EnemySupport\Enemies\Enemy_BasicTrooper.cs" />
