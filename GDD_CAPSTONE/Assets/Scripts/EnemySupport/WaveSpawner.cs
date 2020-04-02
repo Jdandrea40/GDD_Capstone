@@ -6,7 +6,6 @@ public class WaveSpawner : MonoBehaviour
 {
     // Starts the "queue" at 0
     int currentWave = 0;
-    int resumeFrom = 0;
     // A list of EnemyWave (ScriptableObjects)
     [SerializeField] public List<EnemyWave> Wave = new List<EnemyWave>();
     GameObject waveIncoming;
@@ -57,14 +56,14 @@ public class WaveSpawner : MonoBehaviour
             if (!GameplayManager.Instance.IsPaused)
             {
                 Instantiate(Wave[currentWave].Enemies[enemy], transform.position, Quaternion.identity);
-                yield return new WaitForSeconds(.3f);
+                yield return new WaitForSeconds(.5f);
 
             }
             // else, wait until its not paused anymore
             else
             {
                 yield return new WaitUntil(() => !GameplayManager.Instance.IsPaused);
-                yield return new WaitForSeconds(.3f);
+                yield return new WaitForSeconds(.5f);
             }
         }
         currentWave++;

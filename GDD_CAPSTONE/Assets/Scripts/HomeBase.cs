@@ -8,7 +8,6 @@ public class HomeBase : MonoBehaviour
     [SerializeField] GameObject[] warningLights;
     [SerializeField] SpriteRenderer[] warningRadius;
     IEnumerator bhCoRoutine;
-    bool bhRunning = false;
     bool baseHit;
 
     Color startRed;

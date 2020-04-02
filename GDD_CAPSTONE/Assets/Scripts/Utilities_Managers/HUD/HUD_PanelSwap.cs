@@ -23,5 +23,6 @@ public class HUD_PanelSwap : MonoBehaviour
     {
         buildPanel.SetActive(false);
         buyPanel.SetActive(true);
+        buyPanel.GetComponent<HUD_BuyPanel>().UpdateCountText();
     }
 }

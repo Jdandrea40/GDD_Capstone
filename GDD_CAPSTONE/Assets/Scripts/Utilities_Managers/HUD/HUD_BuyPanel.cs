@@ -5,16 +5,20 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 public class HUD_BuyPanel : MonoBehaviour
 {
+    [SerializeField] Text[] pieceCountText;
+
     ItemCollectedEvent itemBoughtEvent;
     public void AddItemBoughtListener(UnityAction listener)
     {
         itemBoughtEvent.AddListener(listener);
     }
+
     // Start is called before the first frame update
     void Start()
     {
         itemBoughtEvent = new ItemCollectedEvent();
         EventManager.AddItemBoughtInvoker(this);
+        UpdateCountText();
     }
 
     /// <summary>
@@ -35,7 +39,9 @@ public class HUD_BuyPanel : MonoBehaviour
         {
             GameplayManager.Instance.ScrapCollected -= 100;
             PiecesCollectedManager.Instance.CollectedPieces[(PiecesCollectedManager.TowerPieceEnum)towerToBuy]++;
+            // HUD_CraftingUI = Listener, Invokes the UpdateItemCount() method
             itemBoughtEvent.Invoke();
+            UpdateCountText();
             AudioManager.Instance.PlaySFX(AudioManager.Sounds.ITEM_PICKUP);
         }
         else
@@ -43,5 +49,21 @@ public class HUD_BuyPanel : MonoBehaviour
             //TODO: ERROR SOUND / Inssufucient Funds
         }
         
+    }
+
+    public void UpdateCountText()
+    {
+        for (int i = 0; i < pieceCountText.Length; i++)
+        {
+            pieceCountText[i].text = PiecesCollectedManager.Instance.CollectedPieces[(PiecesCollectedManager.TowerPieceEnum)i].ToString();
+            if (PiecesCollectedManager.Instance.CollectedPieces[(PiecesCollectedManager.TowerPieceEnum)i] < 1)
+            {
+                pieceCountText[i].color = Color.red;
+            }
+            else
+            {
+                pieceCountText[i].color = Color.white;
+            }
+        }
     }
 }

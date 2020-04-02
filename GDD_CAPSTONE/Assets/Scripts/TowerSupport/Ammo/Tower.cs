@@ -246,7 +246,7 @@ public class Tower : MonoBehaviour
 
     /// <summary>
     /// Coroutine used to handle the rate of fire waiting
-    /// sets the canfire (Update()) boll to true when done
+    /// sets the canfire (Update()) bool to true when done
     /// </summary>
     /// <returns></returns>
     IEnumerator WaitToFire()
