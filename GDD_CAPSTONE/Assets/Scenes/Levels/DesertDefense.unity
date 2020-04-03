@@ -824,6 +824,7 @@ GameObject:
   - component: {fileID: 844957909}
   - component: {fileID: 844957911}
   - component: {fileID: 844957910}
+  - component: {fileID: 844957912}
   m_Layer: 0
   m_Name: EnemyPath
   m_TagString: Untagged
@@ -2233,6 +2234,22 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &844957912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 844957908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c67d207377ce73b4ca26bbf8b70fffad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  build: {fileID: 2407236934098633091, guid: 5ac71784603b4184cb5ce1e335aa486d, type: 3}
+  hoverTile: {fileID: 0}
+  builtTile: {fileID: 11400000, guid: 0c4bd0ea766d87d4aa62031bc95c2e83, type: 2}
+  tilemp: {fileID: 844957911}
 --- !u!1 &896041997
 GameObject:
   m_ObjectHideFlags: 0

@@ -1428,6 +1428,7 @@ GameObject:
   - component: {fileID: 2048442411}
   - component: {fileID: 2048442410}
   - component: {fileID: 2048442408}
+  - component: {fileID: 2048442409}
   m_Layer: 0
   m_Name: Grass
   m_TagString: Untagged
@@ -1462,6 +1463,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   build: {fileID: 2407236934098633091, guid: 5ac71784603b4184cb5ce1e335aa486d, type: 3}
+  hoverTile: {fileID: 11400000, guid: 0c4bd0ea766d87d4aa62031bc95c2e83, type: 2}
+  builtTile: {fileID: 11400000, guid: ea0766f8b6ca8e2438c4eff7d5388684, type: 2}
+--- !u!19719996 &2048442409
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2048442406}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0.00001
 --- !u!483693784 &2048442410
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -1505,7 +1524,7 @@ TilemapRenderer:
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
-  m_Mode: 1
+  m_Mode: 0
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
 --- !u!1839735485 &2048442411
