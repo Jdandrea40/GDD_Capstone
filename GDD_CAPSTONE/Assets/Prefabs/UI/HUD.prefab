@@ -9119,6 +9119,9 @@ MonoBehaviour:
   - {fileID: 6766404466845607623}
   - {fileID: 6766404465844910376}
   - {fileID: 6766404467554408421}
+  buildAreaToggle: {fileID: 8564525382393510233}
+  buildAreaText: {fileID: 3330905270811480171}
+  buildAreaImg: {fileID: 6386888107737360293}
   imageBKGS:
   - {fileID: 3567111845273627569}
   - {fileID: 4881076994911389547}
@@ -12044,7 +12047,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -212.5, y: 119.1}
+  m_AnchoredPosition: {x: -212.5, y: 119.09961}
   m_SizeDelta: {x: -425, y: 238.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3816467557151139037
@@ -13092,7 +13095,7 @@ GameObject:
   - component: {fileID: 6243594132363403306}
   - component: {fileID: 6386888107737360293}
   m_Layer: 5
-  m_Name: BATGL
+  m_Name: BATGL_IMG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13770,7 +13773,7 @@ GameObject:
   - component: {fileID: 7105367955674978274}
   - component: {fileID: 8564525382393510233}
   m_Layer: 5
-  m_Name: TowerBase
+  m_Name: BATGL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13844,8 +13847,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4504601223927246255}
-        m_MethodName: AmmoPieceSelected
-        m_Mode: 3
+        m_MethodName: set_enabled
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -13854,7 +13857,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_IsOn: 1
+  m_IsOn: 0
 --- !u!1 &8289930419099830698
 GameObject:
   m_ObjectHideFlags: 0

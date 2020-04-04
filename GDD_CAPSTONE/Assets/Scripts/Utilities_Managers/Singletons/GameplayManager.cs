@@ -21,6 +21,7 @@ public class GameplayManager : Singleton<GameplayManager>
     // Used to communicate between the Tower and the Sell Panel
     public GameObject TowerToSell { get; set; } = null;
     public List<GameObject> SpawnedEnemies { get; set; }
+    public bool CanBuildArea { get; set; }
 
     GameObject pauseMenu;
     GameObject winMenu;

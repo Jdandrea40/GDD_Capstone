@@ -23,7 +23,7 @@ public class TileMapTester : MonoBehaviour
         Vector3 point = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && GameplayManager.Instance.CanBuildArea)
         {
             selectedTile = tilemp.WorldToCell(point);
             
@@ -31,7 +31,7 @@ public class TileMapTester : MonoBehaviour
             {
                 tilemp.SetTile(selectedTile, builtTile);
                 Instantiate(build, new Vector2(selectedTile.x + .5f, selectedTile.y + .5f), Quaternion.identity);
-                Debug.Log("Poop");
+                GameplayManager.Instance.ScrapCollected -= 25;
             }
 
 

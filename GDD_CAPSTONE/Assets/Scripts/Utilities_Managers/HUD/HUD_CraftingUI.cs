@@ -19,7 +19,10 @@ public class HUD_CraftingUI : MonoBehaviour
     [SerializeField] Toggle[] toggleTops;
     [SerializeField] Toggle[] toggleBots;
     [SerializeField] Toggle[] toggleAmmo;
-    
+
+    [SerializeField] Toggle buildAreaToggle;
+    [SerializeField] Text buildAreaText;
+    [SerializeField] Image buildAreaImg;
     // An array of the BKG images so that they can be swapped to red/normal based on amount
     [SerializeField] Image[] imageBKGS;
 
@@ -37,6 +40,7 @@ public class HUD_CraftingUI : MonoBehaviour
     [SerializeField] TurretTop[] tTop;
     [SerializeField] TowerBase[] tBase;
     [SerializeField] AmmoType[] tAmmo;
+    
     
     [SerializeField] Text[] itemCountText;
 
@@ -68,10 +72,21 @@ public class HUD_CraftingUI : MonoBehaviour
                 toggleBots[i].interactable = false;
                 toggleAmmo[i].interactable = false;
             }
+            buildAreaToggle.interactable = false;
         }
         else
         {
             UpdateItemCount();
+            if(buildAreaToggle.isOn)
+            {
+                GameplayManager.Instance.CanBuildArea = true;
+            }
+            else
+            {
+                GameplayManager.Instance.CanBuildArea = false;
+
+            }
+            //buildAreaToggle.interactable = true;
         }
     }
     /// <summary>
@@ -118,6 +133,19 @@ public class HUD_CraftingUI : MonoBehaviour
                 }
                 imageBKGS[i].color = Color.white;
             }
+        }
+        if (GameplayManager.Instance.ScrapCollected < 25)
+        {
+            buildAreaToggle.interactable = false;
+            buildAreaToggle.isOn = false;
+            buildAreaText.color = Color.red;
+            buildAreaImg.color = Color.red;
+        }
+        else
+        {
+            buildAreaToggle.interactable = true;
+            buildAreaText.color = Color.white;
+            buildAreaImg.color = Color.white;
         }
     }
     // Responsible for updating the UI image and Text in the Crafting window
@@ -172,7 +200,6 @@ public class HUD_CraftingUI : MonoBehaviour
             selectedBot = pieceSelected;
             TowerUIUpdate(selectedBot, (int)Piece.BOT);
             AudioManager.Instance.PlaySFX(AudioManager.Sounds.TOGGLE_CLICK);
-
         }
 
     }
@@ -186,5 +213,4 @@ public class HUD_CraftingUI : MonoBehaviour
 
         }
     }
-
 }
