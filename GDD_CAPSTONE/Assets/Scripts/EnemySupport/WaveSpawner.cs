@@ -63,7 +63,7 @@ public class WaveSpawner : MonoBehaviour
             else
             {
                 yield return new WaitUntil(() => !GameplayManager.Instance.IsPaused);
-                yield return new WaitForSeconds(.5f);
+                yield return new WaitForSeconds(.3f);
             }
         }
         currentWave++;

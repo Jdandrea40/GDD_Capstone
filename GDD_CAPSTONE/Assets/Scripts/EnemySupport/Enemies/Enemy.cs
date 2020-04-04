@@ -11,13 +11,14 @@ public class Enemy : MonoBehaviour
 {
     CircleCollider2D cc2d;
     protected SpriteRenderer sr;
+    Rigidbody2D rb2d;
 
     [SerializeField] Image healthBar;
     // This is hat the enemy drops on death
     [SerializeField] protected GameObject item;
+    protected int myID;
 
     // Was being used for dictionary target acquisition
-    int instanceID;
 
     #region ENEMY STATS
 
@@ -26,7 +27,7 @@ public class Enemy : MonoBehaviour
     protected int scrapGiven;
     float fullHealth;
 
-    // Enemy slow speed changin
+    // Enemy slow speed changing
     protected float moveSpeed;
     float slowSpeed;
     float currentSpeed;
@@ -35,6 +36,7 @@ public class Enemy : MonoBehaviour
     protected bool TakingDamage = false;
     protected bool Slowed = false;
     EnemyMoveTowardsPoint enemyMove;
+    bool instanceIDHit = false;
 
     public float CurrentSpeed { get => currentSpeed; set => currentSpeed = value; }
     public float HealthBarHealth { get => Health; }
@@ -59,19 +61,20 @@ public class Enemy : MonoBehaviour
     #region UNITY METHODS
 
     protected virtual void Awake()
-    {
+    { 
+        
         cc2d = GetComponent<CircleCollider2D>();
         eStat = ENEMY_STATS.Instance;
         //EventManager.AddEnemyDamageListener(TakeDamage);
-
     }
     // Start is called before the first frame update
     public virtual void Start()
     {
+        Debug.Log(gameObject.name + " " + gameObject.GetInstanceID());
         sr = GetComponent<SpriteRenderer>();
         // Gets the mov script to disable during SLOW
         enemyMove = GetComponent<EnemyMoveTowardsPoint>();
-        
+        rb2d = GetComponent<Rigidbody2D>();
         // Adds itself to the overall in game enemy list
         // being used to to determine if the level has been won
         GameplayManager.Instance.SpawnedEnemies.Add(gameObject);
@@ -79,9 +82,11 @@ public class Enemy : MonoBehaviour
         // Will Increase the base Health PLus the Modifier (EHM += CurrWave)
         Health += GameplayManager.Instance.EnemyHealthModifier;
         fullHealth = Health;
-
         currentSpeed = moveSpeed;
         slowSpeed = moveSpeed * .5f;
+
+        EventManager.AddEnemyDamageListener(CheckIfTarget);
+
 
         #region UNUSED STUFF
         //Debug.Log(Health);
@@ -121,7 +126,10 @@ public class Enemy : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
+    protected void CheckIfTarget(int instanceId)
+    {
+        myID = instanceId;
+    }
     protected virtual void SpawnItem()
     {
         if (Random.Range(0, 5) > 1)
@@ -130,18 +138,24 @@ public class Enemy : MonoBehaviour
             Instantiate(item, transform.position, Quaternion.identity);
         }
     }
-    /// <summary>
-    /// Collision Checking
-    /// </summary>
-    /// <param name="collision"></param>
+    ///// <summary>
+    ///// Collision Checking
+    ///// </summary>
+    ///// <param name="collision"></param>
     public virtual void OnCollisionEnter2D(Collision2D collision)
     {
+
         // Used to take damage from projectile
         if (collision.gameObject.layer == (int)CollisionLayers.PROJECTILE)
         {
-            // Gets the stats from the Projectile inorder to take proper damage
             Projectile proj = collision.gameObject.GetComponent<Projectile>();
-            TakeDamage(proj.ProjDamage, proj.ProjDoT, proj.ProjDotAmount, proj.ProjSlow);
+            Debug.Log("I am: " + transform.GetInstanceID() + " The Proj wants: " + proj.TargetToHitID);
+            if (proj.TargetToHitID == gameObject.GetInstanceID() || proj.ProjSplash)
+            {
+                // Gets the stats from the Projectile inorder to take proper damage
+                Debug.Log("BOOP");
+                TakeDamage(proj.ProjDamage, proj.ProjDoT, proj.ProjDotAmount, proj.ProjSlow);
+            }
         }
         // Removes itself from the the "In=Play" list (GAMEMANAGER)
         if (collision.gameObject.layer == (int)CollisionLayers.HOME_BASE)
@@ -161,7 +175,8 @@ public class Enemy : MonoBehaviour
     /// <param name="dotAmount"></param>
     /// <param name="slow"></param>
     public virtual void TakeDamage(int amount, bool dot, int dotAmount, bool slow)
-    {     
+    {
+        Debug.Log("TAKEING DAMAGE");
         // initial impact damge health loss
         Health -= amount;
 

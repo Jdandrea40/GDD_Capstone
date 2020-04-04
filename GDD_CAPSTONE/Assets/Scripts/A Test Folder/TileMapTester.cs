@@ -6,7 +6,6 @@ using UnityEngine.Tilemaps;
 public class TileMapTester : MonoBehaviour
 {
     [SerializeField] GameObject build;
-    [SerializeField] Tile hoverTile;
     [SerializeField] Tile builtTile;
     [SerializeField] Tilemap tilemp;
     Vector3Int selectedTile;
@@ -43,14 +42,10 @@ public class TileMapTester : MonoBehaviour
     {
         if (tilemp.ContainsTile(tilemp.GetTile(selectedTile)) && tilemp.GetTile(selectedTile) != builtTile)
         {
-            tilemp.SetTile(selectedTile,hoverTile);
             Debug.Log("HOVER");
         }
     }
-    private void OnMouseExit()
-    {
-        tilemp.SetTile(selectedTile, builtTile);
-    }
+
 
     //private void OnMouseEnter()
     //{

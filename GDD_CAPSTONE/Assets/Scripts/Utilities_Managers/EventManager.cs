@@ -32,7 +32,8 @@ public static class EventManager
     static UnityAction towerPanelListener;
 
     static Projectile enemyDamageInvoker;
-    static UnityAction<int, bool, int, bool> enemyDamageListener;
+    static UnityAction<int> enemyDamageListener;
+    
 
     #endregion
 
@@ -143,6 +144,24 @@ public static class EventManager
         }
     }
 
+    public static void AddEnemyDamageInvoker(Projectile invoker)
+    {
+        enemyDamageInvoker = invoker;
+        if (enemyDamageListener != null)
+        {
+            invoker.AddEnemyDamageListener(enemyDamageListener);
+        }
+    }
+
+    public static void AddEnemyDamageListener(UnityAction<int> listener)
+    {
+        enemyDamageListener = listener;
+        if (enemyDamageInvoker != null)
+        {
+            enemyDamageInvoker.AddEnemyDamageListener(listener);
+        }
+    }
+
     //public static void AddEnemyTargetInvoker(Enemy invoker)
     //{
     //    addEnemyTargetInvoker = invoker;
@@ -179,23 +198,6 @@ public static class EventManager
     //    }
     //}
 
-    //public static void AddEnemyDamageInvoker(Projectile invoker)
-    //{
-    //    enemyDamageInvoker = invoker;
-    //    if (enemyDamageListener != null)
-    //    {
-    //        invoker.AddEnemyDamageListener(enemyDamageListener);
-    //    }
-    //}
-
-    //public static void AddEnemyDamageListener(UnityAction<int, bool, int, bool> listener)
-    //{
-    //    enemyDamageListener = listener;
-    //    if (enemyDamageListener != null)
-    //    {
-    //        enemyDamageInvoker.AddEnemyDamageListener(listener);
-    //    }
-    //}
 
     //public static void TowerFireInvoker(Tower invoker)
     //{

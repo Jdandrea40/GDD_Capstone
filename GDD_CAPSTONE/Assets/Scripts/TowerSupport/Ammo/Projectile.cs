@@ -11,20 +11,23 @@ public class Projectile : MonoBehaviour
     #region EVENTS
 
     EnemyDamageEvent enemyDamageEvent;
-    CircleCollider2D cc2d;
-    [SerializeField] GameObject explosion;
-
-    public void AddEnemyDamageListener(UnityAction<int, bool, int, bool> listener)
+    public void AddEnemyDamageListener(UnityAction<int> listener)
     {
         enemyDamageEvent.AddListener(listener);
     }
+    
 
     #endregion
+
+    CircleCollider2D cc2d;
+    [SerializeField] GameObject explosion;
 
     int projDamage;
     bool projDoT;
     int projDotAmount;
     bool projSlow;
+
+    int targetToHitID;
 
     bool projSplash;
     Color projColor;
@@ -44,6 +47,8 @@ public class Projectile : MonoBehaviour
     public bool ProjDoT { get => projDoT; set => projDoT = value; }
     public int ProjDotAmount { get => projDotAmount; set => projDotAmount = value; }
     public bool ProjSlow { get => projSlow; set => projSlow = value; }
+    public int TargetToHitID { get => targetToHitID; set => targetToHitID = value; }
+    public bool ProjSplash { get => projSplash; set => projSplash = value; }
 
     // Called before first frame update
     private void Start()
@@ -55,16 +60,15 @@ public class Projectile : MonoBehaviour
         //targetToHit = tower.TargetToShoot.transform;
         projectileMoveSpeed = ConstantsManager.PROJECTILE_MOVE_SPEED;
 
-        //enemyDamageEvent = new EnemyDamageEvent();
-        //EventManager.AddEnemyDamageInvoker(this);
-
         //EventManager.TowerFireListener(SetStats);
         sr.color = projColor;
         sr.sprite = projSprite;
 
+        enemyDamageEvent = new EnemyDamageEvent();
+        EventManager.AddEnemyDamageInvoker(this);
     }
 
-    public void SetStats(int damage, bool dot, int dotAmount, bool slow, bool AoE, Color sprColor, Sprite sprite)
+    public void SetStats(int damage, bool dot, int dotAmount, bool slow, bool AoE, Color sprColor, Sprite sprite, int targetID)
     {
         projDamage = damage;
         projDoT = dot;
@@ -73,6 +77,7 @@ public class Projectile : MonoBehaviour
         projColor = sprColor;
         projSprite = sprite;
         projSplash = AoE;
+        targetToHitID = targetID;
 
     }
     // Update is called once per frame
@@ -108,9 +113,9 @@ public class Projectile : MonoBehaviour
 
     // used to indetify the target to move towards
     public void MoveToEnemy(GameObject target)
-    {
+    {  
         if (target != null)
-        {
+        {            
             targetToHit = target.transform;
         }
     }
@@ -121,6 +126,8 @@ public class Projectile : MonoBehaviour
         if (collision.gameObject.layer == (int)CollisionLayers.ENEMIES && !hasHit)
         {
             hasHit = true;
+            enemyDamageEvent.Invoke(targetToHitID);
+            Debug.Log("PROJ Collided with: " + collision.gameObject.GetInstanceID() + " Proj wanted to hit: " + targetToHitID);
             if (projSplash)
             {
                 if (projSlow)
@@ -150,7 +157,10 @@ public class Projectile : MonoBehaviour
             }
             else
             {
-                Destroy(gameObject);
+                if (collision.gameObject.GetInstanceID() == targetToHitID)
+                {
+                    Destroy(gameObject);
+                }
             }
             
         }

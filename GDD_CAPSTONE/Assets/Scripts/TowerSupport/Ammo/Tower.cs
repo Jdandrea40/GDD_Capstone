@@ -169,7 +169,7 @@ public class Tower : MonoBehaviour
                     // this is: ImpactDamage, DamageOverTime (bool) -> Amount, Slow (bool), SplashDamge (bool), color, and sprite
                     // as well as the current target it is aiming at so that the proj can MoveTowards this enemy
                     Projectile proj = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Projectile>();
-                    proj.SetStats(damage, damageOverTime, dotAmount, slow, splashDamage, ammoColor, projSpr);
+                    proj.SetStats(damage, damageOverTime, dotAmount, slow, splashDamage, ammoColor, projSpr, targetToShoot.GetInstanceID());
                     // call the method inside Projectile to travel towards target
                     proj.MoveToEnemy(targetToShoot);
                     if (!splashDamage)
@@ -304,6 +304,9 @@ public class Tower : MonoBehaviour
         {
             targetToShoot = null;
         }
+
+
+        
     }
 
     /// <summary>
