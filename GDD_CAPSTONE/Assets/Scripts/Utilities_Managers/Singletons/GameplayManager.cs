@@ -22,6 +22,7 @@ public class GameplayManager : Singleton<GameplayManager>
     public GameObject TowerToSell { get; set; } = null;
     public List<GameObject> SpawnedEnemies { get; set; }
     public bool CanBuildArea { get; set; }
+    public bool CursorSwapReset { get; set; }
 
     GameObject pauseMenu;
     GameObject winMenu;

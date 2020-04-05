@@ -77,18 +77,30 @@ public class HUD_CraftingUI : MonoBehaviour
         else
         {
             UpdateItemCount();
-            if(buildAreaToggle.isOn)
+            // Checks the current state of the Toggle
+            // will activate GPM-BuildArea
+            // and Swap Cursor
+            if (buildAreaToggle.isOn == true)
             {
                 GameplayManager.Instance.CanBuildArea = true;
+                ArtManager.Instance.SwapCursor(ArtManager.CursorToUse.BUILD_AREA);
+                GameplayManager.Instance.CursorSwapReset = true;
             }
             else
             {
                 GameplayManager.Instance.CanBuildArea = false;
+                if (GameplayManager.Instance.CursorSwapReset)
+                {
+                    GameplayManager.Instance.CursorSwapReset = false;
+                    ArtManager.Instance.SwapCursor(ArtManager.CursorToUse.NORMAL);
+                }
 
             }
-            //buildAreaToggle.interactable = true;
         }
+
+        //Debug.Log(buildAreaToggle.isOn);
     }
+
     /// <summary>
     /// Updates the amount of scrap pieces collected
     /// uses the Dictionary in PCM as well as the TPE type casting

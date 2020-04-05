@@ -74,3 +74,6 @@ TagManager:
   - name: HUD
     uniqueID: 4218702871
     locked: 0
+  - name: MOUSE (ALWAYS TOP)
+    uniqueID: 3622028343
+    locked: 0

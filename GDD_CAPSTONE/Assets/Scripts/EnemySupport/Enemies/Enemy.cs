@@ -70,7 +70,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     public virtual void Start()
     {
-        Debug.Log(gameObject.name + " " + gameObject.GetInstanceID());
+        //Debug.Log(gameObject.name + " " + gameObject.GetInstanceID());
         sr = GetComponent<SpriteRenderer>();
         // Gets the mov script to disable during SLOW
         enemyMove = GetComponent<EnemyMoveTowardsPoint>();
@@ -149,12 +149,16 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject.layer == (int)CollisionLayers.PROJECTILE)
         {
             Projectile proj = collision.gameObject.GetComponent<Projectile>();
-            Debug.Log("I am: " + transform.GetInstanceID() + " The Proj wants: " + proj.TargetToHitID);
+            //Debug.Log("I am: " + transform.GetInstanceID() + " The Proj wants: " + proj.TargetToHitID);
             if (proj.TargetToHitID == gameObject.GetInstanceID() || proj.ProjSplash)
             {
                 // Gets the stats from the Projectile inorder to take proper damage
-                Debug.Log("BOOP");
+                //Debug.Log("BOOP");
                 TakeDamage(proj.ProjDamage, proj.ProjDoT, proj.ProjDotAmount, proj.ProjSlow);
+                if (!proj.ProjSplash)
+                {
+                    Destroy(collision.gameObject);
+                }
             }
         }
         // Removes itself from the the "In=Play" list (GAMEMANAGER)
@@ -176,7 +180,7 @@ public class Enemy : MonoBehaviour
     /// <param name="slow"></param>
     public virtual void TakeDamage(int amount, bool dot, int dotAmount, bool slow)
     {
-        Debug.Log("TAKEING DAMAGE");
+        // Debug.Log("TAKING DAMAGE");
         // initial impact damge health loss
         Health -= amount;
 

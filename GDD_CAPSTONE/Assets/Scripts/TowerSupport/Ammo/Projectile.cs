@@ -127,7 +127,7 @@ public class Projectile : MonoBehaviour
         {
             hasHit = true;
             enemyDamageEvent.Invoke(targetToHitID);
-            Debug.Log("PROJ Collided with: " + collision.gameObject.GetInstanceID() + " Proj wanted to hit: " + targetToHitID);
+            //Debug.Log("PROJ Collided with: " + collision.gameObject.GetInstanceID() + " Proj wanted to hit: " + targetToHitID);
             if (projSplash)
             {
                 if (projSlow)

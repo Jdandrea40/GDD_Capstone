@@ -84,14 +84,17 @@ public class BuildableArea : MonoBehaviour
                 rangeColor = hoverColor;
                 hovering = true;
                 rangeIndicator.SetActive(true);
+                ArtManager.Instance.SwapCursor(ArtManager.CursorToUse.HAMMER);
             }
             // Hover color will be red
             else
             {
                 sr.material.color = cantPlaceColor;
                 rangeColor = cantPlaceColor;
+                ArtManager.Instance.SwapCursor(ArtManager.CursorToUse.ERROR);
+
             }
-            
+
         }
     }
 
@@ -106,6 +109,8 @@ public class BuildableArea : MonoBehaviour
         cantPlaceCanvas.alpha = 0;
         cantPlaceCanvas.interactable = false;
         cantPlaceCanvas.blocksRaycasts = false;
+        ArtManager.Instance.SwapCursor(ArtManager.CursorToUse.NORMAL);
+
     }
 
     // Click support

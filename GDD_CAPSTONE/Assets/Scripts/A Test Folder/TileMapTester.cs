@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.Tilemaps;
 
 public class TileMapTester : MonoBehaviour
@@ -25,13 +26,18 @@ public class TileMapTester : MonoBehaviour
         
         if (Input.GetMouseButtonDown(0) && GameplayManager.Instance.CanBuildArea)
         {
+            if (EventSystem.current.IsPointerOverGameObject())
+            {
+                return;
+            }
             selectedTile = tilemp.WorldToCell(point);
             
             if (tilemp.ContainsTile(tilemp.GetTile(selectedTile)) && tilemp.GetTile(selectedTile) != builtTile)
             {
+                GameplayManager.Instance.ScrapCollected -= 25;
                 tilemp.SetTile(selectedTile, builtTile);
                 Instantiate(build, new Vector2(selectedTile.x + .5f, selectedTile.y + .5f), Quaternion.identity);
-                GameplayManager.Instance.ScrapCollected -= 25;
+                
             }
 
 

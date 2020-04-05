@@ -101,6 +101,7 @@
     <Compile Include="Assets\Scripts\TowerSupport\TowerAttack.cs" />
     <Compile Include="Assets\Scripts\TowerSupport\TurretRadiusDrawer.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\ConstantsManager.cs" />
+    <Compile Include="Assets\Scripts\Utilities_Managers\CursorChange.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\EventManager.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\HUD\HUD_BuyPanel.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\HUD\HUD_CraftingUI.cs" />
@@ -119,6 +120,7 @@
     <Compile Include="Assets\Scripts\Utilities_Managers\MenuNavigation\LevelSelect.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\MenuNavigation\PopUpCanvases.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\MenuNavigation\TitleScreenManager.cs" />
+    <Compile Include="Assets\Scripts\Utilities_Managers\Singletons\ArtManager.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\Singletons\AudioManager.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\Singletons\GameplayManager.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\Singletons\LevelCompletionManager.cs" />

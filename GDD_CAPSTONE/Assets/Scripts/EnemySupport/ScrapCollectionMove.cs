@@ -47,6 +47,8 @@ public class ScrapCollectionMove : MonoBehaviour
     {
         yield return new WaitForSeconds(.5f);
         canMove = true;
+        yield return new WaitForSeconds(1);
+        Destroy(gameObject);
 
     }
 }
