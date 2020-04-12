@@ -12,6 +12,7 @@ public class TitleScreenManager : MonoBehaviour
         {
             AudioManager.Instance.PlayMusic(AudioManager.Sounds.BKG_LOOP, true);
         }
+        ArtManager.Instance.SwapCursor(ArtManager.CursorToUse.NORMAL);
     }
     public void PlayGame()
     {

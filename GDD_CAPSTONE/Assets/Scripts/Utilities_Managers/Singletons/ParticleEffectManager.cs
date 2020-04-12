@@ -14,7 +14,8 @@ public class ParticleEffectManager : Singleton<ParticleEffectManager>
     { 
         NORMAL_EXPLODE, 
         CRYO_EXPLODE, 
-        INCENDIARY_EXPLODE 
+        INCENDIARY_EXPLODE,
+        SCRAP_COLLECT
     };
 
     public Dictionary<ParticleToPlay, ParticleSystem> particleDictionary = new Dictionary<ParticleToPlay, ParticleSystem>();
@@ -24,11 +25,16 @@ public class ParticleEffectManager : Singleton<ParticleEffectManager>
         particleDictionary.Add(ParticleToPlay.NORMAL_EXPLODE, Resources.Load<ParticleSystem>("ParticleEffects/NormalExplode"));
         particleDictionary.Add(ParticleToPlay.CRYO_EXPLODE, Resources.Load<ParticleSystem>("ParticleEffects/CryoExplode"));
         particleDictionary.Add(ParticleToPlay.INCENDIARY_EXPLODE, Resources.Load<ParticleSystem>("ParticleEffects/IncendiaryExplode"));
+        particleDictionary.Add(ParticleToPlay.SCRAP_COLLECT, Resources.Load<ParticleSystem>("ParticleEffects/ScrapParticle"));
     }
     // Called before Start()
     void Awake()
     {
         AddParticlesToDictionary();
         
+    }
+    public void CreateParticle(ParticleToPlay particle, Transform pos)
+    {
+        Instantiate(particleDictionary[particle], pos.position, Quaternion.identity);
     }
 }

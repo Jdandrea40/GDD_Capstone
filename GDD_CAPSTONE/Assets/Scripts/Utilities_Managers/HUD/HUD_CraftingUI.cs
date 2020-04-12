@@ -19,7 +19,10 @@ public class HUD_CraftingUI : MonoBehaviour
     [SerializeField] Toggle[] toggleTops;
     [SerializeField] Toggle[] toggleBots;
     [SerializeField] Toggle[] toggleAmmo;
-    
+
+    [SerializeField] Toggle buildAreaToggle;
+    [SerializeField] Text buildAreaText;
+    [SerializeField] Image buildAreaImg;
     // An array of the BKG images so that they can be swapped to red/normal based on amount
     [SerializeField] Image[] imageBKGS;
 
@@ -38,12 +41,14 @@ public class HUD_CraftingUI : MonoBehaviour
     [SerializeField] TowerBase[] tBase;
     [SerializeField] AmmoType[] tAmmo;
     
+    
     [SerializeField] Text[] itemCountText;
 
     // Start is called before the first frame update
     void Start()
     {
         EventManager.AddItemCollectedListener(UpdateItemCount);
+        EventManager.AddItemBoughtListener(UpdateItemCount);
         EventManager.ScrapUsedListener(UpdateItemCount);
         
         // Game Start Initialization
@@ -52,6 +57,48 @@ public class HUD_CraftingUI : MonoBehaviour
         TowerUIUpdate(0, 1);
         TowerUIUpdate(0, 2);
 
+    }
+    /// <summary>
+    /// called every frame
+    /// </summary>
+    private void Update()
+    {
+        // dissalows the toggle swapping during pause
+        if (GameplayManager.Instance.IsPaused)
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                toggleTops[i].interactable = false;
+                toggleBots[i].interactable = false;
+                toggleAmmo[i].interactable = false;
+            }
+            buildAreaToggle.interactable = false;
+        }
+        else
+        {
+            UpdateItemCount();
+            // Checks the current state of the Toggle
+            // will activate GPM-BuildArea
+            // and Swap Cursor
+            if (buildAreaToggle.isOn == true)
+            {
+                GameplayManager.Instance.CanBuildArea = true;
+                ArtManager.Instance.SwapCursor(ArtManager.CursorToUse.BUILD_AREA);
+                GameplayManager.Instance.CursorSwapReset = true;
+            }
+            else
+            {
+                GameplayManager.Instance.CanBuildArea = false;
+                if (GameplayManager.Instance.CursorSwapReset)
+                {
+                    GameplayManager.Instance.CursorSwapReset = false;
+                    ArtManager.Instance.SwapCursor(ArtManager.CursorToUse.NORMAL);
+                }
+
+            }
+        }
+
+        //Debug.Log(buildAreaToggle.isOn);
     }
 
     /// <summary>
@@ -98,6 +145,19 @@ public class HUD_CraftingUI : MonoBehaviour
                 }
                 imageBKGS[i].color = Color.white;
             }
+        }
+        if (GameplayManager.Instance.ScrapCollected < 25)
+        {
+            buildAreaToggle.interactable = false;
+            buildAreaToggle.isOn = false;
+            buildAreaText.color = Color.red;
+            buildAreaImg.color = Color.red;
+        }
+        else
+        {
+            buildAreaToggle.interactable = true;
+            buildAreaText.color = Color.white;
+            buildAreaImg.color = Color.white;
         }
     }
     // Responsible for updating the UI image and Text in the Crafting window
@@ -152,7 +212,6 @@ public class HUD_CraftingUI : MonoBehaviour
             selectedBot = pieceSelected;
             TowerUIUpdate(selectedBot, (int)Piece.BOT);
             AudioManager.Instance.PlaySFX(AudioManager.Sounds.TOGGLE_CLICK);
-
         }
 
     }
@@ -166,5 +225,4 @@ public class HUD_CraftingUI : MonoBehaviour
 
         }
     }
-
 }

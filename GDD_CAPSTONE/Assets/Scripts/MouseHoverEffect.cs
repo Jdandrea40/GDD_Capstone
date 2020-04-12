@@ -18,7 +18,10 @@ public class MouseHoverEffect : MonoBehaviour
     }
     private void OnMouseEnter()
     {
-        sr.material.color = hoverColor;      
+        if (!GameplayManager.Instance.IsPaused)
+        {
+            sr.material.color = hoverColor;
+        }
     }
 
     private void OnMouseExit()

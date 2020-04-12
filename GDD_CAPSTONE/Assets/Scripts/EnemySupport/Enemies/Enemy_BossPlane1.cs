@@ -9,6 +9,7 @@ public class Enemy_BossPlane1 : Enemy
         base.Awake();
         Health = eStat.BOSS_PLANE_1_HEALTH;
         moveSpeed = eStat.BOSS_PLANE_1_MOVE_SPEED;
+        scrapGiven = 25;
     }
     protected override void SpawnItem()
     {

@@ -19,18 +19,45 @@ public static class EventManager
     static HUDManager waveSpawnInvoker;
     static UnityAction waveSpawnListener;
 
+    static HUD_BuyPanel itemBoughtInvoker;
+    static UnityAction itemBoughtListener;
+
     static ItemDrop itemCollectedInvoker;
     static UnityAction itemCollectedListener;
 
     static Tower scrapUsedInvoker;
     static UnityAction scrapUsedListener;
 
+    static Tower towerPanelInvoker;
+    static UnityAction towerPanelListener;
+
     static Projectile enemyDamageInvoker;
-    static UnityAction<int, bool, int, bool> enemyDamageListener;
+    static UnityAction<int> enemyDamageListener;
+    
 
     #endregion
 
     #region EVENTS
+
+    #region Tower Panel
+    public static void ActivateTowerPanelInvoker(Tower invoker)
+    {
+        towerPanelInvoker = invoker;
+        if (towerPanelListener != null)
+        {
+            invoker.AddTowerPanelListener(towerPanelListener);
+        }
+    }
+
+    public static void ActivateTowerPanelListener(UnityAction listener)
+    {
+        towerPanelListener = listener;
+        if (towerPanelInvoker != null)
+        {
+            towerPanelInvoker.AddTowerPanelListener(listener);
+        }
+    }
+    #endregion
     #region Scrap Used
     /// <summary>
     /// This event is being used to update the UI After a tower has been built
@@ -56,7 +83,23 @@ public static class EventManager
     }
 
     #endregion
+    public static void AddItemBoughtInvoker(HUD_BuyPanel invoker)
+    {
+        itemBoughtInvoker = invoker;
+        if (itemCollectedListener != null)
+        {
+            invoker.AddItemBoughtListener(itemCollectedListener);
+        }
+    }
 
+    public static void AddItemBoughtListener(UnityAction listener)
+    {
+        itemBoughtListener = listener;
+        if (itemBoughtInvoker != null)
+        {
+            itemBoughtInvoker.AddItemBoughtListener(listener);
+        }
+    }
     #region Item Pickup
     /// <summary>
     /// This event is being used to update the UI when an Item (scrap)
@@ -71,6 +114,7 @@ public static class EventManager
             invoker.AddItemCollectedListener(itemCollectedListener);
         }
     }
+
 
     public static void AddItemCollectedListener(UnityAction listener)
     {
@@ -97,6 +141,24 @@ public static class EventManager
         if (waveSpawnInvoker != null)
         {
             waveSpawnInvoker.AddWaveSpawnListener(listener);
+        }
+    }
+
+    public static void AddEnemyDamageInvoker(Projectile invoker)
+    {
+        enemyDamageInvoker = invoker;
+        if (enemyDamageListener != null)
+        {
+            invoker.AddEnemyDamageListener(enemyDamageListener);
+        }
+    }
+
+    public static void AddEnemyDamageListener(UnityAction<int> listener)
+    {
+        enemyDamageListener = listener;
+        if (enemyDamageInvoker != null)
+        {
+            enemyDamageInvoker.AddEnemyDamageListener(listener);
         }
     }
 
@@ -136,23 +198,6 @@ public static class EventManager
     //    }
     //}
 
-    //public static void AddEnemyDamageInvoker(Projectile invoker)
-    //{
-    //    enemyDamageInvoker = invoker;
-    //    if (enemyDamageListener != null)
-    //    {
-    //        invoker.AddEnemyDamageListener(enemyDamageListener);
-    //    }
-    //}
-
-    //public static void AddEnemyDamageListener(UnityAction<int, bool, int, bool> listener)
-    //{
-    //    enemyDamageListener = listener;
-    //    if (enemyDamageListener != null)
-    //    {
-    //        enemyDamageInvoker.AddEnemyDamageListener(listener);
-    //    }
-    //}
 
     //public static void TowerFireInvoker(Tower invoker)
     //{

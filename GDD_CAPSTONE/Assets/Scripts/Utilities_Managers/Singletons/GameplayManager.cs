@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 public class GameplayManager : Singleton<GameplayManager>
 {
     int currWave;
-    public int EnemiesKilled { get; set; }
+    //public int EnemiesKilled { get; set; }
+    public int ScrapCollected { get; set; }
     public int BaseHealth { get; set; }
     public int EnemyHealthModifier { get; set; }
     public int MaxWaveCount { get; set; }
@@ -17,11 +18,17 @@ public class GameplayManager : Singleton<GameplayManager>
     public bool IsPaused { get; set; }
     // Used to only allow the PauseMenu to be activated while in a game
     public bool InGame { get; set; } = false;
+    // Used to communicate between the Tower and the Sell Panel
+    public GameObject TowerToSell { get; set; } = null;
     public List<GameObject> SpawnedEnemies { get; set; }
+    public bool CanBuildArea { get; set; }
+    public bool CursorSwapReset { get; set; }
 
     GameObject pauseMenu;
     GameObject winMenu;
     GameObject loseMenu;
+   
+    
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +36,7 @@ public class GameplayManager : Singleton<GameplayManager>
         pauseMenu = Resources.Load<GameObject>("PopUpCanvases/PauseCanvas");
         winMenu = Resources.Load<GameObject>("PopUpCanvases/WinCanvas");
         loseMenu = Resources.Load<GameObject>("PopUpCanvases/LoseCanvas");
+
         MaxWaveCount = WaveSpawner.TotalWaves;
         WaveInProgress = false;
         IsPaused = false;
@@ -42,10 +50,11 @@ public class GameplayManager : Singleton<GameplayManager>
         if (!IsPaused)
         {
             // Used to pause the game
-            if (InGame && Input.GetKey(KeyCode.Escape))
+            if (InGame && Input.GetKeyDown(KeyCode.Escape))
             {
                 Instantiate(pauseMenu);
             }
+            
 
             // Used to increase the Health Modifier of Enemies
             if (currWave != CurWaveCount)
