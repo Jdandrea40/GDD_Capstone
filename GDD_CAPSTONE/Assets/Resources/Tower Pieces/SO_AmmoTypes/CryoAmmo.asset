@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CryoAmmo
   m_EditorClassIdentifier: 
   Name: Cryo Ammo
-  ImpactDamage: 1
+  ImpactDamage: 2
   DamageOverTime: 0
   DoTAmount: 0
   Slow: 1

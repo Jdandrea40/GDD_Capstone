@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ArmorPiercingAmmo
   m_EditorClassIdentifier: 
   Name: Armor Piercing Ammo
-  ImpactDamage: 5
+  ImpactDamage: 6
   DamageOverTime: 0
   DoTAmount: 0
   Slow: 0

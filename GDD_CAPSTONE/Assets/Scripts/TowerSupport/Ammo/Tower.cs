@@ -48,7 +48,7 @@ public class Tower : MonoBehaviour
     }
 
     // Accesor for TurretRangeIndicator
-    public int TurretRadius { get => range; }
+    public float TurretRadius { get => range; }
 
     #endregion
 
@@ -63,7 +63,7 @@ public class Tower : MonoBehaviour
     // damage modifiers
     int damage;             // Ammo + TurretTop
     float fireRate;         // TurretTop + TurretBase
-    int range;              // Base
+    float range;              // Base
 
     // Proj visuals
     Color ammoColor;        // Ammo
@@ -284,29 +284,59 @@ public class Tower : MonoBehaviour
     /// </summary>
     void UpdateTarget()
     {
-        float shortestDistace = Mathf.Infinity;
-        GameObject closestEnemy = null;
-        foreach(GameObject enemy in GameplayManager.Instance.SpawnedEnemies)
+        if (GameplayManager.Instance.SpawnedEnemies.Count > 0)
         {
-            float distanceToEnemy = Vector2.Distance(transform.position, enemy.transform.position);
-            if (distanceToEnemy < shortestDistace)
+            //for (int i = 0; i < GameplayManager.Instance.SpawnedEnemies.Count; i++)
+            //{
+            foreach (GameObject enemy in GameplayManager.Instance.SpawnedEnemies)
             {
-                shortestDistace = distanceToEnemy;
-                closestEnemy = enemy;
+                float distanceToEnemy = Vector2.Distance(transform.position, enemy.transform.position);
+                if (targetToShoot == null)
+                {
+                    
+                    if (distanceToEnemy <= range)
+                    {
+                        targetToShoot = enemy;
+                    }
+                    else
+                    {
+                        targetToShoot = null;
+                    }
+                }
+            }
+            if (targetToShoot != null)
+            {
+                if (Vector2.Distance(transform.position, targetToShoot.transform.position) > range)
+                {
+                    targetToShoot = null;
+                }
             }
         }
+    
+        //    float shortestDistace = Mathf.Infinity;
+        //    GameObject closestEnemy = null;
+        //    foreach (GameObject enemy in GameplayManager.Instance.SpawnedEnemies)
+        //    {
+        //        float distanceToEnemy = Vector2.Distance(transform.position, enemy.transform.position);
 
-        if (closestEnemy != null && shortestDistace <= range)
-        {
-            targetToShoot = closestEnemy;
-        }
-        else
-        {
-            targetToShoot = null;
-        }
+        //        if (distanceToEnemy < shortestDistace)
+        //        {
+        //            shortestDistace = distanceToEnemy;
+        //            closestEnemy = enemy;
+        //        }
+        //    }
 
+        //    if (closestEnemy != null && shortestDistace <= range)
+        //    {
+        //        targetToShoot = closestEnemy;
+        //    }
+        //    else
+        //    {
+        //        targetToShoot = null;
+        //    }
 
-        
+        //}
+
     }
 
     /// <summary>

@@ -1,14 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HUD_SellUpgradePanel : MonoBehaviour
 {
     [SerializeField] GameObject sellPanel;
+    [SerializeField] Image mainPanelImage;
+    [SerializeField] Button sellButton;
+
     // Start is called before the first frame update
     void Start()
     {
+        mainPanelImage.raycastTarget = false;
         EventManager.ActivateTowerPanelListener(OpenPanel);
+
     }
 
     /// <summary>
@@ -26,14 +32,20 @@ public class HUD_SellUpgradePanel : MonoBehaviour
             ba.bc2d.enabled = true;
 
             Destroy(GameplayManager.Instance.TowerToSell);
-            sellPanel.SetActive(false);
-            GameplayManager.Instance.TowerToSell = null;
+            CloseMenu();
         }
+    }
+
+    IEnumerator ButtonBuffer()
+    {
+        yield return new WaitForSeconds(.5f);
+        sellButton.interactable = true;
     }
     public void CloseMenu()
     {
         if (!GameplayManager.Instance.IsPaused)
         {
+            mainPanelImage.raycastTarget = false;
             sellPanel.SetActive(false);
             GameplayManager.Instance.TowerToSell = null;
         }
@@ -41,6 +53,9 @@ public class HUD_SellUpgradePanel : MonoBehaviour
 
     void OpenPanel()
     {
+        sellButton.interactable = false;
+        StartCoroutine(ButtonBuffer());
+        mainPanelImage.raycastTarget = true;
         sellPanel.SetActive(true);
     }
 }
