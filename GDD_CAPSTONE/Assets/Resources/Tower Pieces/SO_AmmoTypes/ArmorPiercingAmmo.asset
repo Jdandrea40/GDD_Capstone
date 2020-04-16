@@ -17,5 +17,5 @@ MonoBehaviour:
   DamageOverTime: 0
   DoTAmount: 0
   Slow: 0
-  AmmoSprite: {fileID: 21300000, guid: b591860378b4dab41a75e02a5e6e2f08, type: 3}
+  AmmoSprite: {fileID: 21300000, guid: 75c2dff68b501404a987e5823102b21f, type: 3}
   color: {r: 1, g: 1, b: 1, a: 1}
