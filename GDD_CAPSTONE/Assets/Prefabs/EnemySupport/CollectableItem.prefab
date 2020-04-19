@@ -55,7 +55,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: ebe04fc1dc8c78f4991f9f7eef9459ff, type: 3}
   - {fileID: 21300000, guid: bd535c5d673c1bd42b31bed30b368f51, type: 3}
   - {fileID: 21300000, guid: 75c2dff68b501404a987e5823102b21f, type: 3}
-  - {fileID: 21300000, guid: da273d1e927124a468f2c56588f31bd4, type: 3}
+  - {fileID: 21300000, guid: b1713b68760d02b438ab3bf3debce39e, type: 3}
   - {fileID: 21300000, guid: 00f5c98127a4ce34ebb4bf4fb5124d25, type: 3}
 --- !u!61 &2514460380740616193
 BoxCollider2D:
