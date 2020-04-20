@@ -27,9 +27,14 @@ public class HUD_SellUpgradePanel : MonoBehaviour
             // Sets the Buildable area back to a normal Unoccupiead Area
             // bc2d needs to be reneabled due to it being disabled to avoid double triggering of
             // ba and tower
+            GameplayManager.Instance.ScrapCollected += 50;
             BuildableArea ba = GameplayManager.Instance.TowerToSell.GetComponentInParent<BuildableArea>();
             ba.Occupied = false;
             ba.bc2d.enabled = true;
+            Instantiate(ParticleEffectManager.Instance.particleDictionary[ParticleEffectManager.ParticleToPlay.SCRAP_COLLECT], GameplayManager.Instance.TowerToSell.transform.position, Quaternion.identity);
+            Instantiate(ParticleEffectManager.Instance.particleDictionary[ParticleEffectManager.ParticleToPlay.SCRAP_COLLECT], GameplayManager.Instance.TowerToSell.transform.position, Quaternion.identity);
+            Instantiate(ParticleEffectManager.Instance.particleDictionary[ParticleEffectManager.ParticleToPlay.SCRAP_COLLECT], GameplayManager.Instance.TowerToSell.transform.position, Quaternion.identity);
+            Instantiate(ParticleEffectManager.Instance.particleDictionary[ParticleEffectManager.ParticleToPlay.SCRAP_COLLECT], GameplayManager.Instance.TowerToSell.transform.position, Quaternion.identity);
 
             Destroy(GameplayManager.Instance.TowerToSell);
             CloseMenu();

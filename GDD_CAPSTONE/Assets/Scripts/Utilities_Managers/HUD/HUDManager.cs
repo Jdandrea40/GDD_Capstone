@@ -10,6 +10,8 @@ public class HUDManager : MonoBehaviour
     [SerializeField] Button spawnButton;
     [SerializeField] Text countDownText;
     [SerializeField] Sprite fastForwardImg;
+    [SerializeField] GameObject directionArrows;
+    [SerializeField] Text scrapCostText;
 
     bool firstClick = true;
     WaveSpawnEvent waveSpawnEvent;
@@ -39,6 +41,7 @@ public class HUDManager : MonoBehaviour
         // The Countdown text located on the HUD
         countDownText.text = " ";
         countdownCoRout = CountDown();
+        scrapCostText.text = $"X {GameplayManager.Instance.ScrapCostToBuild}";
 
     }
 
@@ -54,6 +57,16 @@ public class HUDManager : MonoBehaviour
         {
 
             spawnButton.interactable = true;
+        }
+        scrapCostText.text = $"X {GameplayManager.Instance.ScrapCostToBuild}";
+        if (GameplayManager.Instance.ScrapCostToBuild > GameplayManager.Instance.ScrapCollected)
+        {
+            scrapCostText.color = Color.red;
+        }
+        else
+        {
+            scrapCostText.color = Color.white;
+
         }
 
     }
@@ -82,6 +95,7 @@ public class HUDManager : MonoBehaviour
             yield return new WaitForSeconds(1);
         }
         SpawnWave();
+        
     }
 
     /// <summary>
@@ -96,6 +110,7 @@ public class HUDManager : MonoBehaviour
         {
             // Changes the initial image of the Play image to Fast forward image
             spawnButton.image.sprite = fastForwardImg;
+            Destroy(directionArrows);
         }
 
 
@@ -108,7 +123,6 @@ public class HUDManager : MonoBehaviour
             countdownCoRout = CountDown();
             StartCoroutine(countdownCoRout);
             waveSpawnEvent.Invoke();
-
-        }
+           }
     }
 }

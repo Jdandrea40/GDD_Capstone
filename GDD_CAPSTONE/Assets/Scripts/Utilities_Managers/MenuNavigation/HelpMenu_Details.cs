@@ -18,7 +18,6 @@ public class HelpMenu_Details : MonoBehaviour
         itemButtons[1].interactable = true;
         itemButtons[2].interactable = true;
 
-        Debug.Log("POOP");
     }
 
     public void PanelSelected(int panelNum)

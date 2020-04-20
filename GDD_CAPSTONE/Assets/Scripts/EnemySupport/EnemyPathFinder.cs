@@ -9,18 +9,41 @@ using UnityEngine;
 /// </summary>
 public class EnemyPathFinder : MonoBehaviour
 {
-    public static Transform[] points;
+    public Transform[] points;
 
     /// <summary>
     /// Finds all POI the enemy must move to
     /// </summary>
     private void Awake()
     {
-        points = new Transform[transform.childCount];
-        for (int i = 0; i < points.Length; i++)
+        points = FindSpawnSide();
+        Debug.Log(points.Length);
+        for (int i = 0; i < points.Length - 1; i++)
         {
             points[i] = transform.GetChild(i);
         }
+    }
+    
+    Transform[] FindSpawnSide()
+    {
+        float shortestDist = Mathf.Infinity;
+        GameObject[] ePaths = GameObject.FindGameObjectsWithTag("EnemyPath");
+        GameObject pathToPick = ePaths[0];
+        Transform[] points;
+
+        foreach (GameObject path in ePaths)
+        {
+            float distance = Vector2.Distance(path.transform.position, gameObject.transform.position);
+            if (distance < shortestDist)
+            {
+                shortestDist = distance;
+                pathToPick = path;
+            }
+        }
+        
+        points = pathToPick.GetComponentsInChildren<Transform>();
+
+        return points;
     }
 }
 

@@ -9,9 +9,13 @@ public class TileMapTester : MonoBehaviour
     [SerializeField] GameObject build;
     [SerializeField] Tile builtTile;
     [SerializeField] Tilemap tilemp;
+    HUD_CraftingUI hudCUI;
 
     Vector3Int selectedTile;
-
+    private void Start()
+    {
+        hudCUI = FindObjectOfType<HUD_CraftingUI>();
+    }
     void Update() 
     { 
         Vector3 point = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -32,10 +36,12 @@ public class TileMapTester : MonoBehaviour
             {
                 if (tilemp.ContainsTile(tilemp.GetTile(selectedTile)) && tilemp.GetTile(selectedTile) != builtTile)
                 {
-                    GameplayManager.Instance.ScrapCollected -= 25;
+                    GameplayManager.Instance.ScrapCollected -= GameplayManager.Instance.ScrapCostToBuild;
+                    GameplayManager.Instance.ScrapCostToBuild += 25;
                     tilemp.SetTile(selectedTile, builtTile);
                     Instantiate(build, new Vector2(selectedTile.x + .5f, selectedTile.y + .5f), Quaternion.identity);
-
+                    GameplayManager.Instance.CanBuildArea = false;
+                    hudCUI.buildAreaToggle.isOn = false;
                 }
 
 
