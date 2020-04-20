@@ -1784,6 +1784,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Spawner
       objectReference: {fileID: 0}
+    - target: {fileID: 3056510077518992304, guid: bbd328581bcc48f4c9634b37680c0f5d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3056510077518992306, guid: bbd328581bcc48f4c9634b37680c0f5d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1839,6 +1844,48 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3056510077518992307, guid: bbd328581bcc48f4c9634b37680c0f5d,
+        type: 3}
+      propertyPath: Wave.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: f8b3529e934a1fe4dbdce091e96ad05c,
+        type: 2}
+    - target: {fileID: 3056510077518992307, guid: bbd328581bcc48f4c9634b37680c0f5d,
+        type: 3}
+      propertyPath: Wave.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: 94c3b16633b3f5d4f98ba4ee8aeebcfe,
+        type: 2}
+    - target: {fileID: 3056510077518992307, guid: bbd328581bcc48f4c9634b37680c0f5d,
+        type: 3}
+      propertyPath: Wave.Array.data[6]
+      value: 
+      objectReference: {fileID: 11400000, guid: 88ca0b5f2b8df924f890195f7f876259,
+        type: 2}
+    - target: {fileID: 3056510077518992307, guid: bbd328581bcc48f4c9634b37680c0f5d,
+        type: 3}
+      propertyPath: Wave.Array.data[7]
+      value: 
+      objectReference: {fileID: 11400000, guid: 9c888c3073647a54080676b210ca3a48,
+        type: 2}
+    - target: {fileID: 3056510077518992307, guid: bbd328581bcc48f4c9634b37680c0f5d,
+        type: 3}
+      propertyPath: Wave.Array.data[8]
+      value: 
+      objectReference: {fileID: 11400000, guid: cf516b6d8b001b34d8ffbe20d7ab224f,
+        type: 2}
+    - target: {fileID: 3056510077518992307, guid: bbd328581bcc48f4c9634b37680c0f5d,
+        type: 3}
+      propertyPath: Wave.Array.data[9]
+      value: 
+      objectReference: {fileID: 11400000, guid: 93e9377329a8c6d418bb9cf7e5f024c1,
+        type: 2}
+    - target: {fileID: 3056510077518992307, guid: bbd328581bcc48f4c9634b37680c0f5d,
+        type: 3}
+      propertyPath: Wave.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: f8b3529e934a1fe4dbdce091e96ad05c,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bbd328581bcc48f4c9634b37680c0f5d, type: 3}
 --- !u!4 &250214867 stripped
@@ -15683,16 +15730,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Wave:
+  - {fileID: 11400000, guid: f8b3529e934a1fe4dbdce091e96ad05c, type: 2}
   - {fileID: 11400000, guid: b9eba9b697500ac40a52fab5e6d0a13e, type: 2}
+  - {fileID: 11400000, guid: f8b3529e934a1fe4dbdce091e96ad05c, type: 2}
+  - {fileID: 11400000, guid: 94c3b16633b3f5d4f98ba4ee8aeebcfe, type: 2}
+  - {fileID: 11400000, guid: f8b3529e934a1fe4dbdce091e96ad05c, type: 2}
   - {fileID: 11400000, guid: 94c3b16633b3f5d4f98ba4ee8aeebcfe, type: 2}
   - {fileID: 11400000, guid: 88ca0b5f2b8df924f890195f7f876259, type: 2}
   - {fileID: 11400000, guid: 9c888c3073647a54080676b210ca3a48, type: 2}
-  - {fileID: 11400000, guid: 93e9377329a8c6d418bb9cf7e5f024c1, type: 2}
   - {fileID: 11400000, guid: cf516b6d8b001b34d8ffbe20d7ab224f, type: 2}
-  - {fileID: 11400000, guid: c492546d824c55e47ab68a8a51dec41f, type: 2}
-  - {fileID: 11400000, guid: d3ba43da9e0d0b847ae8716eabf9d549, type: 2}
-  - {fileID: 11400000, guid: 13876f309daaffa408c086a25c7aebbe, type: 2}
-  - {fileID: 11400000, guid: ac814c421a8ab0b4198f0a759d3b89c8, type: 2}
+  - {fileID: 11400000, guid: 93e9377329a8c6d418bb9cf7e5f024c1, type: 2}
 --- !u!4 &8221070630597817611
 Transform:
   m_ObjectHideFlags: 0

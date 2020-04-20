@@ -498,7 +498,8 @@ MonoBehaviour:
   completedImage:
   - {fileID: 1108897899}
   - {fileID: 430204433}
-  - {fileID: 1644283342}
+  - {fileID: 326216119}
+  - {fileID: 1047930535}
 --- !u!1 &178524722
 GameObject:
   m_ObjectHideFlags: 0
@@ -1464,7 +1465,7 @@ GameObject:
   - component: {fileID: 572899368}
   - component: {fileID: 572899367}
   m_Layer: 5
-  m_Name: RoundAboutCompletedPanel
+  m_Name: IntersectionCompletedPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3504,7 +3505,7 @@ GameObject:
   - component: {fileID: 1644283344}
   - component: {fileID: 1644283343}
   m_Layer: 5
-  m_Name: RoundAboutCompletedPanel
+  m_Name: DepotCompletedPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
