@@ -9,52 +9,43 @@ public class TileMapTester : MonoBehaviour
     [SerializeField] GameObject build;
     [SerializeField] Tile builtTile;
     [SerializeField] Tilemap tilemp;
-    Vector3Int selectedTile;
-    Color white;
-    Color black;
-    void Start() 
-    { 
-        //tilemp = GameObject.Find("EnemyPath").GetComponent<Tilemap>();
+    HUD_CraftingUI hudCUI;
 
-        white = new Color(1, 1, 1, 1);
-        black = new Color(100, 100, 100, 1);
+    Vector3Int selectedTile;
+    private void Start()
+    {
+        hudCUI = FindObjectOfType<HUD_CraftingUI>();
     }
     void Update() 
     { 
         Vector3 point = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        
-        if (Input.GetMouseButtonDown(0) && GameplayManager.Instance.CanBuildArea)
-        {
+        if (GameplayManager.Instance.CanBuildArea)
+        {       
             if (EventSystem.current.IsPointerOverGameObject())
             {
                 return;
             }
             selectedTile = tilemp.WorldToCell(point);
-            
-            if (tilemp.ContainsTile(tilemp.GetTile(selectedTile)) && tilemp.GetTile(selectedTile) != builtTile)
+            // Will show an error cursor over unbuildable areas
+            if (!tilemp.ContainsTile(tilemp.GetTile(selectedTile)))
             {
-                GameplayManager.Instance.ScrapCollected -= 25;
-                tilemp.SetTile(selectedTile, builtTile);
-                Instantiate(build, new Vector2(selectedTile.x + .5f, selectedTile.y + .5f), Quaternion.identity);
-                
+                ArtManager.Instance.SwapCursor(ArtManager.CursorToUse.ERROR);
             }
+            if (Input.GetMouseButtonDown(0))
+            {
+                if (tilemp.ContainsTile(tilemp.GetTile(selectedTile)) && tilemp.GetTile(selectedTile) != builtTile)
+                {
+                    GameplayManager.Instance.ScrapCollected -= GameplayManager.Instance.ScrapCostToBuild;
+                    GameplayManager.Instance.ScrapCostToBuild += 25;
+                    tilemp.SetTile(selectedTile, builtTile);
+                    Instantiate(build, new Vector2(selectedTile.x + .5f, selectedTile.y + .5f), Quaternion.identity);
+                    GameplayManager.Instance.CanBuildArea = false;
+                    hudCUI.buildAreaToggle.isOn = false;
+                }
 
 
+            }
         }
     }
-
-    private void OnMouseEnter()
-    {
-        if (tilemp.ContainsTile(tilemp.GetTile(selectedTile)) && tilemp.GetTile(selectedTile) != builtTile)
-        {
-            Debug.Log("HOVER");
-        }
-    }
-
-
-    //private void OnMouseEnter()
-    //{
-    //    gameObject.SetActive(false);
-    //}
 }

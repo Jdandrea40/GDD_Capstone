@@ -8,6 +8,8 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class HelpMenu : MonoBehaviour
 {
+    [SerializeField] GameObject detailPanel;
+
     /// <summary>
     /// Method to go to the levelSelected
     /// Scene name must be passed in through Inspector Button OnClick()
@@ -17,5 +19,15 @@ public class HelpMenu : MonoBehaviour
     {
         AudioManager.Instance.PlaySFX(AudioManager.Sounds.BUTTON_CLICK);
         SceneManager.LoadScene(levelSelected);
+    }
+   public void OpenDetails()
+   {
+        detailPanel.SetActive(true);
+   }
+
+    public void CloseDetails()
+    {
+        detailPanel.SetActive(false);
+
     }
 }

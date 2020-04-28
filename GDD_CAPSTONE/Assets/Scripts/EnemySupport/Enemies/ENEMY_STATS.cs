@@ -7,14 +7,14 @@ public class ENEMY_STATS : Singleton<ENEMY_STATS>
     #region BASIC AIRPLANE
 
     public int BASIC_AIRPLANE_HEALTH = 40;
-    public float BASIC_AIRPLANE_MOVE_SPEED = 1f;
+    public float BASIC_AIRPLANE_MOVE_SPEED = 1.5f;
 
     #endregion
 
     #region BASIC TROOPER
 
     public int BASIC_TROOPER_HEALTH = 50;
-    public float BASIC_TROOPER_MOVE_SPEED = .5f;
+    public float BASIC_TROOPER_MOVE_SPEED = 1f;
 
     #endregion
 

@@ -311,7 +311,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4959509490376843683
 Transform:
   m_ObjectHideFlags: 0
@@ -478,6 +478,7 @@ MonoBehaviour:
   enemyTargets: []
   projectile: {fileID: 498285652798417211, guid: e896772b2a513dd4c84480ea43f3c559,
     type: 3}
+  laserSightMat: {fileID: 2100000, guid: 90a5d4aba890a774cae240bcbf3339ce, type: 2}
 --- !u!114 &7589645309595770845
 MonoBehaviour:
   m_ObjectHideFlags: 0

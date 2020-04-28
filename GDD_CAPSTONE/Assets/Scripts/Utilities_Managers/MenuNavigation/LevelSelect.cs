@@ -64,19 +64,23 @@ public class LevelSelect : MonoBehaviour
     {
         switch(levelName)
         {
-            case ("DesertDefense"):
-                LevelCompletionManager.Instance.currentLevel = LevelCompletionManager.LevelNames.DESERT_DEFENSE;
+            case ("GalletCity"):
+                LevelCompletionManager.Instance.currentLevel = LevelCompletionManager.LevelNames.GALLETCITY;
                 break;
-            case ("TheGrasslands"):
-                LevelCompletionManager.Instance.currentLevel = LevelCompletionManager.LevelNames.THE_GRASSLANDS;
+            case ("TheForest"):
+                LevelCompletionManager.Instance.currentLevel = LevelCompletionManager.LevelNames.THEFOREST;
                 break;
-            case ("RoundAbout"):
-                LevelCompletionManager.Instance.currentLevel = LevelCompletionManager.LevelNames.ROUNDABOUT;
+            case ("Depot"):
+                LevelCompletionManager.Instance.currentLevel = LevelCompletionManager.LevelNames.DEPOT;
+                break;
+            case ("Intersection"):
+                LevelCompletionManager.Instance.currentLevel = LevelCompletionManager.LevelNames.INTERSECTION;
                 break;
             default:
                 System.Console.WriteLine("NOT A LEVEL");
                 break;
         }
+        Debug.Log(LevelCompletionManager.Instance.currentLevel);
         AudioManager.Instance.PlaySFX(AudioManager.Sounds.BUTTON_CLICK);
         SceneManager.LoadScene(levelName);
     }

@@ -14,13 +14,25 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/HelpMenu.unity
     guid: e2e27be279e59cb4aa6c46ccd10a5e86
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Levels/DesertDefense.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Levels/TheGrasslands.unity
     guid: 2c542f2006d1a7846ac1abb99fc77996
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Levels/RoundAbout.unity
     guid: df91302e75a7298439e47591e5fca5fa
+  - enabled: 1
+    path: Assets/Scenes/Levels/NewLevels/Depot.unity
+    guid: 9dd121eb27ed09a468e9afd6f5985f40
+  - enabled: 1
+    path: Assets/Scenes/Levels/NewLevels/Intersection.unity
+    guid: b1e16ace65e66be4c88bbda5dc2d1151
+  - enabled: 1
+    path: Assets/Scenes/Levels/NewLevels/TheForest.unity
+    guid: 1f972111b9dc08f40a9065266b6b5fd8
+  - enabled: 1
+    path: Assets/Scenes/Levels/NewLevels/GalletCity.unity
+    guid: 7366cddd6bf39b14485000364fdd6d72
   m_configObjects: {}

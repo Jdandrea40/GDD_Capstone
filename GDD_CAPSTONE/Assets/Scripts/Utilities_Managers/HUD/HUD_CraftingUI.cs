@@ -20,7 +20,7 @@ public class HUD_CraftingUI : MonoBehaviour
     [SerializeField] Toggle[] toggleBots;
     [SerializeField] Toggle[] toggleAmmo;
 
-    [SerializeField] Toggle buildAreaToggle;
+    [SerializeField] public Toggle buildAreaToggle;
     [SerializeField] Text buildAreaText;
     [SerializeField] Image buildAreaImg;
     // An array of the BKG images so that they can be swapped to red/normal based on amount
@@ -146,7 +146,7 @@ public class HUD_CraftingUI : MonoBehaviour
                 imageBKGS[i].color = Color.white;
             }
         }
-        if (GameplayManager.Instance.ScrapCollected < 25)
+        if (GameplayManager.Instance.ScrapCollected < GameplayManager.Instance.ScrapCostToBuild)
         {
             buildAreaToggle.interactable = false;
             buildAreaToggle.isOn = false;

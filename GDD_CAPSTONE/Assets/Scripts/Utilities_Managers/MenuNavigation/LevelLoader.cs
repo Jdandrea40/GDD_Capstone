@@ -15,11 +15,12 @@ public class LevelLoader : MonoBehaviour
         GameplayManager.Instance.CurWaveCount = 0;
         GameplayManager.Instance.CurrWaveText = 0;
         GameplayManager.Instance.EnemyHealthModifier = 0;
-        GameplayManager.Instance.ScrapCollected = 0;
+        GameplayManager.Instance.ScrapCollected = 100;
         GameplayManager.Instance.SpawnedEnemies = new List<GameObject>();
         GameplayManager.Instance.InGame = true;
         GameplayManager.Instance.IsPaused = false;
         GameplayManager.Instance.WaveInProgress = false;
+        GameplayManager.Instance.ScrapCostToBuild = 25;
 
         // Sets all inventory pieces to 1
         for (int i = 0; i < 9; i++)

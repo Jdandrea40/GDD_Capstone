@@ -9,17 +9,41 @@ using UnityEngine;
 public class EnemyMoveTowardsPoint : MonoBehaviour
 {
     int currentPoint = 0;
+    GameObject spawnPoint;
+    Transform[] path;
     private Transform target;
     float moveSpeed;
 
     // Start is called before the first frame update
     void Start()
     {
+        FindSpawnSide();
+        Debug.Log(spawnPoint.name);
         // Sets the target to the first point in the array
-        target = EnemyPathFinder.points[0];        
+        path = spawnPoint.GetComponent<EnemyPathFinder>().points;
+        Debug.Log(path.Length);
+        target = path[0];
         moveSpeed = GetComponent<Enemy>().CurrentSpeed;
     }
 
+    void FindSpawnSide()
+    {
+        float shortestDist = Mathf.Infinity;
+        GameObject[] spawners = GameObject.FindGameObjectsWithTag("EnemyPath");
+        GameObject spawnerToPick = spawners[0];
+        Debug.Log(spawners.Length);
+        foreach (GameObject spawner in spawners)
+        {
+            float distance = Vector2.Distance(spawner.transform.position, gameObject.transform.position);
+            if (distance < shortestDist)
+            {
+                shortestDist = distance;
+                spawnerToPick = spawner;
+            }
+        }
+
+        spawnPoint = spawnerToPick;
+    }
     // Update is called once per frame
     void Update()
     {
@@ -52,8 +76,8 @@ public class EnemyMoveTowardsPoint : MonoBehaviour
     void GetNextWaypoint()
     {
         // checks if its current point is the end
-        if (currentPoint >= EnemyPathFinder.points.Length - 1)
-        { 
+        if (currentPoint >= path.Length - 1)
+        {  
             // KYS
             Destroy(gameObject);
             return;
@@ -61,7 +85,7 @@ public class EnemyMoveTowardsPoint : MonoBehaviour
 
         // Increment and set
         currentPoint++;
-        target = EnemyPathFinder.points[currentPoint];
+        target = path[currentPoint];
 
         // Rotates the sprite to face to right direction
         Vector2 direction = target.transform.position - transform.position;

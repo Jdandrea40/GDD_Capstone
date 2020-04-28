@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: CryoAmmo
   m_EditorClassIdentifier: 
   Name: Cryo Ammo
-  ImpactDamage: 1
+  ImpactDamage: 2
   DamageOverTime: 0
   DoTAmount: 0
   Slow: 1
-  AmmoSprite: {fileID: 21300000, guid: da273d1e927124a468f2c56588f31bd4, type: 3}
+  AmmoSprite: {fileID: 21300000, guid: b1713b68760d02b438ab3bf3debce39e, type: 3}
   color: {r: 0.5411765, g: 0.7259696, b: 0.98039216, a: 1}

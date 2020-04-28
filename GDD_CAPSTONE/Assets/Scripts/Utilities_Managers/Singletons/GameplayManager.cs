@@ -8,6 +8,7 @@ public class GameplayManager : Singleton<GameplayManager>
     int currWave;
     //public int EnemiesKilled { get; set; }
     public int ScrapCollected { get; set; }
+    public int ScrapCostToBuild { get; set; }
     public int BaseHealth { get; set; }
     public int EnemyHealthModifier { get; set; }
     public int MaxWaveCount { get; set; }

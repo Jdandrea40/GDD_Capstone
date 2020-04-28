@@ -21,7 +21,7 @@ public class WaveSpawner : MonoBehaviour
     {
         waveIncoming = Resources.Load<GameObject>("PopUpCanvases/WaveIncomingCanvas");
         totalWaves = Wave.Count;
-        EventManager.AddWaveSpawnListener(InvokeSpawner);
+        EventManager.AddWaveSpawnListener(this.InvokeSpawner);
     }
 
     /// <summary>

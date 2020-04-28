@@ -1,14 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HUD_SellUpgradePanel : MonoBehaviour
 {
     [SerializeField] GameObject sellPanel;
+    [SerializeField] Image mainPanelImage;
+    [SerializeField] Button sellButton;
+
     // Start is called before the first frame update
     void Start()
     {
+        mainPanelImage.raycastTarget = false;
         EventManager.ActivateTowerPanelListener(OpenPanel);
+
     }
 
     /// <summary>
@@ -21,19 +27,30 @@ public class HUD_SellUpgradePanel : MonoBehaviour
             // Sets the Buildable area back to a normal Unoccupiead Area
             // bc2d needs to be reneabled due to it being disabled to avoid double triggering of
             // ba and tower
+            GameplayManager.Instance.ScrapCollected += 50;
             BuildableArea ba = GameplayManager.Instance.TowerToSell.GetComponentInParent<BuildableArea>();
             ba.Occupied = false;
             ba.bc2d.enabled = true;
+            Instantiate(ParticleEffectManager.Instance.particleDictionary[ParticleEffectManager.ParticleToPlay.SCRAP_COLLECT], GameplayManager.Instance.TowerToSell.transform.position, Quaternion.identity);
+            Instantiate(ParticleEffectManager.Instance.particleDictionary[ParticleEffectManager.ParticleToPlay.SCRAP_COLLECT], GameplayManager.Instance.TowerToSell.transform.position, Quaternion.identity);
+            Instantiate(ParticleEffectManager.Instance.particleDictionary[ParticleEffectManager.ParticleToPlay.SCRAP_COLLECT], GameplayManager.Instance.TowerToSell.transform.position, Quaternion.identity);
+            Instantiate(ParticleEffectManager.Instance.particleDictionary[ParticleEffectManager.ParticleToPlay.SCRAP_COLLECT], GameplayManager.Instance.TowerToSell.transform.position, Quaternion.identity);
 
             Destroy(GameplayManager.Instance.TowerToSell);
-            sellPanel.SetActive(false);
-            GameplayManager.Instance.TowerToSell = null;
+            CloseMenu();
         }
+    }
+
+    IEnumerator ButtonBuffer()
+    {
+        yield return new WaitForSeconds(.5f);
+        sellButton.interactable = true;
     }
     public void CloseMenu()
     {
         if (!GameplayManager.Instance.IsPaused)
         {
+            mainPanelImage.raycastTarget = false;
             sellPanel.SetActive(false);
             GameplayManager.Instance.TowerToSell = null;
         }
@@ -41,6 +58,9 @@ public class HUD_SellUpgradePanel : MonoBehaviour
 
     void OpenPanel()
     {
+        sellButton.interactable = false;
+        StartCoroutine(ButtonBuffer());
+        mainPanelImage.raycastTarget = true;
         sellPanel.SetActive(true);
     }
 }

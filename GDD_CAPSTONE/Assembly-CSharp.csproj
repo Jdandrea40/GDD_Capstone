@@ -115,6 +115,7 @@
     <Compile Include="Assets\Scripts\Utilities_Managers\LayersManager.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\ManagerLoader.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\MenuNavigation\HelpMenu.cs" />
+    <Compile Include="Assets\Scripts\Utilities_Managers\MenuNavigation\HelpMenu_Details.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\MenuNavigation\LevelLoader.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\MenuNavigation\LevelLoaderTest.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\MenuNavigation\LevelSelect.cs" />

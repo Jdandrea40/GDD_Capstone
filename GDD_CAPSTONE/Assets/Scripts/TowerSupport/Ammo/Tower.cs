@@ -48,7 +48,7 @@ public class Tower : MonoBehaviour
     }
 
     // Accesor for TurretRangeIndicator
-    public int TurretRadius { get => range; }
+    public float TurretRadius { get => range; }
 
     #endregion
 
@@ -63,11 +63,14 @@ public class Tower : MonoBehaviour
     // damage modifiers
     int damage;             // Ammo + TurretTop
     float fireRate;         // TurretTop + TurretBase
-    int range;              // Base
+    float range;              // Base
 
     // Proj visuals
     Color ammoColor;        // Ammo
     Sprite projSpr;         // Ammo
+    LineRenderer laserSight;
+    Vector3 startPoint;
+    [SerializeField] Material laserSightMat;
 
     // special cases effects
     bool splashDamage;      // TurretTop
@@ -143,10 +146,20 @@ public class Tower : MonoBehaviour
         PiecesCollectedManager.Instance.CollectedPieces[(PiecesCollectedManager.TowerPieceEnum)HUD_CraftingUI.SelectedBot + 3]--;
         PiecesCollectedManager.Instance.CollectedPieces[(PiecesCollectedManager.TowerPieceEnum)HUD_CraftingUI.SelectedAmmo + 6]--;
 
-        //sellCanvas.alpha = 0;
-        //sellCanvas.interactable = false;
-        //sellCanvas.blocksRaycasts = false;
+        startPoint = gameObject.transform.position;
+        if (laserSight != null)
+        {
+            Debug.Log("SIGHT");
+            laserSight.sortingLayerName = "TOWER_RADIUS";
+            
+            laserSight.SetPosition(0, startPoint);
+            laserSight.SetPosition(1, startPoint);
+            laserSight.startWidth = .03f;
+            laserSight.startColor = Color.red;
+            laserSight.endColor = Color.red;
 
+            laserSight.material = laserSightMat;
+        }
         scrapUsedEvent.Invoke();
         InvokeRepeating("UpdateTarget", 0, .5f);
     }
@@ -159,7 +172,11 @@ public class Tower : MonoBehaviour
             if (targetToShoot == null)
             {
                 targeting = false;
-                return;
+                if (laserSight != null)
+                {
+                    laserSight.SetPosition(1, startPoint);
+                }
+                    return;
             }
             else
             {
@@ -191,6 +208,11 @@ public class Tower : MonoBehaviour
 
                 if (targeting)
                 {
+                    if (laserSight != null)
+                    {
+                        laserSight.SetPosition(1, targetToShoot.transform.position);
+
+                    }
                     // get a vector from tower to target
                     Vector2 direction = targetToShoot.transform.position - transform.position;
                     // find the angle of that line
@@ -284,29 +306,66 @@ public class Tower : MonoBehaviour
     /// </summary>
     void UpdateTarget()
     {
-        float shortestDistace = Mathf.Infinity;
-        GameObject closestEnemy = null;
-        foreach(GameObject enemy in GameplayManager.Instance.SpawnedEnemies)
+        if (GameplayManager.Instance.SpawnedEnemies.Count > 0)
         {
-            float distanceToEnemy = Vector2.Distance(transform.position, enemy.transform.position);
-            if (distanceToEnemy < shortestDistace)
+            //for (int i = 0; i < GameplayManager.Instance.SpawnedEnemies.Count; i++)
+            //{
+            foreach (GameObject enemy in GameplayManager.Instance.SpawnedEnemies)
             {
-                shortestDistace = distanceToEnemy;
-                closestEnemy = enemy;
+                float distanceToEnemy = Vector2.Distance(transform.position, enemy.transform.position);
+                if (targetToShoot == null)
+                {
+                    
+                    if (distanceToEnemy <= range)
+                    {
+                        targetToShoot = enemy;
+                    }
+                    else
+                    {
+                        targetToShoot = null;
+                    }
+                }
+            }
+            if (targetToShoot != null)
+            {
+                if (laserSight != null)
+                {
+                    laserSight.enabled = true;
+
+                    //laserSight.SetPositions(gameObject.transform.position, targetToShoot.transform.position);
+                }
+                if (Vector2.Distance(transform.position, targetToShoot.transform.position) > range)
+                {
+                    targetToShoot = null;
+                }
+
             }
         }
+    
+        //    float shortestDistace = Mathf.Infinity;
+        //    GameObject closestEnemy = null;
+        //    foreach (GameObject enemy in GameplayManager.Instance.SpawnedEnemies)
+        //    {
+        //        float distanceToEnemy = Vector2.Distance(transform.position, enemy.transform.position);
 
-        if (closestEnemy != null && shortestDistace <= range)
-        {
-            targetToShoot = closestEnemy;
-        }
-        else
-        {
-            targetToShoot = null;
-        }
+        //        if (distanceToEnemy < shortestDistace)
+        //        {
+        //            shortestDistace = distanceToEnemy;
+        //            closestEnemy = enemy;
+        //        }
+        //    }
 
+        //    if (closestEnemy != null && shortestDistace <= range)
+        //    {
+        //        targetToShoot = closestEnemy;
+        //    }
+        //    else
+        //    {
+        //        targetToShoot = null;
+        //    }
 
-        
+        //}
+
     }
 
     /// <summary>
@@ -319,12 +378,19 @@ public class Tower : MonoBehaviour
         TowerBase tBase = pcm.pcBase[HUD_CraftingUI.SelectedBot];
         AmmoType tAmmo = pcm.pcAmmo[HUD_CraftingUI.SelectedAmmo];
 
-        
+        if (tBase.Name == "Laser Sight")
+        {
+            laserSight = gameObject.AddComponent<LineRenderer>();
+        }
+        else
+        {
+            laserSight = null;
+        }
         // Visuals
         sr.sprite = tTop.TurretSprite;
         sr.color = tAmmo.color;
         projSpr = tTop.ProjectileSprite;
-        turretBaseSprite.sprite = tBase.BaseSprite;
+        //turretBaseSprite.sprite = tBase.BaseSprite;
         turretBaseSprite.color = tBase.BaseColor;
 
         // Stat Values
