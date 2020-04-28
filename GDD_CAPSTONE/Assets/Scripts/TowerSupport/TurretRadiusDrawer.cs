@@ -9,7 +9,7 @@ public class TurretRadiusDrawer : MonoBehaviour
 {
     SpriteRenderer sr;
     Tower radiusSupport;
-    int radius;
+    float radius;
 
     // Start is called before the first frame update
     void Start()

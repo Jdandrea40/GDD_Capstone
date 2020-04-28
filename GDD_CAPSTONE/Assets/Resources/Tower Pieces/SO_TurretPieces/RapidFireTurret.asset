@@ -16,5 +16,5 @@ MonoBehaviour:
   Damage: 3
   FireRate: 0.1
   SplashDamage: 0
-  TurretSprite: {fileID: 21300000, guid: 36b08c0a35889a14abcbb65ed94021ef, type: 3}
-  ProjectileSprite: {fileID: 21300000, guid: b591860378b4dab41a75e02a5e6e2f08, type: 3}
+  TurretSprite: {fileID: 21300000, guid: 676d57d5d23f3ed4b97a3efb9fbb8076, type: 3}
+  ProjectileSprite: {fileID: 21300000, guid: 75c2dff68b501404a987e5823102b21f, type: 3}

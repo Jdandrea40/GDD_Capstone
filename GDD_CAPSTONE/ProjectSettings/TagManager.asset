@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - EnemyPath
   - Base
+  - Spawner
   layers:
   - Default
   - TransparentFX

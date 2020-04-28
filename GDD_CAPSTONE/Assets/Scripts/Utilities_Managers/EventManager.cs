@@ -16,8 +16,8 @@ public static class EventManager
     static List<Tower> towerFireInvoker = new List<Tower>();
     static List<UnityAction<int, bool, int, bool>> towerFireListener = new List<UnityAction<int, bool, int, bool>>();
 
-    static HUDManager waveSpawnInvoker;
-    static UnityAction waveSpawnListener;
+    static List<HUDManager> waveSpawnInvoker = new List<HUDManager>();
+    static List<UnityAction> waveSpawnListener = new List<UnityAction>();
 
     static HUD_BuyPanel itemBoughtInvoker;
     static UnityAction itemBoughtListener;
@@ -128,20 +128,21 @@ public static class EventManager
     #endregion
     public static void AddWaveSpawnInvoker(HUDManager invoker)
     {
-        waveSpawnInvoker = invoker;
-        if(waveSpawnListener != null)
+        waveSpawnInvoker.Add(invoker);
+        foreach(UnityAction listener in waveSpawnListener)
         {
-            invoker.AddWaveSpawnListener(waveSpawnListener);
+            invoker.AddWaveSpawnListener(listener);
         }
     }
 
     public static void AddWaveSpawnListener(UnityAction listener)
     {
-        waveSpawnListener = listener;
-        if (waveSpawnInvoker != null)
+        waveSpawnListener.Add(listener);
+        foreach(HUDManager invoker in waveSpawnInvoker)
         {
-            waveSpawnInvoker.AddWaveSpawnListener(listener);
+            invoker.AddWaveSpawnListener(listener);
         }
+
     }
 
     public static void AddEnemyDamageInvoker(Projectile invoker)
@@ -162,6 +163,23 @@ public static class EventManager
         }
     }
 
+    //public static void TowerFireInvoker(Tower invoker)
+    //{
+    //    towerFireInvoker.Add(invoker);
+    //    foreach (UnityAction<int, bool, int, bool> listener in towerFireListener)
+    //    {
+    //        invoker.AddTowerFireListener(listener);
+    //    }
+    //}
+
+    //public static void TowerFireListener(UnityAction<int, bool, int, bool> listener)
+    //{
+    //    towerFireListener.Add(listener);
+    //    foreach (Tower invoker in towerFireInvoker)
+    //    {
+    //        invoker.AddTowerFireListener(listener);
+    //    }
+    //}
     //public static void AddEnemyTargetInvoker(Enemy invoker)
     //{
     //    addEnemyTargetInvoker = invoker;
@@ -199,22 +217,6 @@ public static class EventManager
     //}
 
 
-    //public static void TowerFireInvoker(Tower invoker)
-    //{
-    //    towerFireInvoker.Add(invoker);
-    //    foreach (UnityAction<int, bool, int, bool> listener in towerFireListener)
-    //    {
-    //        invoker.AddTowerFireListener(listener);
-    //    }
-    //}
 
-    //public static void TowerFireListener(UnityAction<int, bool, int, bool> listener)
-    //{
-    //    towerFireListener.Add(listener);
-    //    foreach (Tower invoker in towerFireInvoker)
-    //    {
-    //        invoker.AddTowerFireListener(listener);
-    //    }
-    //}
     #endregion
 }
