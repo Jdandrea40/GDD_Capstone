@@ -7,6 +7,13 @@ public class GameplayManager : Singleton<GameplayManager>
 {
     int currWave;
     //public int EnemiesKilled { get; set; }
+    public int TopPieceMaxRange { get; set; }
+    public int BasePieceMaxRange { get; set; }
+    public int AmmoPieceMaxRange { get; set; }
+    public bool TopDropped { get; set; }
+    public bool BotDropped { get; set; }
+    public bool AmmoDropped { get; set; }
+
     public int ScrapCollected { get; set; }
     public int ScrapCostToBuild { get; set; }
     public int BaseHealth { get; set; }
@@ -64,6 +71,17 @@ public class GameplayManager : Singleton<GameplayManager>
                 currWave = CurWaveCount;
             }
 
+            // resets all pieces to beable to drop at same rate
+            if (TopDropped && BotDropped && AmmoDropped)
+            {
+                TopDropped = false;
+                BotDropped = false;
+                AmmoDropped = false;
+
+                TopPieceMaxRange = 10;
+                BasePieceMaxRange = 10;
+                AmmoPieceMaxRange = 10;
+            }
             // LOSE CONDITION
             if (BaseHealth <= 0)
             {

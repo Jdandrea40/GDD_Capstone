@@ -165,6 +165,7 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject.layer == (int)CollisionLayers.HOME_BASE)
         {
             GameplayManager.Instance.SpawnedEnemies.Remove(gameObject);
+            Destroy(gameObject);
         }
     }
     #endregion

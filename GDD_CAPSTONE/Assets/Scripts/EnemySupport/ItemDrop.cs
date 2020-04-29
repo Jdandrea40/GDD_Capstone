@@ -8,11 +8,15 @@ public class ItemDrop : MonoBehaviour
     // TODO: DO THIS BETTER, CASE STATMENT IS A MILE LONG, Condense (Dictionary?)
     enum DroppedItem { SINGLE_FIRE, RAPID_FIRE, CANNON, SHORT, MEDIUM, LONG, STANDARD, SLOW, INCENDIARY }
 
-    // An array of items to drop sprites
-    [SerializeField] Sprite[] item = new Sprite[9];
+    [SerializeField] Sprite[] topPiece;
+    [SerializeField] Sprite[] basePiece;
+    [SerializeField] Sprite[] ammoPiece;
 
     SpriteRenderer sr;
-    int itemToDrop;
+    
+    int topDropChance;
+    int baseDropChance;
+    int ammoDropChance;
 
     PiecesCollectedManager.TowerPieceEnum itemType;
 
@@ -28,67 +32,124 @@ public class ItemDrop : MonoBehaviour
         // Event for HUI_CUI updating
         itemCollectedEvent = new ItemCollectedEvent();
         EventManager.AddItemCollectedInvoker(this);
-        Pulse();
+
+        
         sr = GetComponent<SpriteRenderer>();
-        itemToDrop = Random.Range(0, 9);
-        DropItem(itemToDrop);
+        PickPieceToDrop();
+        Pulse();
     }
 
+    void PickPieceToDrop()
+    {
+        topDropChance = Random.Range(0, GameplayManager.Instance.TopPieceMaxRange);
+        baseDropChance = Random.Range(0, GameplayManager.Instance.BasePieceMaxRange);
+        ammoDropChance = Random.Range(0, GameplayManager.Instance.AmmoPieceMaxRange);
+
+        if (topDropChance > baseDropChance)
+        {
+            if (topDropChance > ammoDropChance)
+            {
+                // top is highest
+                GameplayManager.Instance.TopPieceMaxRange -= 2;
+                DropTopPiece();
+            }
+            else
+            {
+                // ammoIsHighest
+                GameplayManager.Instance.AmmoPieceMaxRange -= 2;
+                DropAmmoPiece();
+
+            }
+        }
+        else if (baseDropChance > ammoDropChance)
+        {
+            // base is highest
+            GameplayManager.Instance.BasePieceMaxRange -= 2;
+            DropBasePiece();
+        }
+        else
+        {
+            // ammo is highest
+            GameplayManager.Instance.AmmoPieceMaxRange -= 2;
+            DropAmmoPiece();
+        }
+
+    }
     // Just used to call the pulsing animation
     public void Pulse()
     { }
 
-    void DropItem(int itemToDrop)
+    void DropTopPiece()
     {
-        sr.sprite = item[itemToDrop];
-
-        switch(itemToDrop)
+        int itemToDrop = Random.Range(0, 3);
+        sr.sprite = topPiece[itemToDrop];
+        GameplayManager.Instance.TopDropped = true;
+        switch (itemToDrop)
         {
-            case (int)DroppedItem.SINGLE_FIRE:
+            case 0:
                 {
                     itemType = PiecesCollectedManager.TowerPieceEnum.SINGLEFIRE_TOP;
                     break;
                 }
-            case (int)DroppedItem.RAPID_FIRE:
+            case 1:
                 {
                     itemType = PiecesCollectedManager.TowerPieceEnum.RAPIDFIRE_TOP;
                     break;
                 }
-            case (int)DroppedItem.CANNON:
+            case 2:
                 {
                     itemType = PiecesCollectedManager.TowerPieceEnum.CANNON_TOP;
                     break;
                 }
-            case (int)DroppedItem.SHORT:
+        }
+    }
+
+    void DropBasePiece()
+    {
+        GameplayManager.Instance.BotDropped = true;
+        int itemToDrop = Random.Range(0, 3);
+        sr.sprite = basePiece[itemToDrop];
+
+        switch (itemToDrop)
+        {
+            case 0:
                 {
                     itemType = PiecesCollectedManager.TowerPieceEnum.SHORTRANGE_BASE;
+                    break;
+                }
+            case 1:
+                {
+                    itemType = PiecesCollectedManager.TowerPieceEnum.MIDRANGE_BASE;
+                    break;
+                }
+            case 2:
+                {
+                    itemType = PiecesCollectedManager.TowerPieceEnum.LONGRANGE_BASE;
                     sr.color = Color.red;
                     break;
                 }
-            case (int)DroppedItem.MEDIUM:
-                {
-                    itemType = PiecesCollectedManager.TowerPieceEnum.MIDRANGE_BASE;
-                    sr.color = Color.yellow;
-                    break;
-                }
-            case (int)DroppedItem.LONG:
-                {
-                    itemType = PiecesCollectedManager.TowerPieceEnum.LONGRANGE_BASE;
-                    sr.color = Color.green;
-                    break;
-                }
-            case (int)DroppedItem.STANDARD:
+        }
+    }
+
+    void DropAmmoPiece()
+    {
+        GameplayManager.Instance.AmmoDropped = true;
+        int itemToDrop = Random.Range(0, 3);
+        sr.sprite = ammoPiece[itemToDrop];
+
+        switch (itemToDrop)
+        {
+            case 0:
                 {
                     itemType = PiecesCollectedManager.TowerPieceEnum.KINETIC_AMMO;
                     break;
                 }
-            case (int)DroppedItem.SLOW:
+            case 1:
                 {
                     itemType = PiecesCollectedManager.TowerPieceEnum.CRYO_AMMO;
-                    sr.color = Color.blue;
                     break;
                 }
-            case (int)DroppedItem.INCENDIARY:
+            case 2:
                 {
                     itemType = PiecesCollectedManager.TowerPieceEnum.INCENDIARY_AMMO;
                     break;

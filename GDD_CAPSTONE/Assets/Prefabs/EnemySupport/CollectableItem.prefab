@@ -57,6 +57,18 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 75c2dff68b501404a987e5823102b21f, type: 3}
   - {fileID: 21300000, guid: b1713b68760d02b438ab3bf3debce39e, type: 3}
   - {fileID: 21300000, guid: 00f5c98127a4ce34ebb4bf4fb5124d25, type: 3}
+  topPiece:
+  - {fileID: 21300000, guid: f883c1d29d9aed248a42b5deb74bdbdf, type: 3}
+  - {fileID: 21300000, guid: 676d57d5d23f3ed4b97a3efb9fbb8076, type: 3}
+  - {fileID: 21300000, guid: 6908b614e8f0f994b9fd3d1894be5084, type: 3}
+  basePiece:
+  - {fileID: 21300000, guid: 206e32cfd9ea5e4428c330bd65fabaf5, type: 3}
+  - {fileID: 21300000, guid: ebe04fc1dc8c78f4991f9f7eef9459ff, type: 3}
+  - {fileID: 21300000, guid: bd535c5d673c1bd42b31bed30b368f51, type: 3}
+  ammoPiece:
+  - {fileID: 21300000, guid: 75c2dff68b501404a987e5823102b21f, type: 3}
+  - {fileID: 21300000, guid: b1713b68760d02b438ab3bf3debce39e, type: 3}
+  - {fileID: 21300000, guid: 00f5c98127a4ce34ebb4bf4fb5124d25, type: 3}
 --- !u!61 &2514460380740616193
 BoxCollider2D:
   m_ObjectHideFlags: 0

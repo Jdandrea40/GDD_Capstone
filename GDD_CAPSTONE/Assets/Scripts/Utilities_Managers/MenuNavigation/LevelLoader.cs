@@ -22,6 +22,10 @@ public class LevelLoader : MonoBehaviour
         GameplayManager.Instance.WaveInProgress = false;
         GameplayManager.Instance.ScrapCostToBuild = 25;
 
+        GameplayManager.Instance.TopPieceMaxRange = 10;
+        GameplayManager.Instance.BasePieceMaxRange = 10;
+        GameplayManager.Instance.AmmoPieceMaxRange = 10;
+
         // Sets all inventory pieces to 1
         for (int i = 0; i < 9; i++)
         {

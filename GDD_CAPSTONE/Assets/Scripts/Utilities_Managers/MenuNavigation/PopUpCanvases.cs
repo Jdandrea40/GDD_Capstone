@@ -15,6 +15,7 @@ public class PopUpCanvases : MonoBehaviour
     {
         //Time.timeScale = 0;
         GameplayManager.Instance.IsPaused = true;
+        ArtManager.Instance.SwapCursor(ArtManager.CursorToUse.NORMAL);
     }
     private void Update()
     {
