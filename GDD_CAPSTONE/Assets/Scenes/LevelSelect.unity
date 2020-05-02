@@ -498,8 +498,8 @@ MonoBehaviour:
   completedImage:
   - {fileID: 1108897899}
   - {fileID: 430204433}
-  - {fileID: 326216119}
-  - {fileID: 1047930535}
+  - {fileID: 572899365}
+  - {fileID: 1644283342}
 --- !u!1 &178524722
 GameObject:
   m_ObjectHideFlags: 0
@@ -1317,7 +1317,7 @@ GameObject:
   - component: {fileID: 430204436}
   - component: {fileID: 430204435}
   m_Layer: 5
-  m_Name: TheGrasslandsCompletedPanel
+  m_Name: TheForestCompletedPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

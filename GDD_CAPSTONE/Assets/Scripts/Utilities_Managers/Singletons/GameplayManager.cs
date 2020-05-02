@@ -94,6 +94,7 @@ public class GameplayManager : Singleton<GameplayManager>
                 {
                     if (LevelCompletionManager.Instance.completeledLevels[LevelCompletionManager.Instance.currentLevel] == false)
                     {
+                        Debug.Log(LevelCompletionManager.Instance.currentLevel);
                         LevelCompletionManager.Instance.completeledLevels[LevelCompletionManager.Instance.currentLevel] = true;
                     }
                     Instantiate(winMenu);

@@ -25,6 +25,7 @@ public class LevelSelect : MonoBehaviour
         {
             if(LevelCompletionManager.Instance.completeledLevels[(LevelCompletionManager.LevelNames)i] == true && completedImage[i].activeSelf == false)
             {
+                
                 completedImage[i].SetActive(true);
             }
         }
