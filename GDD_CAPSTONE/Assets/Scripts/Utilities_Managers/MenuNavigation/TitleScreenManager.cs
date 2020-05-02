@@ -17,7 +17,7 @@ public class TitleScreenManager : MonoBehaviour
     public void PlayGame()
     {
         AudioManager.Instance.PlaySFX(AudioManager.Sounds.BUTTON_CLICK);
-        SceneManager.LoadScene("LevelSelect");
+        SceneManager.LoadScene("HelpMenu");
         
     }
 
@@ -30,6 +30,6 @@ public class TitleScreenManager : MonoBehaviour
     public void HelpMenu()
     {
         AudioManager.Instance.PlaySFX(AudioManager.Sounds.BUTTON_CLICK);
-        SceneManager.LoadScene("HelpMenu");
+        SceneManager.LoadScene("Credits");
     }
 }
