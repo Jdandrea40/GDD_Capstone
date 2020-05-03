@@ -132,7 +132,7 @@ public class Enemy : MonoBehaviour
     }
     protected virtual void SpawnItem()
     {
-        if (Random.Range(0, 5) > 1)
+        if (Random.Range(0, 6) > 2)
         {
             // Spawns collectable item
             Instantiate(item, transform.position, Quaternion.identity);

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: RapidFireTurret
   m_EditorClassIdentifier: 
   Name: Rapid Fire Turret
-  Damage: 3
+  Damage: 6
   FireRate: 0.1
   SplashDamage: 0
   TurretSprite: {fileID: 21300000, guid: 676d57d5d23f3ed4b97a3efb9fbb8076, type: 3}

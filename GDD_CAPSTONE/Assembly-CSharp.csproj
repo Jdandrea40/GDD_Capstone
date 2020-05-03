@@ -129,6 +129,7 @@
     <Compile Include="Assets\Scripts\Utilities_Managers\Singletons\ParticleEffectManager.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\Singletons\PiecesCollectedManager.cs" />
     <Compile Include="Assets\Scripts\Utilities_Managers\Singletons\Singleton.cs" />
+    <Compile Include="Assets\Scripts\Utilities_Managers\VolumeAdjuster.cs" />
     <None Include="Assets\Fonts\viper_nora\text.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />

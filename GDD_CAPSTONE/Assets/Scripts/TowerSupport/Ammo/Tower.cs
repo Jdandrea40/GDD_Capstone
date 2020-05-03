@@ -149,7 +149,7 @@ public class Tower : MonoBehaviour
         startPoint = gameObject.transform.position;
         if (laserSight != null)
         {
-            laserSight.sortingLayerName = "TOWER_RADIUS";
+            laserSight.sortingLayerName = "TOWER";
             
             laserSight.SetPosition(0, startPoint);
             laserSight.SetPosition(1, startPoint);

@@ -26,6 +26,7 @@ public class AudioManager : Singleton<AudioManager>
     //dictionary for AudioClips to play
     private Dictionary<Sounds, AudioClip> soundDictionary = new Dictionary<Sounds, AudioClip>();
 
+
     //Adds Sounds to the dictionary
     private void AddSoundsToDictionary()
     {
